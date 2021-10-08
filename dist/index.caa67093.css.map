@@ -1,0 +1,1 @@
+{"mappings":"AAEA;EACA,OAHQ","sources":["src/index.scss"],"sourcesContent":["$color: steelblue;\n\n.movie-base {\ncolor: $color;\n}"],"names":[],"version":3,"file":"index.caa67093.css.map","sourceRoot":"/__parcel_source_root/"}
