@@ -1,13 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { MainView } from './components/main-view/main-view';
+
 
 import './index.scss';
+
+
 
 class movieBaseApplication extends React.Component {
     render() {
         return (
             <div className="movie-base">
-                <div>Good morning</div>
+                <div>Good evening</div>
             </div>
         );
     }
