@@ -1,4 +1,14 @@
 .movie-base {
   color: steelblue;
 }
+
+.main-view {
+  background-color: #0b192e;
+  color: #6ce4fe;
+}
+@media only screen and (max-width: 768px) {
+  .main-view {
+    color: #ffbf00;
+  }
+}
 /*# sourceMappingURL=index.caa67093.css.map */
