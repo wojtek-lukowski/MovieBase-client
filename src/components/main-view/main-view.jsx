@@ -1,5 +1,6 @@
 import React from 'react';
-import {MovieCard} from '../movie-card/movie-card';
+import { MovieCard } from '../movie-card/movie-card';
+import { MovieView } from '../movie-view/movie-view';
 
 export class MainView extends React.Component {
 
@@ -19,20 +20,34 @@ constructor() {
 {"_id":{"$oid":"613f3b7746378b95b687fbaa"},"Title":"Fight Club","Description":"A 1999 American film directed by David Fincher. Based on the 1996 novel of the same title by Chuck Palahniuk. It tells the story of the unnamed narator, who is discontented with his white collar-job.","Genre":{"$oid":"6148cbab2ea4a3d102c06d04"},"Director":"6148eb763dd18203732c44e9","ImagePath":"fightclub.png","Featured":false,"Actors":[{"$oid":"61408adf46378b95b687fbb4"}]}
 {"_id":{"$oid":"61540024adbba3d9dbfac157"},"Title":"Back to the Future","Description":"Back to the Future is a 1985 American science fiction film directed by Robert Zemeckis. Written by Zemeckis and Bob Gale, it stars Michael J. Fox, Christopher Lloyd, Lea Thompson, Crispin Glover, and Thomas F. Wilson. Set in 1985, the story follows Marty McFly (Fox), a teenager accidentally sent back to 1955 in a time-traveling DeLorean automobile built by his eccentric scientist friend Doctor Emmett /Doc/ Brown (Lloyd). Trapped in the past, Marty inadvertently prevents his future parents' meeting—threatening his existence—and is forced to reconcile the pair and somehow get back to the future.","Actors":[],"__v":0}
 {"_id":{"$oid":"61560750ab4f045b1650a32e"},"Title":"Back to the Future Part II","Description":"Back to the Future Part II is a 1989 American science fiction film directed by Robert Zemeckis and written by Bob Gale. It is the sequel to the 1985 film Back to the Future and the second installment in the Back to the Future franchise. The film stars Michael J. Fox, Christopher Lloyd, Lea Thompson, and Thomas F. Wilson. The film follows Marty McFly (Fox) and his friend Dr. Emmett 'Doc' Brown (Lloyd) as they travel from 1985 to 2015 to prevent Marty's son from sabotaging the McFly family's future; when their arch-nemesis Biff Tannen (Wilson) steals Doc's DeLorean time machine and uses it to alter history for his benefit, the duo must return to 1955 to restore the timeline.","Actors":[],"__v":0}
-        ]
-    }
+        ],
+        // selectedMovie = null
+    };
+}
+
+setSelectedMovie(newSelectedMovie) {
+    this.setState({
+        selectedMovie: newSelectedMovie
+    });
 }
 
 render() {
-    const {movies} = this.state;
+    const { movies, selectedMovie } = this.state;
+
+    if (selectedMovie) return <MovieView movie={selectedMovie} />;
 
     if (movies.length === 0) return <div className="main-view">No film tonight</div>;
 
     return (
         <div className="main-view">
-            {movies.map(movie => <MovieCard key={movie._id} movie={movie}/>)}
+          {selectedMovie
+            ? <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }}/>
+            : movies.map(movie => (
+              <MovieCard key={movie._id} movie={movie} onMovieClick={(movie) => { this.setSelectedMovie(movie) }}/>
+            ))
+          }
         </div>
-    );
+      );
 }
 
 }

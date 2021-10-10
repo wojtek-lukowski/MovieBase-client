@@ -3,13 +3,3 @@ $color: steelblue;
 .movie-base {
   color: $color;
 }
-
-//just playing with the styling
-.main-view {
-  background-color: #0b192e;
-  color: #6ce4fe;
-
-  @media only screen and (max-width: 768px) {
-    color: #ffbf00;
-  }
-}
