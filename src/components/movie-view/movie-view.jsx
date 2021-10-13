@@ -2,7 +2,7 @@ import React from'react';
 
 export class MovieView extends React.Component {
 render() {
-    const { movie } = this.props;
+    const { movie, onBackClick } = this.props;
     return (
     <div className="movie-view">
 
@@ -18,6 +18,11 @@ render() {
     <span className="label">Description: </span>
     <span className="value">{movie.Description}</span>
 </div>
+
+{/* <div className="movie-director">
+    <span className="label">Director: </span>
+    <span className="value">{movie.Director}</span>
+</div> */}
 
 {/* <div className="movie-genre">
     <span className="label">Genre: </span>
