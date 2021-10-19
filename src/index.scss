@@ -1,5 +1,7 @@
-$color: steelblue;
-
-.movie-base {
-  color: $color;
+.main-view {
+    margin: 36px;
 }
+
+// @import "./components/main-view/main-view.scss";
+// @import "./components/movie-card/movie-card.scss";
+// @import "./components/movie-view/movie-view.scss";

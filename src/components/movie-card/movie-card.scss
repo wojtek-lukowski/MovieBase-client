@@ -1,0 +1,12 @@
+.movie-card {
+    background-color: grey;
+min-width: 200px;
+min-height: 200px;
+height: auto;
+flex-shrink: 0;
+
+&:hover {
+    opacity: .8;
+    cursor: pointer;
+}
+}

@@ -1,0 +1,57 @@
+.movie-view {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 1fr 2fr 1fr 1fr;
+    grid-template-areas:
+    "poster title title"
+    "poster description description"
+    "poster director genre"
+    "button button button";
+    row-gap: 24px;
+    margin: 36px;
+
+    .movie-poster {
+        grid-area: poster;
+    }
+
+    .movie-title {
+        grid-area: title;
+        font-weight: bold;
+
+        &:nth-child(2) {
+            font-size: 36px;
+        }
+    }
+
+    .movie-description {
+        grid-area: description;
+    }
+
+    .movie-genre {
+        grid-area: genre;
+        justify-self: left;
+    }
+
+    .movie-director {
+        grid-area: director;
+        justify-self: left;
+    }
+
+    button {
+        width: 300px;
+        height: 50px;
+        background-color: red;
+        color: white;
+        border: none;
+        font-size: 24px;
+        font-weight: bold;
+        grid-area: button;
+        justify-self: center;
+        margin-top: 16px;
+
+        &:hover {
+            opacity: .8;
+            cursor: pointer;
+        }
+    }
+}
