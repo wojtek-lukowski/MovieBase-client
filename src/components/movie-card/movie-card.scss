@@ -1,8 +1,12 @@
 .movie-card {
-    background-color: grey;
-min-width: 200px;
+    background-color: black;
+    color: white;
+    font-size: 24px;
+    text-align: center;
+width: 200px;
 min-height: 200px;
 height: auto;
+padding: 24px;
 flex-shrink: 0;
 
 &:hover {

@@ -1,8 +1,12 @@
 .movie-card {
-  background-color: grey;
-  min-width: 200px;
+  background-color: black;
+  color: white;
+  font-size: 24px;
+  text-align: center;
+  width: 200px;
   min-height: 200px;
   height: auto;
+  padding: 24px;
   flex-shrink: 0;
 }
 .movie-card:hover {
@@ -32,11 +36,11 @@
 }
 .movie-view .movie-genre {
   grid-area: genre;
-  justify-self: left;
+  justify-self: center;
 }
 .movie-view .movie-director {
   grid-area: director;
-  justify-self: left;
+  justify-self: center;
 }
 .movie-view button {
   width: 300px;
