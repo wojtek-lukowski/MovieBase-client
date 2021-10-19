@@ -6,6 +6,7 @@ import { useState } from 'react';
 export function RegistrationView(props) {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [email, setEmail] = useState('');
     const [birthday, setBirthday] = useState('');
 
     const handleSubmit = (e) => {
@@ -26,6 +27,10 @@ export function RegistrationView(props) {
                     <label>
                         Password:
                         <input type="password" value={password} onChange={e => setPassword(e.target.value)} />
+                    </label>
+                    <label>
+                        Email:
+                        <input type="email" value={email} onChange={e => setEmail(e.target.value)} />
                     </label>
                     <label>
                         Birthday:

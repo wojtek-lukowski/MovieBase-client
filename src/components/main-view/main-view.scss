@@ -1,6 +1,19 @@
+* {
+    box-sizing: border-box;
+}
+
 .main-view {
     display: flex;
     flex-wrap:wrap;
     column-gap: 24px;
     row-gap: 24px;
+}
+
+.landingPage {
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 24px;
+margin-top: 64px;
 }
