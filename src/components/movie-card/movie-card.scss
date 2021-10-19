@@ -1,6 +1,6 @@
 .movie-card {
-    background-color: black;
-    color: white;
+    background-color: var(--background);
+    color: var(--yellow);
     font-size: 24px;
     text-align: center;
 width: 200px;
@@ -10,7 +10,10 @@ padding: 24px;
 flex-shrink: 0;
 
 &:hover {
-    opacity: .8;
+    opacity: .9;
     cursor: pointer;
 }
 }
+
+@import "../../index.scss";
+ 

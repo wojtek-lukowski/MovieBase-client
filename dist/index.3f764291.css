@@ -1,6 +1,6 @@
 .movie-card {
-  background-color: black;
-  color: white;
+  background-color: var(--background);
+  color: var(--yellow);
   font-size: 24px;
   text-align: center;
   width: 200px;
@@ -10,8 +10,36 @@
   flex-shrink: 0;
 }
 .movie-card:hover {
-  opacity: 0.8;
+  opacity: 0.9;
   cursor: pointer;
+}
+
+body {
+  background-color: white;
+}
+
+.main-view {
+  margin: 36px;
+}
+
+:root {
+  --yellow: #ffbf00;
+  --background: #272727;
+}
+
+button {
+  background-color: var(--yellow);
+  color: var(--background);
+  padding: 8px 24px;
+  margin-top: 24px;
+  font-size: 16px;
+  font-weight: bold;
+  border: 1px solid var(--background);
+}
+button:hover {
+  background-color: var(--background);
+  color: var(--yellow);
+  border: 1px solid var(--yellow);
 }
 .movie-view {
   display: grid;
@@ -43,20 +71,48 @@
   justify-self: center;
 }
 .movie-view button {
-  width: 300px;
-  height: 50px;
-  background-color: red;
-  color: white;
-  border: none;
-  font-size: 24px;
+  background-color: var(--background);
+  color: var(--yellow);
+  padding: 8px 24px;
+  margin-top: 24px;
+  font-size: 16px;
   font-weight: bold;
   grid-area: button;
   justify-self: center;
   margin-top: 16px;
+  border: none;
 }
 .movie-view button:hover {
-  opacity: 0.8;
-  cursor: pointer;
+  border: none;
+  opacity: 0.9;
+}
+
+body {
+  background-color: white;
+}
+
+.main-view {
+  margin: 36px;
+}
+
+:root {
+  --yellow: #ffbf00;
+  --background: #272727;
+}
+
+button {
+  background-color: var(--yellow);
+  color: var(--background);
+  padding: 8px 24px;
+  margin-top: 24px;
+  font-size: 16px;
+  font-weight: bold;
+  border: 1px solid var(--background);
+}
+button:hover {
+  background-color: var(--background);
+  color: var(--yellow);
+  border: 1px solid var(--yellow);
 }
 .main-view {
   display: flex;
@@ -67,14 +123,13 @@
 .loginView {
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 .loginForm {
   max-width: 40%;
   height: auto;
-  background-color: #272727;
-  color: #ffbf00;
+  background-color: var(--background);
+  color: var(--yellow);
   padding: 36px;
   position: absolute;
   top: 20%;
@@ -96,31 +151,75 @@
   width: 100%;
   height: 40px;
   margin: 8px auto 16px;
-  background-color: #272727;
-  border: 1px solid #ffbf00;
+  background-color: var(--background);
+  border: 1px solid var(--yellow);
   font-size: 18px;
   display: block;
-  color: #ffbf00;
+  color: var(--yellow);
 }
 .loginForm form input:focus {
-  background-color: white;
-  color: #272727;
+  background-color: var(--yellow);
+  color: var(--background);
 }
 .loginForm form button {
-  background-color: #ffbf00;
-  color: #272727;
+  background-color: var(--yellow);
+  color: var(--background);
   padding: 8px 24px;
   margin-top: 24px;
   font-size: 16px;
   font-weight: bold;
-  border: 1px solid #272727;
+  border: 1px solid var(--background);
 }
 .loginForm form button:hover {
-  background-color: #272727;
-  color: #ffbf00;
-  border: 1px solid #ffbf00;
+  background-color: var(--background);
+  color: var(--yellow);
+  border: 1px solid var(--yellow);
+}
+
+.main-view {
+  margin: 36px;
+}
+
+:root {
+  --yellow: #ffbf00;
+  --background: #272727;
+}
+
+button {
+  background-color: var(--yellow);
+  color: var(--background);
+  padding: 8px 24px;
+  margin-top: 24px;
+  font-size: 16px;
+  font-weight: bold;
+  border: 1px solid var(--background);
+}
+button:hover {
+  background-color: var(--background);
+  color: var(--yellow);
+  border: 1px solid var(--yellow);
 }
 .main-view {
   margin: 36px;
+}
+
+:root {
+  --yellow: #ffbf00;
+  --background: #272727;
+}
+
+button {
+  background-color: var(--yellow);
+  color: var(--background);
+  padding: 8px 24px;
+  margin-top: 24px;
+  font-size: 16px;
+  font-weight: bold;
+  border: 1px solid var(--background);
+}
+button:hover {
+  background-color: var(--background);
+  color: var(--yellow);
+  border: 1px solid var(--yellow);
 }
 /*# sourceMappingURL=index.3f764291.css.map */
