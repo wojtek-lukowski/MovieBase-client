@@ -64,6 +64,62 @@
   column-gap: 24px;
   row-gap: 24px;
 }
+.loginView {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginForm {
+  max-width: 40%;
+  height: auto;
+  background-color: #272727;
+  color: #ffbf00;
+  padding: 36px;
+  position: absolute;
+  top: 20%;
+}
+.loginForm form {
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+.loginForm form h1 {
+  text-align: center;
+  padding: 16px 0;
+}
+.loginForm form label {
+  width: 100%;
+}
+.loginForm form input {
+  width: 100%;
+  height: 40px;
+  margin: 8px auto 16px;
+  background-color: #272727;
+  border: 1px solid #ffbf00;
+  font-size: 18px;
+  display: block;
+  color: #ffbf00;
+}
+.loginForm form input:focus {
+  background-color: white;
+  color: #272727;
+}
+.loginForm form button {
+  background-color: #ffbf00;
+  color: #272727;
+  padding: 8px 24px;
+  margin-top: 24px;
+  font-size: 16px;
+  font-weight: bold;
+  border: 1px solid #272727;
+}
+.loginForm form button:hover {
+  background-color: #272727;
+  color: #ffbf00;
+  border: 1px solid #ffbf00;
+}
 .main-view {
   margin: 36px;
 }

@@ -22741,7 +22741,7 @@ var _reactDefault = parcelHelpers.interopDefault(_react);
 var _axios = require("axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
 var _mainViewScss = require("./main-view.scss");
-// import { LoginView } from '../login-view/login-view';
+var _loginView = require("../login-view/login-view");
 var _movieCard = require("../movie-card/movie-card");
 var _movieView = require("../movie-view/movie-view");
 class MainView extends _reactDefault.default.Component {
@@ -22749,7 +22749,8 @@ class MainView extends _reactDefault.default.Component {
         super();
         this.state = {
             movies: [],
-            selectedMovie: null
+            selectedMovie: null,
+            user: null
         };
     }
     componentDidMount() {
@@ -22766,21 +22767,28 @@ class MainView extends _reactDefault.default.Component {
             selectedMovie: newSelectedMovie
         });
     }
-    // onLoggedIn(user) {
-    //   this.setState({
-    //     user
-    //   });
-    // }
+    onLoggedIn(user) {
+        this.setState({
+            user
+        });
+    }
     render() {
-        const { movies , selectedMovie  } = this.state;
-        console.log(selectedMovie);
-        // if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
+        const { movies , selectedMovie , user  } = this.state;
+        if (!user) return(/*#__PURE__*/ _jsxRuntime.jsx(_loginView.LoginView, {
+            onLoggedIn: (user1)=>this.onLoggedIn(user1)
+            ,
+            __source: {
+                fileName: "src/components/main-view/main-view.jsx",
+                lineNumber: 47
+            },
+            __self: this
+        }));
         // if (selectedMovie) return <MovieView movie={selectedMovie} />;
         if (movies.length === 0) return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
             className: "main-view",
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 52
+                lineNumber: 51
             },
             __self: this,
             children: "Loading..."
@@ -22789,7 +22797,7 @@ class MainView extends _reactDefault.default.Component {
             className: "main-view",
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 55
+                lineNumber: 54
             },
             __self: this,
             children: selectedMovie ? /*#__PURE__*/ _jsxRuntime.jsx(_movieView.MovieView, {
@@ -22799,7 +22807,7 @@ class MainView extends _reactDefault.default.Component {
                 },
                 __source: {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 57
+                    lineNumber: 56
                 },
                 __self: this
             }) : movies.map((movie)=>/*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
@@ -22809,7 +22817,7 @@ class MainView extends _reactDefault.default.Component {
                     },
                     __source: {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 59
+                        lineNumber: 58
                     },
                     __self: this
                 }, movie._id)
@@ -22823,7 +22831,7 @@ class MainView extends _reactDefault.default.Component {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"lpaPZ","../movie-card/movie-card":"6EiBJ","../movie-view/movie-view":"ikZdr","axios":"iYoWk","./main-view.scss":"jyMAr"}],"5lGN4":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"lpaPZ","../movie-card/movie-card":"6EiBJ","../movie-view/movie-view":"ikZdr","axios":"iYoWk","./main-view.scss":"jyMAr","../login-view/login-view":"054li"}],"5lGN4":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -25458,6 +25466,141 @@ module.exports = CancelToken;
     return typeof payload === 'object' && payload.isAxiosError === true;
 };
 
-},{}],"jyMAr":[function() {},{}],"jUTZ8":[function() {},{}]},["9NtYk","k2XMz","dLPEP"], "dLPEP", "parcelRequire1ec2")
+},{}],"jyMAr":[function() {},{}],"054li":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$02dd = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$02dd.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "LoginView", ()=>LoginView
+);
+var _jsxRuntime = require("react/jsx-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _loginViewScss = require("./login-view.scss");
+class LoginView extends _reactDefault.default.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            username: '',
+            password: ''
+        };
+        this.onUsernameChange = this.onUsernameChange.bind(this);
+        this.onPasswordChange = this.onPasswordChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+    onUsernameChange(event) {
+        this.setState({
+            username: event.target.value
+        });
+    }
+    onPasswordChange(event) {
+        this.setState({
+            password: event.target.value
+        });
+    }
+    handleSubmit() {
+        const { username , password  } = this.state;
+        console.log(username, password);
+        this.props.onLoggedIn(username);
+    }
+    render() {
+        return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
+            className: "loginView",
+            __source: {
+                fileName: "src/components/login-view/login-view.jsx",
+                lineNumber: 38
+            },
+            __self: this,
+            children: /*#__PURE__*/ _jsxRuntime.jsxs("div", {
+                className: "loginForm",
+                __source: {
+                    fileName: "src/components/login-view/login-view.jsx",
+                    lineNumber: 39
+                },
+                __self: this,
+                children: [
+                    /*#__PURE__*/ _jsxRuntime.jsx("h1", {
+                        __source: {
+                            fileName: "src/components/login-view/login-view.jsx",
+                            lineNumber: 40
+                        },
+                        __self: this,
+                        children: "Log in"
+                    }),
+                    /*#__PURE__*/ _jsxRuntime.jsxs("form", {
+                        __source: {
+                            fileName: "src/components/login-view/login-view.jsx",
+                            lineNumber: 41
+                        },
+                        __self: this,
+                        children: [
+                            /*#__PURE__*/ _jsxRuntime.jsxs("label", {
+                                __source: {
+                                    fileName: "src/components/login-view/login-view.jsx",
+                                    lineNumber: 42
+                                },
+                                __self: this,
+                                children: [
+                                    "Username:",
+                                    /*#__PURE__*/ _jsxRuntime.jsx("input", {
+                                        type: "text",
+                                        value: this.state.username,
+                                        onChange: this.onUsernameChange,
+                                        __source: {
+                                            fileName: "src/components/login-view/login-view.jsx",
+                                            lineNumber: 44
+                                        },
+                                        __self: this
+                                    })
+                                ]
+                            }),
+                            /*#__PURE__*/ _jsxRuntime.jsxs("label", {
+                                __source: {
+                                    fileName: "src/components/login-view/login-view.jsx",
+                                    lineNumber: 46
+                                },
+                                __self: this,
+                                children: [
+                                    "Password:",
+                                    /*#__PURE__*/ _jsxRuntime.jsx("input", {
+                                        type: "password",
+                                        value: this.state.password,
+                                        onChange: this.onPasswordChange,
+                                        __source: {
+                                            fileName: "src/components/login-view/login-view.jsx",
+                                            lineNumber: 48
+                                        },
+                                        __self: this
+                                    })
+                                ]
+                            }),
+                            /*#__PURE__*/ _jsxRuntime.jsx("button", {
+                                type: "button",
+                                onClick: this.handleSubmit,
+                                __source: {
+                                    fileName: "src/components/login-view/login-view.jsx",
+                                    lineNumber: 50
+                                },
+                                __self: this,
+                                children: "Log in"
+                            })
+                        ]
+                    })
+                ]
+            })
+        }));
+    }
+}
+
+  $parcel$ReactRefreshHelpers$02dd.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"lpaPZ","./login-view.scss":"lS4BK"}],"lS4BK":[function() {},{}],"jUTZ8":[function() {},{}]},["9NtYk","k2XMz","dLPEP"], "dLPEP", "parcelRequire1ec2")
 
 //# sourceMappingURL=index.6701a6e1.js.map

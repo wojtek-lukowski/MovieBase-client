@@ -3,7 +3,7 @@ import axios from 'axios';
 
 import './main-view.scss'
 
-// import { LoginView } from '../login-view/login-view';
+import { LoginView } from '../login-view/login-view';
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
 
@@ -14,7 +14,7 @@ export class MainView extends React.Component {
     this.state = {
       movies: [],
       selectedMovie: null,
-      // user: null
+      user: null
     };
   }
 
@@ -36,16 +36,15 @@ export class MainView extends React.Component {
     });
   }
 
-  // onLoggedIn(user) {
-  //   this.setState({
-  //     user
-  //   });
-  // }
+  onLoggedIn(user) {
+    this.setState({
+      user
+    });
+  }
 
   render() {
-    const { movies, selectedMovie } = this.state;
-    console.log(selectedMovie);
-    // if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
+    const { movies, selectedMovie, user } = this.state;
+    if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
 
     // if (selectedMovie) return <MovieView movie={selectedMovie} />;
 
