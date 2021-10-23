@@ -1,28 +1,23 @@
-.main-view {
-    margin: 36px;
-}
-
 :root {
     --yellow: #ffbf00;
     --background: #272727;
+    --black: #0000;
+    
+    --u: 0.8rem;
+    --u0-5: calc(var(--u) * 0.5);
+    --u1-5: calc(var(--u) * 1.5);
+    --u2: calc(var(--u) * 2);
+    --u3: calc(var(--u) * 3);
+    --u4: calc(var(--u) * 4);
+    --u5: calc(var(--u) * 5);
+    --u6: calc(var(--u) * 6);
+    --u7: calc(var(--u) * 7);
+    --u8: calc(var(--u) * 8);
+    --u9: calc(var(--u) * 9);
+    --u10: calc(var(--u) * 10); 
 }
 
-button {
-    background-color:var(--yellow);
-    color: var(--background);
-    padding: 8px 24px;
-    margin-top: 24px;
-    font-size: 16px;
-    font-weight: bold;
-    border: 1px solid var(--background);
-
-    &:hover {
-    background-color: var(--background);
-        color: var(--yellow);
-        border: 1px solid var(--yellow);
-    }
+body {
+    font-size: 67.5%;
+    margin: 2.4rem;
 }
-
-// @import "./components/main-view/main-view.scss";
-// @import "./components/movie-card/movie-card.scss";
-// @import "./components/movie-view/movie-view.scss";

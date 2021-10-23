@@ -1,60 +1,26 @@
-.movie-view {
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    grid-template-rows: 1fr 2fr 1fr 1fr;
-    grid-template-areas:
-    "poster title title"
-    "poster description description"
-    "poster director genre"
-    "button button button";
-    row-gap: 24px;
-    margin: 36px;
+.movie-poster {
+    flex: 0;
 
-    .movie-poster {
-        grid-area: poster;
-    }
+    .button-back-container {
+justify-content: center !important;
+padding: 2rem;
 
-    .movie-title {
-        grid-area: title;
-        font-weight: bold;
+.button-back {
+    margin-top: var(--u1);
+    width: 50%;
+}
+}
 
-        &:nth-child(2) {
-            font-size: 36px;
+
+}
+
+.movie-details {
+
+    span {
+        &:nth-of-type(1) {
+            font-size: .8rem;
+            padding-right: .8rem;
         }
-    }
-
-    .movie-description {
-        grid-area: description;
-    }
-
-    .movie-genre {
-        grid-area: genre;
-        justify-self: center;
-    }
-
-    .movie-director {
-        grid-area: director;
-        justify-self: center;
-    }
-
-    button {
-    background-color:var(--background);
-    color: var(--yellow);
-    width: 300px;
-    padding: 8px 24px;
-    margin-top: 24px;
-    font-size: 16px;
-    font-weight: bold;
-        grid-area: button;
-        justify-self: center;
-        margin-top: 16px;
-        border: none;
-
-        &:hover {
-            border: none;
-            opacity: .9;
-            cursor: pointer;
-            }
     }
 }
 
