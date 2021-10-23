@@ -25656,7 +25656,7 @@ function RegistrationView(props) {
     const [birthday, setBirthday] = _react.useState('');
     const handleSubmit = (e)=>{
         e.preventDefault();
-        console.log(username, password, birthday);
+        console.log(username, password, email, birthday);
         props.onLoggedIn(username);
     };
     return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
