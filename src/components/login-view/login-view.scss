@@ -23,7 +23,7 @@
     input {
         background-color: var(--background);
         border: 1px solid var(--yellow);
-        font-size: 18px;
+        font-size: 1rem;
         display: block;
         color: var(--yellow);
 
@@ -33,6 +33,10 @@
         }
     }
 
+    .form-label {
+        font-size: .8rem;
+        margin-bottom: var(--u0-5);
+    }
     .form-button {
         text-align: right;
     }

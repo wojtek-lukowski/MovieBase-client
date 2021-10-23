@@ -169,13 +169,17 @@ body {
 .form input {
   background-color: var(--background);
   border: 1px solid var(--yellow);
-  font-size: 18px;
+  font-size: 1rem;
   display: block;
   color: var(--yellow);
 }
 .form input:focus {
   background-color: var(--yellow);
   color: var(--background);
+}
+.form .form-label {
+  font-size: 0.8rem;
+  margin-bottom: var(--u0-5);
 }
 .form .form-button {
   text-align: right;
