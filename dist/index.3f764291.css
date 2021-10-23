@@ -1,20 +1,37 @@
 .card {
   background-color: var(--background) !important;
   color: var(--yellow);
+  height: 100%;
+  flex: 0;
+}
+.card .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-content: space-between;
+}
+.card .movie-card-button {
+  justify-content: flex-end !important;
+  padding-right: 2rem;
 }
 .card .text {
   height: 5rem;
   overflow-y: scroll;
   font-size: 0.8rem;
 }
-.card button {
+.card .btn-outline-primary {
   color: var(--yellow);
   border: 1px solid var(--yellow);
 }
-.card button:hover {
+.card .btn-outline-primary:hover, .card .btn-outline-primary:focus, .card .btn-outline-primary:active {
   background-color: var(--yellow);
   color: var(--background);
   border: 1px solid var(--yellow);
+}
+
+.movie-card:hover {
+  opacity: 0.95;
+  cursor: pointer;
 }
 
 :root {
@@ -39,14 +56,26 @@ body {
   font-size: 67.5%;
   margin: 2.4rem;
 }
-.movie-poster {
+
+.btn {
+  background-color: var(--yellow);
+  border: 1px solid var(--yellow);
+  color: var(--background);
+  margin-top: var(--u2);
+}
+.btn:hover, .btn:focus, .btn:active {
+  background-color: var(--background);
+  border: 1px solid var(--yellow);
+  color: var(--yellow);
+}
+.card-body {
   flex: 0;
 }
-.movie-poster .button-back-container {
+.card-body .button-back-container {
   justify-content: center !important;
-  padding: 2rem;
+  padding: 2rem 0 1rem;
 }
-.movie-poster .button-back-container .button-back {
+.card-body .button-back-container .btn-outline-primary {
   margin-top: var(--u1);
   width: 50%;
 }
@@ -78,6 +107,18 @@ body {
   font-size: 67.5%;
   margin: 2.4rem;
 }
+
+.btn {
+  background-color: var(--yellow);
+  border: 1px solid var(--yellow);
+  color: var(--background);
+  margin-top: var(--u2);
+}
+.btn:hover, .btn:focus, .btn:active {
+  background-color: var(--background);
+  border: 1px solid var(--yellow);
+  color: var(--yellow);
+}
 * {
   box-sizing: border-box;
 }
@@ -86,11 +127,16 @@ body {
   background-color: var(--black);
 }
 
+.col-md-3 {
+  padding: 0 !important;
+}
+
 .main-view {
   display: flex;
   flex-wrap: wrap;
-  column-gap: 24px;
-  row-gap: 24px;
+  column-gap: var(--u2);
+  row-gap: var(--u2);
+  padding-top: var(--u3);
 }
 
 .landingPage {
@@ -98,8 +144,8 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   align-items: stretch;
-  gap: 24px;
-  margin-top: 64px;
+  gap: var(--u3);
+  margin-top: 6.4rem;
 }
 .loginView {
   display: flex;
@@ -107,55 +153,43 @@ body {
   flex-shrink: 0;
 }
 
-.loginForm {
-  max-width: 400px;
-  height: auto;
+.form {
   background-color: var(--background);
   color: var(--yellow);
-  padding: 36px;
+  padding: var(--u2);
 }
-.loginForm form {
-  box-sizing: border-box;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-}
-.loginForm form h1 {
+.form h2 {
+  display: block;
   text-align: center;
-  margin-top: 0;
+  margin-bottom: var(--u1-5);
 }
-.loginForm form label {
-  width: 100%;
+.form .form-control {
+  margin-bottom: var(--u1-5);
 }
-.loginForm form input {
-  width: 100%;
-  height: 40px;
-  margin: 8px auto 16px;
-  padding: 0 8px;
+.form input {
   background-color: var(--background);
   border: 1px solid var(--yellow);
   font-size: 18px;
   display: block;
   color: var(--yellow);
 }
-.loginForm form input:focus {
+.form input:focus {
   background-color: var(--yellow);
   color: var(--background);
 }
-.loginForm form button {
-  background-color: var(--yellow);
-  color: var(--background);
-  padding: 8px 24px;
-  margin-top: 24px;
-  font-size: 16px;
-  font-weight: bold;
-  border: 1px solid var(--background);
+.form .form-button {
+  text-align: right;
 }
-.loginForm form button:hover {
-  background-color: var(--background);
-  color: var(--yellow);
+.form .btn-outline-primary {
+  background-color: var(--yellow);
   border: 1px solid var(--yellow);
-  cursor: pointer;
+  color: var(--background);
+  margin-top: var(--u2);
+}
+.form .btn-outline-primary:hover, .form .btn-outline-primary:focus, .form .btn-outline-primary:active {
+  background-color: var(--background);
+  border: 1px solid var(--yellow);
+  color: var(--yellow);
 }
 
 :root {
@@ -180,11 +214,19 @@ body {
   font-size: 67.5%;
   margin: 2.4rem;
 }
-.registrationView {
-  display: flex;
-  justify-content: center;
-  flex-shrink: 0;
+
+.btn {
+  background-color: var(--yellow);
+  border: 1px solid var(--yellow);
+  color: var(--background);
+  margin-top: var(--u2);
 }
+.btn:hover, .btn:focus, .btn:active {
+  background-color: var(--background);
+  border: 1px solid var(--yellow);
+  color: var(--yellow);
+}
+
 :root {
   --yellow: #ffbf00;
   --background: #272727;
@@ -206,5 +248,17 @@ body {
 body {
   font-size: 67.5%;
   margin: 2.4rem;
+}
+
+.btn {
+  background-color: var(--yellow);
+  border: 1px solid var(--yellow);
+  color: var(--background);
+  margin-top: var(--u2);
+}
+.btn:hover, .btn:focus, .btn:active {
+  background-color: var(--background);
+  border: 1px solid var(--yellow);
+  color: var(--yellow);
 }
 /*# sourceMappingURL=index.3f764291.css.map */

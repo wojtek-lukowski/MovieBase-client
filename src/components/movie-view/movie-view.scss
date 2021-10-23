@@ -1,17 +1,15 @@
-.movie-poster {
+.card-body {
     flex: 0;
 
     .button-back-container {
-justify-content: center !important;
-padding: 2rem;
+        justify-content: center !important;
+        padding: 2rem 0 1rem;
 
-.button-back {
-    margin-top: var(--u1);
-    width: 50%;
+        .btn-outline-primary {
+            margin-top: var(--u1);
+            width: 50%;
+        }
 }
-}
-
-
 }
 
 .movie-details {

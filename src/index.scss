@@ -21,3 +21,18 @@ body {
     font-size: 67.5%;
     margin: 2.4rem;
 }
+
+.btn {
+    background-color: var(--yellow);
+        border: 1px solid var(--yellow);
+        color: var(--background);
+        margin-top: var(--u2);
+
+        &:hover,
+        &:focus,
+        &:active {
+        background-color: var(--background);
+        border: 1px solid var(--yellow);
+        color: var(--yellow);
+        }
+}

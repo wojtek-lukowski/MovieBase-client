@@ -1,6 +1,20 @@
 .card {
     background-color: var(--background) !important;
     color: var(--yellow);
+    height: 100%;
+    flex: 0;
+
+    .card-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-content: space-between;
+}
+
+    .movie-card-button {
+        justify-content: flex-end !important;
+        padding-right: 2rem;
+    }
 
     .text {
         height: 5rem;
@@ -8,16 +22,26 @@
         font-size: .8rem;
     }
 
-    button {
+    .btn-outline-primary {
         color: var(--yellow);
         border: 1px solid var(--yellow);
+        // justify-self: flex-end;
 
-        &:hover {
+        &:hover,
+        &:focus,
+        &:active {
             background-color: var(--yellow);
             color: var(--background);
             border: 1px solid var(--yellow);
         }
 }
+}
+
+.movie-card {
+    &:hover {
+        opacity: .95;
+        cursor: pointer;
+    }
 }
 
 
