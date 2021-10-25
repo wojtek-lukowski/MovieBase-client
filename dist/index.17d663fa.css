@@ -1,52 +1,270 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--black);
+}
+
+.col-md-3 {
+  padding: 0 !important;
+}
+
 .main-view {
   display: flex;
   flex-wrap: wrap;
-  column-gap: 24px;
-  row-gap: 24px;
+  column-gap: var(--u2);
+  row-gap: var(--u2);
+  padding-top: var(--u3);
 }
-.movie-card {
-  background-color: grey;
-  min-width: 200px;
-  min-height: 200px;
-  height: auto;
+
+.landingPage {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: var(--u3);
+  margin-top: 6.4rem;
+}
+
+.loginView {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.form {
+  background-color: var(--background);
+  color: var(--yellow);
+  padding: var(--u2);
+  width: 25rem;
   flex-shrink: 0;
 }
-.movie-card :hover {
-  opacity: 0.8;
+.form h2 {
+  display: block;
+  text-align: center;
+  margin-bottom: var(--u1-5);
+}
+.form .form-control {
+  margin-bottom: var(--u1-5);
+}
+.form input {
+  background-color: var(--background);
+  border: 1px solid var(--yellow);
+  font-size: 1rem;
+  display: block;
+  color: var(--yellow);
+}
+.form input:focus {
+  background-color: var(--yellow);
+  color: var(--background);
+}
+.form .form-label {
+  font-size: 0.8rem;
+  margin-bottom: var(--u0-5);
+}
+.form .form-button {
+  text-align: right;
+}
+.form .btn-outline-primary {
+  background-color: var(--yellow);
+  border: 1px solid var(--yellow);
+  color: var(--background);
+  margin-top: var(--u2);
+}
+.form .btn-outline-primary:hover, .form .btn-outline-primary:focus, .form .btn-outline-primary:active {
+  background-color: var(--background);
+  border: 1px solid var(--yellow);
+  color: var(--yellow);
+}
+
+:root {
+  --yellow: #ffbf00;
+  --background: #272727;
+  --black: #0000;
+  --u: 0.8rem;
+  --u0-5: calc(var(--u) * 0.5);
+  --u1-5: calc(var(--u) * 1.5);
+  --u2: calc(var(--u) * 2);
+  --u3: calc(var(--u) * 3);
+  --u4: calc(var(--u) * 4);
+  --u5: calc(var(--u) * 5);
+  --u6: calc(var(--u) * 6);
+  --u7: calc(var(--u) * 7);
+  --u8: calc(var(--u) * 8);
+  --u9: calc(var(--u) * 9);
+  --u10: calc(var(--u) * 10);
+}
+
+body {
+  font-size: 67.5%;
+  margin: 2.4rem;
+}
+
+.btn {
+  background-color: var(--yellow);
+  border: 1px solid var(--yellow);
+  color: var(--background);
+  margin-top: var(--u2);
+}
+.btn:hover, .btn:focus, .btn:active {
+  background-color: var(--background);
+  border: 1px solid var(--yellow);
+  color: var(--yellow);
+}
+.card {
+  background-color: var(--background) !important;
+  color: var(--yellow);
+  height: 100%;
+  flex: 0;
+}
+.card .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-content: space-between;
+}
+.card .movie-card-button {
+  justify-content: flex-end !important;
+  padding-right: 2rem;
+}
+.card .text {
+  height: 5rem;
+  overflow-y: scroll;
+  font-size: 0.8rem;
+}
+.card .btn-outline-primary {
+  color: var(--yellow);
+  border: 1px solid var(--yellow);
+}
+.card .btn-outline-primary:hover, .card .btn-outline-primary:focus, .card .btn-outline-primary:active {
+  background-color: var(--yellow);
+  color: var(--background);
+  border: 1px solid var(--yellow);
+}
+
+.movie-card:hover {
+  opacity: 0.95;
   cursor: pointer;
 }
 
-.movie-view {
-  display: grid;
-  grid-template-columns: 1fr 3fr;
-  grid-template-rows: 2fr 2fr 1fr;
-  grid-template-areas: "poster title" "poster description" "button button";
+:root {
+  --yellow: #ffbf00;
+  --background: #272727;
+  --black: #0000;
+  --u: 0.8rem;
+  --u0-5: calc(var(--u) * 0.5);
+  --u1-5: calc(var(--u) * 1.5);
+  --u2: calc(var(--u) * 2);
+  --u3: calc(var(--u) * 3);
+  --u4: calc(var(--u) * 4);
+  --u5: calc(var(--u) * 5);
+  --u6: calc(var(--u) * 6);
+  --u7: calc(var(--u) * 7);
+  --u8: calc(var(--u) * 8);
+  --u9: calc(var(--u) * 9);
+  --u10: calc(var(--u) * 10);
 }
-.movie-view .movie-poster {
-  grid-area: poster;
+
+body {
+  font-size: 67.5%;
+  margin: 2.4rem;
 }
-.movie-view .movie-title {
-  grid-area: title;
-  font-weight: bold;
+
+.btn {
+  background-color: var(--yellow);
+  border: 1px solid var(--yellow);
+  color: var(--background);
+  margin-top: var(--u2);
 }
-.movie-view .movie-title:nth-child(2) {
-  font-size: 36px;
+.btn:hover, .btn:focus, .btn:active {
+  background-color: var(--background);
+  border: 1px solid var(--yellow);
+  color: var(--yellow);
 }
-.movie-view .movie-description {
-  grid-area: description;
+.card-body {
+  flex: 0;
 }
-.movie-view button {
-  width: 200px;
-  height: 50px;
-  background-color: red;
-  color: white;
-  border: none;
-  grid-area: button;
-  justify-self: center;
-  margin-top: 16px;
+.card-body .button-back-container {
+  justify-content: center !important;
+  padding: 2rem 0 1rem;
 }
-.movie-view button:hover {
-  opacity: 0.8;
-  cursor: pointer;
+.card-body .button-back-container .btn-outline-primary {
+  margin-top: var(--u1);
+  width: 50%;
+}
+
+.movie-details span:nth-of-type(1) {
+  font-size: 0.8rem;
+  padding-right: 0.8rem;
+}
+
+:root {
+  --yellow: #ffbf00;
+  --background: #272727;
+  --black: #0000;
+  --u: 0.8rem;
+  --u0-5: calc(var(--u) * 0.5);
+  --u1-5: calc(var(--u) * 1.5);
+  --u2: calc(var(--u) * 2);
+  --u3: calc(var(--u) * 3);
+  --u4: calc(var(--u) * 4);
+  --u5: calc(var(--u) * 5);
+  --u6: calc(var(--u) * 6);
+  --u7: calc(var(--u) * 7);
+  --u8: calc(var(--u) * 8);
+  --u9: calc(var(--u) * 9);
+  --u10: calc(var(--u) * 10);
+}
+
+body {
+  font-size: 67.5%;
+  margin: 2.4rem;
+}
+
+.btn {
+  background-color: var(--yellow);
+  border: 1px solid var(--yellow);
+  color: var(--background);
+  margin-top: var(--u2);
+}
+.btn:hover, .btn:focus, .btn:active {
+  background-color: var(--background);
+  border: 1px solid var(--yellow);
+  color: var(--yellow);
+}
+:root {
+  --yellow: #ffbf00;
+  --background: #272727;
+  --black: #0000;
+  --u: 0.8rem;
+  --u0-5: calc(var(--u) * 0.5);
+  --u1-5: calc(var(--u) * 1.5);
+  --u2: calc(var(--u) * 2);
+  --u3: calc(var(--u) * 3);
+  --u4: calc(var(--u) * 4);
+  --u5: calc(var(--u) * 5);
+  --u6: calc(var(--u) * 6);
+  --u7: calc(var(--u) * 7);
+  --u8: calc(var(--u) * 8);
+  --u9: calc(var(--u) * 9);
+  --u10: calc(var(--u) * 10);
+}
+
+body {
+  font-size: 67.5%;
+  margin: 2.4rem;
+}
+
+.btn {
+  background-color: var(--yellow);
+  border: 1px solid var(--yellow);
+  color: var(--background);
+  margin-top: var(--u2);
+}
+.btn:hover, .btn:focus, .btn:active {
+  background-color: var(--background);
+  border: 1px solid var(--yellow);
+  color: var(--yellow);
 }
 /*# sourceMappingURL=index.17d663fa.css.map */

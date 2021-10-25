@@ -1,5 +1,6 @@
 import React from 'react';
 import './login-view.scss';
+import axios from 'axios';
 
 import { useState } from 'react';
 import Form from 'react-bootstrap/Form';
@@ -12,18 +13,27 @@ export function LoginView(props) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(username, password);
-        props.onLoggedIn(username)
+        axios.post('https://moviebased.herokuapp.com/login', {
+            Username: username,
+            Password: password
+        })
+            .then(response => {
+                const data = response.data;
+                props.onLoggedIn(data);
+            })
+            .catch(e => {
+                console.log('No such user.')
+            });
     };
 
     return (
         <Form className="form">
             <h2>Log In</h2>
-            <Form.Group>
+            <Form.Group controlId="formUsername">
                 <Form.Label>Username:</Form.Label>
                 <Form.Control type="text" value={username} onChange={e => setUsername(e.target.value)} placeholder="Username"></Form.Control>
             </Form.Group>
-            <Form.Group>
+            <Form.Group controlId="formPassword">
                 <Form.Label>Password:</Form.Label>
                 <Form.Control type="password" value={password} onChange={e => setPassword(e.target.value)} placeholder="Password"></Form.Control>
             </Form.Group>
@@ -32,26 +42,5 @@ export function LoginView(props) {
             </div>
         </Form>
     )
-
-
-    // return (
-    //     <div className="loginView">
-    //         <div className="loginForm">
-    //             <h1>Log in</h1>
-    //             <form>
-    //                 <label>
-    //                     Username:
-    //                     <input type="text" value={username} onChange={e => setUsername(e.target.value)} />
-    //                 </label>
-    //                 <label>
-    //                     Password:
-    //                     <input type="password" value={password} onChange={e => setPassword(e.target.value)} />
-    //                 </label>
-    //                 <button type="submit" onClick={handleSubmit}>Log in</button>
-    //             </form>
-    //         </div>
-    //     </div>
-    // );
-
 };
 
