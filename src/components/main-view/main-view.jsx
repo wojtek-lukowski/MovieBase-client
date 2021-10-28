@@ -9,6 +9,7 @@ import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Button from 'react-bootstrap/Button';
 
 export class MainView extends React.Component {
 
@@ -33,15 +34,15 @@ export class MainView extends React.Component {
   //     });
   // }
 
-  // componentDidMount() {
-  //   let accessToken = localStorage.getItem('token');
-  //   if (accessToken !== null) {
-  //     this.setState({
-  //       user: localStorage.getItem('user')
-  //     });
-  //     this.getMovies(accessToken);
-  //   }
-  // }
+  componentDidMount() {
+    let accessToken = localStorage.getItem('token');
+    if (accessToken !== null) {
+      this.setState({
+        user: localStorage.getItem('user')
+      });
+      this.getMovies(accessToken);
+    }
+  }
 
   setSelectedMovie(newSelectedMovie) {
     this.setState({
@@ -74,6 +75,15 @@ export class MainView extends React.Component {
       });
   }
 
+  onLoggedOut() {
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    console.log('logging out');
+    this.setState({
+      user: null
+    });
+  }
+
   render() {
     const { movies, selectedMovie, user } = this.state;
     if (!user) return (
@@ -89,8 +99,6 @@ export class MainView extends React.Component {
           <img src="/img/cinema.jpg" alt="" />
         </div>
       </div>
-
-
     )
 
     // if (selectedMovie) return <MovieView movie={selectedMovie} />;
@@ -109,7 +117,11 @@ export class MainView extends React.Component {
               <MovieCard key={movie._id} movie={movie} onMovieClick={(movie) => { this.setSelectedMovie(movie) }} />
             </Col>
           ))
+          // < Button > Test</Button>
         }
+        <Col>
+          <Button variant="outline-primary" className="btn-outline-primary" onClick={() => { this.onLoggedOut() }}>Log out</Button>
+        </Col>
       </Row >
     );
   }

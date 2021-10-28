@@ -27,6 +27,16 @@ body {
   margin-top: 6.4rem;
 }
 
+.btn-outline-primary {
+  color: var(--yellow);
+  border: 1px solid var(--yellow);
+}
+.btn-outline-primary:hover, .btn-outline-primary:focus, .btn-outline-primary:active {
+  background-color: var(--yellow);
+  color: var(--background);
+  border: 1px solid var(--yellow);
+}
+
 .loginView {
   display: flex;
   flex-wrap: wrap;

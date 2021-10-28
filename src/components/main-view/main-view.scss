@@ -26,3 +26,17 @@ body {
     gap: var(--u3);
     margin-top: 6.4rem;
 }
+
+.btn-outline-primary {
+    color: var(--yellow);
+    border: 1px solid var(--yellow);
+    // justify-self: flex-end;
+
+    &:hover,
+    &:focus,
+    &:active {
+        background-color: var(--yellow);
+        color: var(--background);
+        border: 1px solid var(--yellow);
+    }
+}
