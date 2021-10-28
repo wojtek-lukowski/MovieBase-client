@@ -4,6 +4,8 @@
 
 body {
     background-color: var(--black);
+    background-image: url(../img/cinema.jpg);
+    background-size: 100%;
 }
 
 .col-md-3 {
@@ -25,6 +27,9 @@ body {
     align-items: stretch;
     gap: var(--u3);
     margin-top: 6.4rem;
+    background-image: url(../img/cinema.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
 }
 
 .btn-outline-primary {
@@ -39,4 +44,13 @@ body {
         color: var(--background);
         border: 1px solid var(--yellow);
     }
+}
+
+.cinema {
+    width: 100%;
+    height: auto;
+    position: relative;
+    top: 0;
+    left: 0;
+z-index: 1000;
 }

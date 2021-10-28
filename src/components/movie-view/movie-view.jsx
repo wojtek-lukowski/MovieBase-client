@@ -5,9 +5,8 @@ import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Image from 'react-bootstrap/Image';
-import './movie-view.scss'
-
-
+import './movie-view.scss';
+import terminator from '../img/terminator.png';
 export class MovieView extends React.Component {
 
     render() {

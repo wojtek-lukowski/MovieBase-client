@@ -1,6 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+
 import './main-view.scss'
 
 import { RegistrationView } from '../registration-view/registration-view';
@@ -10,6 +12,7 @@ import { MovieView } from '../movie-view/movie-view';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
+import cinema from '../img/cinema.jpg'
 
 export class MainView extends React.Component {
 
@@ -21,18 +24,6 @@ export class MainView extends React.Component {
       user: null
     };
   }
-
-  // componentDidMount() {
-  //   axios.get('https://moviebased.herokuapp.com/movies')
-  //     .then(response => {
-  //       this.setState({
-  //         movies: response.data
-  //       });
-  //     })
-  //     .catch(error => {
-  //       console.log(error);
-  //     });
-  // }
 
   componentDidMount() {
     let accessToken = localStorage.getItem('token');
@@ -91,12 +82,12 @@ export class MainView extends React.Component {
       <div>
 
         <div className="landingPage">
+          {/* <img src={cinema} className="cinema" /> */}
           <RegistrationView />
           <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
         </div>
 
         <div>
-          <img src="/img/cinema.jpg" alt="" />
         </div>
       </div>
     )

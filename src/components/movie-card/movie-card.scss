@@ -1,6 +1,7 @@
 .card {
     background-color: var(--background) !important;
     color: var(--yellow);
+    border: 1px solid var(--yellow);
     height: 100%;
     flex: 0;
 
@@ -39,6 +40,7 @@
 
 .movie-card {
     &:hover {
+        border: 1px solid var(--yellow);
         opacity: .95;
         cursor: pointer;
     }
