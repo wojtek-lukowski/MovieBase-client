@@ -3,7 +3,6 @@
 }
 
 body {
-  background-color: var(--black);
   background-image: url(cinema.31f27562.jpg);
   background-size: 100%;
 }
@@ -18,26 +17,20 @@ body {
   column-gap: var(--u2);
   row-gap: var(--u2);
   padding-top: var(--u3);
-}
-
-.landingPage {
-  display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  align-items: stretch;
-  gap: var(--u3);
-  margin-top: 6.4rem;
-  background-image: url(cinema.31f27562.jpg);
-  background-size: 100%;
-  background-repeat: no-repeat;
+  align-items: center;
 }
 
-.btn-outline-primary {
+.btn-outline-primary,
+.btn-link {
   color: var(--yellow);
   border: 1px solid var(--yellow);
 }
 
-.btn-outline-primary:hover, .btn-outline-primary:focus, .btn-outline-primary:active {
+.btn-outline-primary:hover, .btn-outline-primary:focus, .btn-outline-primary:active,
+.btn-link:hover,
+.btn-link:focus,
+.btn-link:active {
   background-color: var(--yellow);
   color: var(--background);
   border: 1px solid var(--yellow);
@@ -142,7 +135,7 @@ body {
   background-color: var(--background) !important;
   color: var(--yellow);
   border: 1px solid var(--yellow);
-  height: 100%;
+  height: auto;
   flex: 0;
 }
 .card .card-body {
@@ -150,6 +143,9 @@ body {
   flex-direction: column;
   justify-content: space-around;
   align-content: space-between;
+}
+.card .card-img {
+  padding: var(--u2);
 }
 .card .movie-card-button {
   justify-content: flex-end !important;
@@ -160,14 +156,19 @@ body {
   overflow-y: scroll;
   font-size: 0.8rem;
 }
-.card .btn-outline-primary {
+.card .btn-outline-primar,
+.card .btn-link {
   color: var(--yellow);
   border: 1px solid var(--yellow);
 }
-.card .btn-outline-primary:hover, .card .btn-outline-primary:focus, .card .btn-outline-primary:active {
+.card .btn-outline-primar:hover, .card .btn-outline-primar:focus, .card .btn-outline-primar:active,
+.card .btn-link:hover,
+.card .btn-link:focus,
+.card .btn-link:active {
   background-color: var(--yellow);
   color: var(--background);
   border: 1px solid var(--yellow);
+  text-decoration: none;
 }
 
 .movie-card:hover {

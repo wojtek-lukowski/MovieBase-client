@@ -4,6 +4,7 @@ import './registration-view.scss';
 import { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import axios from 'axios';
 
 export function RegistrationView(props) {
     const [username, setUsername] = useState('');
@@ -11,7 +12,23 @@ export function RegistrationView(props) {
     const [email, setEmail] = useState('');
     const [birthday, setBirthday] = useState('');
 
-    const handleSubmit = (e) => {
+
+    axios.post('https://moviebased.herokuapp.com/users', {
+        Username: username,
+        Password: password,
+        Email: email,
+        Birthday: birthday
+    })
+        .then(response => {
+            const data = response.data;
+            console.log(data);
+            widonw.open('/', '_self');
+        })
+        .catch(e => {
+            console.log('Error registering the user')
+        });
+
+    const handleRegister = (e) => {
         e.preventDefault();
         console.log(username, password, email, birthday);
         props.onLoggedIn(username)
@@ -37,7 +54,7 @@ export function RegistrationView(props) {
                 <Form.Control type="date" value={birthday} onChange={e => setBirthday(e.target.value)} placeholder="Birthday"></Form.Control>
             </Form.Group>
             <div className="form-button">
-                <Button variant="outline-primary" type="submit" onClick={handleSubmit}>Create Account</Button>
+                <Button variant="outline-primary" type="submit" onClick={handleRegister}>Create Account</Button>
             </div>
         </Form>
     )

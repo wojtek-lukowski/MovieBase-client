@@ -26,16 +26,20 @@ export class MovieView extends React.Component {
                                 <Row className="movie-details">
                                     <Col>
                                         <span>Director:</span>
-                                        <span>{movie.Director.Name}</span>
+                                        <Link to={`/directors/${movie.Director.Name}`}>
+                                            <span>{movie.Director.Name}</span>
+                                        </Link>
                                     </Col>
                                     <Col>
                                         <span>Genre:</span>
-                                        <span>{movie.Genre.Name}</span>
+                                        <Link to={`/genre/${movie.Genre.Name}`}>
+                                            <span>{movie.Genre.Name}</span>
+                                        </Link>
                                     </Col>
                                 </Row>
                             </Card.Text>
                             <Row md={12} className="button-back-container">
-                                <Button onClick={() => { onBackClick(null); }} variant="outline-primary" className="button-back">Back</Button>
+                                <Button onClick={() => { onBackClick(); }} variant="outline-primary" className="button-back">Back</Button>
                             </Row>
                         </Card.Body>
                     </Card>
@@ -49,11 +53,11 @@ MovieView.propTypes = {
     movie: PropTypes.shape({
         Title: PropTypes.string.isRequired,
         Description: PropTypes.string.isRequired,
-        ImagePath: PropTypes.string.isRequired,
+        ImagePath: PropTypes.string,
         Genre: PropTypes.string,
         Director: PropTypes.string,
         // Actors: PropTypes.string,
         // Featured: PropTypes.bool,
     }).isRequired,
-    onMovieClick: PropTypes.func.isRequired
+    onBackClick: PropTypes.func.isRequired
 };

@@ -3,7 +3,7 @@
 }
 
 body {
-    background-color: var(--black);
+    // background-color: var(--black);
     background-image: url(../img/cinema.jpg);
     background-size: 100%;
 }
@@ -18,21 +18,24 @@ body {
     column-gap: var(--u2);
     row-gap: var(--u2);
     padding-top: var(--u3);
-}
-
-.landingPage {
-    display: flex;
-    flex-wrap:wrap;
     justify-content: center;
-    align-items: stretch;
-    gap: var(--u3);
-    margin-top: 6.4rem;
-    background-image: url(../img/cinema.jpg);
-    background-size: 100%;
-    background-repeat: no-repeat;
+    align-items: center;
 }
 
-.btn-outline-primary {
+// .landingPage {
+//     display: flex;
+//     flex-wrap:wrap;
+//     justify-content: center;
+//     align-items: stretch;
+//     gap: var(--u3);
+//     margin-top: 6.4rem;
+//     background-image: url(../img/cinema.jpg);
+//     background-size: 100%;
+//     background-repeat: no-repeat;
+// }
+
+.btn-outline-primary,
+.btn-link {
     color: var(--yellow);
     border: 1px solid var(--yellow);
     // justify-self: flex-end;

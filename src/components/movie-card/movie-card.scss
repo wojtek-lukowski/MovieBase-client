@@ -2,7 +2,7 @@
     background-color: var(--background) !important;
     color: var(--yellow);
     border: 1px solid var(--yellow);
-    height: 100%;
+    height: auto;
     flex: 0;
 
     .card-body {
@@ -10,6 +10,10 @@
         flex-direction: column;
         justify-content: space-around;
         align-content: space-between;
+}
+
+.card-img {
+    padding: var(--u2);
 }
 
     .movie-card-button {
@@ -23,7 +27,8 @@
         font-size: .8rem;
     }
 
-    .btn-outline-primary {
+    .btn-outline-primar,
+    .btn-link {
         color: var(--yellow);
         border: 1px solid var(--yellow);
         // justify-self: flex-end;
@@ -34,6 +39,7 @@
             background-color: var(--yellow);
             color: var(--background);
             border: 1px solid var(--yellow);
+            text-decoration: none;
         }
 }
 }
