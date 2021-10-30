@@ -19,7 +19,7 @@ export class MovieCard extends React.Component {
                     <Card.Title>{movie.Title}</Card.Title>
                     <Card.Text className="text">{movie.Description}</Card.Text>
                     <Row className="movie-card-button">
-                        <Link to={`/movies/$movie._id`}>
+                        <Link to={`/movies/${movie._id}`}>
                             <Button variant="link">See more</Button>
                         </Link>
                     </Row>
