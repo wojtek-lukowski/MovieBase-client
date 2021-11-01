@@ -12,17 +12,26 @@ import { Link } from 'react-router-dom';
 export class GenreView extends React.Component {
     render() {
         const { onBackClick, genre } = this.props;
-        console.log('genre', genre);
+        console.log('genre', genre); //description and movies are missing???
+        console.log('description', genre.Description); //undefined???
 
         return (
 
-            <div>
+            <div className="genre-view">
                 <h1>{genre.Name}</h1>
                 <div className="genre-description">{genre.Description}</div>
-                {/* <div className="genre-movies">{genre.Movies}</div> */}
+                <div className="genre-movies">{genre.Movies}</div>
                 <Button onClick={() => { onBackClick(); }} variant="outline-primary" className="button-back">Back</Button>
             </div>
 
         );
     }
 }
+
+GenreView.propTypes = {
+    genre: PropTypes.shape({
+        Name: PropTypes.string.isRequired,
+        Description: PropTypes.string.isRequired,
+        Movies: PropTypes.array
+    }).isRequired
+};

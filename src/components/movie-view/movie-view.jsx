@@ -19,7 +19,8 @@ export class MovieView extends React.Component {
                 <Col>
                     <Card md={9}>
                         <Card.Body>
-                            <Card.Img variant="left" className="card-img" src={require('../img/terminator.png')} />
+                            {/* <Card.Img variant="left" className="card-img" src={require('../img/terminator.png')} /> */}
+                            <Card.Img variant="left" className="card-img" src={movie.ImagePath} />
                             <Card.Title>{movie.Title}</Card.Title>
                             <Card.Text>{movie.Description}</Card.Text>
                             <Card.Text>

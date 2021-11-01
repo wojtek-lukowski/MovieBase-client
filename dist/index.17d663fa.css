@@ -318,8 +318,48 @@ body {
 .director-view {
   background-color: var(--background);
   color: var(--yellow);
+  padding: var(--u2);
+  display: flex;
+  flex-direction: column;
 }
-
+.director-view .director-bio,
+.director-view .director-birth,
+.director-view .director-death,
+.director-view .director-movies {
+  margin-top: var(--u2);
+}
+.director-view .director-birth-label,
+.director-view .director-death-label {
+  font-size: 0.8rem;
+  padding-right: 0.8rem;
+  display: inline;
+}
+.director-view .director-birth-date,
+.director-view .director-death-date {
+  display: inline;
+  color: red;
+  font-weight: bold;
+}
+.director-view button,
+.director-view button:visited {
+  color: var(--yellow);
+  border: 1px solid var(--yellow);
+  width: 50%;
+  align-self: center;
+}
+.director-view button:hover, .director-view button:focus, .director-view button:active,
+.director-view button:visited:hover,
+.director-view button:visited:focus,
+.director-view button:visited:active {
+  background-color: var(--yellow);
+  color: var(--background);
+  border: 1px solid var(--yellow);
+  text-decoration: none;
+}
+.genre-view {
+  background-color: var(--background);
+  color: var(--yellow);
+}
 :root {
   --yellow: #ffbf00;
   --background: #272727;

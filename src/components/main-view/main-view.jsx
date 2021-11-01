@@ -131,7 +131,7 @@ export class MainView extends React.Component {
             </Col>
           }} />
 
-          <Route exact path="/directors/:Name" render={({ match }) => {
+          <Route exact path="/directors/:Name" render={({ match, history }) => {
             if (!user) return <Col>
               <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
             </Col>
@@ -141,14 +141,13 @@ export class MainView extends React.Component {
             </Col>
           }} />
 
-          <Route exact path="/genres/:Name" render={({ match }) => {
+          <Route exact path="/genres/:Name" render={({ match, history }) => {
             if (!user) return <Col>
               <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
             </Col>
             if (movies.length === 0) return <div className="main-view">Loading...</div>;
-            console.log('genre:', genre)
             return <Col md={8}>
-              <GenreView genre={movies.find(m => m.Genre.Name === match.params.name).Genre} onBackClick={() => history.goBack()} />
+              <GenreView genre={movies.find(m => m.Genre.Name === match.params.Name).Genre} onBackClick={() => history.goBack()} />
             </Col>
           }} />
 
