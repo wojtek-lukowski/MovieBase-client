@@ -272,7 +272,6 @@ body {
   padding-right: 0.8rem;
 }
 .movie-details .link {
-  color: red;
   font-weight: bold;
 }
 .movie-details .link:hover {

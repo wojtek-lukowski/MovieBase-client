@@ -29,12 +29,11 @@ export class DirectorView extends React.Component {
                 <div className="director-movies">
                     <div>
                         <h4>Other movies:</h4>
-                        <div className="director-movies-list">{director.Movies.map(movie => <p>{movie}</p>)}</div>
+                        <div className="director-movies-list">{director.Movies.map(movie => <p key={movie}>{movie}</p>)}</div>
                     </div>
                 </div>
                 <Button onClick={() => { onBackClick(); }} variant="outline-primary" className="button-back">Back</Button>
             </div>
-
         );
 
         return (
@@ -54,8 +53,10 @@ export class DirectorView extends React.Component {
                     </div>
                 </div>
                 <div className="director-movies">
-                    <div className="director-movies-label"><h4>Other movies:</h4></div>
-                    <div className="director-movies-titles">{director.Movies}</div>
+                    <div>
+                        <h4>Other movies:</h4>
+                        <div className="director-movies-list">{director.Movies.map(movie => <p>{movie}</p>)}</div>
+                    </div>
                 </div>
                 <Button onClick={() => { onBackClick(); }} variant="outline-primary" className="button-back">Back</Button>
             </div>

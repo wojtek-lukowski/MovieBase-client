@@ -29701,7 +29701,7 @@ class DirectorView extends _reactDefault.default.Component {
                                         },
                                         __self: this,
                                         children: movie
-                                    })
+                                    }, movie)
                                 )
                             })
                         ]
@@ -29726,14 +29726,14 @@ class DirectorView extends _reactDefault.default.Component {
             className: "director-view",
             __source: {
                 fileName: "src/components/director-view/director-view.jsx",
-                lineNumber: 42
+                lineNumber: 41
             },
             __self: this,
             children: [
                 /*#__PURE__*/ _jsxRuntime.jsx("h1", {
                     __source: {
                         fileName: "src/components/director-view/director-view.jsx",
-                        lineNumber: 43
+                        lineNumber: 42
                     },
                     __self: this,
                     children: director.Name
@@ -29743,7 +29743,7 @@ class DirectorView extends _reactDefault.default.Component {
                     src: require('../img/terminator.png'),
                     __source: {
                         fileName: "src/components/director-view/director-view.jsx",
-                        lineNumber: 44
+                        lineNumber: 43
                     },
                     __self: this
                 }),
@@ -29751,7 +29751,7 @@ class DirectorView extends _reactDefault.default.Component {
                     className: "director-bio",
                     __source: {
                         fileName: "src/components/director-view/director-view.jsx",
-                        lineNumber: 45
+                        lineNumber: 44
                     },
                     __self: this,
                     children: director.Bio
@@ -29760,7 +29760,7 @@ class DirectorView extends _reactDefault.default.Component {
                     className: "director-life",
                     __source: {
                         fileName: "src/components/director-view/director-view.jsx",
-                        lineNumber: 46
+                        lineNumber: 45
                     },
                     __self: this,
                     children: [
@@ -29768,7 +29768,7 @@ class DirectorView extends _reactDefault.default.Component {
                             className: "director-birth",
                             __source: {
                                 fileName: "src/components/director-view/director-view.jsx",
-                                lineNumber: 47
+                                lineNumber: 46
                             },
                             __self: this,
                             children: [
@@ -29776,7 +29776,7 @@ class DirectorView extends _reactDefault.default.Component {
                                     className: "director-birth-label",
                                     __source: {
                                         fileName: "src/components/director-view/director-view.jsx",
-                                        lineNumber: 48
+                                        lineNumber: 47
                                     },
                                     __self: this,
                                     children: "Born:"
@@ -29785,7 +29785,7 @@ class DirectorView extends _reactDefault.default.Component {
                                     className: "director-birth-date",
                                     __source: {
                                         fileName: "src/components/director-view/director-view.jsx",
-                                        lineNumber: 49
+                                        lineNumber: 48
                                     },
                                     __self: this,
                                     children: director.Birth
@@ -29796,7 +29796,7 @@ class DirectorView extends _reactDefault.default.Component {
                             className: "director-death",
                             __source: {
                                 fileName: "src/components/director-view/director-view.jsx",
-                                lineNumber: 51
+                                lineNumber: 50
                             },
                             __self: this,
                             children: [
@@ -29804,7 +29804,7 @@ class DirectorView extends _reactDefault.default.Component {
                                     className: "director-death-label",
                                     __source: {
                                         fileName: "src/components/director-view/director-view.jsx",
-                                        lineNumber: 52
+                                        lineNumber: 51
                                     },
                                     __self: this,
                                     children: "Died:"
@@ -29813,7 +29813,7 @@ class DirectorView extends _reactDefault.default.Component {
                                     className: "director-death-date",
                                     __source: {
                                         fileName: "src/components/director-view/director-view.jsx",
-                                        lineNumber: 53
+                                        lineNumber: 52
                                     },
                                     __self: this,
                                     children: director.Death
@@ -29822,40 +29822,47 @@ class DirectorView extends _reactDefault.default.Component {
                         })
                     ]
                 }),
-                /*#__PURE__*/ _jsxRuntime.jsxs("div", {
+                /*#__PURE__*/ _jsxRuntime.jsx("div", {
                     className: "director-movies",
                     __source: {
                         fileName: "src/components/director-view/director-view.jsx",
-                        lineNumber: 56
+                        lineNumber: 55
                     },
                     __self: this,
-                    children: [
-                        /*#__PURE__*/ _jsxRuntime.jsx("div", {
-                            className: "director-movies-label",
-                            __source: {
-                                fileName: "src/components/director-view/director-view.jsx",
-                                lineNumber: 57
-                            },
-                            __self: this,
-                            children: /*#__PURE__*/ _jsxRuntime.jsx("h4", {
+                    children: /*#__PURE__*/ _jsxRuntime.jsxs("div", {
+                        __source: {
+                            fileName: "src/components/director-view/director-view.jsx",
+                            lineNumber: 56
+                        },
+                        __self: this,
+                        children: [
+                            /*#__PURE__*/ _jsxRuntime.jsx("h4", {
                                 __source: {
                                     fileName: "src/components/director-view/director-view.jsx",
                                     lineNumber: 57
                                 },
                                 __self: this,
                                 children: "Other movies:"
+                            }),
+                            /*#__PURE__*/ _jsxRuntime.jsx("div", {
+                                className: "director-movies-list",
+                                __source: {
+                                    fileName: "src/components/director-view/director-view.jsx",
+                                    lineNumber: 58
+                                },
+                                __self: this,
+                                children: director.Movies.map((movie)=>/*#__PURE__*/ _jsxRuntime.jsx("p", {
+                                        __source: {
+                                            fileName: "src/components/director-view/director-view.jsx",
+                                            lineNumber: 58
+                                        },
+                                        __self: this,
+                                        children: movie
+                                    })
+                                )
                             })
-                        }),
-                        /*#__PURE__*/ _jsxRuntime.jsx("div", {
-                            className: "director-movies-titles",
-                            __source: {
-                                fileName: "src/components/director-view/director-view.jsx",
-                                lineNumber: 58
-                            },
-                            __self: this,
-                            children: director.Movies
-                        })
-                    ]
+                        ]
+                    })
                 }),
                 /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
                     onClick: ()=>{
@@ -29865,7 +29872,7 @@ class DirectorView extends _reactDefault.default.Component {
                     className: "button-back",
                     __source: {
                         fileName: "src/components/director-view/director-view.jsx",
-                        lineNumber: 60
+                        lineNumber: 61
                     },
                     __self: this,
                     children: "Back"
