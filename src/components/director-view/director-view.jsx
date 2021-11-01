@@ -20,15 +20,16 @@ export class DirectorView extends React.Component {
                 <h1>{director.Name}</h1>
                 <div className="director-image" src={require('../img/terminator.png')}></div>
                 <div className="director-bio">{director.Bio}</div>
-                <div className="director-birth">
-                    <div>Born:
-                        {director.Birth}
+                <div className="director-life">
+                    <div className="director-birth">
+                        <div className="director-birth-label">Born:</div>
+                        <div className="director-birth-date">{director.Birth}</div>
                     </div>
                 </div>
                 <div className="director-movies">
                     <div>
                         <h4>Other movies:</h4>
-                        {director.Movies}
+                        <div className="director-movies-list">{director.Movies.map(movie => <p>{movie}</p>)}</div>
                     </div>
                 </div>
                 <Button onClick={() => { onBackClick(); }} variant="outline-primary" className="button-back">Back</Button>
@@ -42,13 +43,15 @@ export class DirectorView extends React.Component {
                 <h1>{director.Name}</h1>
                 <div className="director-image" src={require('../img/terminator.png')}></div>
                 <div className="director-bio">{director.Bio}</div>
-                <div className="director-birth">
-                    <div className="director-birth-label">Born:</div>
-                    <div className="director-birth-date">{director.Birth}</div>
-                </div>
-                <div className="director-death">
-                    <div className="director-death-label">Died:</div>
-                    <div className="director-death-date">{director.Death}</div>
+                <div className="director-life">
+                    <div className="director-birth">
+                        <div className="director-birth-label">Born:</div>
+                        <div className="director-birth-date">{director.Birth}</div>
+                    </div>
+                    <div className="director-death">
+                        <div className="director-death-label">Died:</div>
+                        <div className="director-death-date">{director.Death}</div>
+                    </div>
                 </div>
                 <div className="director-movies">
                     <div className="director-movies-label"><h4>Other movies:</h4></div>

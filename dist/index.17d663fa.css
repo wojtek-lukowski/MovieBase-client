@@ -328,6 +328,18 @@ body {
 .director-view .director-movies {
   margin-top: var(--u2);
 }
+.director-view .director-bio .director-movies-list,
+.director-view .director-birth .director-movies-list,
+.director-view .director-death .director-movies-list,
+.director-view .director-movies .director-movies-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.director-view .director-life {
+  display: flex;
+  justify-content: space-between;
+}
 .director-view .director-birth-label,
 .director-view .director-death-label {
   font-size: 0.8rem;
@@ -337,7 +349,6 @@ body {
 .director-view .director-birth-date,
 .director-view .director-death-date {
   display: inline;
-  color: red;
   font-weight: bold;
 }
 .director-view button,
