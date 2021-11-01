@@ -8,6 +8,17 @@ body {
     background-size: 100%;
 }
 
+header {
+    // position: fixed;
+    // top: 0;
+}
+
+.log-out {
+    display: flex;
+    justify-content: right;
+
+}
+
 .col-md-3 {
     padding: 0 !important;
 }
@@ -56,4 +67,19 @@ body {
     top: 0;
     left: 0;
 z-index: 1000;
+}
+
+.btn-create-account {
+    color: var(--yellow) !important;
+    border: 1px solid var(--yellow) !important;
+    background-color: var(--background) !important;
+    // justify-self: flex-end;
+
+    &:hover,
+    &:focus,
+    &:active {
+        background-color: var(--yellow)!important;
+        color: var(--background)!important;
+        border: 1px solid var(--yellow)!important;
+    }
 }

@@ -7,6 +7,11 @@ body {
   background-size: 100%;
 }
 
+.log-out {
+  display: flex;
+  justify-content: right;
+}
+
 .col-md-3 {
   padding: 0 !important;
 }
@@ -45,6 +50,18 @@ body {
   z-index: 1000;
 }
 
+.btn-create-account {
+  color: var(--yellow) !important;
+  border: 1px solid var(--yellow) !important;
+  background-color: var(--background) !important;
+}
+
+.btn-create-account:hover, .btn-create-account:focus, .btn-create-account:active {
+  background-color: var(--yellow) !important;
+  color: var(--background) !important;
+  border: 1px solid var(--yellow) !important;
+}
+
 .loginView {
   display: flex;
   flex-wrap: wrap;
@@ -58,6 +75,8 @@ body {
   padding: var(--u2);
   width: 25rem;
   flex-shrink: 0;
+  margin-left: auto;
+  margin-right: auto;
 }
 .form h2 {
   display: block;
@@ -144,6 +163,13 @@ body {
   justify-content: space-around;
   align-content: space-between;
 }
+.card a {
+  color: var(--yellow);
+}
+.card a:hover {
+  color: var(--yellow);
+  text-decoration: none;
+}
 .card .card-img {
   padding: var(--u2);
 }
@@ -211,6 +237,10 @@ body {
   border: 1px solid var(--yellow);
   color: var(--yellow);
 }
+.movie-view {
+  display: flex;
+}
+
 .card-body {
   flex: 0;
 }
@@ -222,10 +252,33 @@ body {
   margin-top: var(--u1);
   width: 50%;
 }
+.card-body .button-back-container button,
+.card-body .button-back-container button:visited {
+  color: var(--yellow);
+  border: 1px solid var(--yellow);
+}
+.card-body .button-back-container button:hover, .card-body .button-back-container button:focus, .card-body .button-back-container button:active,
+.card-body .button-back-container button:visited:hover,
+.card-body .button-back-container button:visited:focus,
+.card-body .button-back-container button:visited:active {
+  background-color: var(--yellow);
+  color: var(--background);
+  border: 1px solid var(--yellow);
+  text-decoration: none;
+}
 
-.movie-details span:nth-of-type(1) {
+.movie-details span {
   font-size: 0.8rem;
   padding-right: 0.8rem;
+}
+.movie-details .link {
+  color: red;
+  font-weight: bold;
+}
+.movie-details .link:hover {
+  background-color: var(--yellow);
+  color: var(--background);
+  padding: 0 var(--u1);
 }
 
 :root {
@@ -262,6 +315,11 @@ body {
   border: 1px solid var(--yellow);
   color: var(--yellow);
 }
+.director-view {
+  background-color: var(--background);
+  color: var(--yellow);
+}
+
 :root {
   --yellow: #ffbf00;
   --background: #272727;
