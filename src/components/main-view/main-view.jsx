@@ -13,6 +13,8 @@ import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
 import { DirectorView } from '../director-view/director-view';
 import { GenreView } from '../genre-view/genre-view';
+import { ProfileView } from '../profile-view/profile-view';
+import { Header } from '../header/header';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
@@ -81,7 +83,7 @@ export class MainView extends React.Component {
 
   render() {
     const { movies, user } = this.state;
-    // console.log(movies);
+    // console.log(user);
 
     return (
       <Router>
@@ -96,7 +98,14 @@ export class MainView extends React.Component {
             if (movies.length === 0) return <div className="loading">Loading...</div>;
             return (
               <div>
+                {/* <Header onLoggedOut={this.onLoggedOut} /> */}
                 <header>
+                  <div> <h4>Welcome, <span>{user}</span></h4></div>
+                  <div className="log-out">
+                    <Link to={`/user/${user}`}>
+                      <Button className="btn-log-out">Profile</Button>
+                    </Link>
+                  </div>
                   <div className="log-out">
                     <Button className="btn-log-out" onClick={() => this.onLoggedOut()}> Log out</Button>
                   </div>
@@ -119,13 +128,21 @@ export class MainView extends React.Component {
             </Col>
           }} />
 
+          <Route exact path="/user/:Username" render={({ history }) => {
+            if (!user) return <Col>
+              <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
+            </Col>
+            if (movies.length === 0) return <div className="main-view">Loading...</div>;
+            return <div>
+              <ProfileView user={user} onBackClick={() => history.goBack()} />
+            </div>
+          }} />
+
           <Route exact path="/movies/:MovieId" render={({ match, history }) => {
             if (!user) return <Col>
               <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
             </Col>
             if (movies.length === 0) return <div className="main-view">Loading...</div>;
-            // console.log('find', movies.find(m => m._id === match.params.movieId));
-            // console.log('params', match.params);
             return <Col md={8}>
               <MovieView movie={movies.find(m => m._id === match.params.MovieId)} onBackClick={() => history.goBack()} />
             </Col>
@@ -146,6 +163,7 @@ export class MainView extends React.Component {
               <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
             </Col>
             if (movies.length === 0) return <div className="main-view">Loading...</div>;
+            console.log(movies);
             return <Col md={8}>
               <GenreView genre={movies.find(m => m.Genre.Name === match.params.Name).Genre} onBackClick={() => history.goBack()} />
             </Col>

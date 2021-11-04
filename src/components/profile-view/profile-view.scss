@@ -1,0 +1,16 @@
+.profile-view {
+    color: var(--yellow);
+    background-color: black;
+    padding: var(--u4);
+}
+
+.favorite-movies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--u2);
+}
+
+.update-form {
+    width: 60%;
+    margin: var(--u3) auto;
+}

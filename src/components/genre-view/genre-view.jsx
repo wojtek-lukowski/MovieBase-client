@@ -10,6 +10,38 @@ import terminator from '../img/terminator.png';
 import { Link } from 'react-router-dom';
 
 export class GenreView extends React.Component {
+
+    constructor() {
+        super();
+
+        this.state = {
+            Description: null,
+            Movies: []
+        };
+    }
+
+    componentDidMount() {
+        const accessToken = localStorage.getItem('token');
+        this.getGenre(accessToken);
+        console.log('test');
+    }
+
+    getGenre(token) {
+        const { genre } = this.props;
+        axios.get(`https://moviebased.herokuapp.com/genre/${genre.Name}`, {
+            headers: { Authorization: `Bearer ${token}` }
+        })
+            .then((response) => {
+                this.setState({
+                    Description: response.data.Description,
+                    Movies: response.data.Movies,
+                });
+            })
+            .catch(function (error) {
+                console.log(error);
+            })
+    }
+
     render() {
         const { onBackClick, genre } = this.props;
         console.log('genre', genre); //description and movies are missing???
