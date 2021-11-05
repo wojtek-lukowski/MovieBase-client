@@ -45,9 +45,10 @@ export class GenreView extends React.Component {
     // }
 
     render() {
-        const { onBackClick, genre, description } = this.props;
+        const { onBackClick, genre, Description, Movies } = this.props;
         console.log('genre', genre); //description and movies are missing???
-        console.log(description);
+        console.log(Description);
+        console.log(Movies);
 
         return (
 

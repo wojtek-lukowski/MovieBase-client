@@ -27,7 +27,9 @@ export class MainView extends React.Component {
     this.state = {
       movies: [],
       selectedMovie: null,
-      user: null
+      user: null,
+      Description: null,
+      Movies: null
     };
   }
 
@@ -174,14 +176,14 @@ export class MainView extends React.Component {
             </Col>
           }} />
 
-          <Route exact path="/genres/:Name" render={({ match, history }) => {
+          <Route exact path="/genres/:Name" render={({ match, history, Description, Movies }) => {
             if (!user) return <Col>
               <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
             </Col>
             if (movies.length === 0) return <div className="main-view">Loading...</div>;
             console.log(movies);
             return <Col md={8}>
-              <GenreView genre={movies.find(m => m.Genre.Name === match.params.Name).Genre} onBackClick={() => history.goBack()} description={Description} />
+              <GenreView genre={movies.find(m => m.Genre.Name === match.params.Name).Genre} onBackClick={() => history.goBack()} Description={Description} Movies={Movies} />
             </Col>
           }} />
 
