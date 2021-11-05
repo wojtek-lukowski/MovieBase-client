@@ -72,6 +72,22 @@ export class MainView extends React.Component {
       });
   }
 
+  getGenre(token) {
+    const { genre } = this.props;
+    axios.get(`https://moviebased.herokuapp.com/genre/${genre.Name}`, {
+      headers: { Authorization: `Bearer ${token}` }
+    })
+      .then((response) => {
+        this.setState({
+          Description: response.data.Description,
+          Movies: response.data.Movies,
+        });
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
+  }
+
   onLoggedOut() {
     localStorage.removeItem('token');
     localStorage.removeItem('user');
@@ -165,7 +181,7 @@ export class MainView extends React.Component {
             if (movies.length === 0) return <div className="main-view">Loading...</div>;
             console.log(movies);
             return <Col md={8}>
-              <GenreView genre={movies.find(m => m.Genre.Name === match.params.Name).Genre} onBackClick={() => history.goBack()} />
+              <GenreView genre={movies.find(m => m.Genre.Name === match.params.Name).Genre} onBackClick={() => history.goBack()} description={Description} />
             </Col>
           }} />
 

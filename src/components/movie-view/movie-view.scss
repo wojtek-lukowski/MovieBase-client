@@ -6,12 +6,13 @@
     flex: 0;
 
     .button-back-container {
-        justify-content: center !important;
         padding: 2rem 0 1rem;
+        display: flex;
+        justify-content: space-around;
 
         .btn-outline-primary {
             margin-top: var(--u1);
-            width: 50%;
+            width: 30%;
         }
 
         button,

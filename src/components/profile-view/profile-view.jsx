@@ -70,6 +70,22 @@ export class ProfileView extends React.Component {
             })
     }
 
+    getGenre(token) {
+        const { genre } = this.props;
+        axios.get(`https://moviebased.herokuapp.com/genre/${genre.Name}`, {
+            headers: { Authorization: `Bearer ${token}` }
+        })
+            .then((response) => {
+                this.setState({
+                    Description: response.data.Description,
+                    Movies: response.data.Movies,
+                });
+            })
+            .catch(function (error) {
+                console.log(error);
+            })
+    }
+
     // Edit The Current User
 
     editUser(e) {
@@ -96,8 +112,7 @@ export class ProfileView extends React.Component {
                 });
                 localStorage.setItem('user', this.state.Username);
                 const data = response.data;
-                console.log(data);
-                console.log(this.state.Username);
+                console.log('this.state.Username', this.state.Username);
                 alert(username + " has been updated!");
             })
             .catch(function (error) {
@@ -107,7 +122,7 @@ export class ProfileView extends React.Component {
 
     // Delete A Favorite Movie From Users Favorite 
 
-    onUnfavorite(id) {
+    removeFromFavs(id) {
         const username = localStorage.getItem('user');
         const token = localStorage.getItem('token');
 
@@ -125,7 +140,7 @@ export class ProfileView extends React.Component {
 
     // Delete A User
 
-    onDeleteUser() {
+    removeUser() {
         const token = localStorage.getItem('token');
         const username = localStorage.getItem('user');
         axios.delete(`https://moviebased.herokuapp.com/users/${username}`, {
@@ -162,7 +177,7 @@ export class ProfileView extends React.Component {
     //copy end
 
     render() {
-        const { user, onBackClick, onLoggedOut } = this.props;
+        const { user, onBackClick } = this.props;
         console.log(this.state.Username); //undefined
 
         return (
@@ -177,12 +192,12 @@ export class ProfileView extends React.Component {
                 <div className="favorite-movies">
                     {this.state.Favorites.map(fav => (
                         <div md={3} key={fav._id}>
-                            <FavMovie movie={fav} onUnfavorite={this.onUnfavorite} />
+                            <FavMovie movie={fav} onUnfavorite={this.removeFromFavs} />
                         </div>
                     ))}
                 </div>
 
-                <Form className="update-form">
+                <Form className="update-form" onSubmit={(e) => this.editUser(e)}>
                     <h2>Update your data</h2>
                     <Form.Group>
                         <Form.Label>Username:</Form.Label>
@@ -206,7 +221,7 @@ export class ProfileView extends React.Component {
                 </Form>
 
                 <div className="">
-                    <Button variant="danger" onClick={() => this.onDeleteUser()} >Delete Profile</Button>
+                    <Button variant="danger" onClick={() => this.removeUser()} >Delete Profile</Button>
                 </div>
             </div>
         );

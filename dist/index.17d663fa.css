@@ -251,12 +251,13 @@ body {
   flex: 0;
 }
 .card-body .button-back-container {
-  justify-content: center !important;
   padding: 2rem 0 1rem;
+  display: flex;
+  justify-content: space-around;
 }
 .card-body .button-back-container .btn-outline-primary {
   margin-top: var(--u1);
-  width: 50%;
+  width: 30%;
 }
 .card-body .button-back-container button,
 .card-body .button-back-container button:visited {
