@@ -29377,12 +29377,12 @@ var _terminatorPng = require("../img/terminator.png");
 var _terminatorPngDefault = parcelHelpers.interopDefault(_terminatorPng);
 var _reactRouterDom = require("react-router-dom");
 class MovieView extends _reactDefault.default.Component {
-    addToFavs(id) {
+    addToFavs(movie) {
         const username = localStorage.getItem('user');
         const token = localStorage.getItem('token');
         console.log('username', username);
-        console.log(id);
-        _axiosDefault.default.post(`https://moviebased.herokuapp.com/users/${username}/movies/` + id, {
+        console.log(movie);
+        _axiosDefault.default.post(`https://moviebased.herokuapp.com/users/${username}/movies/` + movie, {
             headers: {
                 Authorization: `Bearer ${token}`
             }

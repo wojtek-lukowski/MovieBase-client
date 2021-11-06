@@ -12,13 +12,13 @@ import terminator from '../img/terminator.png';
 import { Link } from 'react-router-dom';
 export class MovieView extends React.Component {
 
-    addToFavs(id) {
+    addToFavs(movie) {
         const username = localStorage.getItem('user');
         const token = localStorage.getItem('token');
         console.log('username', username);
-        console.log(id);
+        console.log(movie);
 
-        axios.post(`https://moviebased.herokuapp.com/users/${username}/movies/` + (id), {
+        axios.post(`https://moviebased.herokuapp.com/users/${username}/movies/` + (movie), {
             headers: { Authorization: `Bearer ${token}` }
         })
             .then((response) => {
