@@ -6,11 +6,13 @@ import { Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 import './fav-movie.scss'
-
-
 export class FavMovie extends React.Component {
     render() {
-        const { movie, onUnfavorite } = this.props;
+        const { movie, removeFav } = this.props;
+
+        function favRemoved() {
+            alert(`${movie.Title} has been removed.`)
+        }
 
         return (
             <Card className="fav-movie-card">
@@ -22,7 +24,7 @@ export class FavMovie extends React.Component {
                     <Card.Text className="text">{movie.Description}</Card.Text>
                     <Row>
                         <Col className="fav-movie-buttons">
-                            <Button variant="link" onClick={() => { onUnfavorite(movie._id) }}>Remove from favs</Button>
+                            <Button variant="link" onClick={() => { removeFav(movie._id), favRemoved(), location.reload() }}>Remove from favs</Button>
                             <Link to={`/movies/${movie._id}`}>
                                 <Button variant="link">See more</Button>
                             </Link>

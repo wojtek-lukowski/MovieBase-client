@@ -131,7 +131,6 @@ export class ProfileView extends React.Component {
         })
             .then((response) => {
                 console.log(response);
-                this.componentDidMount();
             })
             .catch(function (error) {
                 console.log(error);
@@ -192,7 +191,7 @@ export class ProfileView extends React.Component {
                 <div className="favorite-movies">
                     {this.state.Favorites.map(fav => (
                         <div md={3} key={fav._id}>
-                            <FavMovie movie={fav} onUnfavorite={this.removeFromFavs} />
+                            <FavMovie movie={fav} removeFav={this.removeFromFavs} />
                         </div>
                     ))}
                 </div>
