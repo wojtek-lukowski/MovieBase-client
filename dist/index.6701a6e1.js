@@ -30034,50 +30034,47 @@ var _terminatorPng = require("../img/terminator.png");
 var _terminatorPngDefault = parcelHelpers.interopDefault(_terminatorPng);
 var _reactRouterDom = require("react-router-dom");
 class GenreView extends _reactDefault.default.Component {
-    // constructor() {
-    //     super();
-    //     this.state = {
-    //         Description: null,
-    //         Movies: []
-    //     };
-    // }
-    // componentDidMount() {
-    //     const accessToken = localStorage.getItem('token');
-    //     this.getGenre(accessToken);
-    //     console.log('test');
-    // }
-    // getGenre(token) {
-    //     const { genre } = this.props;
-    //     axios.get(`https://moviebased.herokuapp.com/genre/${genre.Name}`, {
-    //         headers: { Authorization: `Bearer ${token}` }
-    //     })
-    //         .then((response) => {
-    //             this.setState({
-    //                 Description: response.data.Description,
-    //                 Movies: response.data.Movies,
-    //             });
-    //         })
-    //         .catch(function (error) {
-    //             console.log(error);
-    //         })
-    // }
+    constructor(){
+        super();
+        this.state = {
+            Description: null,
+            Movies: []
+        };
+    }
+    componentDidMount() {
+        const accessToken = localStorage.getItem('token');
+        this.getGenre(accessToken);
+    }
+    getGenre(token) {
+        const { genre  } = this.props;
+        _axiosDefault.default.get(`https://moviebased.herokuapp.com/genres/${genre.Name}`, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        }).then((response)=>{
+            this.setState({
+                Description: response.data.Description,
+                Movies: response.data.Movies
+            });
+        }).catch(function(error) {
+            console.log(error);
+        });
+    }
     render() {
-        const { onBackClick , genre , Description , Movies  } = this.props;
-        console.log('genre', genre); //description and movies are missing???
-        console.log(Description);
-        console.log(Movies);
+        const { onBackClick , genre  } = this.props;
+        const { Description , Movies  } = this.state;
         return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
             className: "genre-view",
             __source: {
                 fileName: "src/components/genre-view/genre-view.jsx",
-                lineNumber: 55
+                lineNumber: 50
             },
             __self: this,
             children: [
                 /*#__PURE__*/ _jsxRuntime.jsx("h1", {
                     __source: {
                         fileName: "src/components/genre-view/genre-view.jsx",
-                        lineNumber: 56
+                        lineNumber: 51
                     },
                     __self: this,
                     children: genre.Name
@@ -30086,19 +30083,41 @@ class GenreView extends _reactDefault.default.Component {
                     className: "genre-description",
                     __source: {
                         fileName: "src/components/genre-view/genre-view.jsx",
-                        lineNumber: 57
+                        lineNumber: 52
                     },
                     __self: this,
-                    children: genre.Description
+                    children: Description
                 }),
-                /*#__PURE__*/ _jsxRuntime.jsx("div", {
+                /*#__PURE__*/ _jsxRuntime.jsxs("div", {
                     className: "genre-movies",
                     __source: {
                         fileName: "src/components/genre-view/genre-view.jsx",
-                        lineNumber: 58
+                        lineNumber: 53
                     },
                     __self: this,
-                    children: genre.Movies
+                    children: [
+                        /*#__PURE__*/ _jsxRuntime.jsxs("div", {
+                            __source: {
+                                fileName: "src/components/genre-view/genre-view.jsx",
+                                lineNumber: 54
+                            },
+                            __self: this,
+                            children: [
+                                "Other ",
+                                genre.Name,
+                                " movies:"
+                            ]
+                        }),
+                        Movies.map((movieId)=>/*#__PURE__*/ _jsxRuntime.jsx("div", {
+                                __source: {
+                                    fileName: "src/components/genre-view/genre-view.jsx",
+                                    lineNumber: 56
+                                },
+                                __self: this,
+                                children: movieId
+                            })
+                        )
+                    ]
                 }),
                 /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
                     onClick: ()=>{

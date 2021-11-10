@@ -13,52 +13,51 @@ import { Link } from 'react-router-dom';
 
 export class GenreView extends React.Component {
 
-    // constructor() {
-    //     super();
+    constructor() {
+        super();
 
-    //     this.state = {
-    //         Description: null,
-    //         Movies: []
-    //     };
-    // }
+        this.state = {
+            Description: null,
+            Movies: []
+        };
+    }
 
-    // componentDidMount() {
-    //     const accessToken = localStorage.getItem('token');
-    //     this.getGenre(accessToken);
-    //     console.log('test');
-    // }
+    componentDidMount() {
+        const accessToken = localStorage.getItem('token');
+        this.getGenre(accessToken);
+    }
 
-    // getGenre(token) {
-    //     const { genre } = this.props;
-    //     axios.get(`https://moviebased.herokuapp.com/genre/${genre.Name}`, {
-    //         headers: { Authorization: `Bearer ${token}` }
-    //     })
-    //         .then((response) => {
-    //             this.setState({
-    //                 Description: response.data.Description,
-    //                 Movies: response.data.Movies,
-    //             });
-    //         })
-    //         .catch(function (error) {
-    //             console.log(error);
-    //         })
-    // }
+    getGenre(token) {
+        const { genre } = this.props;
+        axios.get(`https://moviebased.herokuapp.com/genres/${genre.Name}`, {
+            headers: { Authorization: `Bearer ${token}` }
+        })
+            .then((response) => {
+                this.setState({
+                    Description: response.data.Description,
+                    Movies: response.data.Movies,
+                });
+            })
+            .catch(function (error) {
+                console.log(error);
+            })
+    }
 
     render() {
-        const { onBackClick, genre, Description, Movies } = this.props;
-        console.log('genre', genre); //description and movies are missing???
-        console.log(Description);
-        console.log(Movies);
-
+        const { onBackClick, genre } = this.props;
+        const { Description, Movies } = this.state;
         return (
-
             <div className="genre-view">
                 <h1>{genre.Name}</h1>
-                <div className="genre-description">{genre.Description}</div>
-                <div className="genre-movies">{genre.Movies}</div>
+                <div className="genre-description">{Description}</div>
+                <div className="genre-movies">
+                    <div>Other {genre.Name} movies:</div>
+                    {Movies.map((movieId) => (
+                        <div>{movieId}</div>
+                    ))}
+                </div>
                 <Button onClick={() => { onBackClick(); }} variant="outline-primary" className="button-back">Back</Button>
             </div>
-
         );
     }
 }
