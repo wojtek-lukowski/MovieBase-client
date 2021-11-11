@@ -176,12 +176,12 @@ export class ProfileView extends React.Component {
     //copy end
 
     render() {
-        const { user, onBackClick } = this.props;
+        const { onBackClick } = this.props;
         console.log(this.state.Username); //undefined
 
         return (
             <div className="profile-view">
-                <Header onClick={() => this.onLoggedOut()} />
+                <Header onLoggedOut={this.onLoggedOut} />
                 <Button onClick={() => { onBackClick(); }} variant="outline-primary" className="button-back">Back</Button>
                 {/* <h1>Hello, {user}</h1> user = username - passed from main-view */}
                 <h1>Hello, {this.state.Username}</h1>
@@ -191,7 +191,7 @@ export class ProfileView extends React.Component {
                 <div className="favorite-movies">
                     {this.state.Favorites.map(fav => (
                         <div md={3} key={fav._id}>
-                            <FavMovie movie={fav} removeFav={this.removeFromFavs} />
+                            <FavMovie key={fav._id} movie={fav} removeFav={this.removeFromFavs} />
                         </div>
                     ))}
                 </div>

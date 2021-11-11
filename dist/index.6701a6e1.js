@@ -30190,8 +30190,9 @@ class Header extends _reactDefault.default.Component {
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
                         className: "btn-log-out",
-                        onClick: ()=>onLoggedOut()
-                        ,
+                        onClick: ()=>{
+                            onLoggedOut();
+                        },
                         __source: {
                             fileName: "src/components/header/header.jsx",
                             lineNumber: 20
@@ -30374,7 +30375,7 @@ class ProfileView extends _reactDefault.default.Component {
     }
     //copy end
     render() {
-        const { user , onBackClick  } = this.props;
+        const { onBackClick  } = this.props;
         console.log(this.state.Username); //undefined
         return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
             className: "profile-view",
@@ -30385,8 +30386,7 @@ class ProfileView extends _reactDefault.default.Component {
             __self: this,
             children: [
                 /*#__PURE__*/ _jsxRuntime.jsx(_header.Header, {
-                    onClick: ()=>this.onLoggedOut()
-                    ,
+                    onLoggedOut: this.onLoggedOut,
                     __source: {
                         fileName: "src/components/profile-view/profile-view.jsx",
                         lineNumber: 184
@@ -30469,7 +30469,7 @@ class ProfileView extends _reactDefault.default.Component {
                                     lineNumber: 194
                                 },
                                 __self: this
-                            })
+                            }, fav._id)
                         }, fav._id)
                     )
                 }),
@@ -30669,16 +30669,46 @@ var _reactBootstrap = require("react-bootstrap");
 var _reactRouterDom = require("react-router-dom");
 var _favMovieScss = require("./fav-movie.scss");
 class FavMovie extends _reactDefault.default.Component {
+    // constructor() {
+    //     super();
+    //     this.state = {
+    //         Movies: [],
+    //         Description: null,
+    //         ImagePath: null
+    //     };
+    // }
+    // componentDidMount() {
+    //     const accessToken = localStorage.getItem('token');
+    //     this.getFavs(accessToken);
+    // }
+    // getFavs(token) {
+    //     const { movie } = this.props;
+    //     axios.get(`https://moviebased.herokuapp.com/movies/${movie._id}`, {
+    //         headers: { Authorization: `Bearer ${token}` }
+    //     })
+    //         .then(response => {
+    //             this.setState({
+    //                 Movies: response.data.movies,
+    //                 Description: response.data.Description,
+    //                 ImagePath: response.data.ImagePath
+    //             });
+    //         })
+    //         .catch(function (error) {
+    //             console.log(error);
+    //         });
+    // }
     render() {
-        const { movie , removeFav  } = this.props;
+        const { movie , removeFav , fav  } = this.props;
+        // const { Movies, ImagePath, Description } = this.state;
         function favRemoved() {
             alert(`${movie.Title} has been removed.`);
         }
+        console.log(movie);
         return(/*#__PURE__*/ _jsxRuntime.jsxs(_cardDefault.default, {
             className: "fav-movie-card",
             __source: {
                 fileName: "src/components/fav-movie/fav-movie.jsx",
-                lineNumber: 18
+                lineNumber: 55
             },
             __self: this,
             children: [
@@ -30688,21 +30718,21 @@ class FavMovie extends _reactDefault.default.Component {
                     src: movie.ImagePath,
                     __source: {
                         fileName: "src/components/fav-movie/fav-movie.jsx",
-                        lineNumber: 21
+                        lineNumber: 58
                     },
                     __self: this
                 }),
                 /*#__PURE__*/ _jsxRuntime.jsxs(_cardDefault.default.Body, {
                     __source: {
                         fileName: "src/components/fav-movie/fav-movie.jsx",
-                        lineNumber: 22
+                        lineNumber: 59
                     },
                     __self: this,
                     children: [
                         /*#__PURE__*/ _jsxRuntime.jsx(_cardDefault.default.Title, {
                             __source: {
                                 fileName: "src/components/fav-movie/fav-movie.jsx",
-                                lineNumber: 23
+                                lineNumber: 60
                             },
                             __self: this,
                             children: movie.Title
@@ -30711,7 +30741,7 @@ class FavMovie extends _reactDefault.default.Component {
                             className: "text",
                             __source: {
                                 fileName: "src/components/fav-movie/fav-movie.jsx",
-                                lineNumber: 24
+                                lineNumber: 61
                             },
                             __self: this,
                             children: movie.Description
@@ -30719,14 +30749,14 @@ class FavMovie extends _reactDefault.default.Component {
                         /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
                             __source: {
                                 fileName: "src/components/fav-movie/fav-movie.jsx",
-                                lineNumber: 25
+                                lineNumber: 62
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Col, {
                                 className: "fav-movie-buttons",
                                 __source: {
                                     fileName: "src/components/fav-movie/fav-movie.jsx",
-                                    lineNumber: 26
+                                    lineNumber: 63
                                 },
                                 __self: this,
                                 children: [
@@ -30737,7 +30767,7 @@ class FavMovie extends _reactDefault.default.Component {
                                         },
                                         __source: {
                                             fileName: "src/components/fav-movie/fav-movie.jsx",
-                                            lineNumber: 27
+                                            lineNumber: 64
                                         },
                                         __self: this,
                                         children: "Remove from favs"
@@ -30746,14 +30776,14 @@ class FavMovie extends _reactDefault.default.Component {
                                         to: `/movies/${movie._id}`,
                                         __source: {
                                             fileName: "src/components/fav-movie/fav-movie.jsx",
-                                            lineNumber: 28
+                                            lineNumber: 65
                                         },
                                         __self: this,
                                         children: /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
                                             variant: "link",
                                             __source: {
                                                 fileName: "src/components/fav-movie/fav-movie.jsx",
-                                                lineNumber: 29
+                                                lineNumber: 66
                                             },
                                             __self: this,
                                             children: "See more"
@@ -30771,7 +30801,7 @@ class FavMovie extends _reactDefault.default.Component {
 FavMovie.propTypes = {
     movie: _propTypesDefault.default.shape({
         Title: _propTypesDefault.default.string.isRequired,
-        Description: _propTypesDefault.default.string.isRequired,
+        Description: _propTypesDefault.default.string,
         Director: _propTypesDefault.default.string,
         ImagePath: _propTypesDefault.default.string
     }).isRequired

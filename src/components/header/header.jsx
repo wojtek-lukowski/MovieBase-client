@@ -17,7 +17,7 @@ export class Header extends React.Component {
                     <Button className="btn-log-out">Profile</Button>
                 </div>
                 <div className="log-out">
-                    <Button className="btn-log-out" onClick={() => onLoggedOut()}> Log out</Button>
+                    <Button className="btn-log-out" onClick={() => { onLoggedOut(); }}> Log out</Button>
                 </div>
             </div>
         );
