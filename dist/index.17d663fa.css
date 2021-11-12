@@ -1,13 +1,11 @@
-* {
-  box-sizing: border-box;
-}
-
 body {
-  background-image: url(cinema.31f27562.jpg);
+  background-color: var(--background-dark);
   background-size: 100%;
 }
 
 header {
+  position: fixed;
+  top: 0;
   background-color: var(--background);
   color: var(--yellow);
   padding: var(--u3) var(--u5);
@@ -37,7 +35,6 @@ header {
   color: var(--yellow);
   border: 1px solid var(--yellow);
 }
-
 .btn-outline-primary:hover, .btn-outline-primary:focus, .btn-outline-primary:active,
 .btn-link:hover,
 .btn-link:focus,
@@ -61,7 +58,6 @@ header {
   border: 1px solid var(--yellow) !important;
   background-color: var(--background) !important;
 }
-
 .btn-create-account:hover, .btn-create-account:focus, .btn-create-account:active {
   background-color: var(--yellow) !important;
   color: var(--background) !important;
@@ -124,7 +120,9 @@ header {
 
 :root {
   --yellow: #ffbf00;
+  --background-light: #404040;
   --background: #272727;
+  --background-dark: #0F0F0F;
   --black: #0000;
   --u: 0.8rem;
   --u0-5: calc(var(--u) * 0.5);
@@ -140,9 +138,17 @@ header {
   --u10: calc(var(--u) * 10);
 }
 
+html {
+  font-size: 65.2% !important;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-  font-size: 67.5%;
   margin: 2.4rem;
+  font-size: 1.6rem;
 }
 
 .btn {
@@ -156,10 +162,107 @@ body {
   border: 1px solid var(--yellow);
   color: var(--yellow);
 }
+
+.header {
+  background-color: var(--background);
+  border: 1px solid var(--yellow);
+  border-radius: 3px;
+  padding: var(--u2);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center !important;
+}
+
+.header-profile {
+  align-items: center;
+}
+
+.button-primary {
+  color: var(--yellow);
+  border: 1px solid var(--yellow);
+  background-color: var(--background);
+  padding: 0.75rem 1rem;
+  border-radius: 3px;
+}
+.button-primary:hover, .button-primary:focus, .button-primary:active {
+  background-color: var(--yellow);
+  color: var(--background);
+  border: 1px solid var(--yellow);
+  text-decoration: none;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+body {
+  background-color: var(--background-dark);
+  background-size: 100%;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  background-color: var(--background);
+  color: var(--yellow);
+  padding: var(--u3) var(--u5);
+}
+
+.log-out {
+  display: flex;
+  justify-content: right;
+}
+
+.col-md-3 {
+  padding: 0 !important;
+}
+
+.main-view {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: var(--u2);
+  row-gap: var(--u2);
+  padding-top: var(--u3);
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-outline-primary,
+.btn-link {
+  color: var(--yellow);
+  border: 1px solid var(--yellow);
+}
+.btn-outline-primary:hover, .btn-outline-primary:focus, .btn-outline-primary:active,
+.btn-link:hover,
+.btn-link:focus,
+.btn-link:active {
+  background-color: var(--yellow);
+  color: var(--background);
+  border: 1px solid var(--yellow);
+}
+
+.cinema {
+  width: 100%;
+  height: auto;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.btn-create-account {
+  color: var(--yellow) !important;
+  border: 1px solid var(--yellow) !important;
+  background-color: var(--background) !important;
+}
+.btn-create-account:hover, .btn-create-account:focus, .btn-create-account:active {
+  background-color: var(--yellow) !important;
+  color: var(--background) !important;
+  border: 1px solid var(--yellow) !important;
+}
 .card {
   background-color: var(--background) !important;
   color: var(--yellow);
   border: 1px solid var(--yellow);
+  border-radius: 3px;
   height: auto;
   flex: 0;
 }
@@ -178,6 +281,7 @@ body {
 }
 .card .card-img {
   padding: var(--u2);
+  width: 100%;
 }
 .card .movie-card-button {
   justify-content: flex-end !important;
@@ -188,30 +292,20 @@ body {
   overflow-y: scroll;
   font-size: 0.8rem;
 }
-.card .btn-outline-primar,
-.card .btn-link {
-  color: var(--yellow);
-  border: 1px solid var(--yellow);
-}
-.card .btn-outline-primar:hover, .card .btn-outline-primar:focus, .card .btn-outline-primar:active,
-.card .btn-link:hover,
-.card .btn-link:focus,
-.card .btn-link:active {
-  background-color: var(--yellow);
-  color: var(--background);
-  border: 1px solid var(--yellow);
-  text-decoration: none;
+.card .button-primary {
+  width: 100%;
 }
 
 .movie-card:hover {
   border: 1px solid var(--yellow);
-  opacity: 0.95;
   cursor: pointer;
 }
 
 :root {
   --yellow: #ffbf00;
+  --background-light: #404040;
   --background: #272727;
+  --background-dark: #0F0F0F;
   --black: #0000;
   --u: 0.8rem;
   --u0-5: calc(var(--u) * 0.5);
@@ -227,9 +321,17 @@ body {
   --u10: calc(var(--u) * 10);
 }
 
+html {
+  font-size: 65.2% !important;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-  font-size: 67.5%;
   margin: 2.4rem;
+  font-size: 1.6rem;
 }
 
 .btn {
@@ -242,6 +344,102 @@ body {
   background-color: var(--background);
   border: 1px solid var(--yellow);
   color: var(--yellow);
+}
+
+.header {
+  background-color: var(--background);
+  border: 1px solid var(--yellow);
+  border-radius: 3px;
+  padding: var(--u2);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center !important;
+}
+
+.header-profile {
+  align-items: center;
+}
+
+.button-primary {
+  color: var(--yellow);
+  border: 1px solid var(--yellow);
+  background-color: var(--background);
+  padding: 0.75rem 1rem;
+  border-radius: 3px;
+}
+.button-primary:hover, .button-primary:focus, .button-primary:active {
+  background-color: var(--yellow);
+  color: var(--background);
+  border: 1px solid var(--yellow);
+  text-decoration: none;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+body {
+  background-color: var(--background-dark);
+  background-size: 100%;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  background-color: var(--background);
+  color: var(--yellow);
+  padding: var(--u3) var(--u5);
+}
+
+.log-out {
+  display: flex;
+  justify-content: right;
+}
+
+.col-md-3 {
+  padding: 0 !important;
+}
+
+.main-view {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: var(--u2);
+  row-gap: var(--u2);
+  padding-top: var(--u3);
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-outline-primary,
+.btn-link {
+  color: var(--yellow);
+  border: 1px solid var(--yellow);
+}
+.btn-outline-primary:hover, .btn-outline-primary:focus, .btn-outline-primary:active,
+.btn-link:hover,
+.btn-link:focus,
+.btn-link:active {
+  background-color: var(--yellow);
+  color: var(--background);
+  border: 1px solid var(--yellow);
+}
+
+.cinema {
+  width: 100%;
+  height: auto;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.btn-create-account {
+  color: var(--yellow) !important;
+  border: 1px solid var(--yellow) !important;
+  background-color: var(--background) !important;
+}
+.btn-create-account:hover, .btn-create-account:focus, .btn-create-account:active {
+  background-color: var(--yellow) !important;
+  color: var(--background) !important;
+  border: 1px solid var(--yellow) !important;
 }
 .movie-view {
   display: flex;
@@ -289,7 +487,9 @@ body {
 
 :root {
   --yellow: #ffbf00;
+  --background-light: #404040;
   --background: #272727;
+  --background-dark: #0F0F0F;
   --black: #0000;
   --u: 0.8rem;
   --u0-5: calc(var(--u) * 0.5);
@@ -305,9 +505,17 @@ body {
   --u10: calc(var(--u) * 10);
 }
 
+html {
+  font-size: 65.2% !important;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-  font-size: 67.5%;
   margin: 2.4rem;
+  font-size: 1.6rem;
 }
 
 .btn {
@@ -320,6 +528,102 @@ body {
   background-color: var(--background);
   border: 1px solid var(--yellow);
   color: var(--yellow);
+}
+
+.header {
+  background-color: var(--background);
+  border: 1px solid var(--yellow);
+  border-radius: 3px;
+  padding: var(--u2);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center !important;
+}
+
+.header-profile {
+  align-items: center;
+}
+
+.button-primary {
+  color: var(--yellow);
+  border: 1px solid var(--yellow);
+  background-color: var(--background);
+  padding: 0.75rem 1rem;
+  border-radius: 3px;
+}
+.button-primary:hover, .button-primary:focus, .button-primary:active {
+  background-color: var(--yellow);
+  color: var(--background);
+  border: 1px solid var(--yellow);
+  text-decoration: none;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+body {
+  background-color: var(--background-dark);
+  background-size: 100%;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  background-color: var(--background);
+  color: var(--yellow);
+  padding: var(--u3) var(--u5);
+}
+
+.log-out {
+  display: flex;
+  justify-content: right;
+}
+
+.col-md-3 {
+  padding: 0 !important;
+}
+
+.main-view {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: var(--u2);
+  row-gap: var(--u2);
+  padding-top: var(--u3);
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-outline-primary,
+.btn-link {
+  color: var(--yellow);
+  border: 1px solid var(--yellow);
+}
+.btn-outline-primary:hover, .btn-outline-primary:focus, .btn-outline-primary:active,
+.btn-link:hover,
+.btn-link:focus,
+.btn-link:active {
+  background-color: var(--yellow);
+  color: var(--background);
+  border: 1px solid var(--yellow);
+}
+
+.cinema {
+  width: 100%;
+  height: auto;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.btn-create-account {
+  color: var(--yellow) !important;
+  border: 1px solid var(--yellow) !important;
+  background-color: var(--background) !important;
+}
+.btn-create-account:hover, .btn-create-account:focus, .btn-create-account:active {
+  background-color: var(--yellow) !important;
+  color: var(--background) !important;
+  border: 1px solid var(--yellow) !important;
 }
 .director-view {
   background-color: var(--background);
@@ -377,7 +681,35 @@ body {
   background-color: var(--background);
   color: var(--yellow);
 }
+.header {
+  background-color: var(--background);
+  border: 1px solid var(--yellow);
+  border-radius: 3px;
+  padding: var(--u2);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center !important;
+}
 
+.header-profile {
+  align-items: center;
+}
+
+.button-primary {
+  color: var(--yellow);
+  border: 1px solid var(--yellow);
+  background-color: var(--background);
+  padding: 0.75rem 1rem;
+  border-radius: 3px;
+}
+.button-primary:hover, .button-primary:focus, .button-primary:active {
+  background-color: var(--yellow);
+  color: var(--background);
+  border: 1px solid var(--yellow);
+  text-decoration: none;
+  transition: 0.4s;
+  cursor: pointer;
+}
 .profile-view {
   color: var(--yellow);
   background-color: black;
@@ -388,6 +720,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: var(--u2);
+  justify-content: space-around;
 }
 
 .update-form {
@@ -404,7 +737,9 @@ body {
 }
 :root {
   --yellow: #ffbf00;
+  --background-light: #404040;
   --background: #272727;
+  --background-dark: #0F0F0F;
   --black: #0000;
   --u: 0.8rem;
   --u0-5: calc(var(--u) * 0.5);
@@ -420,9 +755,17 @@ body {
   --u10: calc(var(--u) * 10);
 }
 
+html {
+  font-size: 65.2% !important;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-  font-size: 67.5%;
   margin: 2.4rem;
+  font-size: 1.6rem;
 }
 
 .btn {
@@ -435,5 +778,101 @@ body {
   background-color: var(--background);
   border: 1px solid var(--yellow);
   color: var(--yellow);
+}
+
+.header {
+  background-color: var(--background);
+  border: 1px solid var(--yellow);
+  border-radius: 3px;
+  padding: var(--u2);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center !important;
+}
+
+.header-profile {
+  align-items: center;
+}
+
+.button-primary {
+  color: var(--yellow);
+  border: 1px solid var(--yellow);
+  background-color: var(--background);
+  padding: 0.75rem 1rem;
+  border-radius: 3px;
+}
+.button-primary:hover, .button-primary:focus, .button-primary:active {
+  background-color: var(--yellow);
+  color: var(--background);
+  border: 1px solid var(--yellow);
+  text-decoration: none;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+body {
+  background-color: var(--background-dark);
+  background-size: 100%;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  background-color: var(--background);
+  color: var(--yellow);
+  padding: var(--u3) var(--u5);
+}
+
+.log-out {
+  display: flex;
+  justify-content: right;
+}
+
+.col-md-3 {
+  padding: 0 !important;
+}
+
+.main-view {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: var(--u2);
+  row-gap: var(--u2);
+  padding-top: var(--u3);
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-outline-primary,
+.btn-link {
+  color: var(--yellow);
+  border: 1px solid var(--yellow);
+}
+.btn-outline-primary:hover, .btn-outline-primary:focus, .btn-outline-primary:active,
+.btn-link:hover,
+.btn-link:focus,
+.btn-link:active {
+  background-color: var(--yellow);
+  color: var(--background);
+  border: 1px solid var(--yellow);
+}
+
+.cinema {
+  width: 100%;
+  height: auto;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.btn-create-account {
+  color: var(--yellow) !important;
+  border: 1px solid var(--yellow) !important;
+  background-color: var(--background) !important;
+}
+.btn-create-account:hover, .btn-create-account:focus, .btn-create-account:active {
+  background-color: var(--yellow) !important;
+  color: var(--background) !important;
+  border: 1px solid var(--yellow) !important;
 }
 /*# sourceMappingURL=index.17d663fa.css.map */
