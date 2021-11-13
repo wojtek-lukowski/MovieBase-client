@@ -1,19 +1,23 @@
-* {
-    box-sizing: border-box;
+html {
+    background-color: var(--background-dark);
 }
 
 body {
-    // background-color: var(--black);
-    background-image: url(../img/cinema.jpg);
+    background-color: red;
+    // background-image: url(../img/cinema.jpg);
     background-size: 100%;
 }
 
+.app-container {
+background-color: var(--background-dark);
+}
+
 header {
-    // position: fixed;
-    // top: 0;
-background-color: var(--background);
-color: var(--yellow);
-padding: var(--u3) var(--u5);
+    position: fixed;
+    top: 0;
+    background-color: var(--background);
+    color: var(--yellow);
+    padding: var(--u3) var(--u5);
 }
 
 .log-out {

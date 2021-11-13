@@ -1,0 +1,32 @@
+.header {
+    background-color: var(--background);
+    border: 1px solid var(--yellow);
+    border-radius: 3px;
+    padding: var(--u2);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center !important;
+}
+
+.header-profile {
+    align-items: center;
+}
+
+.button-primary {
+    color: var(--yellow);
+    border: 1px solid var(--yellow);
+    background-color: var(--background);
+    padding: 0.75rem 1rem;
+    border-radius: 3px;
+
+    &:hover,
+    &:focus,
+    &:active {
+        background-color: var(--yellow);
+        color: var(--background);
+        border: 1px solid var(--yellow);
+        text-decoration: none;
+        transition: 0.4s;
+        cursor: pointer;
+    }
+}

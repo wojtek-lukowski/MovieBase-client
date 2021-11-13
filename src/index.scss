@@ -1,6 +1,8 @@
 :root {
     --yellow: #ffbf00;
+    --background-light: #404040;
     --background: #272727;
+    --background-dark: #0F0F0F;
     --black: #0000;
     
     --u: 0.8rem;
@@ -17,13 +19,22 @@
     --u10: calc(var(--u) * 10); 
 }
 
+html {
+    font-size: 65.2% !important;
+}
+
+* {
+    box-sizing: border-box;
+}
+
 body {
-    font-size: 67.5%;
     margin: 2.4rem;
+    font-size: 1.6rem;
+    background-color: var(--background-dark);
 }
 
 .btn {
-    background-color: var(--yellow);
+        background-color: var(--yellow);
         border: 1px solid var(--yellow);
         color: var(--background);
         margin-top: var(--u2);
@@ -36,3 +47,6 @@ body {
         color: var(--yellow);
         }
 }
+
+@import './components/header/header.scss';
+@import './components/main-view/main-view.scss';

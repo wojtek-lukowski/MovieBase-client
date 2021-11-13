@@ -5,19 +5,21 @@ import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 
-import './header.scss'
+import './header.scss';
 
 export class Header extends React.Component {
     render() {
-        const { onLoggedOut } = this.props;
+        const { onLoggedOut, user } = this.props;
 
         return (
-            <div>
-                <div className="log-out">
-                    <Button className="btn-log-out">Profile</Button>
+            <div class="header">
+                <div className="header-profile ">
+                    <Link to={`/user/${user}`}>
+                        <button className="button-primary">Profile</button>
+                    </Link>
                 </div>
-                <div className="log-out">
-                    <Button className="btn-log-out" onClick={() => { onLoggedOut(); }}> Log out</Button>
+                <div className="header-log-out">
+                    <button className="button-primary" onClick={() => { onLoggedOut(); }}> Log out</button>
                 </div>
             </div>
         );

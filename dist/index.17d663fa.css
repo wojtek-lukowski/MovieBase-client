@@ -1,6 +1,14 @@
-body {
+html {
   background-color: var(--background-dark);
+}
+
+body {
+  background-color: red;
   background-size: 100%;
+}
+
+.app-container {
+  background-color: var(--background-dark);
 }
 
 header {
@@ -149,6 +157,7 @@ html {
 body {
   margin: 2.4rem;
   font-size: 1.6rem;
+  background-color: var(--background-dark);
 }
 
 .btn {
@@ -193,9 +202,17 @@ body {
   cursor: pointer;
 }
 
-body {
+html {
   background-color: var(--background-dark);
+}
+
+body {
+  background-color: red;
   background-size: 100%;
+}
+
+.app-container {
+  background-color: var(--background-dark);
 }
 
 header {
@@ -332,6 +349,7 @@ html {
 body {
   margin: 2.4rem;
   font-size: 1.6rem;
+  background-color: var(--background-dark);
 }
 
 .btn {
@@ -376,9 +394,17 @@ body {
   cursor: pointer;
 }
 
-body {
+html {
   background-color: var(--background-dark);
+}
+
+body {
+  background-color: red;
   background-size: 100%;
+}
+
+.app-container {
+  background-color: var(--background-dark);
 }
 
 header {
@@ -516,6 +542,7 @@ html {
 body {
   margin: 2.4rem;
   font-size: 1.6rem;
+  background-color: var(--background-dark);
 }
 
 .btn {
@@ -560,9 +587,17 @@ body {
   cursor: pointer;
 }
 
-body {
+html {
   background-color: var(--background-dark);
+}
+
+body {
+  background-color: red;
   background-size: 100%;
+}
+
+.app-container {
+  background-color: var(--background-dark);
 }
 
 header {
@@ -712,7 +747,7 @@ header {
 }
 .profile-view {
   color: var(--yellow);
-  background-color: black;
+  background-color: var(--background-dark);
   padding: var(--u4);
 }
 
@@ -766,6 +801,7 @@ html {
 body {
   margin: 2.4rem;
   font-size: 1.6rem;
+  background-color: var(--background-dark);
 }
 
 .btn {
@@ -810,9 +846,17 @@ body {
   cursor: pointer;
 }
 
-body {
+html {
   background-color: var(--background-dark);
+}
+
+body {
+  background-color: red;
   background-size: 100%;
+}
+
+.app-container {
+  background-color: var(--background-dark);
 }
 
 header {

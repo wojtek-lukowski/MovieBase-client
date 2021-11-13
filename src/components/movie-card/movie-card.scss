@@ -2,6 +2,7 @@
     background-color: var(--background) !important;
     color: var(--yellow);
     border: 1px solid var(--yellow);
+    border-radius: 3px;
     height: auto;
     flex: 0;
 
@@ -23,40 +24,44 @@ a:hover {
 
 .card-img {
     padding: var(--u2);
+    width: 100%;
 }
 
-    .movie-card-button {
-        justify-content: flex-end !important;
-        padding-right: 2rem;
-    }
-
-    .text {
-        height: 5rem;
-        overflow-y: scroll;
-        font-size: .8rem;
-    }
-
-    .btn-outline-primar,
-    .btn-link {
-        color: var(--yellow);
-        border: 1px solid var(--yellow);
-        // justify-self: flex-end;
-
-        &:hover,
-        &:focus,
-        &:active {
-            background-color: var(--yellow);
-            color: var(--background);
-            border: 1px solid var(--yellow);
-            text-decoration: none;
-        }
+.movie-card-button {
+    justify-content: flex-end !important;
+    padding-right: 2rem;
 }
+
+.text {
+    height: 5rem;
+    overflow-y: scroll;
+    font-size: .8rem;
+}
+
+.button-primary {
+    width: 100%;
+}
+
+    // .btn-outline-primary,
+    // .btn-link {
+    //     color: var(--yellow);
+    //     border: 1px solid var(--yellow);
+    //     // justify-self: flex-end;
+
+    //     &:hover,
+    //     &:focus,
+    //     &:active {
+    //         background-color: var(--yellow);
+    //         color: var(--background);
+    //         border: 1px solid var(--yellow);
+    //         text-decoration: none;
+    //     }
+    // }
 }
 
 .movie-card {
     &:hover {
         border: 1px solid var(--yellow);
-        opacity: .95;
         cursor: pointer;
     }
 }

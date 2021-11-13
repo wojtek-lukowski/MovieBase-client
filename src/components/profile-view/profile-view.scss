@@ -1,6 +1,6 @@
 .profile-view {
     color: var(--yellow);
-    background-color: black;
+    background-color: var(--background-dark);
     padding: var(--u4);
 }
 
@@ -8,6 +8,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: var(--u2);
+justify-content: space-around;
 }
 
 .update-form {

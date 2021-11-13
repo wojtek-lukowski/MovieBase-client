@@ -4,7 +4,6 @@ import axios from 'axios';
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
-
 import './main-view.scss'
 
 import { RegistrationView } from '../registration-view/registration-view';
@@ -18,7 +17,6 @@ import { Header } from '../header/header';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
-import cinema from '../img/cinema.jpg'
 
 export class MainView extends React.Component {
 
@@ -100,8 +98,8 @@ export class MainView extends React.Component {
             if (movies.length === 0) return <div className="loading">Loading...</div>;
             return (
               <div>
-                {/* <Header onLoggedOut={this.onLoggedOut} /> */}
-                <header>
+                <Header onLoggedOut={this.onLoggedOut} />
+                {/* <header>
                   <div> <h4>Welcome, <span>{user}</span></h4></div>
                   <div className="log-out">
                     <Link to={`/user/${user}`}>
@@ -111,7 +109,7 @@ export class MainView extends React.Component {
                   <div className="log-out">
                     <Button className="btn-log-out" onClick={() => this.onLoggedOut()}> Log out</Button>
                   </div>
-                </header>
+                </header> */}
                 <div className="main-view">
                   {movies.map(m => (
                     <Col md={3} key={m._id}>
