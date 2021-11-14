@@ -1,9 +1,12 @@
 import React from 'react';
 import axios from 'axios';
 
+import { setUser, updateUser } from '../../actions/actions';
+
+import { connect } from 'react-redux';
+
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-
 
 import './profile-view.scss'
 
@@ -225,3 +228,12 @@ export class ProfileView extends React.Component {
         );
     }
 }
+
+let mapStateToProps = state => {
+    return {
+        user: state.user,
+        movies: state.movies
+    }
+}
+
+export default connect(mapStateToProps, { setUser, updateUser })(ProfileView);

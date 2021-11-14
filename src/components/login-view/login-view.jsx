@@ -1,6 +1,9 @@
 import React from 'react';
 import './login-view.scss';
 import axios from 'axios';
+
+import { connect } from 'react-redux';
+
 import { Link } from 'react-router-dom';
 
 import { useState } from 'react';
@@ -44,5 +47,11 @@ export function LoginView(props) {
             </div>
         </Form >
     )
-};
+}
+
+const mapDispatchToProps = (dispatch) => ({
+    handleSubmit: (username, password) => dispatch(handleSubmit(username, password))
+});
+
+export default connect(null, mapDispatchToProps)(LoginView);
 

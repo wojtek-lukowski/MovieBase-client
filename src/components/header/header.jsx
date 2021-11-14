@@ -12,7 +12,7 @@ export class Header extends React.Component {
         const { onLoggedOut, user } = this.props;
 
         return (
-            <div class="header">
+            <div className="header">
                 <div className="header-profile ">
                     <Link to={`/user/${user}`}>
                         <button className="button-primary">Profile</button>
