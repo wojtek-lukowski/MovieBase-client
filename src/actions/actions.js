@@ -5,21 +5,26 @@ export const UPDATE_USER = 'UPDATE_USER';
 export const REMOVE_USER = 'REMOVE_USER';
 
 export function setMovies(filterText) {
+    console.log('setMovies triggered');
     return { type: SET_MOVIES, filterText };
 }
 
 export function setFilter(value) {
+    console.log('setFilter triggered');
     return { type: SET_FILTER, value };
 }
 
 export function setUser(value) {
+    console.log('setUser triggered');
     return { type: SET_USER, value };
 }
 
 export function updateUser(value) {
+    console.log('updateUser triggered');
     return { type: UPDATE_USER, value };
 }
 
 export function removeUser(value) {
+    console.log('removeUsertriggered');
     return { type: REMOVE_USER, value };
 }

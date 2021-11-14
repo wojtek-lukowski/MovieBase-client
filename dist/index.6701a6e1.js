@@ -31105,30 +31105,35 @@ const SET_USER = 'SET_USER';
 const UPDATE_USER = 'UPDATE_USER';
 const REMOVE_USER = 'REMOVE_USER';
 function setMovies(filterText) {
+    console.log('setMovies triggered');
     return {
         type: SET_MOVIES,
         filterText
     };
 }
 function setFilter(value) {
+    console.log('setFilter triggered');
     return {
         type: SET_FILTER,
         value
     };
 }
 function setUser(value) {
+    console.log('setUser triggered');
     return {
         type: SET_USER,
         value
     };
 }
 function updateUser(value) {
+    console.log('updateUser triggered');
     return {
         type: UPDATE_USER,
         value
     };
 }
 function removeUser(value) {
+    console.log('removeUsertriggered');
     return {
         type: REMOVE_USER,
         value
@@ -43697,6 +43702,7 @@ var _actions = require("../actions/actions");
 const visibilityFilter = (state = '', action)=>{
     switch(action.type){
         case _actions.SET_FILTER:
+            console.log('setFilter reducer reached');
             return action.filterText;
         default:
             return state;
@@ -43705,6 +43711,7 @@ const visibilityFilter = (state = '', action)=>{
 const movies = (state = [], action)=>{
     switch(action.type){
         case _actions.SET_MOVIES:
+            console.log('setMovies reducer reached');
             return action.value;
         default:
             return state;
@@ -43713,11 +43720,13 @@ const movies = (state = [], action)=>{
 const user = (state = null, action)=>{
     switch(action.type){
         case _actions.SET_USER:
+            console.log('setUser reducer reached');
             return {
                 ...state,
                 user: user
             };
         case _actions.UPDATE_USER:
+            console.log('updateUser reducer reached');
             return {
                 ...state,
                 user: {
@@ -43728,6 +43737,7 @@ const user = (state = null, action)=>{
                 }
             };
         case _actions.REMOVE_USER:
+            console.log('removeUser reducer reached');
             return state.splice((user1, username)=>(username === action.username)(alert(`${user1} has been removed.`))
             );
         default:
