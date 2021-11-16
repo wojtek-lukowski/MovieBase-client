@@ -22,7 +22,7 @@ const movies = (state = [], action) => {
     }
 }
 
-const user = (state = null, action) => {
+const users = (state = null, action) => {
   switch (action.type) {
 
     case SET_USER:
@@ -44,10 +44,17 @@ case UPDATE_USER:
 
   case REMOVE_USER:
     console.log('removeUser reducer reached');
-    return state.splice((user, username) => (
-      username === action.username)
-      (alert(`${user} has been removed.`))
-  )
+    // const newState = state.slice();
+    // newState.splice(user);
+    // alert(`${Username} has been removed.`);
+    // return newState;
+
+    return state.filter((userToRemove, index) => {
+    if (userToRemove.Username === user.Username) {
+    return false;
+    }
+    return true
+    });
 
       default:
         return state;
@@ -57,7 +64,7 @@ case UPDATE_USER:
 const moviesApp = combineReducers({
   visibilityFilter,
   movies,
-  user
+  users
 });
 
 export default moviesApp;

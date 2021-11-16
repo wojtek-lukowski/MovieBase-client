@@ -21,7 +21,6 @@ import { FavMovie } from '../fav-movie/fav-movie';
 import { Row, Col, Button, Form } from 'react-bootstrap';
 // import Col from 'react-bootstrap/Col';
 // import Button from 'react-bootstrap/Button';
-import cinema from '../img/cinema.jpg'
 
 export class ProfileView extends React.Component {
 
