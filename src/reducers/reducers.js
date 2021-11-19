@@ -6,7 +6,7 @@ const visibilityFilter = (state = '', action) => {
     switch (action.type) {
         case SET_FILTER:
           console.log('setFilter reducer reached');
-          return action.filterText;
+          return action.value;
             default:
                 return state;
     }

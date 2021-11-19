@@ -18,9 +18,11 @@ export class MovieView extends React.Component {
         console.log('username', username);
         console.log(movie);
 
-        axios.post(`https://moviebased.herokuapp.com/users/${username}/movies/` + (movie), {
-            headers: { Authorization: `Bearer ${token}` }
-        })
+        axios.post(`https://moviebased.herokuapp.com/users/${username}/movies/` + (movie),
+            {},
+            {
+                headers: { Authorization: `Bearer ${token}` }
+            })
             .then((response) => {
                 console.log(response);
                 this.componentDidMount();

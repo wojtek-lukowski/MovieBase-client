@@ -16,6 +16,9 @@ export function RegistrationView(props) {
     const [email, setEmail] = useState('');
     const [birthday, setBirthday] = useState('');
 
+    const [usernameError, setUsernameError] = useState(null);
+    const [emailError, setEmailError] = useState(null);
+    const [passwordError, setPasswordError] = useState(null);
 
     const handleRegister = (e) => {
         e.preventDefault();
@@ -37,33 +40,26 @@ export function RegistrationView(props) {
     }
 
     const validate = (e) => {
-        const usernameError = {}
-        const passwordError = {}
-        const emailError = {}
-
         let isValid = true;
 
         //Conditions
         if (username.trim().length < 5) {
-            usernameError.usernameShort = "Username must have at least  5 characters."
+            usernameError("Username must have at least  5 characters.");
             isValid = false;
         }
 
         if (password.trim().length < 5) {
-            passwordError.passwordMissing = "Your password must contain  at least 6 characters."
+            passwordError("Your password must contain  at least 6 characters.");
             isValid = false;
         }
 
         if (!email.includes(".") || !email.includes("@")) {
-            emailError.emailNotEmail = "Enter a valid email"
+            emailError("Enter a valid email");
             isValid = false;
         }
 
-        setUsernameError(usernameError);
-        setPasswordError(passwordError);
-        setEmailError(emailError);
         return isValid;
-    }
+    };
 
     return (
         <Row>
@@ -72,28 +68,58 @@ export function RegistrationView(props) {
                     <h2>Create Account</h2>
                     <Form.Group>
                         <Form.Label>Username:</Form.Label>
-                        <Form.Control type="text" value={username} onChange={e => setUsername(e.target.value)} onInput={validate} placeholder="Username"></Form.Control>
+                        <Form.Control
+                            type="text"
+                            value={username}
+                            onChange={(e) => setUsername(e.target.value)}
+                            onBlur={validate}
+                            placeholder="Username"
+                        ></Form.Control>
+                        {usernameError && <p>{usernameError}</p>}
                     </Form.Group>
                     <Form.Group>
                         <Form.Label>Password:</Form.Label>
-                        <Form.Control type="password" value={password} onChange={e => setPassword(e.target.value)} onInput={validate} placeholder="Password"></Form.Control>
+                        <Form.Control
+                            type="password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            onInput={validate}
+                            placeholder="Password"
+                        ></Form.Control>
                     </Form.Group>
                     <Form.Group>
                         <Form.Label>Email:</Form.Label>
-                        <Form.Control type="email" value={email} onChange={e => setEmail(e.target.value)} onInput={validate} placeholder="Email"></Form.Control>
+                        <Form.Control
+                            type="email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            onInput={validate}
+                            placeholder="Email"
+                        ></Form.Control>
                     </Form.Group>
                     <Form.Group>
                         <Form.Label>Birthday:</Form.Label>
-                        <Form.Control type="date" value={birthday} onChange={e => setBirthday(e.target.value)} onInput={validate} placeholder="Birthday"></Form.Control>
+                        <Form.Control
+                            type="date"
+                            value={birthday}
+                            onChange={(e) => setBirthday(e.target.value)}
+                            onInput={validate}
+                            placeholder="Birthday"
+                        ></Form.Control>
                     </Form.Group>
 
-                    <Button variant="outline-primary" type="submit" onClick={handleRegister}>Create Account</Button>
-
+                    <Button
+                        variant="outline-primary"
+                        type="submit"
+                        onClick={handleRegister}
+                    >
+                        Create Account
+                    </Button>
                 </Form>
             </Col>
             <Col>
                 <Link to={`/`}>
-                    <Button >Back to login</Button>
+                    <Button>Back to login</Button>
                 </Link>
             </Col>
         </Row>

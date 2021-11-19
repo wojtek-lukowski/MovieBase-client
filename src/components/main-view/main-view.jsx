@@ -26,9 +26,9 @@ export class MainView extends React.Component {
 
   constructor() {
     super();
-    // this.state = {
-    //   user: null,
-    // };
+    this.state = {
+      user: null,
+    };
   }
 
   componentDidMount() {
@@ -57,7 +57,9 @@ export class MainView extends React.Component {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(response => {
-        this.props.setMovies(response.data);
+        // this.props.setMovies(response.data);
+        console.log('response', response.data);
+        console.log('props', this.props);
       })
       .catch(function (error) {
         console.log(error);
@@ -74,19 +76,23 @@ export class MainView extends React.Component {
   }
 
   render() {
-    const { movies, user } = this.props;
+    const { movies } = this.props;
+    const { user } = this.state;
+    console.log(movies);
 
     return (
       <Router>
         <Row className="main-view justify-content-md-center">
           <Route exact path="/" render={() => {
-            if (!user) return <Col>
-              <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
-              <Link to={`/register`}>
-                <Button className="btn-create-account">Create Account</Button>
-              </Link>
-            </Col>
-            if (movies.length === 0) return <div className="loading">Loading...</div>;
+            if (!user)
+              return <Col>
+                <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />
+                <Link to={`/register`}>
+                  <Button className="btn-create-account">Create Account</Button>
+                </Link>
+              </Col>
+            if (movies.length === 0)
+              return <div className="loading">Loading...</div>;
             return <div>
               <header>
                 <div> <h4>Welcome, <span>{user}</span></h4></div>
@@ -96,7 +102,7 @@ export class MainView extends React.Component {
                   </Link>
                 </div>
                 <div className="log-out">
-                  <Button className="btn-log-out" onClick={() => this.onLoggedOut()}> Log out</Button>
+                  <Button className="btn-log-out" onClick={() => this.onLoggedOut()}>Log out</Button>
                 </div>
               </header>
               <MoviesList movies={movies} />;
