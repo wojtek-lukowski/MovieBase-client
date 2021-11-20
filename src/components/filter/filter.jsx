@@ -5,12 +5,15 @@ import Form from 'react-bootstrap/Form';
 
 import { setFilter } from '../../actions/actions';
 
+import './filter.scss';
+
 function VisibilityFilterInput(props) {
-  return <Form.Control
-    onChange={e => props.setFilter(e.target.value)}
-    value={props.visibilityFilter}
-    placeholder="filter"
-  />;
+  return <div classname="filter">
+    <Form.Control
+      onChange={e => props.setFilter(e.target.value)}
+      value={props.visibilityFilter}
+      placeholder="filter"
+    /></div>;
 }
 
 export default connect(

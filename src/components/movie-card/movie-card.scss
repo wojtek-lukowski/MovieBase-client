@@ -1,71 +1,82 @@
-// .card {
-//     background-color: var(--background);
-//     color: var(--yellow);
-//     border: 1px solid var(--yellow);
-//     border-radius: 3px;
-//     height: auto;
-//     flex: 0;
+.card {
+  display: inline-block;
+  background-color: var(--background) !important;
+  color: var(--yellow);
+  width: 30rem;
+  border: 1px solid var(--yellow);
+  padding: var(--u2);
+  border-radius: 3px;
+  height: auto;
+  flex: 0;
 
-//     .card-body {
-//         display: flex;
-//         flex-direction: column;
-//         justify-content: space-around;
-//         align-content: space-between;
-// }
+  .title {
+    font-size: 1.8rem;
+    text-align: center;
+  }
 
-// a {
-//     color: var(--yellow);
-// }
+    .card-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-content: space-between;
+}
 
-// a:hover {
-//     color: var(--yellow);
-//     text-decoration: none;
-// }
+a {
+    color: var(--yellow);
+}
 
-// .card-img {
-//     padding: var(--u2);
-//     width: 100%;
-// }
+a:hover {
+    color: var(--yellow);
+    text-decoration: none;
+}
 
-// .movie-card-button {
-//     justify-content: flex-end !important;
-//     padding-right: 2rem;
-// }
+.card-img {
+    // padding: var(--u2);
+    // width: 100%;
+    background-color: lime;
+}
 
-// .text {
-//     height: 5rem;
-//     overflow-y: scroll;
-//     font-size: .8rem;
-// }
+.movie-card-button {
+  display: flex;
+    justify-content: flex-end !important;
+    padding-top: var(--u3);
+    padding-right: 2rem;
+}
 
-// .button-primary {
-//     width: 100%;
-// }
+.text {
+    height: 5rem;
+    overflow-y: scroll;
+    font-size: .8rem;
+}
 
-//     // .btn-outline-primary,
-//     // .btn-link {
-//     //     color: var(--yellow);
-//     //     border: 1px solid var(--yellow);
-//     //     // justify-self: flex-end;
+.button-primary {
+    width: 100%;
+}
 
-//     //     &:hover,
-//     //     &:focus,
-//     //     &:active {
-//     //         background-color: var(--yellow);
-//     //         color: var(--background);
-//     //         border: 1px solid var(--yellow);
-//     //         text-decoration: none;
-//     //     }
-//     // }
-// }
+    // .btn-outline-primary,
+    // .btn-link {
+    //     color: var(--yellow);
+    //     border: 1px solid var(--yellow);
+    //     // justify-self: flex-end;
 
-// .movie-card {
-//     &:hover {
-//         border: 1px solid var(--yellow);
-//         cursor: pointer;
-//     }
-// }
+    //     &:hover,
+    //     &:focus,
+    //     &:active {
+    //         background-color: var(--yellow);
+    //         color: var(--background);
+    //         border: 1px solid var(--yellow);
+    //         text-decoration: none;
+    //     }
+    // }
+}
+
+.movie-card {
+    &:hover {
+        border: 1px solid var(--yellow);
+        cursor: pointer;
+    }
+}
 
 
-// // @import "../../index.scss";
+// @import "../../index.scss";
  

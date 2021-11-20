@@ -1,4 +1,191 @@
+:root {
+  --yellow: #ffbf00;
+  --background-light: #404040;
+  --background: #272727;
+  --background-dark: #0F0F0F;
+  --black: #0000;
+  --u: 0.8rem;
+  --u0-5: calc(var(--u) * 0.5);
+  --u1-5: calc(var(--u) * 1.5);
+  --u2: calc(var(--u) * 2);
+  --u3: calc(var(--u) * 3);
+  --u4: calc(var(--u) * 4);
+  --u5: calc(var(--u) * 5);
+  --u6: calc(var(--u) * 6);
+  --u7: calc(var(--u) * 7);
+  --u8: calc(var(--u) * 8);
+  --u9: calc(var(--u) * 9);
+  --u10: calc(var(--u) * 10);
+}
 
+html {
+  font-size: 65.2% !important;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 2.4rem;
+  font-size: 1.6rem;
+  background-color: var(--background-dark);
+}
+
+.btn {
+  background-color: var(--yellow);
+  border: 1px solid var(--yellow);
+  color: var(--background);
+  margin-top: var(--u2);
+}
+.btn:hover, .btn:focus, .btn:active {
+  background-color: var(--background);
+  border: 1px solid var(--yellow);
+  color: var(--yellow);
+}
+
+.movies-list {
+  background-color: lime;
+}
+
+html {
+  background-color: var(--background-dark);
+  margin-top: 200px;
+}
+
+a {
+  color: var(--yellow);
+}
+
+body {
+  margin-top: 200px;
+}
+
+.app-container {
+  background-color: var(--background-dark);
+}
+
+header {
+  position: fixed;
+  top: 0;
+  background-color: var(--background);
+  color: var(--yellow);
+  padding: var(--u3) var(--u5);
+}
+
+.log-out {
+  display: flex;
+  justify-content: right;
+}
+
+.col-md-3 {
+  padding: 0 !important;
+}
+
+.row,
+.main-view {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: var(--u2);
+  row-gap: var(--u2);
+  padding-top: var(--u3);
+  justify-content: center;
+  align-items: center;
+}
+
+.filter {
+  background-color: lime;
+}
+
+.movies-list {
+  background-color: orangered;
+  display: flex;
+}
+
+.btn-outline-primary,
+.btn-link {
+  color: var(--yellow);
+  border: 1px solid var(--yellow);
+}
+.btn-outline-primary:hover, .btn-outline-primary:focus, .btn-outline-primary:active,
+.btn-link:hover,
+.btn-link:focus,
+.btn-link:active {
+  background-color: var(--yellow);
+  color: var(--background);
+  border: 1px solid var(--yellow);
+}
+
+.cinema {
+  width: 100%;
+  height: auto;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.btn-create-account {
+  color: var(--yellow) !important;
+  border: 1px solid var(--yellow) !important;
+  background-color: var(--background) !important;
+}
+.btn-create-account:hover, .btn-create-account:focus, .btn-create-account:active {
+  background-color: var(--yellow) !important;
+  color: var(--background) !important;
+  border: 1px solid var(--yellow) !important;
+}
+
+.card {
+  display: inline-block;
+  background-color: var(--background) !important;
+  color: var(--yellow);
+  width: 30rem;
+  border: 1px solid var(--yellow);
+  padding: var(--u2);
+  border-radius: 3px;
+  height: auto;
+  flex: 0;
+}
+.card .title {
+  font-size: 1.8rem;
+  text-align: center;
+}
+.card .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-content: space-between;
+}
+.card a {
+  color: var(--yellow);
+}
+.card a:hover {
+  color: var(--yellow);
+  text-decoration: none;
+}
+.card .card-img {
+  background-color: lime;
+}
+.card .movie-card-button {
+  display: flex;
+  justify-content: flex-end !important;
+  padding-top: var(--u3);
+  padding-right: 2rem;
+}
+.card .text {
+  height: 5rem;
+  overflow-y: scroll;
+  font-size: 0.8rem;
+}
+.card .button-primary {
+  width: 100%;
+}
+
+.movie-card:hover {
+  border: 1px solid var(--yellow);
+  cursor: pointer;
+}
 .movie-view {
   display: flex;
 }
@@ -43,6 +230,282 @@
   padding: 0 var(--u1);
 }
 
+:root {
+  --yellow: #ffbf00;
+  --background-light: #404040;
+  --background: #272727;
+  --background-dark: #0F0F0F;
+  --black: #0000;
+  --u: 0.8rem;
+  --u0-5: calc(var(--u) * 0.5);
+  --u1-5: calc(var(--u) * 1.5);
+  --u2: calc(var(--u) * 2);
+  --u3: calc(var(--u) * 3);
+  --u4: calc(var(--u) * 4);
+  --u5: calc(var(--u) * 5);
+  --u6: calc(var(--u) * 6);
+  --u7: calc(var(--u) * 7);
+  --u8: calc(var(--u) * 8);
+  --u9: calc(var(--u) * 9);
+  --u10: calc(var(--u) * 10);
+}
+
+html {
+  font-size: 65.2% !important;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 2.4rem;
+  font-size: 1.6rem;
+  background-color: var(--background-dark);
+}
+
+.btn {
+  background-color: var(--yellow);
+  border: 1px solid var(--yellow);
+  color: var(--background);
+  margin-top: var(--u2);
+}
+.btn:hover, .btn:focus, .btn:active {
+  background-color: var(--background);
+  border: 1px solid var(--yellow);
+  color: var(--yellow);
+}
+
+.movies-list {
+  background-color: lime;
+}
+
+html {
+  background-color: var(--background-dark);
+  margin-top: 200px;
+}
+
+a {
+  color: var(--yellow);
+}
+
+body {
+  margin-top: 200px;
+}
+
+.app-container {
+  background-color: var(--background-dark);
+}
+
+header {
+  position: fixed;
+  top: 0;
+  background-color: var(--background);
+  color: var(--yellow);
+  padding: var(--u3) var(--u5);
+}
+
+.log-out {
+  display: flex;
+  justify-content: right;
+}
+
+.col-md-3 {
+  padding: 0 !important;
+}
+
+.row,
+.main-view {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: var(--u2);
+  row-gap: var(--u2);
+  padding-top: var(--u3);
+  justify-content: center;
+  align-items: center;
+}
+
+.filter {
+  background-color: lime;
+}
+
+.movies-list {
+  background-color: orangered;
+  display: flex;
+}
+
+.btn-outline-primary,
+.btn-link {
+  color: var(--yellow);
+  border: 1px solid var(--yellow);
+}
+.btn-outline-primary:hover, .btn-outline-primary:focus, .btn-outline-primary:active,
+.btn-link:hover,
+.btn-link:focus,
+.btn-link:active {
+  background-color: var(--yellow);
+  color: var(--background);
+  border: 1px solid var(--yellow);
+}
+
+.cinema {
+  width: 100%;
+  height: auto;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.btn-create-account {
+  color: var(--yellow) !important;
+  border: 1px solid var(--yellow) !important;
+  background-color: var(--background) !important;
+}
+.btn-create-account:hover, .btn-create-account:focus, .btn-create-account:active {
+  background-color: var(--yellow) !important;
+  color: var(--background) !important;
+  border: 1px solid var(--yellow) !important;
+}
+
+.card {
+  display: inline-block;
+  background-color: var(--background) !important;
+  color: var(--yellow);
+  width: 30rem;
+  border: 1px solid var(--yellow);
+  padding: var(--u2);
+  border-radius: 3px;
+  height: auto;
+  flex: 0;
+}
+.card .title {
+  font-size: 1.8rem;
+  text-align: center;
+}
+.card .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-content: space-between;
+}
+.card a {
+  color: var(--yellow);
+}
+.card a:hover {
+  color: var(--yellow);
+  text-decoration: none;
+}
+.card .card-img {
+  background-color: lime;
+}
+.card .movie-card-button {
+  display: flex;
+  justify-content: flex-end !important;
+  padding-top: var(--u3);
+  padding-right: 2rem;
+}
+.card .text {
+  height: 5rem;
+  overflow-y: scroll;
+  font-size: 0.8rem;
+}
+.card .button-primary {
+  width: 100%;
+}
+
+.movie-card:hover {
+  border: 1px solid var(--yellow);
+  cursor: pointer;
+}
+
+html {
+  background-color: var(--background-dark);
+  margin-top: 200px;
+}
+
+a {
+  color: var(--yellow);
+}
+
+body {
+  margin-top: 200px;
+}
+
+.app-container {
+  background-color: var(--background-dark);
+}
+
+header {
+  position: fixed;
+  top: 0;
+  background-color: var(--background);
+  color: var(--yellow);
+  padding: var(--u3) var(--u5);
+}
+
+.log-out {
+  display: flex;
+  justify-content: right;
+}
+
+.col-md-3 {
+  padding: 0 !important;
+}
+
+.row,
+.main-view {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: var(--u2);
+  row-gap: var(--u2);
+  padding-top: var(--u3);
+  justify-content: center;
+  align-items: center;
+}
+
+.filter {
+  background-color: lime;
+}
+
+.movies-list {
+  background-color: orangered;
+  display: flex;
+}
+
+.btn-outline-primary,
+.btn-link {
+  color: var(--yellow);
+  border: 1px solid var(--yellow);
+}
+.btn-outline-primary:hover, .btn-outline-primary:focus, .btn-outline-primary:active,
+.btn-link:hover,
+.btn-link:focus,
+.btn-link:active {
+  background-color: var(--yellow);
+  color: var(--background);
+  border: 1px solid var(--yellow);
+}
+
+.cinema {
+  width: 100%;
+  height: auto;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.btn-create-account {
+  color: var(--yellow) !important;
+  border: 1px solid var(--yellow) !important;
+  background-color: var(--background) !important;
+}
+.btn-create-account:hover, .btn-create-account:focus, .btn-create-account:active {
+  background-color: var(--yellow) !important;
+  color: var(--background) !important;
+  border: 1px solid var(--yellow) !important;
+}
 
 .loginView {
   display: flex;
@@ -96,6 +559,195 @@
   background-color: var(--background);
   border: 1px solid var(--yellow);
   color: var(--yellow);
+}
+
+:root {
+  --yellow: #ffbf00;
+  --background-light: #404040;
+  --background: #272727;
+  --background-dark: #0F0F0F;
+  --black: #0000;
+  --u: 0.8rem;
+  --u0-5: calc(var(--u) * 0.5);
+  --u1-5: calc(var(--u) * 1.5);
+  --u2: calc(var(--u) * 2);
+  --u3: calc(var(--u) * 3);
+  --u4: calc(var(--u) * 4);
+  --u5: calc(var(--u) * 5);
+  --u6: calc(var(--u) * 6);
+  --u7: calc(var(--u) * 7);
+  --u8: calc(var(--u) * 8);
+  --u9: calc(var(--u) * 9);
+  --u10: calc(var(--u) * 10);
+}
+
+html {
+  font-size: 65.2% !important;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 2.4rem;
+  font-size: 1.6rem;
+  background-color: var(--background-dark);
+}
+
+.btn {
+  background-color: var(--yellow);
+  border: 1px solid var(--yellow);
+  color: var(--background);
+  margin-top: var(--u2);
+}
+.btn:hover, .btn:focus, .btn:active {
+  background-color: var(--background);
+  border: 1px solid var(--yellow);
+  color: var(--yellow);
+}
+
+.movies-list {
+  background-color: lime;
+}
+
+html {
+  background-color: var(--background-dark);
+  margin-top: 200px;
+}
+
+a {
+  color: var(--yellow);
+}
+
+body {
+  margin-top: 200px;
+}
+
+.app-container {
+  background-color: var(--background-dark);
+}
+
+header {
+  position: fixed;
+  top: 0;
+  background-color: var(--background);
+  color: var(--yellow);
+  padding: var(--u3) var(--u5);
+}
+
+.log-out {
+  display: flex;
+  justify-content: right;
+}
+
+.col-md-3 {
+  padding: 0 !important;
+}
+
+.row,
+.main-view {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: var(--u2);
+  row-gap: var(--u2);
+  padding-top: var(--u3);
+  justify-content: center;
+  align-items: center;
+}
+
+.filter {
+  background-color: lime;
+}
+
+.movies-list {
+  background-color: orangered;
+  display: flex;
+}
+
+.btn-outline-primary,
+.btn-link {
+  color: var(--yellow);
+  border: 1px solid var(--yellow);
+}
+.btn-outline-primary:hover, .btn-outline-primary:focus, .btn-outline-primary:active,
+.btn-link:hover,
+.btn-link:focus,
+.btn-link:active {
+  background-color: var(--yellow);
+  color: var(--background);
+  border: 1px solid var(--yellow);
+}
+
+.cinema {
+  width: 100%;
+  height: auto;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.btn-create-account {
+  color: var(--yellow) !important;
+  border: 1px solid var(--yellow) !important;
+  background-color: var(--background) !important;
+}
+.btn-create-account:hover, .btn-create-account:focus, .btn-create-account:active {
+  background-color: var(--yellow) !important;
+  color: var(--background) !important;
+  border: 1px solid var(--yellow) !important;
+}
+
+.card {
+  display: inline-block;
+  background-color: var(--background) !important;
+  color: var(--yellow);
+  width: 30rem;
+  border: 1px solid var(--yellow);
+  padding: var(--u2);
+  border-radius: 3px;
+  height: auto;
+  flex: 0;
+}
+.card .title {
+  font-size: 1.8rem;
+  text-align: center;
+}
+.card .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-content: space-between;
+}
+.card a {
+  color: var(--yellow);
+}
+.card a:hover {
+  color: var(--yellow);
+  text-decoration: none;
+}
+.card .card-img {
+  background-color: lime;
+}
+.card .movie-card-button {
+  display: flex;
+  justify-content: flex-end !important;
+  padding-top: var(--u3);
+  padding-right: 2rem;
+}
+.card .text {
+  height: 5rem;
+  overflow-y: scroll;
+  font-size: 0.8rem;
+}
+.card .button-primary {
+  width: 100%;
+}
+
+.movie-card:hover {
+  border: 1px solid var(--yellow);
+  cursor: pointer;
 }
 .director-view {
   background-color: var(--background);

@@ -6,7 +6,7 @@ import { connect } from "react-redux";
 import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-import "./main-view.scss";
+// import "./main-view.scss";
 
 import { setMovies } from "../../actions/actions";
 import MoviesList from "../movies-list/movies-list";
