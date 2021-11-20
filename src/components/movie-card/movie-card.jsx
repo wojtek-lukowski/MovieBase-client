@@ -5,7 +5,7 @@ import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
 import { Link } from 'react-router-dom';
 
-import './movie-card.scss'
+// import './movie-card.scss'
 
 
 export class MovieCard extends React.Component {
@@ -13,7 +13,7 @@ export class MovieCard extends React.Component {
         const { movie } = this.props;
 
         return (
-            <Card className="movie-card">
+            <Card className="card">
                 <Link to={`/movies/${movie._id}`}>
                     <Card.Img variant="top" className="card-img" src={movie.ImagePath} />
                     <Card.Body>

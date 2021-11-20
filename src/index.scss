@@ -1,52 +1,55 @@
-:root {
-    --yellow: #ffbf00;
-    --background-light: #404040;
-    --background: #272727;
-    --background-dark: #0F0F0F;
-    --black: #0000;
+// :root {
+//     --yellow: #ffbf00;
+//     --background-light: #404040;
+//     --background: #272727;
+//     --background-dark: #0F0F0F;
+//     --black: #0000;
     
-    --u: 0.8rem;
-    --u0-5: calc(var(--u) * 0.5);
-    --u1-5: calc(var(--u) * 1.5);
-    --u2: calc(var(--u) * 2);
-    --u3: calc(var(--u) * 3);
-    --u4: calc(var(--u) * 4);
-    --u5: calc(var(--u) * 5);
-    --u6: calc(var(--u) * 6);
-    --u7: calc(var(--u) * 7);
-    --u8: calc(var(--u) * 8);
-    --u9: calc(var(--u) * 9);
-    --u10: calc(var(--u) * 10); 
-}
+//     --u: 0.8rem;
+//     --u0-5: calc(var(--u) * 0.5);
+//     --u1-5: calc(var(--u) * 1.5);
+//     --u2: calc(var(--u) * 2);
+//     --u3: calc(var(--u) * 3);
+//     --u4: calc(var(--u) * 4);
+//     --u5: calc(var(--u) * 5);
+//     --u6: calc(var(--u) * 6);
+//     --u7: calc(var(--u) * 7);
+//     --u8: calc(var(--u) * 8);
+//     --u9: calc(var(--u) * 9);
+//     --u10: calc(var(--u) * 10); 
+// }
 
-html {
-    font-size: 65.2% !important;
-}
+// html {
+//     font-size: 65.2% !important;
+// }
 
-* {
-    box-sizing: border-box;
-}
+// * {
+//     box-sizing: border-box;
+// }
 
-body {
-    margin: 2.4rem;
-    font-size: 1.6rem;
-    background-color: var(--background-dark);
-}
+// body {
+//     margin: 2.4rem;
+//     font-size: 1.6rem;
+//     background-color: var(--background-dark);
+// }
 
-.btn {
-        background-color: var(--yellow);
-        border: 1px solid var(--yellow);
-        color: var(--background);
-        margin-top: var(--u2);
+// .btn {
+//         background-color: var(--yellow);
+//         border: 1px solid var(--yellow);
+//         color: var(--background);
+//         margin-top: var(--u2);
 
-        &:hover,
-        &:focus,
-        &:active {
-        background-color: var(--background);
-        border: 1px solid var(--yellow);
-        color: var(--yellow);
-        }
-}
+//         &:hover,
+//         &:focus,
+//         &:active {
+//         background-color: var(--background);
+//         border: 1px solid var(--yellow);
+//         color: var(--yellow);
+//         }
+// }
 
-@import './components/header/header.scss';
-@import './components/main-view/main-view.scss';
+// // @import './components/header/header.scss';
+// @import './components/main-view/main-view.scss';
+// @import './components/movie-card/movie-card.scss';
+
+// // @import './components/movie-card/movie-card.scss';

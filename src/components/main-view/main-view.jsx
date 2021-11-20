@@ -79,7 +79,7 @@ export class MainView extends React.Component {
 
     return (
       <Router>
-        <Row className="main-view justify-content-md-center">
+        <Row className="main-view">
           <Route
             exact
             path="/"
@@ -89,9 +89,9 @@ export class MainView extends React.Component {
                   <Col>
                     <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />
                     <Link to={`/register`}>
-                      <Button className="btn-create-account">
+                      <a className="btn-create-account">
                         Create Account
-                      </Button>
+                      </a>
                     </Link>
                   </Col>
                 );

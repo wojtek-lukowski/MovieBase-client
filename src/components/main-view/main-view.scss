@@ -1,91 +1,94 @@
-html {
-    background-color: var(--background-dark);
-}
-
-body {
-    background-color: red;
-    // background-image: url(../img/cinema.jpg);
-    background-size: 100%;
-}
-
-.app-container {
-background-color: var(--background-dark);
-}
-
-header {
-    position: fixed;
-    top: 0;
-    background-color: var(--background);
-    color: var(--yellow);
-    padding: var(--u3) var(--u5);
-}
-
-.log-out {
-    display: flex;
-    justify-content: right;
-}
-
-.col-md-3 {
-    padding: 0 !important;
-}
-
-.main-view {
-    display: flex;
-    flex-wrap:wrap;
-    column-gap: var(--u2);
-    row-gap: var(--u2);
-    padding-top: var(--u3);
-    justify-content: center;
-    align-items: center;
-}
-
-// .landingPage {
-//     display: flex;
-//     flex-wrap:wrap;
-//     justify-content: center;
-//     align-items: stretch;
-//     gap: var(--u3);
-//     margin-top: 6.4rem;
-//     background-image: url(../img/cinema.jpg);
-//     background-size: 100%;
-//     background-repeat: no-repeat;
+// html {
+//     background-color: var(--background-dark);
 // }
 
-.btn-outline-primary,
-.btn-link {
-    color: var(--yellow);
-    border: 1px solid var(--yellow);
-    // justify-self: flex-end;
+// a {
+//     color: var(--yellow);
+// }
 
-    &:hover,
-    &:focus,
-    &:active {
-        background-color: var(--yellow);
-        color: var(--background);
-        border: 1px solid var(--yellow);
-    }
-}
+// body {
+//     background-color: red;
+//     background-size: 100%;
+// }
 
-.cinema {
-    width: 100%;
-    height: auto;
-    position: relative;
-    top: 0;
-    left: 0;
-z-index: 1000;
-}
+// .app-container {
+// background-color: var(--background-dark);
+// }
 
-.btn-create-account {
-    color: var(--yellow) !important;
-    border: 1px solid var(--yellow) !important;
-    background-color: var(--background) !important;
-    // justify-self: flex-end;
+// header {
+//     position: fixed;
+//     top: 0;
+//     background-color: var(--background);
+//     color: var(--yellow);
+//     padding: var(--u3) var(--u5);
+// }
 
-    &:hover,
-    &:focus,
-    &:active {
-        background-color: var(--yellow)!important;
-        color: var(--background)!important;
-        border: 1px solid var(--yellow)!important;
-    }
-}
+// .log-out {
+//     display: flex;
+//     justify-content: right;
+// }
+
+// .col-md-3 {
+//     padding: 0 !important;
+// }
+
+// .main-view {
+//     display: flex;
+//     flex-wrap:wrap;
+//     column-gap: var(--u2);
+//     row-gap: var(--u2);
+//     padding-top: var(--u3);
+//     justify-content: center;
+//     align-items: center;
+// }
+
+// // .landingPage {
+// //     display: flex;
+// //     flex-wrap:wrap;
+// //     justify-content: center;
+// //     align-items: stretch;
+// //     gap: var(--u3);
+// //     margin-top: 6.4rem;
+// //     background-image: url(../img/cinema.jpg);
+// //     background-size: 100%;
+// //     background-repeat: no-repeat;
+// // }
+
+// .btn-outline-primary,
+// .btn-link {
+//     color: var(--yellow);
+//     border: 1px solid var(--yellow);
+//     // justify-self: flex-end;
+
+//     &:hover,
+//     &:focus,
+//     &:active {
+//         background-color: var(--yellow);
+//         color: var(--background);
+//         border: 1px solid var(--yellow);
+//     }
+// }
+
+// .cinema {
+//     width: 100%;
+//     height: auto;
+//     position: relative;
+//     top: 0;
+//     left: 0;
+// z-index: 1000;
+// }
+
+// .btn-create-account {
+//     color: var(--yellow) !important;
+//     border: 1px solid var(--yellow) !important;
+//     background-color: var(--background) !important;
+//     // justify-self: flex-end;
+
+//     &:hover,
+//     &:focus,
+//     &:active {
+//         background-color: var(--yellow)!important;
+//         color: var(--background)!important;
+//         border: 1px solid var(--yellow)!important;
+//     }
+// }
