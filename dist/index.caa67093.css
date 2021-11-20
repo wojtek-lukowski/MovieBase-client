@@ -32,18 +32,6 @@ body {
   background-color: var(--background-dark);
 }
 
-.btn {
-  background-color: var(--yellow);
-  border: 1px solid var(--yellow);
-  color: var(--background);
-  margin-top: var(--u2);
-}
-.btn:hover, .btn:focus, .btn:active {
-  background-color: var(--background);
-  border: 1px solid var(--yellow);
-  color: var(--yellow);
-}
-
 .movies-list {
   background-color: lime;
 }
@@ -65,26 +53,13 @@ body {
   background-color: var(--background-dark);
 }
 
-header {
-  position: fixed;
-  top: 0;
-  background-color: var(--background);
-  color: var(--yellow);
-  padding: var(--u3) var(--u5);
-}
-
-.log-out {
-  display: flex;
-  justify-content: right;
-}
-
 .col-md-3 {
   padding: 0 !important;
 }
 
 .row,
 .main-view {
-  display: flex;
+  display: fle !important;
   flex-wrap: wrap;
   column-gap: var(--u2);
   row-gap: var(--u2);
@@ -102,35 +77,28 @@ header {
   display: flex;
 }
 
-.btn-outline-primary,
-.btn-link {
+a {
+  display: inline-block;
+  margin: var(--u);
   color: var(--yellow);
   border: 1px solid var(--yellow);
 }
-.btn-outline-primary:hover, .btn-outline-primary:focus, .btn-outline-primary:active,
-.btn-link:hover,
-.btn-link:focus,
-.btn-link:active {
+a:hover, a:focus, a:active {
   background-color: var(--yellow);
   color: var(--background);
   border: 1px solid var(--yellow);
 }
 
-.cinema {
-  width: 100%;
-  height: auto;
-  position: relative;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-}
-
-.btn-create-account {
+a,
+.button-primary {
   color: var(--yellow) !important;
   border: 1px solid var(--yellow) !important;
   background-color: var(--background) !important;
 }
-.btn-create-account:hover, .btn-create-account:focus, .btn-create-account:active {
+a:hover, a:focus, a:active,
+.button-primary:hover,
+.button-primary:focus,
+.button-primary:active {
   background-color: var(--yellow) !important;
   color: var(--background) !important;
   border: 1px solid var(--yellow) !important;
@@ -150,12 +118,6 @@ header {
 .card .title {
   font-size: 1.8rem;
   text-align: center;
-}
-.card .card-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-content: space-between;
 }
 .card a {
   color: var(--yellow);
@@ -264,18 +226,6 @@ body {
   background-color: var(--background-dark);
 }
 
-.btn {
-  background-color: var(--yellow);
-  border: 1px solid var(--yellow);
-  color: var(--background);
-  margin-top: var(--u2);
-}
-.btn:hover, .btn:focus, .btn:active {
-  background-color: var(--background);
-  border: 1px solid var(--yellow);
-  color: var(--yellow);
-}
-
 .movies-list {
   background-color: lime;
 }
@@ -297,26 +247,13 @@ body {
   background-color: var(--background-dark);
 }
 
-header {
-  position: fixed;
-  top: 0;
-  background-color: var(--background);
-  color: var(--yellow);
-  padding: var(--u3) var(--u5);
-}
-
-.log-out {
-  display: flex;
-  justify-content: right;
-}
-
 .col-md-3 {
   padding: 0 !important;
 }
 
 .row,
 .main-view {
-  display: flex;
+  display: fle !important;
   flex-wrap: wrap;
   column-gap: var(--u2);
   row-gap: var(--u2);
@@ -334,35 +271,28 @@ header {
   display: flex;
 }
 
-.btn-outline-primary,
-.btn-link {
+a {
+  display: inline-block;
+  margin: var(--u);
   color: var(--yellow);
   border: 1px solid var(--yellow);
 }
-.btn-outline-primary:hover, .btn-outline-primary:focus, .btn-outline-primary:active,
-.btn-link:hover,
-.btn-link:focus,
-.btn-link:active {
+a:hover, a:focus, a:active {
   background-color: var(--yellow);
   color: var(--background);
   border: 1px solid var(--yellow);
 }
 
-.cinema {
-  width: 100%;
-  height: auto;
-  position: relative;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-}
-
-.btn-create-account {
+a,
+.button-primary {
   color: var(--yellow) !important;
   border: 1px solid var(--yellow) !important;
   background-color: var(--background) !important;
 }
-.btn-create-account:hover, .btn-create-account:focus, .btn-create-account:active {
+a:hover, a:focus, a:active,
+.button-primary:hover,
+.button-primary:focus,
+.button-primary:active {
   background-color: var(--yellow) !important;
   color: var(--background) !important;
   border: 1px solid var(--yellow) !important;
@@ -382,12 +312,6 @@ header {
 .card .title {
   font-size: 1.8rem;
   text-align: center;
-}
-.card .card-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-content: space-between;
 }
 .card a {
   color: var(--yellow);
@@ -436,26 +360,13 @@ body {
   background-color: var(--background-dark);
 }
 
-header {
-  position: fixed;
-  top: 0;
-  background-color: var(--background);
-  color: var(--yellow);
-  padding: var(--u3) var(--u5);
-}
-
-.log-out {
-  display: flex;
-  justify-content: right;
-}
-
 .col-md-3 {
   padding: 0 !important;
 }
 
 .row,
 .main-view {
-  display: flex;
+  display: fle !important;
   flex-wrap: wrap;
   column-gap: var(--u2);
   row-gap: var(--u2);
@@ -473,35 +384,28 @@ header {
   display: flex;
 }
 
-.btn-outline-primary,
-.btn-link {
+a {
+  display: inline-block;
+  margin: var(--u);
   color: var(--yellow);
   border: 1px solid var(--yellow);
 }
-.btn-outline-primary:hover, .btn-outline-primary:focus, .btn-outline-primary:active,
-.btn-link:hover,
-.btn-link:focus,
-.btn-link:active {
+a:hover, a:focus, a:active {
   background-color: var(--yellow);
   color: var(--background);
   border: 1px solid var(--yellow);
 }
 
-.cinema {
-  width: 100%;
-  height: auto;
-  position: relative;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-}
-
-.btn-create-account {
+a,
+.button-primary {
   color: var(--yellow) !important;
   border: 1px solid var(--yellow) !important;
   background-color: var(--background) !important;
 }
-.btn-create-account:hover, .btn-create-account:focus, .btn-create-account:active {
+a:hover, a:focus, a:active,
+.button-primary:hover,
+.button-primary:focus,
+.button-primary:active {
   background-color: var(--yellow) !important;
   color: var(--background) !important;
   border: 1px solid var(--yellow) !important;
@@ -595,18 +499,6 @@ body {
   background-color: var(--background-dark);
 }
 
-.btn {
-  background-color: var(--yellow);
-  border: 1px solid var(--yellow);
-  color: var(--background);
-  margin-top: var(--u2);
-}
-.btn:hover, .btn:focus, .btn:active {
-  background-color: var(--background);
-  border: 1px solid var(--yellow);
-  color: var(--yellow);
-}
-
 .movies-list {
   background-color: lime;
 }
@@ -628,26 +520,13 @@ body {
   background-color: var(--background-dark);
 }
 
-header {
-  position: fixed;
-  top: 0;
-  background-color: var(--background);
-  color: var(--yellow);
-  padding: var(--u3) var(--u5);
-}
-
-.log-out {
-  display: flex;
-  justify-content: right;
-}
-
 .col-md-3 {
   padding: 0 !important;
 }
 
 .row,
 .main-view {
-  display: flex;
+  display: fle !important;
   flex-wrap: wrap;
   column-gap: var(--u2);
   row-gap: var(--u2);
@@ -665,35 +544,28 @@ header {
   display: flex;
 }
 
-.btn-outline-primary,
-.btn-link {
+a {
+  display: inline-block;
+  margin: var(--u);
   color: var(--yellow);
   border: 1px solid var(--yellow);
 }
-.btn-outline-primary:hover, .btn-outline-primary:focus, .btn-outline-primary:active,
-.btn-link:hover,
-.btn-link:focus,
-.btn-link:active {
+a:hover, a:focus, a:active {
   background-color: var(--yellow);
   color: var(--background);
   border: 1px solid var(--yellow);
 }
 
-.cinema {
-  width: 100%;
-  height: auto;
-  position: relative;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-}
-
-.btn-create-account {
+a,
+.button-primary {
   color: var(--yellow) !important;
   border: 1px solid var(--yellow) !important;
   background-color: var(--background) !important;
 }
-.btn-create-account:hover, .btn-create-account:focus, .btn-create-account:active {
+a:hover, a:focus, a:active,
+.button-primary:hover,
+.button-primary:focus,
+.button-primary:active {
   background-color: var(--yellow) !important;
   color: var(--background) !important;
   border: 1px solid var(--yellow) !important;
@@ -713,12 +585,6 @@ header {
 .card .title {
   font-size: 1.8rem;
   text-align: center;
-}
-.card .card-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-content: space-between;
 }
 .card a {
   color: var(--yellow);
@@ -822,14 +688,29 @@ header {
   width: 60%;
   margin: var(--u3) auto;
 }
-.header {
+.page-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  max-width: var(--page);
   background-color: var(--background);
   border: 1px solid var(--yellow);
   border-radius: 3px;
-  padding: var(--u2);
+  padding: var(--u4);
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center !important;
+}
+
+.header-logo svg {
+  width: 5rem;
+  height: auto;
+}
+
+.header-welcome {
+  color: var(--yellow);
 }
 
 .header-profile {

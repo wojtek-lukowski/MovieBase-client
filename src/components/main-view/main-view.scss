@@ -15,18 +15,22 @@ body {
 background-color: var(--background-dark);
 }
 
-header {
-    position: fixed;
-    top: 0;
-    background-color: var(--background);
-    color: var(--yellow);
-    padding: var(--u3) var(--u5);
-}
+// .page-header {
+//     position: fixed;
+//     top: 0;
+//     left: 0;
+//     right: 0;
+// z-index: 1;
+//     max-width: var(--page);
+//     background-color: var(--background);
+//     color: var(--yellow);
+//     padding: var(--u3) var(--u5);
+// }
 
-.log-out {
-    display: flex;
-    justify-content: right;
-}
+// .log-out {
+//     display: flex;
+//     justify-content: right;
+// }
 
 .col-md-3 {
     padding: 0 !important;
@@ -34,7 +38,7 @@ header {
 
 .row,
 .main-view {
-    display: flex;
+    display: fle !important;
     flex-wrap:wrap;
     column-gap: var(--u2);
     row-gap: var(--u2);
@@ -64,8 +68,9 @@ header {
 //     background-repeat: no-repeat;
 // }
 
-.btn-outline-primary,
-.btn-link {
+a {
+  display: inline-block;
+  margin: var(--u);
     color: var(--yellow);
     border: 1px solid var(--yellow);
     // justify-self: flex-end;
@@ -79,16 +84,16 @@ header {
     }
 }
 
-.cinema {
-    width: 100%;
-    height: auto;
-    position: relative;
-    top: 0;
-    left: 0;
-z-index: 1000;
-}
-
-.btn-create-account {
+// .cinema {
+//     width: 100%;
+//     height: auto;
+//     position: relative;
+//     top: 0;
+//     left: 0;
+// z-index: 1000;
+// }
+a,
+.button-primary {
     color: var(--yellow) !important;
     border: 1px solid var(--yellow) !important;
     background-color: var(--background) !important;

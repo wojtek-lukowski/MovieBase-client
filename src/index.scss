@@ -33,20 +33,20 @@ body {
     background-color: var(--background-dark);
 }
 
-.btn {
-        background-color: var(--yellow);
-        border: 1px solid var(--yellow);
-        color: var(--background);
-        margin-top: var(--u2);
+// .btn {
+//         background-color: var(--yellow);
+//         border: 1px solid var(--yellow);
+//         color: var(--background);
+//         margin-top: var(--u2);
 
-        &:hover,
-        &:focus,
-        &:active {
-        background-color: var(--background);
-        border: 1px solid var(--yellow);
-        color: var(--yellow);
-        }
-}
+//         &:hover,
+//         &:focus,
+//         &:active {
+//         background-color: var(--background);
+//         border: 1px solid var(--yellow);
+//         color: var(--yellow);
+//         }
+// }
 
 .movies-list {
   background-color: lime;

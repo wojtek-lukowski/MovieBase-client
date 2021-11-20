@@ -24,8 +24,7 @@ export class MovieCard extends React.Component {
                     </div>
                 </Link>
                 <div className="movie-card-button">
-                    <Link to={`/movies/${movie._id}`}>
-                        <a className="button-primary">See more</a>
+                    <Link to={`/movies/${movie._id}`} className="button-primary">See more
                     </Link>
                 </div>
 

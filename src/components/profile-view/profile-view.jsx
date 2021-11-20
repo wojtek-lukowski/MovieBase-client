@@ -185,7 +185,7 @@ export class ProfileView extends React.Component {
 
         return (
             <div className="profile-view">
-                <Header onLoggedOut={this.onLoggedOut} />
+                <Header logOut={() => this.onLoggedOut()} />
                 <Button onClick={() => { onBackClick(); }} variant="outline-primary" className="button-back">Back</Button>
                 <h1>Hello, {this.state.Username}</h1>
                 <h1>Email: {this.state.Email}</h1>

@@ -88,10 +88,9 @@ export class MainView extends React.Component {
                 return (
                   <Col>
                     <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />
-                    <Link to={`/register`}>
-                      <a className="btn-create-account">
-                        Create Account
-                      </a>
+                    <Link to={`/register`}
+                      className="btn-create-account">
+                      Create Account
                     </Link>
                   </Col>
                 );
@@ -99,28 +98,7 @@ export class MainView extends React.Component {
                 return <div className="loading">Loading...</div>;
               return (
                 <div>
-                  <header>
-                    <div>
-                      {" "}
-                      <h4>
-                        Welcome, <span>{user}</span>
-                      </h4>
-                    </div>
-                    <div className="log-out">
-                      <Link to={`/user/${user}`}>
-                        <Button className="btn-log-out">Profile</Button>
-                      </Link>
-                    </div>
-                    <div className="log-out">
-                      <Button
-                        className="btn-log-out"
-                        onClick={() => this.onLoggedOut()}
-                      >
-                        {" "}
-                        Log out
-                      </Button>
-                    </div>
-                  </header>
+                  <Header user={user} logOut={() => this.onLoggedOut()} />
                   <MoviesList movies={movies} />;
                 </div>
               );

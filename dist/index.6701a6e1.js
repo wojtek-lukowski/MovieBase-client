@@ -23009,10 +23009,8 @@ class MainView extends _reactDefault.default.Component {
                                     }),
                                     /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
                                         to: `/register`,
-                                        children: /*#__PURE__*/ _jsxRuntime.jsx("a", {
-                                            className: "btn-create-account",
-                                            children: "Create Account"
-                                        })
+                                        className: "btn-create-account",
+                                        children: "Create Account"
                                     })
                                 ]
                             }));
@@ -23022,44 +23020,9 @@ class MainView extends _reactDefault.default.Component {
                             }));
                             return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
                                 children: [
-                                    /*#__PURE__*/ _jsxRuntime.jsxs("header", {
-                                        children: [
-                                            /*#__PURE__*/ _jsxRuntime.jsxs("div", {
-                                                children: [
-                                                    " ",
-                                                    /*#__PURE__*/ _jsxRuntime.jsxs("h4", {
-                                                        children: [
-                                                            "Welcome, ",
-                                                            /*#__PURE__*/ _jsxRuntime.jsx("span", {
-                                                                children: user
-                                                            })
-                                                        ]
-                                                    })
-                                                ]
-                                            }),
-                                            /*#__PURE__*/ _jsxRuntime.jsx("div", {
-                                                className: "log-out",
-                                                children: /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
-                                                    to: `/user/${user}`,
-                                                    children: /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
-                                                        className: "btn-log-out",
-                                                        children: "Profile"
-                                                    })
-                                                })
-                                            }),
-                                            /*#__PURE__*/ _jsxRuntime.jsx("div", {
-                                                className: "log-out",
-                                                children: /*#__PURE__*/ _jsxRuntime.jsxs(_buttonDefault.default, {
-                                                    className: "btn-log-out",
-                                                    onClick: ()=>this.onLoggedOut()
-                                                    ,
-                                                    children: [
-                                                        " ",
-                                                        "Log out"
-                                                    ]
-                                                })
-                                            })
-                                        ]
+                                    /*#__PURE__*/ _jsxRuntime.jsx(_header.Header, {
+                                        user: user,
+                                        logOut: ()=>this.onLoggedOut()
                                     }),
                                     /*#__PURE__*/ _jsxRuntime.jsx(_moviesListDefault.default, {
                                         movies: movies
@@ -23087,7 +23050,7 @@ class MainView extends _reactDefault.default.Component {
                         },
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 130
+                            lineNumber: 108
                         },
                         __self: this
                     }),
@@ -23113,7 +23076,7 @@ class MainView extends _reactDefault.default.Component {
                         },
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 142
+                            lineNumber: 120
                         },
                         __self: this
                     }),
@@ -23141,7 +23104,7 @@ class MainView extends _reactDefault.default.Component {
                         },
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 165
+                            lineNumber: 143
                         },
                         __self: this
                     }),
@@ -23169,7 +23132,7 @@ class MainView extends _reactDefault.default.Component {
                         },
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 188
+                            lineNumber: 166
                         },
                         __self: this
                     }),
@@ -23201,7 +23164,7 @@ class MainView extends _reactDefault.default.Component {
                         },
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 214
+                            lineNumber: 192
                         },
                         __self: this
                     })
@@ -23312,20 +23275,13 @@ class MovieCard extends _reactDefault.default.Component {
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
                         to: `/movies/${movie._id}`,
+                        className: "button-primary",
                         __source: {
                             fileName: "src/components/movie-card/movie-card.jsx",
                             lineNumber: 27
                         },
                         __self: this,
-                        children: /*#__PURE__*/ _jsxRuntime.jsx("a", {
-                            className: "button-primary",
-                            __source: {
-                                fileName: "src/components/movie-card/movie-card.jsx",
-                                lineNumber: 28
-                            },
-                            __self: this,
-                            children: "See more"
-                        })
+                        children: "See more"
                     })
                 })
             ]
@@ -31942,7 +31898,8 @@ class ProfileView extends _reactDefault.default.Component {
             __self: this,
             children: [
                 /*#__PURE__*/ _jsxRuntime.jsx(_header.Header, {
-                    onLoggedOut: this.onLoggedOut,
+                    logOut: ()=>this.onLoggedOut()
+                    ,
                     __source: {
                         fileName: "src/components/profile-view/profile-view.jsx",
                         lineNumber: 188
@@ -32233,9 +32190,9 @@ var _buttonDefault = parcelHelpers.interopDefault(_button);
 var _headerScss = require("./header.scss");
 class Header extends _reactDefault.default.Component {
     render() {
-        const { onLoggedOut , user  } = this.props;
+        const { logOut , user  } = this.props;
         return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
-            className: "header",
+            className: "page-header",
             __source: {
                 fileName: "src/components/header/header.jsx",
                 lineNumber: 15
@@ -32243,49 +32200,91 @@ class Header extends _reactDefault.default.Component {
             __self: this,
             children: [
                 /*#__PURE__*/ _jsxRuntime.jsx("div", {
-                    className: "header-profile ",
+                    className: "header-logo",
                     __source: {
                         fileName: "src/components/header/header.jsx",
                         lineNumber: 16
                     },
                     __self: this,
-                    children: /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
-                        to: `/user/${user}`,
+                    children: /*#__PURE__*/ _jsxRuntime.jsx("svg", {
+                        width: "24",
+                        height: "24",
+                        viewBox: "0 0 24 24",
+                        fill: "none",
+                        xmlns: "http://www.w3.org/2000/svg",
                         __source: {
                             fileName: "src/components/header/header.jsx",
                             lineNumber: 17
                         },
                         __self: this,
-                        children: /*#__PURE__*/ _jsxRuntime.jsx("button", {
-                            className: "button-primary",
+                        children: /*#__PURE__*/ _jsxRuntime.jsx("path", {
+                            "fill-rule": "evenodd",
+                            "clip-rule": "evenodd",
+                            d: "M6 3C5.20435 3 4.44129 3.31607 3.87868 3.87868C3.31607 4.44129 3 5.20435 3 6V18C3 18.7956 3.31607 19.5587 3.87868 20.1213C4.44129 20.6839 5.20435 21 6 21H18C18.7956 21 19.5587 20.6839 20.1213 20.1213C20.6839 19.5587 21 18.7956 21 18V6C21 5.20435 20.6839 4.44129 20.1213 3.87868C19.5587 3.31607 18.7956 3 18 3H6ZM5 6C5 5.73478 5.10536 5.48043 5.29289 5.29289C5.48043 5.10536 5.73478 5 6 5H7V7H5V6ZM19 6V7H17V5H18C18.2652 5 18.5196 5.10536 18.7071 5.29289C18.8946 5.48043 19 5.73478 19 6ZM17 11V9H19V11H17ZM17 15V13H19V15H17ZM18 19H17V17H19V18C19 18.2652 18.8946 18.5196 18.7071 18.7071C18.5196 18.8946 18.2652 19 18 19ZM5 18V17H7V19H6C5.73478 19 5.48043 18.8946 5.29289 18.7071C5.10536 18.5196 5 18.2652 5 18ZM7 15H5V13H7V15ZM7 11H5V9H7V11Z",
+                            fill: "#FFBF00",
                             __source: {
                                 fileName: "src/components/header/header.jsx",
                                 lineNumber: 18
                             },
-                            __self: this,
-                            children: "Profile"
+                            __self: this
                         })
                     })
                 }),
                 /*#__PURE__*/ _jsxRuntime.jsx("div", {
-                    className: "header-log-out",
+                    className: "header-welcome",
                     __source: {
                         fileName: "src/components/header/header.jsx",
                         lineNumber: 21
                     },
                     __self: this,
-                    children: /*#__PURE__*/ _jsxRuntime.jsx("button", {
-                        className: "button-primary",
-                        onClick: ()=>{
-                            onLoggedOut();
-                        },
+                    children: /*#__PURE__*/ _jsxRuntime.jsxs("h4", {
                         __source: {
                             fileName: "src/components/header/header.jsx",
                             lineNumber: 22
                         },
                         __self: this,
-                        children: " Log out"
+                        children: [
+                            "Welcome, ",
+                            /*#__PURE__*/ _jsxRuntime.jsx("span", {
+                                __source: {
+                                    fileName: "src/components/header/header.jsx",
+                                    lineNumber: 22
+                                },
+                                __self: this,
+                                children: user
+                            })
+                        ]
                     })
+                }),
+                /*#__PURE__*/ _jsxRuntime.jsxs("div", {
+                    className: "header-buttons",
+                    __source: {
+                        fileName: "src/components/header/header.jsx",
+                        lineNumber: 24
+                    },
+                    __self: this,
+                    children: [
+                        /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
+                            className: "button-primary",
+                            to: `/user/${user}`,
+                            __source: {
+                                fileName: "src/components/header/header.jsx",
+                                lineNumber: 25
+                            },
+                            __self: this,
+                            children: "Profile"
+                        }),
+                        /*#__PURE__*/ _jsxRuntime.jsx("a", {
+                            className: "button-primary",
+                            onClick: logOut,
+                            __source: {
+                                fileName: "src/components/header/header.jsx",
+                                lineNumber: 28
+                            },
+                            __self: this,
+                            children: "Log out"
+                        })
+                    ]
                 })
             ]
         }));
@@ -32297,7 +32296,7 @@ class Header extends _reactDefault.default.Component {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","axios":"iYoWk","react-router-dom":"cpyQW","react-bootstrap/Button":"9CzHT","./header.scss":"aGNZR","@parcel/transformer-js/src/esmodule-helpers.js":"5a8JZ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"hfTLj"}],"aGNZR":[function() {},{}],"kFs9Q":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","axios":"iYoWk","react-router-dom":"cpyQW","react-bootstrap/Button":"9CzHT","@parcel/transformer-js/src/esmodule-helpers.js":"5a8JZ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"hfTLj","./header.scss":"aGNZR"}],"aGNZR":[function() {},{}],"kFs9Q":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$2619 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;

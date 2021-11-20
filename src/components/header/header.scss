@@ -1,11 +1,27 @@
-.header {
-    background-color: var(--background);
-    border: 1px solid var(--yellow);
-    border-radius: 3px;
-    padding: var(--u2);
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center !important;
+.page-header {
+  position: fixed;
+  top: 0;left: 0;
+  right: 0;
+  z-index: 1;
+  max-width: var(--page);
+  background-color: var(--background);
+  border: 1px solid var(--yellow);
+  border-radius: 3px;
+  padding: var(--u4);
+  display: flex;
+  justify-content: space-between;
+  align-items: center !important;
+}
+
+.header-logo {
+  svg {
+    width: 5rem;
+    height: auto;
+  }
+}
+
+.header-welcome {
+  color: var(--yellow);
 }
 
 .header-profile {
