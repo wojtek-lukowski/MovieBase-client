@@ -27,8 +27,11 @@ html {
     box-sizing: border-box;
 }
 
+html {
+    margin-top: 14rem;
+}
+
 body {
-    margin: 2.4rem;
     font-size: 1.6rem;
     background-color: var(--background-dark);
 }

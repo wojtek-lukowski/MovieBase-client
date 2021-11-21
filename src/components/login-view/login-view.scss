@@ -1,19 +1,49 @@
-.loginView {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    // background-image: url("../img/cinema.jpg");
+.login-page {
+  height: 100vh;
+  background-image: url('../img/film.svg');
+  background-repeat: no-repeat;
+  background-size: 80%;
+  background-position: center;
+  object-fit: center;
+  display: flex;
+  align-content: center;
+
+a {
+  border: none;
+  margin: 0;
+
+  &:hover {
+    border: 1px solid var(--background) !important;
+  }
+}
+}
+
+.login-view {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  row-gap: var(--u5);
+  max-width: 25rem;
+  height: 50rem;
+  margin: auto;
+
+  p {
+    text-align: center;
+    font-size: 1.2rem;
+    justify-self: end;
+  }
 }
 
 .form {
-    background-color: var(--background);
-    color: var(--yellow);
-    border: 1px solid var(--yellow);
-    padding: var(--u2);
-    width: 25rem;
-    flex-shrink: 0;
-   margin-left: auto;
-   margin-right: auto;
+  background-color: var(--background);
+  color: var(--yellow);
+  border: 1px solid var(--yellow);
+  padding: var(--u2);
+  width: 25rem;
+  flex-shrink: 0;
+  margin-left: auto;
+  margin-right: auto;
     
     h2 {
         display: block;
@@ -28,7 +58,7 @@
     input {
         background-color: var(--background);
         border: 1px solid var(--yellow);
-        font-size: 1rem;
+        font-size: 1.2rem;
         display: block;
         color: var(--yellow);
 
@@ -36,31 +66,23 @@
             background-color: var(--yellow);
             color: var(--background);
         }
-    }
+
+      }
+      
+      button {
+        font-size: 1.6rem;
+        margin-top: var(--u3);
+        padding: var(--u) var(--u3);
+        width: 100%;
+      }
 
     .form-label {
-        font-size: .8rem;
+        font-size: 1rem;
         margin-bottom: var(--u0-5);
     }
     .form-button {
         text-align: right;
     }
-
-    .btn-outline-primary {
-        background-color: var(--yellow);
-        border: 1px solid var(--yellow);
-        color: var(--background);
-        margin-top: var(--u2);
-
-        &:hover,
-        &:focus,
-        &:active {
-        background-color: var(--background);
-        border: 1px solid var(--yellow);
-        color: var(--yellow);
-        }
-    }
 }
 
-
-@import "../../index.scss";
+// @import "../../index.scss";

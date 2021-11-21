@@ -26,8 +26,11 @@ html {
   box-sizing: border-box;
 }
 
+html {
+  margin-top: 14rem;
+}
+
 body {
-  margin: 2.4rem;
   font-size: 1.6rem;
   background-color: var(--background-dark);
 }
@@ -38,7 +41,6 @@ a {
 
 html {
   background-color: var(--background-dark);
-  margin-top: 200px;
 }
 
 a {
@@ -235,8 +237,11 @@ html {
   box-sizing: border-box;
 }
 
+html {
+  margin-top: 14rem;
+}
+
 body {
-  margin: 2.4rem;
   font-size: 1.6rem;
   background-color: var(--background-dark);
 }
@@ -247,7 +252,6 @@ a {
 
 html {
   background-color: var(--background-dark);
-  margin-top: 200px;
 }
 
 a {
@@ -375,7 +379,6 @@ a:hover, a:focus, a:active,
 
 html {
   background-color: var(--background-dark);
-  margin-top: 200px;
 }
 
 a {
@@ -459,12 +462,38 @@ a:hover, a:focus, a:active,
   border: 1px solid var(--yellow) !important;
 }
 
-.loginView {
+.login-page {
+  height: 100vh;
+  background-image: url("film.4cd2618b.svg");
+  background-repeat: no-repeat;
+  background-size: 80%;
+  background-position: center;
+  object-fit: center;
   display: flex;
+  align-content: center;
+}
+.login-page a {
+  border: none;
+  margin: 0;
+}
+.login-page a:hover {
+  border: 1px solid var(--background) !important;
+}
+.login-view {
+  display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
+  row-gap: var(--u5);
+  max-width: 25rem;
+  height: 50rem;
+  margin: auto;
 }
-
+.login-view p {
+  text-align: center;
+  font-size: 1.2rem;
+  justify-self: end;
+}
 .form {
   background-color: var(--background);
   color: var(--yellow);
@@ -486,7 +515,7 @@ a:hover, a:focus, a:active,
 .form input {
   background-color: var(--background);
   border: 1px solid var(--yellow);
-  font-size: 1rem;
+  font-size: 1.2rem;
   display: block;
   color: var(--yellow);
 }
@@ -494,189 +523,18 @@ a:hover, a:focus, a:active,
   background-color: var(--yellow);
   color: var(--background);
 }
+.form button {
+  font-size: 1.6rem;
+  margin-top: var(--u3);
+  padding: var(--u) var(--u3);
+  width: 100%;
+}
 .form .form-label {
-  font-size: 0.8rem;
+  font-size: 1rem;
   margin-bottom: var(--u0-5);
 }
 .form .form-button {
   text-align: right;
-}
-.form .btn-outline-primary {
-  background-color: var(--yellow);
-  border: 1px solid var(--yellow);
-  color: var(--background);
-  margin-top: var(--u2);
-}
-.form .btn-outline-primary:hover, .form .btn-outline-primary:focus, .form .btn-outline-primary:active {
-  background-color: var(--background);
-  border: 1px solid var(--yellow);
-  color: var(--yellow);
-}
-
-:root {
-  --yellow: #ffbf00;
-  --background-light: #404040;
-  --background: #272727;
-  --background-dark: #0F0F0F;
-  --black: #0000;
-  --u: 0.8rem;
-  --u0-5: calc(var(--u) * 0.5);
-  --u1-5: calc(var(--u) * 1.5);
-  --u2: calc(var(--u) * 2);
-  --u3: calc(var(--u) * 3);
-  --u4: calc(var(--u) * 4);
-  --u5: calc(var(--u) * 5);
-  --u6: calc(var(--u) * 6);
-  --u7: calc(var(--u) * 7);
-  --u8: calc(var(--u) * 8);
-  --u9: calc(var(--u) * 9);
-  --u10: calc(var(--u) * 10);
-}
-
-html {
-  font-size: 65.2% !important;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 2.4rem;
-  font-size: 1.6rem;
-  background-color: var(--background-dark);
-}
-
-a {
-  font-size: 1.6rem;
-}
-
-html {
-  background-color: var(--background-dark);
-  margin-top: 200px;
-}
-
-a {
-  color: var(--yellow);
-}
-
-body {
-  margin-top: 200px;
-}
-
-.app-container {
-  background-color: var(--background-dark);
-}
-
-.col-md-3 {
-  padding: 0 !important;
-}
-
-.movies {
-  max-width: var(--page);
-}
-
-.filter-section {
-  display: flex;
-  justify-content: center;
-  padding-bottom: 2rem;
-}
-
-.filter-input {
-  width: 30rem;
-}
-.filter-input input {
-  border: 1px solid var(--yellow);
-  background-color: var(--background);
-}
-.filter-input input:focus {
-  background-color: var(--yellow) !important;
-  color: var(--background) !important;
-  border: 1px solid var(--yellow);
-}
-
-.filtered-movies {
-  display: flex;
-  flex-wrap: wrap;
-  column-gap: var(--u2);
-  row-gap: var(--u2);
-  max-width: var(--page);
-  padding: var(--u3) 0;
-  justify-content: center;
-}
-
-input {
-  background-color: green;
-  width: 100%;
-}
-
-a {
-  display: inline-block;
-  margin: var(--u);
-  color: var(--yellow);
-  border: 1px solid var(--yellow);
-}
-a:hover, a:focus, a:active {
-  background-color: var(--yellow);
-  color: var(--background);
-  border: 1px solid var(--yellow);
-}
-
-a,
-.button-primary {
-  color: var(--yellow) !important;
-  border: 1px solid var(--yellow) !important;
-  background-color: var(--background) !important;
-}
-a:hover, a:focus, a:active,
-.button-primary:hover,
-.button-primary:focus,
-.button-primary:active {
-  background-color: var(--yellow) !important;
-  color: var(--background) !important;
-  border: 1px solid var(--yellow) !important;
-}
-
-.card {
-  display: inline-block;
-  background-color: var(--background) !important;
-  color: var(--yellow);
-  width: 30rem !important;
-  height: auto;
-  border: 1px solid var(--yellow);
-  padding: var(--u2);
-  border-radius: 3px;
-  height: auto;
-  flex: 0 !important;
-}
-.card .title {
-  font-size: 2rem;
-  text-align: center;
-}
-.card a {
-  color: var(--yellow);
-}
-.card a:hover {
-  color: var(--yellow);
-  text-decoration: none;
-}
-.card .movie-card-button {
-  display: flex;
-  justify-content: center;
-  padding-top: var(--u);
-}
-.card .text {
-  height: 5rem;
-  overflow-y: scroll;
-  font-size: 0.8rem;
-}
-.card .button-primary {
-  width: 50%;
-}
-
-.movie-card:hover {
-  border: 1px solid var(--yellow);
-  cursor: pointer;
 }
 .director-view {
   background-color: var(--background);

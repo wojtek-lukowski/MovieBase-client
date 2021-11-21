@@ -88,13 +88,16 @@ export class MainView extends React.Component {
             render={() => {
               if (!user)
                 return (
-                  <Col>
-                    <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />
-                    <Link to={`/register`}
-                      className="btn-create-account">
-                      Create Account
-                    </Link>
-                  </Col>
+                  <div className="login-page">
+                    <div className="login-view">
+                      <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />
+                      <Link to={`/register`}
+                        className="button-primary">
+                        Create Account
+                      </Link>
+                      <p>© 2021 Wojtek Lukowski</p>
+                    </div>
+                  </div>
                 );
               if (movies.length === 0)
                 return <div className="loading">Loading...</div>;

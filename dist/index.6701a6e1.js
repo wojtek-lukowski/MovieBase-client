@@ -23003,17 +23003,24 @@ class MainView extends _reactDefault.default.Component {
                         exact: true,
                         path: "/",
                         render: ()=>{
-                            if (!user) return(/*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
-                                children: [
-                                    /*#__PURE__*/ _jsxRuntime.jsx(_loginView.LoginView, {
-                                        onLoggedIn: (user1)=>this.onLoggedIn(user1)
-                                    }),
-                                    /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
-                                        to: `/register`,
-                                        className: "btn-create-account",
-                                        children: "Create Account"
-                                    })
-                                ]
+                            if (!user) return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
+                                className: "login-page",
+                                children: /*#__PURE__*/ _jsxRuntime.jsxs("div", {
+                                    className: "login-view",
+                                    children: [
+                                        /*#__PURE__*/ _jsxRuntime.jsx(_loginView.LoginView, {
+                                            onLoggedIn: (user1)=>this.onLoggedIn(user1)
+                                        }),
+                                        /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
+                                            to: `/register`,
+                                            className: "button-primary",
+                                            children: "Create Account"
+                                        }),
+                                        /*#__PURE__*/ _jsxRuntime.jsx("p", {
+                                            children: "\xa9 2021 Wojtek Lukowski"
+                                        })
+                                    ]
+                                })
                             }));
                             if (movies.length === 0) return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
                                 className: "loading",
@@ -23056,7 +23063,7 @@ class MainView extends _reactDefault.default.Component {
                         },
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 112
+                            lineNumber: 115
                         },
                         __self: this
                     }),
@@ -23082,7 +23089,7 @@ class MainView extends _reactDefault.default.Component {
                         },
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 124
+                            lineNumber: 127
                         },
                         __self: this
                     }),
@@ -23110,7 +23117,7 @@ class MainView extends _reactDefault.default.Component {
                         },
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 147
+                            lineNumber: 150
                         },
                         __self: this
                     }),
@@ -23138,7 +23145,7 @@ class MainView extends _reactDefault.default.Component {
                         },
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 170
+                            lineNumber: 173
                         },
                         __self: this
                     }),
@@ -23170,7 +23177,7 @@ class MainView extends _reactDefault.default.Component {
                         },
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 196
+                            lineNumber: 199
                         },
                         __self: this
                     })
@@ -31136,14 +31143,14 @@ function LoginView(props) {
         className: "form",
         __source: {
             fileName: "src/components/login-view/login-view.jsx",
-            lineNumber: 36
+            lineNumber: 35
         },
         __self: this,
         children: [
             /*#__PURE__*/ _jsxRuntime.jsx("h2", {
                 __source: {
                     fileName: "src/components/login-view/login-view.jsx",
-                    lineNumber: 37
+                    lineNumber: 36
                 },
                 __self: this,
                 children: "Log In"
@@ -31152,14 +31159,14 @@ function LoginView(props) {
                 controlId: "formUsername",
                 __source: {
                     fileName: "src/components/login-view/login-view.jsx",
-                    lineNumber: 38
+                    lineNumber: 37
                 },
                 __self: this,
                 children: [
                     /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Label, {
                         __source: {
                             fileName: "src/components/login-view/login-view.jsx",
-                            lineNumber: 39
+                            lineNumber: 38
                         },
                         __self: this,
                         children: "Username: "
@@ -31172,7 +31179,7 @@ function LoginView(props) {
                         placeholder: "Username",
                         __source: {
                             fileName: "src/components/login-view/login-view.jsx",
-                            lineNumber: 40
+                            lineNumber: 39
                         },
                         __self: this
                     })
@@ -31182,14 +31189,14 @@ function LoginView(props) {
                 controlId: "formPassword",
                 __source: {
                     fileName: "src/components/login-view/login-view.jsx",
-                    lineNumber: 42
+                    lineNumber: 41
                 },
                 __self: this,
                 children: [
                     /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Label, {
                         __source: {
                             fileName: "src/components/login-view/login-view.jsx",
-                            lineNumber: 43
+                            lineNumber: 42
                         },
                         __self: this,
                         children: "Password: "
@@ -31202,7 +31209,7 @@ function LoginView(props) {
                         placeholder: "Password",
                         __source: {
                             fileName: "src/components/login-view/login-view.jsx",
-                            lineNumber: 44
+                            lineNumber: 43
                         },
                         __self: this
                     })
@@ -31212,16 +31219,17 @@ function LoginView(props) {
                 className: "form-button",
                 __source: {
                     fileName: "src/components/login-view/login-view.jsx",
-                    lineNumber: 46
+                    lineNumber: 45
                 },
                 __self: this,
-                children: /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
+                children: /*#__PURE__*/ _jsxRuntime.jsx("button", {
                     variant: "outline-primary",
+                    className: "button-primary",
                     type: "submit",
                     onClick: handleSubmit,
                     __source: {
                         fileName: "src/components/login-view/login-view.jsx",
-                        lineNumber: 47
+                        lineNumber: 46
                     },
                     __self: this,
                     children: "Log in"
