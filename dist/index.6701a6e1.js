@@ -22931,6 +22931,7 @@ var _directorView = require("../director-view/director-view");
 var _genreView = require("../genre-view/genre-view");
 var _profileView = require("../profile-view/profile-view");
 var _header = require("../header/header");
+var _filter = require("../filter/filter");
 var _row = require("react-bootstrap/Row");
 var _rowDefault = parcelHelpers.interopDefault(_row);
 var _col = require("react-bootstrap/Col");
@@ -22987,14 +22988,14 @@ class MainView extends _reactDefault.default.Component {
         return(/*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.BrowserRouter, {
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 81
+                lineNumber: 82
             },
             __self: this,
-            children: /*#__PURE__*/ _jsxRuntime.jsxs(_rowDefault.default, {
+            children: /*#__PURE__*/ _jsxRuntime.jsxs("div", {
                 className: "main-view",
                 __source: {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 82
+                    lineNumber: 84
                 },
                 __self: this,
                 children: [
@@ -23024,16 +23025,21 @@ class MainView extends _reactDefault.default.Component {
                                         user: user,
                                         logOut: ()=>this.onLoggedOut()
                                     }),
-                                    /*#__PURE__*/ _jsxRuntime.jsx(_moviesListDefault.default, {
-                                        movies: movies
-                                    }),
-                                    ";"
+                                    /*#__PURE__*/ _jsxRuntime.jsxs("div", {
+                                        className: "movie-cards",
+                                        children: [
+                                            /*#__PURE__*/ _jsxRuntime.jsx(_moviesListDefault.default, {
+                                                movies: movies
+                                            }),
+                                            ";"
+                                        ]
+                                    })
                                 ]
                             }));
                         },
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 83
+                            lineNumber: 85
                         },
                         __self: this
                     }),
@@ -23050,7 +23056,7 @@ class MainView extends _reactDefault.default.Component {
                         },
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 108
+                            lineNumber: 112
                         },
                         __self: this
                     }),
@@ -23076,7 +23082,7 @@ class MainView extends _reactDefault.default.Component {
                         },
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 120
+                            lineNumber: 124
                         },
                         __self: this
                     }),
@@ -23104,7 +23110,7 @@ class MainView extends _reactDefault.default.Component {
                         },
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 143
+                            lineNumber: 147
                         },
                         __self: this
                     }),
@@ -23132,7 +23138,7 @@ class MainView extends _reactDefault.default.Component {
                         },
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 166
+                            lineNumber: 170
                         },
                         __self: this
                     }),
@@ -23164,7 +23170,7 @@ class MainView extends _reactDefault.default.Component {
                         },
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 192
+                            lineNumber: 196
                         },
                         __self: this
                     })
@@ -23187,7 +23193,7 @@ exports.default = _reactRedux.connect(mapStateToProps, {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","@parcel/transformer-js/src/esmodule-helpers.js":"5a8JZ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"hfTLj","../movie-card/movie-card":"6EiBJ","../movie-view/movie-view":"ikZdr","axios":"iYoWk","react-redux":"2L0if","react-router-dom":"cpyQW","../../actions/actions":"1Ttfj","../movies-list/movies-list":"1kGQ5","../registration-view/registration-view":"aP2YV","../login-view/login-view":"054li","../director-view/director-view":"ck15y","../genre-view/genre-view":"8WCoL","../profile-view/profile-view":"2E7Aw","../header/header":"3tyvj","react-bootstrap/Row":"c0x1x","react-bootstrap/Col":"fbam0","react-bootstrap/Button":"9CzHT"}],"6EiBJ":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","@parcel/transformer-js/src/esmodule-helpers.js":"5a8JZ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"hfTLj","../movie-card/movie-card":"6EiBJ","../movie-view/movie-view":"ikZdr","axios":"iYoWk","react-redux":"2L0if","react-router-dom":"cpyQW","../../actions/actions":"1Ttfj","../movies-list/movies-list":"1kGQ5","../registration-view/registration-view":"aP2YV","../login-view/login-view":"054li","../director-view/director-view":"ck15y","../genre-view/genre-view":"8WCoL","../profile-view/profile-view":"2E7Aw","../header/header":"3tyvj","react-bootstrap/Row":"c0x1x","react-bootstrap/Col":"fbam0","react-bootstrap/Button":"9CzHT","../filter/filter":"2BDMw"}],"6EiBJ":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$4249 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -23210,6 +23216,7 @@ var _card = require("react-bootstrap/Card");
 var _cardDefault = parcelHelpers.interopDefault(_card);
 var _row = require("react-bootstrap/Row");
 var _rowDefault = parcelHelpers.interopDefault(_row);
+// import Img from 'react-bootstrap';
 var _reactRouterDom = require("react-router-dom");
 class MovieCard extends _reactDefault.default.Component {
     render() {
@@ -23218,7 +23225,7 @@ class MovieCard extends _reactDefault.default.Component {
             className: "card",
             __source: {
                 fileName: "src/components/movie-card/movie-card.jsx",
-                lineNumber: 16
+                lineNumber: 17
             },
             __self: this,
             children: [
@@ -23226,14 +23233,14 @@ class MovieCard extends _reactDefault.default.Component {
                     to: `/movies/${movie._id}`,
                     __source: {
                         fileName: "src/components/movie-card/movie-card.jsx",
-                        lineNumber: 17
+                        lineNumber: 18
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsxs("div", {
                         className: "card-link",
                         __source: {
                             fileName: "src/components/movie-card/movie-card.jsx",
-                            lineNumber: 18
+                            lineNumber: 19
                         },
                         __self: this,
                         children: [
@@ -23241,7 +23248,7 @@ class MovieCard extends _reactDefault.default.Component {
                                 className: "card-img",
                                 __source: {
                                     fileName: "src/components/movie-card/movie-card.jsx",
-                                    lineNumber: 19
+                                    lineNumber: 20
                                 },
                                 __self: this,
                                 children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
@@ -23249,7 +23256,7 @@ class MovieCard extends _reactDefault.default.Component {
                                     alt: "",
                                     __source: {
                                         fileName: "src/components/movie-card/movie-card.jsx",
-                                        lineNumber: 20
+                                        lineNumber: 21
                                     },
                                     __self: this
                                 })
@@ -23258,7 +23265,7 @@ class MovieCard extends _reactDefault.default.Component {
                                 className: "title",
                                 __source: {
                                     fileName: "src/components/movie-card/movie-card.jsx",
-                                    lineNumber: 22
+                                    lineNumber: 23
                                 },
                                 __self: this,
                                 children: movie.Title
@@ -23270,7 +23277,7 @@ class MovieCard extends _reactDefault.default.Component {
                     className: "movie-card-button",
                     __source: {
                         fileName: "src/components/movie-card/movie-card.jsx",
-                        lineNumber: 26
+                        lineNumber: 27
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
@@ -23278,7 +23285,7 @@ class MovieCard extends _reactDefault.default.Component {
                         className: "button-primary",
                         __source: {
                             fileName: "src/components/movie-card/movie-card.jsx",
-                            lineNumber: 27
+                            lineNumber: 28
                         },
                         __self: this,
                         children: "See more"
@@ -30214,10 +30221,16 @@ function MoviesList(props) {
         __self: this,
         children: "No movies"
     }));
-    return(/*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
+    return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
+        className: "movies",
+        __source: {
+            fileName: "src/components/movies-list/movies-list.jsx",
+            lineNumber: 25
+        },
+        __self: this,
         children: [
             /*#__PURE__*/ _jsxRuntime.jsx("div", {
-                className: "filter",
+                className: "filter-section",
                 __source: {
                     fileName: "src/components/movies-list/movies-list.jsx",
                     lineNumber: 26
@@ -30232,22 +30245,30 @@ function MoviesList(props) {
                     __self: this
                 })
             }),
-            filteredMovies.map((m)=>/*#__PURE__*/ _jsxRuntime.jsx("div", {
-                    __source: {
-                        fileName: "src/components/movies-list/movies-list.jsx",
-                        lineNumber: 30
-                    },
-                    __self: this,
-                    children: /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
-                        movie: m,
+            /*#__PURE__*/ _jsxRuntime.jsx("div", {
+                className: "filtered-movies",
+                __source: {
+                    fileName: "src/components/movies-list/movies-list.jsx",
+                    lineNumber: 29
+                },
+                __self: this,
+                children: filteredMovies.map((m)=>/*#__PURE__*/ _jsxRuntime.jsx("div", {
                         __source: {
                             fileName: "src/components/movies-list/movies-list.jsx",
                             lineNumber: 31
                         },
-                        __self: this
-                    })
-                }, m._id)
-            )
+                        __self: this,
+                        children: /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
+                            movie: m,
+                            __source: {
+                                fileName: "src/components/movies-list/movies-list.jsx",
+                                lineNumber: 32
+                            },
+                            __self: this
+                        })
+                    }, m._id)
+                )
+            })
         ]
     }));
 }
@@ -30280,7 +30301,7 @@ var _actions = require("../../actions/actions");
 var _filterScss = require("./filter.scss");
 function VisibilityFilterInput(props) {
     return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
-        classname: "filter",
+        className: "filter-input",
         __source: {
             fileName: "src/components/filter/filter.jsx",
             lineNumber: 11
@@ -32206,27 +32227,35 @@ class Header extends _reactDefault.default.Component {
                         lineNumber: 16
                     },
                     __self: this,
-                    children: /*#__PURE__*/ _jsxRuntime.jsx("svg", {
-                        width: "24",
-                        height: "24",
-                        viewBox: "0 0 24 24",
-                        fill: "none",
-                        xmlns: "http://www.w3.org/2000/svg",
+                    children: /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
+                        to: "/",
                         __source: {
                             fileName: "src/components/header/header.jsx",
                             lineNumber: 17
                         },
                         __self: this,
-                        children: /*#__PURE__*/ _jsxRuntime.jsx("path", {
-                            "fill-rule": "evenodd",
-                            "clip-rule": "evenodd",
-                            d: "M6 3C5.20435 3 4.44129 3.31607 3.87868 3.87868C3.31607 4.44129 3 5.20435 3 6V18C3 18.7956 3.31607 19.5587 3.87868 20.1213C4.44129 20.6839 5.20435 21 6 21H18C18.7956 21 19.5587 20.6839 20.1213 20.1213C20.6839 19.5587 21 18.7956 21 18V6C21 5.20435 20.6839 4.44129 20.1213 3.87868C19.5587 3.31607 18.7956 3 18 3H6ZM5 6C5 5.73478 5.10536 5.48043 5.29289 5.29289C5.48043 5.10536 5.73478 5 6 5H7V7H5V6ZM19 6V7H17V5H18C18.2652 5 18.5196 5.10536 18.7071 5.29289C18.8946 5.48043 19 5.73478 19 6ZM17 11V9H19V11H17ZM17 15V13H19V15H17ZM18 19H17V17H19V18C19 18.2652 18.8946 18.5196 18.7071 18.7071C18.5196 18.8946 18.2652 19 18 19ZM5 18V17H7V19H6C5.73478 19 5.48043 18.8946 5.29289 18.7071C5.10536 18.5196 5 18.2652 5 18ZM7 15H5V13H7V15ZM7 11H5V9H7V11Z",
-                            fill: "#FFBF00",
+                        children: /*#__PURE__*/ _jsxRuntime.jsx("svg", {
+                            width: "24",
+                            height: "24",
+                            viewBox: "0 0 24 24",
+                            fill: "none",
+                            xmlns: "http://www.w3.org/2000/svg",
                             __source: {
                                 fileName: "src/components/header/header.jsx",
                                 lineNumber: 18
                             },
-                            __self: this
+                            __self: this,
+                            children: /*#__PURE__*/ _jsxRuntime.jsx("path", {
+                                "fill-rule": "evenodd",
+                                "clip-rule": "evenodd",
+                                d: "M6 3C5.20435 3 4.44129 3.31607 3.87868 3.87868C3.31607 4.44129 3 5.20435 3 6V18C3 18.7956 3.31607 19.5587 3.87868 20.1213C4.44129 20.6839 5.20435 21 6 21H18C18.7956 21 19.5587 20.6839 20.1213 20.1213C20.6839 19.5587 21 18.7956 21 18V6C21 5.20435 20.6839 4.44129 20.1213 3.87868C19.5587 3.31607 18.7956 3 18 3H6ZM5 6C5 5.73478 5.10536 5.48043 5.29289 5.29289C5.48043 5.10536 5.73478 5 6 5H7V7H5V6ZM19 6V7H17V5H18C18.2652 5 18.5196 5.10536 18.7071 5.29289C18.8946 5.48043 19 5.73478 19 6ZM17 11V9H19V11H17ZM17 15V13H19V15H17ZM18 19H17V17H19V18C19 18.2652 18.8946 18.5196 18.7071 18.7071C18.5196 18.8946 18.2652 19 18 19ZM5 18V17H7V19H6C5.73478 19 5.48043 18.8946 5.29289 18.7071C5.10536 18.5196 5 18.2652 5 18ZM7 15H5V13H7V15ZM7 11H5V9H7V11Z",
+                                fill: "#FFBF00",
+                                __source: {
+                                    fileName: "src/components/header/header.jsx",
+                                    lineNumber: 19
+                                },
+                                __self: this
+                            })
                         })
                     })
                 }),
@@ -32234,13 +32263,13 @@ class Header extends _reactDefault.default.Component {
                     className: "header-welcome",
                     __source: {
                         fileName: "src/components/header/header.jsx",
-                        lineNumber: 21
+                        lineNumber: 23
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsxs("h4", {
                         __source: {
                             fileName: "src/components/header/header.jsx",
-                            lineNumber: 22
+                            lineNumber: 24
                         },
                         __self: this,
                         children: [
@@ -32248,7 +32277,7 @@ class Header extends _reactDefault.default.Component {
                             /*#__PURE__*/ _jsxRuntime.jsx("span", {
                                 __source: {
                                     fileName: "src/components/header/header.jsx",
-                                    lineNumber: 22
+                                    lineNumber: 24
                                 },
                                 __self: this,
                                 children: user
@@ -32260,7 +32289,7 @@ class Header extends _reactDefault.default.Component {
                     className: "header-buttons",
                     __source: {
                         fileName: "src/components/header/header.jsx",
-                        lineNumber: 24
+                        lineNumber: 26
                     },
                     __self: this,
                     children: [
@@ -32269,7 +32298,7 @@ class Header extends _reactDefault.default.Component {
                             to: `/user/${user}`,
                             __source: {
                                 fileName: "src/components/header/header.jsx",
-                                lineNumber: 25
+                                lineNumber: 27
                             },
                             __self: this,
                             children: "Profile"
@@ -32279,7 +32308,7 @@ class Header extends _reactDefault.default.Component {
                             onClick: logOut,
                             __source: {
                                 fileName: "src/components/header/header.jsx",
-                                lineNumber: 28
+                                lineNumber: 30
                             },
                             __self: this,
                             children: "Log out"

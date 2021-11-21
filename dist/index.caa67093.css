@@ -32,10 +32,6 @@ body {
   background-color: var(--background-dark);
 }
 
-.movies-list {
-  background-color: lime;
-}
-
 html {
   background-color: var(--background-dark);
   margin-top: 200px;
@@ -57,24 +53,37 @@ body {
   padding: 0 !important;
 }
 
-.row,
-.main-view {
-  display: fle !important;
+.movies {
+  max-width: var(--page);
+}
+
+.filter-section {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 2rem;
+}
+
+.filter-input {
+  width: 30rem;
+}
+.filter-input input {
+  border: 1px solid var(--yellow);
+  background-color: var(--background);
+}
+
+.filtered-movies {
+  display: flex;
   flex-wrap: wrap;
   column-gap: var(--u2);
   row-gap: var(--u2);
-  padding-top: var(--u3);
+  max-width: var(--page);
+  padding: var(--u3) 0;
   justify-content: center;
-  align-items: center;
 }
 
-.filter {
-  background-color: lime;
-}
-
-.movies-list {
-  background-color: orangered;
-  display: flex;
+input {
+  background-color: green;
+  width: 100%;
 }
 
 a {
@@ -226,10 +235,6 @@ body {
   background-color: var(--background-dark);
 }
 
-.movies-list {
-  background-color: lime;
-}
-
 html {
   background-color: var(--background-dark);
   margin-top: 200px;
@@ -251,24 +256,37 @@ body {
   padding: 0 !important;
 }
 
-.row,
-.main-view {
-  display: fle !important;
+.movies {
+  max-width: var(--page);
+}
+
+.filter-section {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 2rem;
+}
+
+.filter-input {
+  width: 30rem;
+}
+.filter-input input {
+  border: 1px solid var(--yellow);
+  background-color: var(--background);
+}
+
+.filtered-movies {
+  display: flex;
   flex-wrap: wrap;
   column-gap: var(--u2);
   row-gap: var(--u2);
-  padding-top: var(--u3);
+  max-width: var(--page);
+  padding: var(--u3) 0;
   justify-content: center;
-  align-items: center;
 }
 
-.filter {
-  background-color: lime;
-}
-
-.movies-list {
-  background-color: orangered;
-  display: flex;
+input {
+  background-color: green;
+  width: 100%;
 }
 
 a {
@@ -364,24 +382,37 @@ body {
   padding: 0 !important;
 }
 
-.row,
-.main-view {
-  display: fle !important;
+.movies {
+  max-width: var(--page);
+}
+
+.filter-section {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 2rem;
+}
+
+.filter-input {
+  width: 30rem;
+}
+.filter-input input {
+  border: 1px solid var(--yellow);
+  background-color: var(--background);
+}
+
+.filtered-movies {
+  display: flex;
   flex-wrap: wrap;
   column-gap: var(--u2);
   row-gap: var(--u2);
-  padding-top: var(--u3);
+  max-width: var(--page);
+  padding: var(--u3) 0;
   justify-content: center;
-  align-items: center;
 }
 
-.filter {
-  background-color: lime;
-}
-
-.movies-list {
-  background-color: orangered;
-  display: flex;
+input {
+  background-color: green;
+  width: 100%;
 }
 
 a {
@@ -499,10 +530,6 @@ body {
   background-color: var(--background-dark);
 }
 
-.movies-list {
-  background-color: lime;
-}
-
 html {
   background-color: var(--background-dark);
   margin-top: 200px;
@@ -524,24 +551,37 @@ body {
   padding: 0 !important;
 }
 
-.row,
-.main-view {
-  display: fle !important;
+.movies {
+  max-width: var(--page);
+}
+
+.filter-section {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 2rem;
+}
+
+.filter-input {
+  width: 30rem;
+}
+.filter-input input {
+  border: 1px solid var(--yellow);
+  background-color: var(--background);
+}
+
+.filtered-movies {
+  display: flex;
   flex-wrap: wrap;
   column-gap: var(--u2);
   row-gap: var(--u2);
-  padding-top: var(--u3);
+  max-width: var(--page);
+  padding: var(--u3) 0;
   justify-content: center;
-  align-items: center;
 }
 
-.filter {
-  background-color: lime;
-}
-
-.movies-list {
-  background-color: orangered;
-  display: flex;
+input {
+  background-color: green;
+  width: 100%;
 }
 
 a {
@@ -695,18 +735,27 @@ a:hover, a:focus, a:active,
   right: 0;
   z-index: 1;
   max-width: var(--page);
+  height: 10rem;
   background-color: var(--background);
   border: 1px solid var(--yellow);
   border-radius: 3px;
-  padding: var(--u4);
+  padding: var(--u) var(--u4);
   display: flex;
   justify-content: space-between;
   align-items: center !important;
 }
 
 .header-logo svg {
-  width: 5rem;
+  width: 7rem;
   height: auto;
+  padding: 0;
+}
+.header-logo a {
+  border: none !important;
+}
+.header-logo a:hover {
+  background-color: transparent !important;
+  transform: rotate(90deg) !important;
 }
 
 .header-welcome {

@@ -15,58 +15,52 @@ body {
 background-color: var(--background-dark);
 }
 
-// .page-header {
-//     position: fixed;
-//     top: 0;
-//     left: 0;
-//     right: 0;
-// z-index: 1;
-//     max-width: var(--page);
-//     background-color: var(--background);
-//     color: var(--yellow);
-//     padding: var(--u3) var(--u5);
-// }
-
-// .log-out {
-//     display: flex;
-//     justify-content: right;
-// }
-
 .col-md-3 {
     padding: 0 !important;
 }
 
-.row,
 .main-view {
-    display: fle !important;
-    flex-wrap:wrap;
-    column-gap: var(--u2);
-    row-gap: var(--u2);
-    padding-top: var(--u3);
-    justify-content: center;
-    align-items: center;
+    // display: flex !important;
+    // flex-wrap:wrap;
+    // column-gap: var(--u2);
+    // row-gap: var(--u2);
+    // padding-top: var(--u3);
+    // justify-content: center;
+    // align-items: center;
 }
 
-.filter {
-  background-color: lime;
+.movies {
+  max-width: var(--page);
 }
 
-.movies-list {
-  background-color: orangered;
+.filter-section {
   display: flex;
+  justify-content: center;
+  padding-bottom: 2rem;
 }
 
-// .landingPage {
-//     display: flex;
-//     flex-wrap:wrap;
-//     justify-content: center;
-//     align-items: stretch;
-//     gap: var(--u3);
-//     margin-top: 6.4rem;
-//     background-image: url(../img/cinema.jpg);
-//     background-size: 100%;
-//     background-repeat: no-repeat;
-// }
+.filter-input {
+  width: 30rem;
+    input {
+      border: 1px solid var(--yellow);
+      background-color: var(--background);
+    }
+}
+
+.filtered-movies {
+  display: flex;
+  flex-wrap:wrap;
+  column-gap: var(--u2);
+  row-gap: var(--u2);
+  max-width: var(--page);
+  padding: var(--u3) 0;
+  justify-content: center;
+}
+
+  input {
+    background-color: green;
+    width: 100%;
+  }
 
 a {
   display: inline-block;

@@ -18,6 +18,7 @@ import { DirectorView } from "../director-view/director-view";
 import { GenreView } from "../genre-view/genre-view";
 import { ProfileView } from "../profile-view/profile-view";
 import { Header } from "../header/header";
+import { VisibilityFilterInput } from "../filter/filter";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
@@ -79,7 +80,8 @@ export class MainView extends React.Component {
 
     return (
       <Router>
-        <Row className="main-view">
+        {/* <Row className="main-view"> */}
+        <div className="main-view">
           <Route
             exact
             path="/"
@@ -99,7 +101,9 @@ export class MainView extends React.Component {
               return (
                 <div>
                   <Header user={user} logOut={() => this.onLoggedOut()} />
-                  <MoviesList movies={movies} />;
+                  <div className="movie-cards">
+                    <MoviesList movies={movies} />;
+                  </div>
                 </div>
               );
             }}
@@ -227,7 +231,8 @@ export class MainView extends React.Component {
               <ActorView actor={movies.find(m => m.Actor.Name === match.params.name).Actor} onBackClick={() => history.goBack()} />
             </Col>
           }} /> */}
-        </Row>
+        </div>
+        {/* </Row> */}
       </Router>
     );
   }

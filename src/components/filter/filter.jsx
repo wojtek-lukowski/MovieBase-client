@@ -8,7 +8,7 @@ import { setFilter } from '../../actions/actions';
 import './filter.scss';
 
 function VisibilityFilterInput(props) {
-  return <div classname="filter">
+  return <div className="filter-input">
     <Form.Control
       onChange={e => props.setFilter(e.target.value)}
       value={props.visibilityFilter}

@@ -4,10 +4,11 @@
   right: 0;
   z-index: 1;
   max-width: var(--page);
+  height: 10rem;
   background-color: var(--background);
   border: 1px solid var(--yellow);
   border-radius: 3px;
-  padding: var(--u4);
+  padding: var(--u) var(--u4);
   display: flex;
   justify-content: space-between;
   align-items: center !important;
@@ -15,8 +16,16 @@
 
 .header-logo {
   svg {
-    width: 5rem;
+    width: 7rem;
     height: auto;
+    padding: 0;
+  }
+  a {
+    border: none !important;
+    &:hover {
+      background-color: transparent !important;
+      transform: rotate(90deg) !important;
+    }
   }
 }
 
