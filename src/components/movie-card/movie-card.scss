@@ -32,7 +32,7 @@ a:hover {
 .movie-card-button {
   display: flex;
   justify-content: center;
-  padding-top: var(--u);
+  padding-top: var(--u3);
 }
 
 .text {
@@ -45,21 +45,6 @@ a:hover {
     width: 50%;
 }
 
-    // .btn-outline-primary,
-    // .btn-link {
-    //     color: var(--yellow);
-    //     border: 1px solid var(--yellow);
-    //     // justify-self: flex-end;
-
-    //     &:hover,
-    //     &:focus,
-    //     &:active {
-    //         background-color: var(--yellow);
-    //         color: var(--background);
-    //         border: 1px solid var(--yellow);
-    //         text-decoration: none;
-    //     }
-    // }
 }
 
 .movie-card {

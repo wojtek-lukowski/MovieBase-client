@@ -52,24 +52,42 @@ export class FavMovie extends React.Component {
         console.log(movie);
 
         return (
-            <Card className="fav-movie-card">
+
+            <div className="card">
                 {/* <Link to={`/movies/${movie._id}`}> */}
-                {/* <Card.Img variant="top" className="card-img" src={require('../img/terminator.png')} /> */}
-                <Card.Img variant="top" className="card-img" src={movie.ImagePath} />
-                <Card.Body>
-                    <Card.Title>{movie.Title}</Card.Title>
-                    <Card.Text className="text">{movie.Description}</Card.Text>
-                    <Row>
-                        <Col className="fav-movie-buttons">
-                            <Button variant="link" onClick={() => { removeFav(movie._id), favRemoved(), location.reload() }}>Remove from favs</Button>
-                            <Link to={`/movies/${movie._id}`}>
-                                <Button variant="link">See more</Button>
-                            </Link>
-                        </Col>
-                    </Row>
-                </Card.Body>
+                <div className="card-link">
+                    <div className="card-img">
+                        <img src={movie.ImagePath} alt="movie poster" />
+                    </div>
+                    <div className="title">{movie.Title}</div>
+                    {/* <div className="text">{movie.Description}</div> */}
+                </div>
                 {/* </Link> */}
-            </Card >
+                <div className="movie-card-button">
+                    <button className="button-primary" onClick={() => { removeFav(movie._id), favRemoved(), location.reload() }}>Remove from favs</button>
+                    <Link to={`/movies/${movie._id}`} className="button-primary">See more
+                    </Link>
+                </div>
+
+            </div>
+            // <Card className="fav-movie-card">
+            //     {/* <Link to={`/movies/${movie._id}`}> */}
+            //     {/* <Card.Img variant="top" className="card-img" src={require('../img/terminator.png')} /> */}
+            //     <Card.Img variant="top" className="card-img" src={movie.ImagePath} />
+            //     <Card.Body>
+            //         <Card.Title>{movie.Title}</Card.Title>
+            //         <Card.Text className="text">{movie.Description}</Card.Text>
+            //         <Row>
+            //             <Col className="fav-movie-buttons">
+            //                 <Button variant="link" onClick={() => { removeFav(movie._id), favRemoved(), location.reload() }}>Remove from favs</Button>
+            //                 <Link to={`/movies/${movie._id}`}>
+            //                     <Button variant="link">See more</Button>
+            //                 </Link>
+            //             </Col>
+            //         </Row>
+            //     </Card.Body>
+            //     {/* </Link> */}
+            // </Card >
         );
     }
 }

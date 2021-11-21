@@ -1,7 +1,7 @@
 .profile-view {
     color: var(--yellow);
     background-color: var(--background-dark);
-    padding: var(--u4);
+    padding: 0 var(--u4);
     display: flex;
     flex-direction: column;
 }
@@ -15,15 +15,15 @@
     font-size: 1.6rem;
     margin: var(--u);
     padding: var(--u) var(--u3);
+    font-size: 1.6rem;
   }
-
-
 }
 
 .user {
     display: flex;
     background-color: var(--background);
     padding: var(--u2);
+    margin: 10rem 0 var(--u8);
 }
 
 .user-data {
@@ -64,6 +64,7 @@
 .user-update-button {
   margin-top: var(--u3);
   text-align: right;
+  font-size: 1.6rem;
 }
 
 }

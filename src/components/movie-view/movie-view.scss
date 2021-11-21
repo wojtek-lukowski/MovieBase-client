@@ -1,53 +1,124 @@
 .movie-view {
+    display: grid;
+    grid-template:
+    [row1-start] "image title" auto [row1-end]
+    [row2-start] "image description" auto [row2-end]
+    [row3-start] "image director-genre" auto [row3-end]
+    [row4-start] "image buttons" auto [row4-end]
+    / 30% 70%;
+
+    width: 100%;
+    background-color: var(--background);
+    color: var(--yellow);
+    font-size: 1.6rem;
+}
+
+.movie-img {
+    grid-area: image;
+    width: 200px;
+    height: 400px;
+}
+
+.movie-info {
+    padding: var(--u3);
+}
+
+.movie-title {
+    grid-area: title;
+    margin: var(--u3) 0;
+}
+
+.movie-description {
+    grid-area: description;
+    margin-bottom: var(--u2);
+}
+
+.director-genre {
+    grid-area: director-genre;
     display: flex;
-}
-
-.card-body {
-    flex: 0;
-
-    .button-back-container {
-        padding: 2rem 0 1rem;
-        display: flex;
-        justify-content: space-around;
-
-        .btn-outline-primary {
-            margin-top: var(--u1);
-            width: 30%;
-        }
-
-        button,
-        button:visited {
-            color: var(--yellow);
-        border: 1px solid var(--yellow);
-
-        &:hover,
-        &:focus,
-        &:active {
-            background-color: var(--yellow);
-            color: var(--background);
-            border: 1px solid var(--yellow);
-            text-decoration: none;
-        }
-    }
-}
-}
-
-.movie-details {
+    justify-content: space-evenly;
 
     span {
-            font-size: .8rem;
-            padding-right: .8rem;
+      font-size: 1.3rem;
+      padding-right: .5rem;
     }
-
+        
     .link {
-        font-weight: bold;
+      border: none !important;
 
         &:hover {
-            background-color: var(--yellow);
-            color: var(--background);
-            padding: 0 var(--u1);
-        }
+          background-color: var(--yellow);
+          color: var(--background);
+          padding: 0 var(--u1);
+          text-decoration: none;
+      }
     }
 }
+
+.movie-view-buttons {
+    grid-area: buttons;
+    display: flex;
+    justify-content: space-between;
+    margin-top: var(--u5);
+
+    button {
+        font-size: 1.6rem;
+        margin: var(--u);
+        padding: var(--u) var(--u3);
+        background-color: var(--background) !important;
+
+        &:hover {
+          background-color: var(--yellow) !important;
+          color: var(--background)!important;
+          cursor: pointer;
+        }
+
+    }
+}
+
+
+//     .button-back-container {
+//         padding: 2rem 0 1rem;
+//         display: flex;
+//         justify-content: space-around;
+
+//         .btn-outline-primary {
+//             margin-top: var(--u1);
+//             width: 30%;
+//         }
+
+//         button,
+//         button:visited {
+//             color: var(--yellow);
+//         border: 1px solid var(--yellow);
+
+//         &:hover,
+//         &:focus,
+//         &:active {
+//             background-color: var(--yellow);
+//             color: var(--background);
+//             border: 1px solid var(--yellow);
+//             text-decoration: none;
+//         }
+//     }
+// }
+
+// .movie-details {
+
+//     span {
+//             font-size: .8rem;
+//             padding-right: .8rem;
+//     }
+
+//     .link {
+//         font-weight: bold;
+
+//         &:hover {
+//             background-color: var(--yellow);
+//             color: var(--background);
+//             padding: 0 var(--u1);
+//         }
+//     }
+// }
 
 @import "../../index.scss";

@@ -53,6 +53,11 @@ body {
   margin-top: 200px;
 }
 
+.main-view {
+  display: flex;
+  justify-content: center;
+}
+
 .app-container {
   background-color: var(--background-dark);
 }
@@ -156,7 +161,7 @@ a:hover, a:focus, a:active,
 .card .movie-card-button {
   display: flex;
   justify-content: center;
-  padding-top: var(--u);
+  padding-top: var(--u3);
 }
 .card .text {
   height: 5rem;
@@ -172,47 +177,69 @@ a:hover, a:focus, a:active,
   cursor: pointer;
 }
 .movie-view {
-  display: flex;
-}
-
-.card-body {
-  flex: 0;
-}
-.card-body .button-back-container {
-  padding: 2rem 0 1rem;
-  display: flex;
-  justify-content: space-around;
-}
-.card-body .button-back-container .btn-outline-primary {
-  margin-top: var(--u1);
-  width: 30%;
-}
-.card-body .button-back-container button,
-.card-body .button-back-container button:visited {
+  display: grid;
+  grid-template: [row1-start] "image title" auto [row1-end] [row2-start] "image description" auto [row2-end] [row3-start] "image director-genre" auto [row3-end] [row4-start] "image buttons" auto [row4-end]/30% 70%;
+  width: 100%;
+  background-color: var(--background);
   color: var(--yellow);
-  border: 1px solid var(--yellow);
-}
-.card-body .button-back-container button:hover, .card-body .button-back-container button:focus, .card-body .button-back-container button:active,
-.card-body .button-back-container button:visited:hover,
-.card-body .button-back-container button:visited:focus,
-.card-body .button-back-container button:visited:active {
-  background-color: var(--yellow);
-  color: var(--background);
-  border: 1px solid var(--yellow);
-  text-decoration: none;
+  font-size: 1.6rem;
 }
 
-.movie-details span {
-  font-size: 0.8rem;
-  padding-right: 0.8rem;
+.movie-img {
+  grid-area: image;
+  width: 200px;
+  height: 400px;
 }
-.movie-details .link {
-  font-weight: bold;
+
+.movie-info {
+  padding: var(--u3);
 }
-.movie-details .link:hover {
+
+.movie-title {
+  grid-area: title;
+  margin: var(--u3) 0;
+}
+
+.movie-description {
+  grid-area: description;
+  margin-bottom: var(--u2);
+}
+
+.director-genre {
+  grid-area: director-genre;
+  display: flex;
+  justify-content: space-evenly;
+}
+.director-genre span {
+  font-size: 1.3rem;
+  padding-right: 0.5rem;
+}
+.director-genre .link {
+  border: none !important;
+}
+.director-genre .link:hover {
   background-color: var(--yellow);
   color: var(--background);
   padding: 0 var(--u1);
+  text-decoration: none;
+}
+
+.movie-view-buttons {
+  grid-area: buttons;
+  display: flex;
+  justify-content: space-between;
+  margin-top: var(--u5);
+}
+.movie-view-buttons button {
+  font-size: 1.6rem;
+  margin: var(--u);
+  padding: var(--u) var(--u3);
+  background-color: var(--background) !important;
+}
+.movie-view-buttons button:hover {
+  background-color: var(--yellow) !important;
+  color: var(--background) !important;
+  cursor: pointer;
 }
 
 :root {
@@ -270,6 +297,11 @@ body {
   margin-top: 200px;
 }
 
+.main-view {
+  display: flex;
+  justify-content: center;
+}
+
 .app-container {
   background-color: var(--background-dark);
 }
@@ -373,7 +405,7 @@ a:hover, a:focus, a:active,
 .card .movie-card-button {
   display: flex;
   justify-content: center;
-  padding-top: var(--u);
+  padding-top: var(--u3);
 }
 .card .text {
   height: 5rem;
@@ -399,6 +431,11 @@ a {
 
 body {
   margin-top: 200px;
+}
+
+.main-view {
+  display: flex;
+  justify-content: center;
 }
 
 .app-container {
@@ -610,7 +647,7 @@ a:hover, a:focus, a:active,
 .profile-view {
   color: var(--yellow);
   background-color: var(--background-dark);
-  padding: var(--u4);
+  padding: 0 var(--u4);
   display: flex;
   flex-direction: column;
 }
@@ -624,12 +661,14 @@ a:hover, a:focus, a:active,
   font-size: 1.6rem;
   margin: var(--u);
   padding: var(--u) var(--u3);
+  font-size: 1.6rem;
 }
 
 .user {
   display: flex;
   background-color: var(--background);
   padding: var(--u2);
+  margin: 10rem 0 var(--u8);
 }
 
 .user-data {
@@ -666,6 +705,7 @@ a:hover, a:focus, a:active,
 .user-update .user-update-button {
   margin-top: var(--u3);
   text-align: right;
+  font-size: 1.6rem;
 }
 .page-header {
   position: fixed;
