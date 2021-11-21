@@ -74,6 +74,11 @@ body {
   border: 1px solid var(--yellow);
   background-color: var(--background);
 }
+.filter-input input:focus {
+  background-color: var(--yellow) !important;
+  color: var(--background) !important;
+  border: 1px solid var(--yellow);
+}
 
 .filtered-movies {
   display: flex;
@@ -278,6 +283,11 @@ body {
   border: 1px solid var(--yellow);
   background-color: var(--background);
 }
+.filter-input input:focus {
+  background-color: var(--yellow) !important;
+  color: var(--background) !important;
+  border: 1px solid var(--yellow);
+}
 
 .filtered-movies {
   display: flex;
@@ -400,6 +410,11 @@ body {
 .filter-input input {
   border: 1px solid var(--yellow);
   background-color: var(--background);
+}
+.filter-input input:focus {
+  background-color: var(--yellow) !important;
+  color: var(--background) !important;
+  border: 1px solid var(--yellow);
 }
 
 .filtered-movies {
@@ -573,6 +588,11 @@ body {
 .filter-input input {
   border: 1px solid var(--yellow);
   background-color: var(--background);
+}
+.filter-input input:focus {
+  background-color: var(--yellow) !important;
+  color: var(--background) !important;
+  border: 1px solid var(--yellow);
 }
 
 .filtered-movies {
@@ -773,7 +793,7 @@ a:hover, a:focus, a:active,
   color: var(--yellow);
   border: 1px solid var(--yellow);
   background-color: var(--background);
-  padding: 0.75rem 1rem;
+  padding: 0.8rem 1.6rem;
   border-radius: 3px;
   text-align: center;
 }

@@ -20,9 +20,10 @@
     height: auto;
     padding: 0;
   }
-  
+
   a {
     border: none !important;
+
     &:hover {
       background-color: transparent !important;
       transform: rotate(90deg) !important;
@@ -42,7 +43,7 @@
     color: var(--yellow);
     border: 1px solid var(--yellow);
     background-color: var(--background);
-    padding: 0.75rem 1rem;
+    padding: 0.8rem 1.6rem;
     border-radius: 3px;
     text-align: center;
 
