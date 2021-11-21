@@ -4,6 +4,12 @@
     padding: var(--u2);
     display: flex;
     flex-direction: column;
+    font-size: 1.6rem;
+
+    button {
+        padding: var(--u) var(--u3);
+        width: 10rem;
+    }
 
 .director-bio,
 .director-birth,
@@ -36,22 +42,27 @@ justify-content: space-evenly;
     font-weight: bold;
 }
 
-button,
-        button:visited {
-            color: var(--yellow);
-        border: 1px solid var(--yellow);
-        width: 50%;
-        align-self: center;
+.button-centered {
+    display: flex;
+    justify-content: center;
+}
 
-        &:hover,
-        &:focus,
-        &:active {
-            background-color: var(--yellow);
-            color: var(--background);
-            border: 1px solid var(--yellow);
-            text-decoration: none;
-        }
-    }
+// button,
+//         button:visited {
+//             color: var(--yellow);
+//         border: 1px solid var(--yellow);
+//         width: 50%;
+//         align-self: center;
+
+//         &:hover,
+//         &:focus,
+//         &:active {
+//             background-color: var(--yellow);
+//             color: var(--background);
+//             border: 1px solid var(--yellow);
+//             text-decoration: none;
+//         }
+//     }
 
 }
 

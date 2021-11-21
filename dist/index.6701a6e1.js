@@ -31370,12 +31370,11 @@ class DirectorView extends _reactDefault.default.Component {
                         ]
                     })
                 }),
-                /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
+                /*#__PURE__*/ _jsxRuntime.jsx("button", {
+                    className: "button-primary",
                     onClick: ()=>{
                         onBackClick();
                     },
-                    variant: "outline-primary",
-                    className: "button-back",
                     __source: {
                         fileName: "src/components/director-view/director-view.jsx",
                         lineNumber: 34
@@ -31527,18 +31526,25 @@ class DirectorView extends _reactDefault.default.Component {
                         ]
                     })
                 }),
-                /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
-                    onClick: ()=>{
-                        onBackClick();
-                    },
-                    variant: "outline-primary",
-                    className: "button-back",
+                /*#__PURE__*/ _jsxRuntime.jsx("div", {
+                    className: "button-centered",
                     __source: {
                         fileName: "src/components/director-view/director-view.jsx",
-                        lineNumber: 60
+                        lineNumber: 61
                     },
                     __self: this,
-                    children: "Back"
+                    children: /*#__PURE__*/ _jsxRuntime.jsx("button", {
+                        className: "button-primary",
+                        onClick: ()=>{
+                            onBackClick();
+                        },
+                        __source: {
+                            fileName: "src/components/director-view/director-view.jsx",
+                            lineNumber: 62
+                        },
+                        __self: this,
+                        children: "Back"
+                    })
                 })
             ]
         }));
@@ -31559,7 +31565,7 @@ DirectorView.propTypes = {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap/Row":"c0x1x","react-bootstrap/Col":"fbam0","react-bootstrap/Card":"MoOk8","react-bootstrap/Button":"9CzHT","react-bootstrap/Image":"kKVYG","./director-view.scss":"hWS1b","react-router-dom":"cpyQW","../img/terminator.png":"59iuO","@parcel/transformer-js/src/esmodule-helpers.js":"5a8JZ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"hfTLj"}],"hWS1b":[function() {},{}],"8WCoL":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap/Row":"c0x1x","react-bootstrap/Col":"fbam0","react-bootstrap/Card":"MoOk8","react-bootstrap/Image":"kKVYG","./director-view.scss":"hWS1b","react-router-dom":"cpyQW","../img/terminator.png":"59iuO","@parcel/transformer-js/src/esmodule-helpers.js":"5a8JZ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"hfTLj","react-bootstrap/Button":"9CzHT"}],"hWS1b":[function() {},{}],"8WCoL":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$5f0a = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -31622,7 +31628,7 @@ class GenreView extends _reactDefault.default.Component {
         const { onBackClick , genre  } = this.props;
         const { Description , Movies  } = this.state;
         return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
-            className: "genre-view",
+            className: "director-view",
             __source: {
                 fileName: "src/components/genre-view/genre-view.jsx",
                 lineNumber: 50
@@ -31638,7 +31644,7 @@ class GenreView extends _reactDefault.default.Component {
                     children: genre.Name
                 }),
                 /*#__PURE__*/ _jsxRuntime.jsx("div", {
-                    className: "genre-description",
+                    className: "director-bio",
                     __source: {
                         fileName: "src/components/genre-view/genre-view.jsx",
                         lineNumber: 52
@@ -31647,7 +31653,7 @@ class GenreView extends _reactDefault.default.Component {
                     children: Description
                 }),
                 /*#__PURE__*/ _jsxRuntime.jsxs("div", {
-                    className: "genre-movies",
+                    className: "genre-movies-list",
                     __source: {
                         fileName: "src/components/genre-view/genre-view.jsx",
                         lineNumber: 53
@@ -31677,18 +31683,25 @@ class GenreView extends _reactDefault.default.Component {
                         )
                     ]
                 }),
-                /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
-                    onClick: ()=>{
-                        onBackClick();
-                    },
-                    variant: "outline-primary",
-                    className: "button-back",
+                /*#__PURE__*/ _jsxRuntime.jsx("div", {
+                    className: "button-centered",
                     __source: {
                         fileName: "src/components/genre-view/genre-view.jsx",
-                        lineNumber: 59
+                        lineNumber: 60
                     },
                     __self: this,
-                    children: "Back"
+                    children: /*#__PURE__*/ _jsxRuntime.jsx("button", {
+                        className: "button-primary",
+                        onClick: ()=>{
+                            onBackClick();
+                        },
+                        __source: {
+                            fileName: "src/components/genre-view/genre-view.jsx",
+                            lineNumber: 61
+                        },
+                        __self: this,
+                        children: "Back"
+                    })
                 })
             ]
         }));

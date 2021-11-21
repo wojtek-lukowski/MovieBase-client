@@ -47,17 +47,21 @@ export class GenreView extends React.Component {
         const { onBackClick, genre } = this.props;
         const { Description, Movies } = this.state;
         return (
-            <div className="genre-view">
+            <div className="director-view">
                 <h1>{genre.Name}</h1>
-                <div className="genre-description">{Description}</div>
-                <div className="genre-movies">
+                <div className="director-bio">{Description}</div>
+                <div className="genre-movies-list">
                     <div>Other {genre.Name} movies:</div>
                     {Movies.map((movieId) => (
                         <div>{movieId}</div>
                     ))}
                 </div>
-                <Button onClick={() => { onBackClick(); }} variant="outline-primary" className="button-back">Back</Button>
+
+                <div className="button-centered">
+                    <button className="button-primary" onClick={() => { onBackClick(); }}>Back</button>
+                </div>
             </div>
+
         );
     }
 }

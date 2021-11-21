@@ -187,11 +187,6 @@ a:hover, a:focus, a:active,
 .card .button-primary {
   width: 50%;
 }
-
-.movie-card:hover {
-  border: 1px solid var(--yellow);
-  cursor: pointer;
-}
 .movie-view {
   display: grid;
   grid-template: [row1-start] "image title" auto [row1-end] [row2-start] "image description" auto [row2-end] [row3-start] "image director-genre" auto [row3-end] [row4-start] "image buttons" auto [row4-end]/30% 70%;
@@ -448,11 +443,6 @@ a:hover, a:focus, a:active,
   width: 50%;
 }
 
-.movie-card:hover {
-  border: 1px solid var(--yellow);
-  cursor: pointer;
-}
-
 html {
   background-color: var(--background-dark);
 }
@@ -630,6 +620,11 @@ a:hover, a:focus, a:active,
   padding: var(--u2);
   display: flex;
   flex-direction: column;
+  font-size: 1.6rem;
+}
+.director-view button {
+  padding: var(--u) var(--u3);
+  width: 10rem;
 }
 .director-view .director-bio,
 .director-view .director-birth,
@@ -660,25 +655,12 @@ a:hover, a:focus, a:active,
   display: inline;
   font-weight: bold;
 }
-.director-view button,
-.director-view button:visited {
-  color: var(--yellow);
-  border: 1px solid var(--yellow);
-  width: 50%;
-  align-self: center;
+.director-view .button-centered {
+  display: flex;
+  justify-content: center;
 }
-.director-view button:hover, .director-view button:focus, .director-view button:active,
-.director-view button:visited:hover,
-.director-view button:visited:focus,
-.director-view button:visited:active {
-  background-color: var(--yellow);
-  color: var(--background);
-  border: 1px solid var(--yellow);
-  text-decoration: none;
-}
-.genre-view {
-  background-color: var(--background);
-  color: var(--yellow);
+.genre-movies-list {
+  margin: var(--u2) 0;
 }
 .profile-view {
   color: var(--yellow);
@@ -719,6 +701,7 @@ a:hover, a:focus, a:active,
   background-color: transparent;
   color: var(--danger-red);
   border: 1px solid var(--danger-red);
+  border-radius: 3px;
   margin-top: var(--u4);
   padding: var(--u1-5) var(--u3);
   font-size: 1.6rem;
