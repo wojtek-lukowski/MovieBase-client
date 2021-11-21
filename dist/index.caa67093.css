@@ -105,6 +105,7 @@ input {
 }
 
 a,
+.link,
 button {
   display: inline-block;
   margin: var(--u);
@@ -112,6 +113,9 @@ button {
   border: 1px solid var(--yellow);
 }
 a:hover, a:focus, a:active,
+.link:hover,
+.link:focus,
+.link:active,
 button:hover,
 button:focus,
 button:active {
@@ -162,6 +166,18 @@ a:hover, a:focus, a:active,
   display: flex;
   justify-content: center;
   padding-top: var(--u3);
+}
+.card .movie-card-button .link,
+.card .movie-card-button button {
+  margin: var(--u);
+  padding: var(--u) var(--u3);
+  font-size: 1.6rem;
+}
+.card .movie-card-button .link:hover,
+.card .movie-card-button button:hover {
+  background-color: var(--yellow);
+  color: var(--background);
+  padding: 0 var(--u1);
 }
 .card .text {
   height: 5rem;
@@ -349,6 +365,7 @@ input {
 }
 
 a,
+.link,
 button {
   display: inline-block;
   margin: var(--u);
@@ -356,6 +373,9 @@ button {
   border: 1px solid var(--yellow);
 }
 a:hover, a:focus, a:active,
+.link:hover,
+.link:focus,
+.link:active,
 button:hover,
 button:focus,
 button:active {
@@ -406,6 +426,18 @@ a:hover, a:focus, a:active,
   display: flex;
   justify-content: center;
   padding-top: var(--u3);
+}
+.card .movie-card-button .link,
+.card .movie-card-button button {
+  margin: var(--u);
+  padding: var(--u) var(--u3);
+  font-size: 1.6rem;
+}
+.card .movie-card-button .link:hover,
+.card .movie-card-button button:hover {
+  background-color: var(--yellow);
+  color: var(--background);
+  padding: 0 var(--u1);
 }
 .card .text {
   height: 5rem;
@@ -485,6 +517,7 @@ input {
 }
 
 a,
+.link,
 button {
   display: inline-block;
   margin: var(--u);
@@ -492,6 +525,9 @@ button {
   border: 1px solid var(--yellow);
 }
 a:hover, a:focus, a:active,
+.link:hover,
+.link:focus,
+.link:active,
 button:hover,
 button:focus,
 button:active {
@@ -658,7 +694,6 @@ a:hover, a:focus, a:active,
   margin-bottom: var(--u3);
 }
 .profile-buttons button {
-  font-size: 1.6rem;
   margin: var(--u);
   padding: var(--u) var(--u3);
   font-size: 1.6rem;
@@ -763,10 +798,5 @@ a:hover, a:focus, a:active,
 }
 .fav-movie-card {
   width: 25rem;
-}
-
-.fav-movie-buttons {
-  display: flex;
-  justify-content: space-between;
 }
 /*# sourceMappingURL=index.caa67093.css.map */

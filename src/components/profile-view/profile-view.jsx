@@ -87,34 +87,37 @@ export class ProfileView extends React.Component {
 
   editUser(e) {
     e.preventDefault();
-    const username = localStorage.getItem('user');
-    const token = localStorage.getItem('token');
+    const username = localStorage.getItem("user");
+    const token = localStorage.getItem("token");
 
-    axios.put(`https://moviebased.herokuapp.com/users/${username}`,
-      {
-        Username: this.state.Username,
-        Password: this.state.Password,
-        Email: this.state.Email,
-        Birthday: this.state.Birthday
-      },
-      {
-        headers: { Authorization: `Bearer ${token}` }
-      })
+    axios
+      .put(
+        `https://moviebased.herokuapp.com/users/${username}`,
+        {
+          Username: this.state.Username,
+          Password: this.state.Password,
+          Email: this.state.Email,
+          Birthday: this.state.Birthday,
+        },
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      )
       .then((response) => {
         this.setState({
           Username: response.data.Username,
           Password: response.data.Password,
           Email: response.data.Email,
-          Birthday: response.data.Birthday
+          Birthday: response.data.Birthday,
         });
-        localStorage.setItem('user', this.state.Username);
+        localStorage.setItem("user", this.state.Username);
         const data = response.data;
-        console.log('this.state.Username', this.state.Username);
+        console.log("this.state.Username", this.state.Username);
         alert(username + " has been updated!");
       })
       .catch(function (error) {
         console.log(error);
-      })
+      });
   }
 
   removeFromFavs(id) {

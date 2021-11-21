@@ -9,41 +9,8 @@ import { Link } from 'react-router-dom';
 import './fav-movie.scss'
 export class FavMovie extends React.Component {
 
-    // constructor() {
-    //     super();
-
-    //     this.state = {
-    //         Movies: [],
-    //         Description: null,
-    //         ImagePath: null
-    //     };
-    // }
-
-    // componentDidMount() {
-    //     const accessToken = localStorage.getItem('token');
-    //     this.getFavs(accessToken);
-    // }
-
-    // getFavs(token) {
-    //     const { movie } = this.props;
-    //     axios.get(`https://moviebased.herokuapp.com/movies/${movie._id}`, {
-    //         headers: { Authorization: `Bearer ${token}` }
-    //     })
-    //         .then(response => {
-    //             this.setState({
-    //                 Movies: response.data.movies,
-    //                 Description: response.data.Description,
-    //                 ImagePath: response.data.ImagePath
-    //             });
-    //         })
-    //         .catch(function (error) {
-    //             console.log(error);
-    //         });
-    // }
-
     render() {
         const { movie, removeFav, fav } = this.props;
-        // const { Movies, ImagePath, Description } = this.state;
 
         function favRemoved() {
             alert(`${movie.Title} has been removed.`)
@@ -64,7 +31,7 @@ export class FavMovie extends React.Component {
                 </div>
                 {/* </Link> */}
                 <div className="movie-card-button">
-                    <button className="button-primary" onClick={() => { removeFav(movie._id), favRemoved(), location.reload() }}>Remove from favs</button>
+                    <button className="button-primary" onClick={() => { removeFav(movie._id), favRemoved(), location.reload() }}>Remove</button>
                     <Link to={`/movies/${movie._id}`} className="button-primary">See more
                     </Link>
                 </div>
