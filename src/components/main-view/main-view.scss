@@ -57,12 +57,12 @@ background-color: var(--background-dark);
     width: 100%;
   }
 
-a {
+a,
+button {
   display: inline-block;
   margin: var(--u);
     color: var(--yellow);
     border: 1px solid var(--yellow);
-    // justify-self: flex-end;
 
     &:hover,
     &:focus,

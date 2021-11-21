@@ -4,6 +4,8 @@
   --background: #272727;
   --background-dark: #0F0F0F;
   --black: #0000;
+  --danger-red: #df4759;
+  --danger-red-hover: #FF0000;
   --u: 0.8rem;
   --u0-5: calc(var(--u) * 0.5);
   --u1-5: calc(var(--u) * 1.5);
@@ -97,13 +99,17 @@ input {
   width: 100%;
 }
 
-a {
+a,
+button {
   display: inline-block;
   margin: var(--u);
   color: var(--yellow);
   border: 1px solid var(--yellow);
 }
-a:hover, a:focus, a:active {
+a:hover, a:focus, a:active,
+button:hover,
+button:focus,
+button:active {
   background-color: var(--yellow);
   color: var(--background);
   border: 1px solid var(--yellow);
@@ -215,6 +221,8 @@ a:hover, a:focus, a:active,
   --background: #272727;
   --background-dark: #0F0F0F;
   --black: #0000;
+  --danger-red: #df4759;
+  --danger-red-hover: #FF0000;
   --u: 0.8rem;
   --u0-5: calc(var(--u) * 0.5);
   --u1-5: calc(var(--u) * 1.5);
@@ -308,13 +316,17 @@ input {
   width: 100%;
 }
 
-a {
+a,
+button {
   display: inline-block;
   margin: var(--u);
   color: var(--yellow);
   border: 1px solid var(--yellow);
 }
-a:hover, a:focus, a:active {
+a:hover, a:focus, a:active,
+button:hover,
+button:focus,
+button:active {
   background-color: var(--yellow);
   color: var(--background);
   border: 1px solid var(--yellow);
@@ -435,13 +447,17 @@ input {
   width: 100%;
 }
 
-a {
+a,
+button {
   display: inline-block;
   margin: var(--u);
   color: var(--yellow);
   border: 1px solid var(--yellow);
 }
-a:hover, a:focus, a:active {
+a:hover, a:focus, a:active,
+button:hover,
+button:focus,
+button:active {
   background-color: var(--yellow);
   color: var(--background);
   border: 1px solid var(--yellow);
@@ -595,18 +611,59 @@ a:hover, a:focus, a:active,
   color: var(--yellow);
   background-color: var(--background-dark);
   padding: var(--u4);
-}
-
-.favorite-movies {
   display: flex;
-  flex-wrap: wrap;
-  gap: var(--u2);
-  justify-content: space-around;
+  flex-direction: column;
 }
 
-.update-form {
-  width: 60%;
+.profile-buttons {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: var(--u3);
+}
+.profile-buttons button {
+  font-size: 1.6rem;
+  margin: var(--u);
+  padding: var(--u) var(--u3);
+}
+
+.user {
+  display: flex;
+  background-color: var(--background);
+  padding: var(--u2);
+}
+
+.user-data {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.user-data span {
+  font-size: 1.8rem;
+}
+
+.button-remove {
+  background-color: var(--danger-red);
+  color: var(--white);
+  border: none;
+  margin-top: var(--u4);
+  padding: var(--u1-5) var(--u3);
+  font-size: 1.6rem;
+}
+.button-remove:hover {
+  background-color: var(--danger-red-hover);
+  cursor: pointer;
+}
+
+.user-update {
+  width: 50%;
   margin: var(--u3) auto;
+}
+.user-update h2 {
+  margin-bottom: var(--u2);
+}
+.user-update .user-update-button {
+  margin-top: var(--u3);
+  text-align: right;
 }
 .page-header {
   position: fixed;

@@ -2,16 +2,66 @@
     color: var(--yellow);
     background-color: var(--background-dark);
     padding: var(--u4);
-}
-
-.favorite-movies {
     display: flex;
-    flex-wrap: wrap;
-    gap: var(--u2);
-    justify-content: space-around;
+    flex-direction: column;
 }
 
-.update-form {
-    width: 60%;
+.profile-buttons {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: var(--u3);
+  
+  button {
+    font-size: 1.6rem;
+    margin: var(--u);
+    padding: var(--u) var(--u3);
+  }
+
+
+}
+
+.user {
+    display: flex;
+    background-color: var(--background);
+    padding: var(--u2);
+}
+
+.user-data {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    span {
+      font-size: 1.8rem;
+    }
+}
+
+  .button-remove {
+    background-color: var(--danger-red);
+    color: var(--white);
+    border: none;
+    margin-top: var(--u4);
+    padding: var(--u1-5) var(--u3);
+    font-size: 1.6rem;
+
+    &:hover {
+      background-color: var(--danger-red-hover);
+      cursor: pointer;
+    }
+ }
+
+
+.user-update {
+    width: 50%;
     margin: var(--u3) auto;
+
+    h2 {
+        margin-bottom: var(--u2);
+    }
+
+.user-update-button {
+  margin-top: var(--u3);
+  text-align: right;
+}
+
 }

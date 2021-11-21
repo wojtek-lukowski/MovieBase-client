@@ -3,11 +3,7 @@ import './registration-view.scss';
 
 import { useState } from 'react';
 import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
 
 
 export function RegistrationView(props) {
@@ -37,7 +33,7 @@ export function RegistrationView(props) {
             .catch(e => {
                 console.log('Error registering the user')
             });
-    }
+    };
 
     const validate = (e) => {
         let isValid = true;
@@ -82,7 +78,7 @@ export function RegistrationView(props) {
                         type="password"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
-                        onInput={validate}
+                        onBlur={validate}
                         placeholder="Password"
                     ></Form.Control>
                 </Form.Group>
@@ -92,7 +88,7 @@ export function RegistrationView(props) {
                         type="email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
-                        onInput={validate}
+                        onBlur={validate}
                         placeholder="Email"
                     ></Form.Control>
                 </Form.Group>
@@ -102,7 +98,7 @@ export function RegistrationView(props) {
                         type="date"
                         value={birthday}
                         onChange={(e) => setBirthday(e.target.value)}
-                        onInput={validate}
+                        onBlur={validate}
                         placeholder="Birthday"
                     ></Form.Control>
                 </Form.Group>
@@ -115,12 +111,7 @@ export function RegistrationView(props) {
                     Create Account
                 </button>
             </Form>
-            {/* <div>
-                <Link to={`/`}>
-                    <a className="button-primary">Back to login</a>
-                </Link>
-            </div> */}
         </div>
     )
-};
+}
 
