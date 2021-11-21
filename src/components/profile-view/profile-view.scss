@@ -37,15 +37,17 @@
 }
 
   .button-remove {
-    background-color: var(--danger-red);
-    color: var(--white);
-    border: none;
+    background-color: transparent;
+    color: var(--danger-red);
+    border: 1px solid var(--danger-red);
     margin-top: var(--u4);
     padding: var(--u1-5) var(--u3);
     font-size: 1.6rem;
 
     &:hover {
-      background-color: var(--danger-red-hover);
+      background-color: var(--danger-red);
+      color: var(--white);
+      border: 1px solid var(--danger-red);
       cursor: pointer;
     }
  }
