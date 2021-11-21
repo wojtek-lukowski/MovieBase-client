@@ -473,7 +473,6 @@ a:hover, a:focus, a:active,
   align-content: center;
 }
 .login-page a {
-  border: none;
   margin: 0;
 }
 .login-page a:hover {

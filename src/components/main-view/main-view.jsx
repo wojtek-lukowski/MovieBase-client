@@ -117,9 +117,13 @@ export class MainView extends React.Component {
             render={() => {
               if (user) return <Redirect to="/" />;
               return (
-                <Col>
-                  <RegistrationView />
-                </Col>
+                <div className="login-page">
+                  <div className="login-view">
+                    <RegistrationView />
+                    <Link to={`/`} className="button-primary">Back to login
+                    </Link>
+                  </div>
+                </div>
               );
             }}
           />
@@ -236,7 +240,7 @@ export class MainView extends React.Component {
           }} /> */}
         </div>
         {/* </Row> */}
-      </Router>
+      </Router >
     );
   }
 }

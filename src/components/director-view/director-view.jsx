@@ -6,7 +6,6 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Image from 'react-bootstrap/Image';
 import './director-view.scss';
-import terminator from '../img/terminator.png';
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 

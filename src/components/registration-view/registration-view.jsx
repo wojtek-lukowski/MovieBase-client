@@ -62,67 +62,65 @@ export function RegistrationView(props) {
     };
 
     return (
-        <Row>
-            <Col>
-                <Form className="form">
-                    <h2>Create Account</h2>
-                    <Form.Group>
-                        <Form.Label>Username:</Form.Label>
-                        <Form.Control
-                            type="text"
-                            value={username}
-                            onChange={(e) => setUsername(e.target.value)}
-                            onBlur={validate}
-                            placeholder="Username"
-                        ></Form.Control>
-                        {usernameError && <p>{usernameError}</p>}
-                    </Form.Group>
-                    <Form.Group>
-                        <Form.Label>Password:</Form.Label>
-                        <Form.Control
-                            type="password"
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                            onInput={validate}
-                            placeholder="Password"
-                        ></Form.Control>
-                    </Form.Group>
-                    <Form.Group>
-                        <Form.Label>Email:</Form.Label>
-                        <Form.Control
-                            type="email"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                            onInput={validate}
-                            placeholder="Email"
-                        ></Form.Control>
-                    </Form.Group>
-                    <Form.Group>
-                        <Form.Label>Birthday:</Form.Label>
-                        <Form.Control
-                            type="date"
-                            value={birthday}
-                            onChange={(e) => setBirthday(e.target.value)}
-                            onInput={validate}
-                            placeholder="Birthday"
-                        ></Form.Control>
-                    </Form.Group>
+        <div>
+            <Form className="form">
+                <h2>Create Account</h2>
+                <Form.Group>
+                    <Form.Label>Username:</Form.Label>
+                    <Form.Control
+                        type="text"
+                        value={username}
+                        onChange={(e) => setUsername(e.target.value)}
+                        onBlur={validate}
+                        placeholder="Username"
+                    ></Form.Control>
+                    {usernameError && <p>{usernameError}</p>}
+                </Form.Group>
+                <Form.Group>
+                    <Form.Label>Password:</Form.Label>
+                    <Form.Control
+                        type="password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        onInput={validate}
+                        placeholder="Password"
+                    ></Form.Control>
+                </Form.Group>
+                <Form.Group>
+                    <Form.Label>Email:</Form.Label>
+                    <Form.Control
+                        type="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        onInput={validate}
+                        placeholder="Email"
+                    ></Form.Control>
+                </Form.Group>
+                <Form.Group>
+                    <Form.Label>Birthday:</Form.Label>
+                    <Form.Control
+                        type="date"
+                        value={birthday}
+                        onChange={(e) => setBirthday(e.target.value)}
+                        onInput={validate}
+                        placeholder="Birthday"
+                    ></Form.Control>
+                </Form.Group>
 
-                    <Button
-                        variant="outline-primary"
-                        type="submit"
-                        onClick={handleRegister}
-                    >
-                        Create Account
-                    </Button>
-                </Form>
-            </Col>
-            <Col>
+                <button
+                    className="button-primary"
+                    type="submit"
+                    onClick={handleRegister}
+                >
+                    Create Account
+                </button>
+            </Form>
+            {/* <div>
                 <Link to={`/`}>
-                    <Button>Back to login</Button>
+                    <a className="button-primary">Back to login</a>
                 </Link>
-            </Col>
-        </Row>
+            </div> */}
+        </div>
     )
 };
 
