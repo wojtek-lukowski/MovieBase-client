@@ -17,6 +17,7 @@
 
 a {
     color: var(--yellow);
+    font-size: 1.4rem;
 }
 
 a:hover {
@@ -38,7 +39,7 @@ a:hover {
   button {
     margin: var(--u);
     padding: var(--u) var(--u3);
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     
             &:hover {
                 background-color: var(--yellow);

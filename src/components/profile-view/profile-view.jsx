@@ -114,6 +114,7 @@ export class ProfileView extends React.Component {
         });
         localStorage.setItem("user", this.state.Username);
         const data = response.data;
+        console.log('data', data);
         console.log("this.state.Username", this.state.Username);
         alert(username + " has been updated!");
       })
@@ -180,7 +181,7 @@ export class ProfileView extends React.Component {
         <Header user={user} logOut={() => this.onLoggedOut()} />
         <div className="profile-buttons">
           <button onClick={() => { onBackClick(); }} className="button-primary">Back</button>
-          <a href="#data" class="button-primary">Your data</a>
+          <a href="#data" className="button-primary">Your data</a>
         </div>
 
         <div className="favorite-movies">

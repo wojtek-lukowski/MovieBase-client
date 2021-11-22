@@ -33,20 +33,12 @@ html {
 }
 
 body {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   background-color: var(--background-dark);
-}
-
-a {
-  font-size: 1.6rem;
 }
 
 html {
   background-color: var(--background-dark);
-}
-
-a {
-  color: var(--yellow);
 }
 
 body {
@@ -101,11 +93,14 @@ input {
 
 a,
 .link,
-button {
+button,
+.button-primary {
   display: inline-block;
   margin: var(--u);
+  background-color: var(--background);
   color: var(--yellow);
   border: 1px solid var(--yellow);
+  font-size: 1.4rem;
 }
 a:hover, a:focus, a:active,
 .link:hover,
@@ -113,25 +108,13 @@ a:hover, a:focus, a:active,
 .link:active,
 button:hover,
 button:focus,
-button:active {
-  background-color: var(--yellow);
-  color: var(--background);
-  border: 1px solid var(--yellow);
-}
-
-a,
-.button-primary {
-  color: var(--yellow) !important;
-  border: 1px solid var(--yellow) !important;
-  background-color: var(--background) !important;
-}
-a:hover, a:focus, a:active,
+button:active,
 .button-primary:hover,
 .button-primary:focus,
 .button-primary:active {
-  background-color: var(--yellow) !important;
-  color: var(--background) !important;
-  border: 1px solid var(--yellow) !important;
+  background-color: var(--yellow);
+  color: var(--background);
+  border: 1px solid var(--yellow);
 }
 
 .card {
@@ -152,6 +135,7 @@ a:hover, a:focus, a:active,
 }
 .card a {
   color: var(--yellow);
+  font-size: 1.4rem;
 }
 .card a:hover {
   color: var(--yellow);
@@ -166,7 +150,7 @@ a:hover, a:focus, a:active,
 .card .movie-card-button button {
   margin: var(--u);
   padding: var(--u) var(--u3);
-  font-size: 1.6rem;
+  font-size: 1.4rem;
 }
 .card .movie-card-button .link:hover,
 .card .movie-card-button button:hover {
@@ -188,7 +172,7 @@ a:hover, a:focus, a:active,
   width: 100%;
   background-color: var(--background);
   color: var(--yellow);
-  font-size: 1.6rem;
+  font-size: 1.4rem;
 }
 
 .movie-img {
@@ -283,20 +267,12 @@ html {
 }
 
 body {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   background-color: var(--background-dark);
-}
-
-a {
-  font-size: 1.6rem;
 }
 
 html {
   background-color: var(--background-dark);
-}
-
-a {
-  color: var(--yellow);
 }
 
 body {
@@ -351,11 +327,14 @@ input {
 
 a,
 .link,
-button {
+button,
+.button-primary {
   display: inline-block;
   margin: var(--u);
+  background-color: var(--background);
   color: var(--yellow);
   border: 1px solid var(--yellow);
+  font-size: 1.4rem;
 }
 a:hover, a:focus, a:active,
 .link:hover,
@@ -363,25 +342,13 @@ a:hover, a:focus, a:active,
 .link:active,
 button:hover,
 button:focus,
-button:active {
-  background-color: var(--yellow);
-  color: var(--background);
-  border: 1px solid var(--yellow);
-}
-
-a,
-.button-primary {
-  color: var(--yellow) !important;
-  border: 1px solid var(--yellow) !important;
-  background-color: var(--background) !important;
-}
-a:hover, a:focus, a:active,
+button:active,
 .button-primary:hover,
 .button-primary:focus,
 .button-primary:active {
-  background-color: var(--yellow) !important;
-  color: var(--background) !important;
-  border: 1px solid var(--yellow) !important;
+  background-color: var(--yellow);
+  color: var(--background);
+  border: 1px solid var(--yellow);
 }
 
 .card {
@@ -402,6 +369,7 @@ a:hover, a:focus, a:active,
 }
 .card a {
   color: var(--yellow);
+  font-size: 1.4rem;
 }
 .card a:hover {
   color: var(--yellow);
@@ -416,7 +384,7 @@ a:hover, a:focus, a:active,
 .card .movie-card-button button {
   margin: var(--u);
   padding: var(--u) var(--u3);
-  font-size: 1.6rem;
+  font-size: 1.4rem;
 }
 .card .movie-card-button .link:hover,
 .card .movie-card-button button:hover {
@@ -435,10 +403,6 @@ a:hover, a:focus, a:active,
 
 html {
   background-color: var(--background-dark);
-}
-
-a {
-  color: var(--yellow);
 }
 
 body {
@@ -493,11 +457,14 @@ input {
 
 a,
 .link,
-button {
+button,
+.button-primary {
   display: inline-block;
   margin: var(--u);
+  background-color: var(--background);
   color: var(--yellow);
   border: 1px solid var(--yellow);
+  font-size: 1.4rem;
 }
 a:hover, a:focus, a:active,
 .link:hover,
@@ -505,25 +472,13 @@ a:hover, a:focus, a:active,
 .link:active,
 button:hover,
 button:focus,
-button:active {
-  background-color: var(--yellow);
-  color: var(--background);
-  border: 1px solid var(--yellow);
-}
-
-a,
-.button-primary {
-  color: var(--yellow) !important;
-  border: 1px solid var(--yellow) !important;
-  background-color: var(--background) !important;
-}
-a:hover, a:focus, a:active,
+button:active,
 .button-primary:hover,
 .button-primary:focus,
 .button-primary:active {
-  background-color: var(--yellow) !important;
-  color: var(--background) !important;
-  border: 1px solid var(--yellow) !important;
+  background-color: var(--yellow);
+  color: var(--background);
+  border: 1px solid var(--yellow);
 }
 
 .login-page {
@@ -605,7 +560,8 @@ a:hover, a:focus, a:active,
   padding: var(--u2);
   display: flex;
   flex-direction: column;
-  font-size: 1.6rem;
+  margin: auto;
+  font-size: 1.4rem;
 }
 .director-view button {
   padding: var(--u) var(--u3);
@@ -654,16 +610,14 @@ a:hover, a:focus, a:active,
   display: flex;
   flex-direction: column;
 }
+.profile-view button {
+  font-size: 1.4rem;
+}
 
 .profile-buttons {
   display: flex;
   justify-content: space-evenly;
   margin-bottom: var(--u3);
-}
-.profile-buttons button {
-  margin: var(--u);
-  padding: var(--u) var(--u3);
-  font-size: 1.6rem;
 }
 
 .user {
@@ -684,12 +638,12 @@ a:hover, a:focus, a:active,
 
 .button-remove {
   background-color: transparent;
-  color: var(--danger-red);
+  color: var(--danger-red) !important;
   border: 1px solid var(--danger-red);
   border-radius: 3px;
   margin-top: var(--u4);
   padding: var(--u1-5) var(--u3);
-  font-size: 1.6rem;
+  font-size: 1.4rem;
 }
 .button-remove:hover {
   background-color: var(--danger-red);
@@ -726,6 +680,9 @@ a:hover, a:focus, a:active,
   justify-content: space-between;
   align-items: center !important;
 }
+.page-header a {
+  color: var(--yellow) !important;
+}
 
 .header-logo svg {
   width: 7rem;
@@ -752,7 +709,7 @@ a:hover, a:focus, a:active,
   color: var(--yellow);
   border: 1px solid var(--yellow);
   background-color: var(--background);
-  padding: 0.8rem 1.6rem;
+  padding: var(--u) var(--u2);
   border-radius: 3px;
   text-align: center;
 }

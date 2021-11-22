@@ -12,6 +12,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center !important;
+
+  a {
+    color: var(--yellow) !important;
+  }
 }
 
 .header-logo {
@@ -43,7 +47,7 @@
     color: var(--yellow);
     border: 1px solid var(--yellow);
     background-color: var(--background);
-    padding: 0.8rem 1.6rem;
+    padding: var(--u) var(--u2);
     border-radius: 3px;
     text-align: center;
 
