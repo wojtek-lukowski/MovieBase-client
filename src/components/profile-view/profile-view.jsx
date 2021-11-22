@@ -89,10 +89,12 @@ export class ProfileView extends React.Component {
     e.preventDefault();
     const username = localStorage.getItem("user");
     const token = localStorage.getItem("token");
+    console.log('event', e);
 
     axios
       .put(
         `https://moviebased.herokuapp.com/users/${username}`,
+        {},
         {
           Username: this.state.Username,
           Password: this.state.Password,
@@ -185,7 +187,7 @@ export class ProfileView extends React.Component {
           <h2>Your favorite movies:</h2>
           <div className="filtered-movies">
             {this.state.Favorites.map(fav => (
-              <div md={3} key={fav._id}>
+              <div key={fav._id}>
                 <FavMovie key={fav._id} movie={fav} removeFav={this.removeFromFavs} />
               </div>
             ))}
