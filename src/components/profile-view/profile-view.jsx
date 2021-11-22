@@ -85,26 +85,25 @@ export class ProfileView extends React.Component {
       })
   }
 
-  editUser(e) {
+  editUser = e => {
     e.preventDefault();
     const username = localStorage.getItem("user");
     const token = localStorage.getItem("token");
     console.log('event', e);
+    console.log('edit');
 
-    axios
-      .put(
-        `https://moviebased.herokuapp.com/users/${username}`,
-        {},
-        {
-          Username: this.state.Username,
-          Password: this.state.Password,
-          Email: this.state.Email,
-          Birthday: this.state.Birthday,
-        },
-        {
-          headers: { Authorization: `Bearer ${token}` },
-        }
-      )
+    axios.put(
+      `https://moviebased.herokuapp.com/users/${username}`,
+      {
+        Username: this.state.Username,
+        Password: this.state.Password,
+        Email: this.state.Email,
+        Birthday: this.state.Birthday,
+      },
+      {
+        headers: { Authorization: `Bearer ${token}` },
+      }
+    )
       .then((response) => {
         this.setState({
           Username: response.data.Username,
