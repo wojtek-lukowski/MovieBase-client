@@ -1,0 +1,44 @@
+.page-header {
+  position: fixed;
+  top: 0;left: 0;
+  right: 0;
+  z-index: 1;
+  max-width: var(--page);
+  height: 10rem;
+  background-color: var(--background);
+  border: 1px solid var(--yellow);
+  border-radius: 3px;
+  padding: var(--u) var(--u4);
+  display: flex;
+  justify-content: space-between;
+  align-items: center !important;
+
+  a {
+    color: var(--yellow) !important;
+  }
+}
+
+.header-logo {
+  svg {
+    width: 7rem;
+    height: auto;
+    padding: 0;
+  }
+
+  a {
+    border: none !important;
+
+    &:hover, :focus, :active {
+      background-color: transparent !important;
+      transform: rotate(90deg) !important;
+    }
+  }
+}
+
+.header-welcome {
+  color: var(--yellow);
+}
+
+.header-profile {
+    align-items: center;
+}

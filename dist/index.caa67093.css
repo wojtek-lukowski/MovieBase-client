@@ -1,4 +1,653 @@
-.movie-base {
-  color: steelblue;
+:root {
+  --yellow: #ffbf00;
+  --background-light: #404040;
+  --background: #272727;
+  --background-dark: #0F0F0F;
+  --black: #0000;
+  --danger-red: #df4759;
+  --danger-red-hover: #FF0000;
+  --u: 0.8rem;
+  --u0-5: calc(var(--u) * 0.5);
+  --u1-5: calc(var(--u) * 1.5);
+  --u2: calc(var(--u) * 2);
+  --u3: calc(var(--u) * 3);
+  --u4: calc(var(--u) * 4);
+  --u5: calc(var(--u) * 5);
+  --u6: calc(var(--u) * 6);
+  --u7: calc(var(--u) * 7);
+  --u8: calc(var(--u) * 8);
+  --u9: calc(var(--u) * 9);
+  --u10: calc(var(--u) * 10);
+}
+
+html {
+  font-size: 65.2% !important;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  margin-top: 14rem;
+}
+
+body {
+  font-size: 1.4rem;
+  background-color: var(--background-dark);
+}
+
+html {
+  background-color: var(--background-dark);
+}
+
+body {
+  margin-top: 200px;
+  font-size: 1.4rem;
+}
+
+.app-container {
+  background-color: var(--background-dark);
+}
+
+.movies {
+  max-width: var(--page);
+}
+
+.filter-section {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 2rem;
+}
+
+.filter-input {
+  width: 30rem;
+}
+.filter-input input {
+  background-color: var(--background);
+  border: 1px solid var(--yellow);
+  border-radius: 0.3rem;
+  height: 4rem;
+  font-size: 1.4rem;
+}
+.filter-input input:focus {
+  background-color: var(--yellow) !important;
+  color: var(--background) !important;
+  border: 1px solid var(--yellow);
+}
+
+.filtered-movies {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: var(--u2);
+  row-gap: var(--u2);
+  max-width: var(--page);
+  padding: var(--u3) 0;
+  justify-content: center;
+}
+
+input {
+  width: 100%;
+}
+
+a,
+.link,
+button,
+.button-primary {
+  display: inline-block;
+  background-color: var(--background);
+  color: var(--yellow);
+  border: 1px solid var(--yellow);
+  border-radius: 3px;
+  font-size: 1.4rem;
+  text-align: center;
+  margin: var(--u);
+  padding: var(--u) var(--u4);
+  min-width: 15rem;
+}
+a:hover, a:focus, a:active,
+.link:hover,
+.link:focus,
+.link:active,
+button:hover,
+button:focus,
+button:active,
+.button-primary:hover,
+.button-primary:focus,
+.button-primary:active {
+  background-color: var(--yellow);
+  color: var(--background) !important;
+  border: 1px solid var(--yellow);
+  text-decoration: none;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  background-color: var(--background) !important;
+  color: var(--yellow);
+  width: 30rem !important;
+  height: auto;
+  border: 1px solid var(--yellow);
+  border-radius: 0.3rem;
+  padding: var(--u2);
+  border-radius: 3px;
+  height: auto;
+  flex: 0 !important;
+}
+.card .title {
+  margin: var(--u3) auto !important;
+  font-size: 2rem;
+  text-align: center;
+}
+.movie-card-button {
+  align-self: center;
+}
+.movie-view {
+  display: grid;
+  grid-template: [row1-start] "image title" auto [row1-end] [row2-start] "image description" auto [row2-end] [row3-start] "image director-genre" auto [row3-end] [row4-start] "image buttons" auto [row4-end]/30% 70%;
+  width: 100%;
+  background-color: var(--background);
+  color: var(--yellow);
+  font-size: 1.4rem;
+}
+
+.movie-img {
+  grid-area: image;
+  width: 200px;
+  height: 400px;
+}
+
+.movie-info {
+  padding: var(--u3);
+}
+
+.movie-title {
+  grid-area: title;
+  margin: var(--u3) 0;
+}
+
+.movie-description {
+  grid-area: description;
+  margin-bottom: var(--u2);
+}
+
+.movie-view-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: var(--u6);
+}
+
+.director-genre {
+  grid-area: director-genre;
+  display: flex;
+  justify-content: space-between;
+}
+.director-genre span {
+  font-size: 1.3rem;
+  padding-right: 0 0.5rem 0 0;
+  border: none;
+  margin: 0;
+}
+.director-genre .director-genre-link {
+  display: inline;
+  background-color: var(--background);
+  color: var(--yellow) !important;
+  border: none;
+  font-size: 1.6rem;
+  padding: 0;
+}
+.director-genre .director-genre-link:hover, .director-genre .director-genre-link:focus, .director-genre .director-genre-link:active {
+  background-color: var(--yellow);
+  color: var(--background) !important;
+  text-decoration: none;
+}
+
+:root {
+  --yellow: #ffbf00;
+  --background-light: #404040;
+  --background: #272727;
+  --background-dark: #0F0F0F;
+  --black: #0000;
+  --danger-red: #df4759;
+  --danger-red-hover: #FF0000;
+  --u: 0.8rem;
+  --u0-5: calc(var(--u) * 0.5);
+  --u1-5: calc(var(--u) * 1.5);
+  --u2: calc(var(--u) * 2);
+  --u3: calc(var(--u) * 3);
+  --u4: calc(var(--u) * 4);
+  --u5: calc(var(--u) * 5);
+  --u6: calc(var(--u) * 6);
+  --u7: calc(var(--u) * 7);
+  --u8: calc(var(--u) * 8);
+  --u9: calc(var(--u) * 9);
+  --u10: calc(var(--u) * 10);
+}
+
+html {
+  font-size: 65.2% !important;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  margin-top: 14rem;
+}
+
+body {
+  font-size: 1.4rem;
+  background-color: var(--background-dark);
+}
+
+html {
+  background-color: var(--background-dark);
+}
+
+body {
+  margin-top: 200px;
+  font-size: 1.4rem;
+}
+
+.app-container {
+  background-color: var(--background-dark);
+}
+
+.movies {
+  max-width: var(--page);
+}
+
+.filter-section {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 2rem;
+}
+
+.filter-input {
+  width: 30rem;
+}
+.filter-input input {
+  background-color: var(--background);
+  border: 1px solid var(--yellow);
+  border-radius: 0.3rem;
+  height: 4rem;
+  font-size: 1.4rem;
+}
+.filter-input input:focus {
+  background-color: var(--yellow) !important;
+  color: var(--background) !important;
+  border: 1px solid var(--yellow);
+}
+
+.filtered-movies {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: var(--u2);
+  row-gap: var(--u2);
+  max-width: var(--page);
+  padding: var(--u3) 0;
+  justify-content: center;
+}
+
+input {
+  width: 100%;
+}
+
+a,
+.link,
+button,
+.button-primary {
+  display: inline-block;
+  background-color: var(--background);
+  color: var(--yellow);
+  border: 1px solid var(--yellow);
+  border-radius: 3px;
+  font-size: 1.4rem;
+  text-align: center;
+  margin: var(--u);
+  padding: var(--u) var(--u4);
+  min-width: 15rem;
+}
+a:hover, a:focus, a:active,
+.link:hover,
+.link:focus,
+.link:active,
+button:hover,
+button:focus,
+button:active,
+.button-primary:hover,
+.button-primary:focus,
+.button-primary:active {
+  background-color: var(--yellow);
+  color: var(--background) !important;
+  border: 1px solid var(--yellow);
+  text-decoration: none;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  background-color: var(--background) !important;
+  color: var(--yellow);
+  width: 30rem !important;
+  height: auto;
+  border: 1px solid var(--yellow);
+  border-radius: 0.3rem;
+  padding: var(--u2);
+  border-radius: 3px;
+  height: auto;
+  flex: 0 !important;
+}
+.card .title {
+  margin: var(--u3) auto !important;
+  font-size: 2rem;
+  text-align: center;
+}
+.movie-card-button {
+  align-self: center;
+}
+
+html {
+  background-color: var(--background-dark);
+}
+
+body {
+  margin-top: 200px;
+  font-size: 1.4rem;
+}
+
+.app-container {
+  background-color: var(--background-dark);
+}
+
+.movies {
+  max-width: var(--page);
+}
+
+.filter-section {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 2rem;
+}
+
+.filter-input {
+  width: 30rem;
+}
+.filter-input input {
+  background-color: var(--background);
+  border: 1px solid var(--yellow);
+  border-radius: 0.3rem;
+  height: 4rem;
+  font-size: 1.4rem;
+}
+.filter-input input:focus {
+  background-color: var(--yellow) !important;
+  color: var(--background) !important;
+  border: 1px solid var(--yellow);
+}
+
+.filtered-movies {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: var(--u2);
+  row-gap: var(--u2);
+  max-width: var(--page);
+  padding: var(--u3) 0;
+  justify-content: center;
+}
+
+input {
+  width: 100%;
+}
+
+a,
+.link,
+button,
+.button-primary {
+  display: inline-block;
+  background-color: var(--background);
+  color: var(--yellow);
+  border: 1px solid var(--yellow);
+  border-radius: 3px;
+  font-size: 1.4rem;
+  text-align: center;
+  margin: var(--u);
+  padding: var(--u) var(--u4);
+  min-width: 15rem;
+}
+a:hover, a:focus, a:active,
+.link:hover,
+.link:focus,
+.link:active,
+button:hover,
+button:focus,
+button:active,
+.button-primary:hover,
+.button-primary:focus,
+.button-primary:active {
+  background-color: var(--yellow);
+  color: var(--background) !important;
+  border: 1px solid var(--yellow);
+  text-decoration: none;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.login-page {
+  height: 100vh;
+  background-image: url("film.4cd2618b.svg");
+  background-repeat: no-repeat;
+  background-size: 80%;
+  background-position: center;
+  object-fit: center;
+  display: flex;
+  align-content: center;
+}
+.login-page a {
+  margin: 0;
+}
+.login-page a:hover {
+  border: 1px solid var(--background) !important;
+}
+.login-view {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  row-gap: var(--u5);
+  max-width: 25rem;
+  height: 50rem;
+  margin: auto;
+}
+.login-view p {
+  text-align: center;
+  font-size: 1.2rem;
+  justify-self: end;
+}
+.form {
+  background-color: var(--background);
+  color: var(--yellow);
+  border: 1px solid var(--yellow);
+  padding: var(--u2);
+  width: 25rem;
+  flex-shrink: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+.form h2 {
+  display: block;
+  text-align: center;
+  margin-bottom: var(--u1-5);
+}
+.form .form-control {
+  margin-bottom: var(--u1-5);
+}
+.form input {
+  background-color: var(--background);
+  border: 1px solid var(--yellow);
+  font-size: 1.2rem;
+  display: block;
+  color: var(--yellow);
+}
+.form input:focus {
+  background-color: var(--yellow);
+  color: var(--background);
+}
+.form .form-label {
+  font-size: 1rem;
+  margin-bottom: var(--u0-5);
+}
+.form .form-button {
+  text-align: right;
+}
+.director-view {
+  background-color: var(--background);
+  color: var(--yellow);
+  padding: var(--u2);
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  font-size: 1.4rem;
+}
+.director-view .director-bio,
+.director-view .director-birth,
+.director-view .director-death,
+.director-view .director-movies {
+  margin-top: var(--u2);
+}
+.director-view .director-bio .director-movies-list,
+.director-view .director-birth .director-movies-list,
+.director-view .director-death .director-movies-list,
+.director-view .director-movies .director-movies-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.director-view .director-life {
+  display: flex;
+  justify-content: space-between;
+}
+.director-view .director-birth-label,
+.director-view .director-death-label {
+  font-size: 0.8rem;
+  padding-right: 0.8rem;
+  display: inline;
+}
+.director-view .director-birth-date,
+.director-view .director-death-date {
+  display: inline;
+  font-weight: bold;
+}
+.director-view .button-centered {
+  display: flex;
+  justify-content: center;
+}
+.genre-movies-list {
+  margin: var(--u2) 0;
+}
+.profile-view {
+  color: var(--yellow);
+  background-color: var(--background-dark);
+  padding: 0 var(--u4);
+  display: flex;
+  flex-direction: column;
+}
+.profile-buttons {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: var(--u3);
+}
+
+.user {
+  display: flex;
+  background-color: var(--background);
+  padding: var(--u2);
+  margin: 10rem 0 var(--u8);
+}
+
+.user-data {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.user-data span {
+  font-size: 1.8rem;
+}
+
+.button-remove {
+  color: var(--danger-red) !important;
+  border: 1px solid var(--danger-red);
+  border-radius: 3px;
+  margin-top: var(--u4);
+  padding: var(--u1-5) var(--u3);
+  font-size: 1.4rem;
+}
+.button-remove:hover {
+  background-color: var(--danger-red);
+  color: var(--white);
+  border: 1px solid var(--danger-red);
+  cursor: pointer;
+}
+
+.user-update {
+  width: 50%;
+  margin: var(--u3) auto;
+}
+.user-update h2 {
+  margin-bottom: var(--u2);
+}
+.user-update .user-update-button {
+  margin-top: var(--u3);
+  text-align: right;
+  font-size: 1.6rem;
+}
+.page-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  max-width: var(--page);
+  height: 10rem;
+  background-color: var(--background);
+  border: 1px solid var(--yellow);
+  border-radius: 3px;
+  padding: var(--u) var(--u4);
+  display: flex;
+  justify-content: space-between;
+  align-items: center !important;
+}
+.page-header a {
+  color: var(--yellow) !important;
+}
+
+.header-logo svg {
+  width: 7rem;
+  height: auto;
+  padding: 0;
+}
+.header-logo a {
+  border: none !important;
+}
+.header-logo a:hover, .header-logo a :focus, .header-logo a :active {
+  background-color: transparent !important;
+  transform: rotate(90deg) !important;
+}
+
+.header-welcome {
+  color: var(--yellow);
+}
+
+.header-profile {
+  align-items: center;
+}
+.centered {
+  text-align: center;
 }
 /*# sourceMappingURL=index.caa67093.css.map */

@@ -1,0 +1,38 @@
+.card {
+  display: flex;
+  justify-content: center;
+  background-color: var(--background) !important;
+  color: var(--yellow);
+  width: 30rem !important;
+  height: auto;
+  border: 1px solid var(--yellow);
+  border-radius: .3rem;
+  padding: var(--u2);
+  border-radius: 3px;
+  height: auto;
+  flex: 0 !important;
+
+  .title {
+    margin: var(--u3) auto !important;
+    font-size: 2rem;
+    text-align: center;
+  }
+
+    .card-img {
+        // padding: var(--u2);
+        // width: 100%;
+    }
+
+    .button-primary {
+        // width: 100%;
+        // align-self: center !important;
+    }
+}
+
+.movie-card-button {
+  align-self: center;
+}
+
+
+// @import "../../index.scss";
+ 

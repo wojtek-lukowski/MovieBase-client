@@ -1,5 +1,46 @@
-$color: steelblue;
+:root {
+    --yellow: #ffbf00;
+    --background-light: #404040;
+    --background: #272727;
+    --background-dark: #0F0F0F;
+    --black: #0000;
+    --danger-red: #df4759;
+    --danger-red-hover: #FF0000;
 
-.movie-base {
-  color: $color;
+    
+    --u: 0.8rem;
+    --u0-5: calc(var(--u) * 0.5);
+    --u1-5: calc(var(--u) * 1.5);
+    --u2: calc(var(--u) * 2);
+    --u3: calc(var(--u) * 3);
+    --u4: calc(var(--u) * 4);
+    --u5: calc(var(--u) * 5);
+    --u6: calc(var(--u) * 6);
+    --u7: calc(var(--u) * 7);
+    --u8: calc(var(--u) * 8);
+    --u9: calc(var(--u) * 9);
+    --u10: calc(var(--u) * 10); 
 }
+
+html {
+    font-size: 65.2% !important;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    margin-top: 14rem;
+}
+
+body {
+    font-size: 1.4rem;
+    background-color: var(--background-dark);
+}
+
+// // @import './components/header/header.scss';
+@import './components/main-view/main-view.scss';
+// @import './components/movie-card/movie-card.scss';
+
+@import './components/movie-card/movie-card.scss';

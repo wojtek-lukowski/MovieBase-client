@@ -1,0 +1,69 @@
+.profile-view {
+    color: var(--yellow);
+    background-color: var(--background-dark);
+    padding: 0 var(--u4);
+    display: flex;
+    flex-direction: column;
+
+    .card {
+      .button-primary {
+        // width: 40%;
+      }
+    }
+}
+
+.profile-buttons {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: var(--u3);
+}
+
+.user {
+    display: flex;
+    background-color: var(--background);
+    padding: var(--u2);
+    margin: 10rem 0 var(--u8);
+}
+
+.user-data {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    span {
+      font-size: 1.8rem;
+    }
+}
+
+  .button-remove {
+    color: var(--danger-red) !important;
+    border: 1px solid var(--danger-red);
+    border-radius: 3px;
+    margin-top: var(--u4);
+    padding: var(--u1-5) var(--u3);
+    font-size: 1.4rem;
+
+    &:hover {
+      background-color: var(--danger-red);
+      color: var(--white);
+      border: 1px solid var(--danger-red);
+      cursor: pointer;
+    }
+ }
+
+
+.user-update {
+    width: 50%;
+    margin: var(--u3) auto;
+
+    h2 {
+        margin-bottom: var(--u2);
+    }
+
+.user-update-button {
+  margin-top: var(--u3);
+  text-align: right;
+  font-size: 1.6rem;
+}
+
+}
