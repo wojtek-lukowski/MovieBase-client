@@ -7,63 +7,40 @@
     margin: auto;
     font-size: 1.4rem;
 
-    button {
-        padding: var(--u) var(--u3);
-        width: 10rem;
-    }
-
-.director-bio,
-.director-birth,
-.director-death,
-.director-movies {
-    margin-top: var(--u2);
+    .director-bio,
+    .director-birth,
+    .director-death,
+    .director-movies {
+        margin-top: var(--u2);
 
     .director-movies-list {
-display: flex;
-flex-wrap: wrap;
-justify-content: space-evenly;   
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;   
+      }
     }
-}
 
-.director-life {
-    display: flex;
-    justify-content: space-between;
-}
+    .director-life {
+        display: flex;
+        justify-content: space-between;
+    }
 
-.director-birth-label,
-.director-death-label {
-    font-size: .8rem;
-    padding-right: .8rem;
-    display: inline;
-}
+    .director-birth-label,
+    .director-death-label {
+        font-size: .8rem;
+        padding-right: .8rem;
+        display: inline;
+    }
 
-.director-birth-date,
-.director-death-date {
-    display: inline;
-    font-weight: bold;
-}
+    .director-birth-date,
+    .director-death-date {
+        display: inline;
+        font-weight: bold;
+    }
 
-.button-centered {
-    display: flex;
-    justify-content: center;
-}
-
-// button,
-//         button:visited {
-//             color: var(--yellow);
-//         border: 1px solid var(--yellow);
-//         width: 50%;
-//         align-self: center;
-
-//         &:hover,
-//         &:focus,
-//         &:active {
-//             background-color: var(--yellow);
-//             color: var(--background);
-//             border: 1px solid var(--yellow);
-//             text-decoration: none;
-//         }
-//     }
-
+    .button-centered {
+        display: flex;
+        justify-content: center;
+    }
 }
 

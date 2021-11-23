@@ -43,14 +43,11 @@ html {
 
 body {
   margin-top: 200px;
+  font-size: 1.4rem;
 }
 
 .app-container {
   background-color: var(--background-dark);
-}
-
-.col-md-3 {
-  padding: 0 !important;
 }
 
 .movies {
@@ -67,8 +64,11 @@ body {
   width: 30rem;
 }
 .filter-input input {
-  border: 1px solid var(--yellow);
   background-color: var(--background);
+  border: 1px solid var(--yellow);
+  border-radius: 0.3rem;
+  height: 4rem;
+  font-size: 1.4rem;
 }
 .filter-input input:focus {
   background-color: var(--yellow) !important;
@@ -87,7 +87,6 @@ body {
 }
 
 input {
-  background-color: green;
   width: 100%;
 }
 
@@ -96,11 +95,15 @@ a,
 button,
 .button-primary {
   display: inline-block;
-  margin: var(--u);
   background-color: var(--background);
   color: var(--yellow);
   border: 1px solid var(--yellow);
+  border-radius: 3px;
   font-size: 1.4rem;
+  text-align: center;
+  margin: var(--u);
+  padding: var(--u) var(--u4);
+  min-width: 15rem;
 }
 a:hover, a:focus, a:active,
 .link:hover,
@@ -113,58 +116,34 @@ button:active,
 .button-primary:focus,
 .button-primary:active {
   background-color: var(--yellow);
-  color: var(--background);
+  color: var(--background) !important;
   border: 1px solid var(--yellow);
+  text-decoration: none;
+  transition: 0.4s;
+  cursor: pointer;
 }
 
 .card {
-  display: inline-block;
+  display: flex;
+  justify-content: center;
   background-color: var(--background) !important;
   color: var(--yellow);
   width: 30rem !important;
   height: auto;
   border: 1px solid var(--yellow);
+  border-radius: 0.3rem;
   padding: var(--u2);
   border-radius: 3px;
   height: auto;
   flex: 0 !important;
 }
 .card .title {
+  margin: var(--u3) auto !important;
   font-size: 2rem;
   text-align: center;
 }
-.card a {
-  color: var(--yellow);
-  font-size: 1.4rem;
-}
-.card a:hover {
-  color: var(--yellow);
-  text-decoration: none;
-}
-.card .movie-card-button {
-  display: flex;
-  justify-content: center;
-  padding-top: var(--u3);
-}
-.card .movie-card-button .link,
-.card .movie-card-button button {
-  margin: var(--u);
-  padding: var(--u) var(--u3);
-  font-size: 1.4rem;
-}
-.card .movie-card-button .link:hover,
-.card .movie-card-button button:hover {
-  background-color: var(--yellow);
-  color: var(--background);
-  padding: 0 var(--u1);
-}
-.card .text {
-  height: 5rem;
-  overflow-y: scroll;
-  font-size: 0.8rem;
-}
-.card .button-primary {
-  width: 50%;
+.movie-card-button {
+  align-self: center;
 }
 .movie-view {
   display: grid;
@@ -195,41 +174,35 @@ button:active,
   margin-bottom: var(--u2);
 }
 
+.movie-view-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: var(--u6);
+}
+
 .director-genre {
   grid-area: director-genre;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 .director-genre span {
   font-size: 1.3rem;
-  padding-right: 0.5rem;
+  padding-right: 0 0.5rem 0 0;
+  border: none;
+  margin: 0;
 }
-.director-genre .link {
-  border: none !important;
-}
-.director-genre .link:hover {
-  background-color: var(--yellow);
-  color: var(--background);
-  padding: 0 var(--u1);
-  text-decoration: none;
-}
-
-.movie-view-buttons {
-  grid-area: buttons;
-  display: flex;
-  justify-content: space-between;
-  margin-top: var(--u5);
-}
-.movie-view-buttons button {
+.director-genre .director-genre-link {
+  display: inline;
+  background-color: var(--background);
+  color: var(--yellow) !important;
+  border: none;
   font-size: 1.6rem;
-  margin: var(--u);
-  padding: var(--u) var(--u3);
-  background-color: var(--background) !important;
+  padding: 0;
 }
-.movie-view-buttons button:hover {
-  background-color: var(--yellow) !important;
+.director-genre .director-genre-link:hover, .director-genre .director-genre-link:focus, .director-genre .director-genre-link:active {
+  background-color: var(--yellow);
   color: var(--background) !important;
-  cursor: pointer;
+  text-decoration: none;
 }
 
 :root {
@@ -277,14 +250,11 @@ html {
 
 body {
   margin-top: 200px;
+  font-size: 1.4rem;
 }
 
 .app-container {
   background-color: var(--background-dark);
-}
-
-.col-md-3 {
-  padding: 0 !important;
 }
 
 .movies {
@@ -301,8 +271,11 @@ body {
   width: 30rem;
 }
 .filter-input input {
-  border: 1px solid var(--yellow);
   background-color: var(--background);
+  border: 1px solid var(--yellow);
+  border-radius: 0.3rem;
+  height: 4rem;
+  font-size: 1.4rem;
 }
 .filter-input input:focus {
   background-color: var(--yellow) !important;
@@ -321,7 +294,6 @@ body {
 }
 
 input {
-  background-color: green;
   width: 100%;
 }
 
@@ -330,11 +302,15 @@ a,
 button,
 .button-primary {
   display: inline-block;
-  margin: var(--u);
   background-color: var(--background);
   color: var(--yellow);
   border: 1px solid var(--yellow);
+  border-radius: 3px;
   font-size: 1.4rem;
+  text-align: center;
+  margin: var(--u);
+  padding: var(--u) var(--u4);
+  min-width: 15rem;
 }
 a:hover, a:focus, a:active,
 .link:hover,
@@ -347,58 +323,34 @@ button:active,
 .button-primary:focus,
 .button-primary:active {
   background-color: var(--yellow);
-  color: var(--background);
+  color: var(--background) !important;
   border: 1px solid var(--yellow);
+  text-decoration: none;
+  transition: 0.4s;
+  cursor: pointer;
 }
 
 .card {
-  display: inline-block;
+  display: flex;
+  justify-content: center;
   background-color: var(--background) !important;
   color: var(--yellow);
   width: 30rem !important;
   height: auto;
   border: 1px solid var(--yellow);
+  border-radius: 0.3rem;
   padding: var(--u2);
   border-radius: 3px;
   height: auto;
   flex: 0 !important;
 }
 .card .title {
+  margin: var(--u3) auto !important;
   font-size: 2rem;
   text-align: center;
 }
-.card a {
-  color: var(--yellow);
-  font-size: 1.4rem;
-}
-.card a:hover {
-  color: var(--yellow);
-  text-decoration: none;
-}
-.card .movie-card-button {
-  display: flex;
-  justify-content: center;
-  padding-top: var(--u3);
-}
-.card .movie-card-button .link,
-.card .movie-card-button button {
-  margin: var(--u);
-  padding: var(--u) var(--u3);
-  font-size: 1.4rem;
-}
-.card .movie-card-button .link:hover,
-.card .movie-card-button button:hover {
-  background-color: var(--yellow);
-  color: var(--background);
-  padding: 0 var(--u1);
-}
-.card .text {
-  height: 5rem;
-  overflow-y: scroll;
-  font-size: 0.8rem;
-}
-.card .button-primary {
-  width: 50%;
+.movie-card-button {
+  align-self: center;
 }
 
 html {
@@ -407,14 +359,11 @@ html {
 
 body {
   margin-top: 200px;
+  font-size: 1.4rem;
 }
 
 .app-container {
   background-color: var(--background-dark);
-}
-
-.col-md-3 {
-  padding: 0 !important;
 }
 
 .movies {
@@ -431,8 +380,11 @@ body {
   width: 30rem;
 }
 .filter-input input {
-  border: 1px solid var(--yellow);
   background-color: var(--background);
+  border: 1px solid var(--yellow);
+  border-radius: 0.3rem;
+  height: 4rem;
+  font-size: 1.4rem;
 }
 .filter-input input:focus {
   background-color: var(--yellow) !important;
@@ -451,7 +403,6 @@ body {
 }
 
 input {
-  background-color: green;
   width: 100%;
 }
 
@@ -460,11 +411,15 @@ a,
 button,
 .button-primary {
   display: inline-block;
-  margin: var(--u);
   background-color: var(--background);
   color: var(--yellow);
   border: 1px solid var(--yellow);
+  border-radius: 3px;
   font-size: 1.4rem;
+  text-align: center;
+  margin: var(--u);
+  padding: var(--u) var(--u4);
+  min-width: 15rem;
 }
 a:hover, a:focus, a:active,
 .link:hover,
@@ -477,8 +432,11 @@ button:active,
 .button-primary:focus,
 .button-primary:active {
   background-color: var(--yellow);
-  color: var(--background);
+  color: var(--background) !important;
   border: 1px solid var(--yellow);
+  text-decoration: none;
+  transition: 0.4s;
+  cursor: pointer;
 }
 
 .login-page {
@@ -541,12 +499,6 @@ button:active,
   background-color: var(--yellow);
   color: var(--background);
 }
-.form button {
-  font-size: 1.6rem;
-  margin-top: var(--u3);
-  padding: var(--u) var(--u3);
-  width: 100%;
-}
 .form .form-label {
   font-size: 1rem;
   margin-bottom: var(--u0-5);
@@ -562,10 +514,6 @@ button:active,
   flex-direction: column;
   margin: auto;
   font-size: 1.4rem;
-}
-.director-view button {
-  padding: var(--u) var(--u3);
-  width: 10rem;
 }
 .director-view .director-bio,
 .director-view .director-birth,
@@ -610,10 +558,6 @@ button:active,
   display: flex;
   flex-direction: column;
 }
-.profile-view button {
-  font-size: 1.4rem;
-}
-
 .profile-buttons {
   display: flex;
   justify-content: space-evenly;
@@ -637,7 +581,6 @@ button:active,
 }
 
 .button-remove {
-  background-color: transparent;
   color: var(--danger-red) !important;
   border: 1px solid var(--danger-red);
   border-radius: 3px;
@@ -692,7 +635,7 @@ button:active,
 .header-logo a {
   border: none !important;
 }
-.header-logo a:hover {
+.header-logo a:hover, .header-logo a :focus, .header-logo a :active {
   background-color: transparent !important;
   transform: rotate(90deg) !important;
 }
@@ -704,24 +647,7 @@ button:active,
 .header-profile {
   align-items: center;
 }
-
-.button-primary {
-  color: var(--yellow);
-  border: 1px solid var(--yellow);
-  background-color: var(--background);
-  padding: var(--u) var(--u2);
-  border-radius: 3px;
+.centered {
   text-align: center;
-}
-.button-primary:hover, .button-primary:focus, .button-primary:active {
-  background-color: var(--yellow);
-  color: var(--background);
-  border: 1px solid var(--yellow);
-  text-decoration: none;
-  transition: 0.4s;
-  cursor: pointer;
-}
-.fav-movie-card {
-  width: 25rem;
 }
 /*# sourceMappingURL=index.caa67093.css.map */

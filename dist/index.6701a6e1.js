@@ -26479,7 +26479,7 @@ class MovieView extends _reactDefault.default.Component {
                                         }),
                                         /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
                                             to: `/directors/${movie.Director.Name}`,
-                                            className: "link",
+                                            className: "director-genre-link",
                                             __source: {
                                                 fileName: "src/components/movie-view/movie-view.jsx",
                                                 lineNumber: 59
@@ -26507,7 +26507,7 @@ class MovieView extends _reactDefault.default.Component {
                                         }),
                                         /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
                                             to: `/genres/${movie.Genre.Name}`,
-                                            className: "link",
+                                            className: "director-genre-link",
                                             __source: {
                                                 fileName: "src/components/movie-view/movie-view.jsx",
                                                 lineNumber: 66
@@ -26528,12 +26528,10 @@ class MovieView extends _reactDefault.default.Component {
                             __self: this,
                             children: [
                                 /*#__PURE__*/ _jsxRuntime.jsx("button", {
-                                    className: "primary-button",
+                                    className: "button-primary",
                                     onClick: ()=>{
                                         onBackClick();
                                     },
-                                    variant: "outline-primary",
-                                    className: "button-back",
                                     __source: {
                                         fileName: "src/components/movie-view/movie-view.jsx",
                                         lineNumber: 73
@@ -26542,7 +26540,7 @@ class MovieView extends _reactDefault.default.Component {
                                     children: "Back"
                                 }),
                                 /*#__PURE__*/ _jsxRuntime.jsx("button", {
-                                    className: "primary-button",
+                                    className: "button-primary",
                                     onClick: ()=>{
                                         this.addToFavs(movie._id);
                                     },
@@ -32440,7 +32438,7 @@ class FavMovie extends _reactDefault.default.Component {
             __self: this,
             children: [
                 /*#__PURE__*/ _jsxRuntime.jsxs("div", {
-                    className: "card-link",
+                    className: "",
                     __source: {
                         fileName: "src/components/fav-movie/fav-movie.jsx",
                         lineNumber: 25
@@ -32476,13 +32474,23 @@ class FavMovie extends _reactDefault.default.Component {
                     ]
                 }),
                 /*#__PURE__*/ _jsxRuntime.jsxs("div", {
-                    className: "movie-card-button",
+                    className: "centered",
                     __source: {
                         fileName: "src/components/fav-movie/fav-movie.jsx",
                         lineNumber: 33
                     },
                     __self: this,
                     children: [
+                        /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
+                            to: `/movies/${movie._id}`,
+                            className: "button-primary",
+                            __source: {
+                                fileName: "src/components/fav-movie/fav-movie.jsx",
+                                lineNumber: 34
+                            },
+                            __self: this,
+                            children: "See more"
+                        }),
                         /*#__PURE__*/ _jsxRuntime.jsx("button", {
                             className: "button-primary",
                             onClick: ()=>{
@@ -32490,20 +32498,10 @@ class FavMovie extends _reactDefault.default.Component {
                             },
                             __source: {
                                 fileName: "src/components/fav-movie/fav-movie.jsx",
-                                lineNumber: 34
-                            },
-                            __self: this,
-                            children: "Remove"
-                        }),
-                        /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
-                            to: `/movies/${movie._id}`,
-                            className: "button-primary",
-                            __source: {
-                                fileName: "src/components/fav-movie/fav-movie.jsx",
                                 lineNumber: 35
                             },
                             __self: this,
-                            children: "See more"
+                            children: "Remove"
                         })
                     ]
                 })
@@ -32525,7 +32523,7 @@ FavMovie.propTypes = {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap/Button":"9CzHT","react-bootstrap/Card":"MoOk8","react-bootstrap":"h2YVd","react-router-dom":"cpyQW","./fav-movie.scss":"5IPhj","@parcel/transformer-js/src/esmodule-helpers.js":"5a8JZ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"hfTLj"}],"h2YVd":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap/Button":"9CzHT","react-bootstrap/Card":"MoOk8","react-bootstrap":"h2YVd","react-router-dom":"cpyQW","@parcel/transformer-js/src/esmodule-helpers.js":"5a8JZ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"hfTLj","./fav-movie.scss":"5IPhj"}],"h2YVd":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Accordion", ()=>_accordionDefault.default

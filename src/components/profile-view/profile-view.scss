@@ -4,9 +4,11 @@
     padding: 0 var(--u4);
     display: flex;
     flex-direction: column;
-  
-    button{
-      font-size: 1.4rem;
+
+    .card {
+      .button-primary {
+        // width: 40%;
+      }
     }
 }
 
@@ -34,7 +36,6 @@
 }
 
   .button-remove {
-    background-color: transparent;
     color: var(--danger-red) !important;
     border: 1px solid var(--danger-red);
     border-radius: 3px;

@@ -1,64 +1,36 @@
 .card {
-  display: inline-block;
+  display: flex;
+  justify-content: center;
   background-color: var(--background) !important;
   color: var(--yellow);
   width: 30rem !important;
   height: auto;
   border: 1px solid var(--yellow);
+  border-radius: .3rem;
   padding: var(--u2);
   border-radius: 3px;
   height: auto;
   flex: 0 !important;
 
   .title {
+    margin: var(--u3) auto !important;
     font-size: 2rem;
     text-align: center;
   }
 
-a {
-    color: var(--yellow);
-    font-size: 1.4rem;
-}
+    .card-img {
+        // padding: var(--u2);
+        // width: 100%;
+    }
 
-a:hover {
-    color: var(--yellow);
-    text-decoration: none;
-}
-
-.card-img {
-    // padding: var(--u2);
-    // width: 100%;
+    .button-primary {
+        // width: 100%;
+        // align-self: center !important;
+    }
 }
 
 .movie-card-button {
-  display: flex;
-  justify-content: center;
-  padding-top: var(--u3);
-
-  .link,
-  button {
-    margin: var(--u);
-    padding: var(--u) var(--u3);
-    font-size: 1.4rem;
-    
-            &:hover {
-                background-color: var(--yellow);
-                color: var(--background);
-                padding: 0 var(--u1);
-            }
-        }
-
-}
-
-.text {
-    height: 5rem;
-    overflow-y: scroll;
-    font-size: .8rem;
-}
-
-.button-primary {
-    width: 50%;
-}
+  align-self: center;
 }
 
 

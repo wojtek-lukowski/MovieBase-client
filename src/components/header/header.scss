@@ -28,7 +28,7 @@
   a {
     border: none !important;
 
-    &:hover {
+    &:hover, :focus, :active {
       background-color: transparent !important;
       transform: rotate(90deg) !important;
     }
@@ -41,24 +41,4 @@
 
 .header-profile {
     align-items: center;
-}
-
-.button-primary {
-    color: var(--yellow);
-    border: 1px solid var(--yellow);
-    background-color: var(--background);
-    padding: var(--u) var(--u2);
-    border-radius: 3px;
-    text-align: center;
-
-    &:hover,
-    &:focus,
-    &:active {
-        background-color: var(--yellow);
-        color: var(--background);
-        border: 1px solid var(--yellow);
-        text-decoration: none;
-        transition: 0.4s;
-        cursor: pointer;
-    }
 }
