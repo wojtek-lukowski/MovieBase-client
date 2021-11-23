@@ -20,7 +20,7 @@ a {
 .login-view {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: center;
   row-gap: var(--u5);
   max-width: 25rem;
@@ -66,21 +66,15 @@ a {
             color: var(--background);
         }
 
-      }
-      
-      // button {
-      //   font-size: 1.6rem;
-      //   margin-top: var(--u3);
-      //   padding: var(--u) var(--u3);
-      //   width: 100%;
-      // }
+    }   
 
     .form-label {
         font-size: 1rem;
         margin-bottom: var(--u0-5);
     }
     .form-button {
-        text-align: right;
+        text-align: center;
+        margin-top: var(--u3);
     }
 }
 

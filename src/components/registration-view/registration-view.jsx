@@ -5,6 +5,8 @@ import { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import axios from 'axios';
 
+import "./registration-view.scss";
+
 
 export function RegistrationView(props) {
   const [username, setUsername] = useState('');
@@ -70,7 +72,7 @@ export function RegistrationView(props) {
             onBlur={validate}
             placeholder="Username"
           ></Form.Control>
-          {usernameError && <p>{usernameError}</p>}
+          {usernameError && <p className="error-message">{usernameError}</p>}
         </Form.Group>
         <Form.Group>
           <Form.Label>Password:</Form.Label>
@@ -81,7 +83,7 @@ export function RegistrationView(props) {
             onBlur={validate}
             placeholder="Password"
           ></Form.Control>
-          {passwordError && <p>{passwordError}</p>}
+          {passwordError && <p className="error-message">{passwordError}</p>}
         </Form.Group>
         <Form.Group>
           <Form.Label>Email:</Form.Label>
@@ -92,7 +94,7 @@ export function RegistrationView(props) {
             onBlur={validate}
             placeholder="Email"
           ></Form.Control>
-          {emailError && <p>{emailError}</p>}
+          {emailError && <p className="error-message">{emailError}</p>}
         </Form.Group>
         <Form.Group>
           <Form.Label>Birthday:</Form.Label>
@@ -105,13 +107,15 @@ export function RegistrationView(props) {
           ></Form.Control>
         </Form.Group>
 
-        <button
-          className="button-primary"
-          type="submit"
-          onClick={handleRegister}
-        >
-          Create Account
-        </button>
+        <div className="form-button">
+          <button
+            className="button-primary"
+            type="submit"
+            onClick={handleRegister}
+          >
+            Create Account
+          </button>
+        </div>
       </Form>
     </div>
   )
