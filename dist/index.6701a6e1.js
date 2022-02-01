@@ -956,26 +956,25 @@ var _mainView = require("./components/main-view/main-view");
 var _mainViewDefault = parcelHelpers.interopDefault(_mainView);
 var _indexScss = require("./index.scss");
 const store = _redux.createStore(_reducersDefault.default, _reduxDevtoolsExtension.devToolsEnhancer());
-console.log('state', store.getState());
 class movieBaseApplication extends _reactDefault.default.Component {
     render() {
         return(/*#__PURE__*/ _jsxRuntime.jsx(_reactRedux.Provider, {
             store: store,
             __source: {
                 fileName: "src/index.jsx",
-                lineNumber: 17
+                lineNumber: 16
             },
             __self: this,
             children: /*#__PURE__*/ _jsxRuntime.jsx(_containerDefault.default, {
                 __source: {
                     fileName: "src/index.jsx",
-                    lineNumber: 18
+                    lineNumber: 17
                 },
                 __self: this,
                 children: /*#__PURE__*/ _jsxRuntime.jsx(_mainViewDefault.default, {
                     __source: {
                         fileName: "src/index.jsx",
-                        lineNumber: 19
+                        lineNumber: 18
                     },
                     __self: this
                 })
@@ -29937,7 +29936,7 @@ function MoviesList(props) {
         className: "main-view",
         __source: {
             fileName: "src/components/movies-list/movies-list.jsx",
-            lineNumber: 23
+            lineNumber: 24
         },
         __self: this,
         children: "No movies"
@@ -29946,7 +29945,7 @@ function MoviesList(props) {
         className: "movies",
         __source: {
             fileName: "src/components/movies-list/movies-list.jsx",
-            lineNumber: 25
+            lineNumber: 26
         },
         __self: this,
         children: [
@@ -29954,14 +29953,14 @@ function MoviesList(props) {
                 className: "filter-section",
                 __source: {
                     fileName: "src/components/movies-list/movies-list.jsx",
-                    lineNumber: 26
+                    lineNumber: 27
                 },
                 __self: this,
                 children: /*#__PURE__*/ _jsxRuntime.jsx(_filterDefault.default, {
                     visibilityFilter: visibilityFilter,
                     __source: {
                         fileName: "src/components/movies-list/movies-list.jsx",
-                        lineNumber: 27
+                        lineNumber: 28
                     },
                     __self: this
                 })
@@ -29970,20 +29969,20 @@ function MoviesList(props) {
                 className: "filtered-movies",
                 __source: {
                     fileName: "src/components/movies-list/movies-list.jsx",
-                    lineNumber: 29
+                    lineNumber: 30
                 },
                 __self: this,
                 children: filteredMovies.map((m)=>/*#__PURE__*/ _jsxRuntime.jsx("div", {
                         __source: {
                             fileName: "src/components/movies-list/movies-list.jsx",
-                            lineNumber: 31
+                            lineNumber: 32
                         },
                         __self: this,
                         children: /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
                             movie: m,
                             __source: {
                                 fileName: "src/components/movies-list/movies-list.jsx",
-                                lineNumber: 32
+                                lineNumber: 33
                             },
                             __self: this
                         })
@@ -30077,59 +30076,105 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _propTypes = require("prop-types");
 var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
+var _axios = require("axios");
+var _axiosDefault = parcelHelpers.interopDefault(_axios);
 var _reactRouterDom = require("react-router-dom");
 class MovieCard extends _reactDefault.default.Component {
+    constructor(){
+        super();
+        this.state = {
+            Favorites: [],
+            isInFavs: false
+        };
+    }
+    getUser = (token, user)=>{
+        _axiosDefault.default.get("https://moviebased.herokuapp.com/users/" + user, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        }).then((response)=>{
+            const idList = response.data.Favorites.map(({ _id  })=>_id
+            );
+            // console.log('id list', idList);
+            this.setState({
+                Favorites: idList
+            });
+            // this.setState({ Favorites: response.data.Favorites });
+            console.log('updated state favs', this.state.Favorites);
+            console.log('calling check favs from get user');
+            this.checkFavs();
+        }).catch(function(error) {
+            console.log(error);
+        });
+    };
+    checkFavs = (movieId)=>{
+        // const movieId = this.props.movie._id;
+        console.log('executing check Favs');
+        console.log('movieId', movieId);
+        if (this.state.Favorites.includes(this.props.movie._id)) {
+            console.log('check fav', this.state.Favorites);
+            // console.log('check movie', this.state.movieId);
+            this.setState({
+                isInFavs: true
+            });
+            console.log('is in favs', this.state.isInFavs);
+            return isInFavs;
+        }
+    };
+    componentDidMount = ()=>{
+        console.log('compenent did mount init');
+        console.log('state favs before', this.state.Favorites);
+        console.log('state is in favs before', this.state.isInFavs);
+        const user = localStorage.getItem('user');
+        const token = localStorage.getItem('token');
+        this.getUser(token, user);
+    };
     render() {
         const { movie  } = this.props;
+        // const { isInFavs } = this.state;
+        // console.log('movie', movie);
+        const movieId = this.props.movie._id;
+        console.log('movie id', movieId);
+        // console.log('Favorites', this.Favorites);
         return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
             className: "card",
             __source: {
                 fileName: "src/components/movie-card/movie-card.jsx",
-                lineNumber: 9
+                lineNumber: 66
             },
             __self: this,
             children: [
-                /*#__PURE__*/ _jsxRuntime.jsxs("div", {
-                    className: "card-link",
+                /*#__PURE__*/ _jsxRuntime.jsx("div", {
+                    className: "card-img",
                     __source: {
                         fileName: "src/components/movie-card/movie-card.jsx",
-                        lineNumber: 11
+                        lineNumber: 67
                     },
                     __self: this,
-                    children: [
-                        /*#__PURE__*/ _jsxRuntime.jsx("div", {
-                            className: "card-img",
-                            __source: {
-                                fileName: "src/components/movie-card/movie-card.jsx",
-                                lineNumber: 12
-                            },
-                            __self: this,
-                            children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
-                                src: movie.ImagePath,
-                                alt: "movie poster",
-                                __source: {
-                                    fileName: "src/components/movie-card/movie-card.jsx",
-                                    lineNumber: 13
-                                },
-                                __self: this
-                            })
-                        }),
-                        /*#__PURE__*/ _jsxRuntime.jsx("div", {
-                            className: "title",
-                            __source: {
-                                fileName: "src/components/movie-card/movie-card.jsx",
-                                lineNumber: 15
-                            },
-                            __self: this,
-                            children: movie.Title
-                        })
-                    ]
+                    children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
+                        src: movie.ImagePath,
+                        alt: "movie poster",
+                        __source: {
+                            fileName: "src/components/movie-card/movie-card.jsx",
+                            lineNumber: 68
+                        },
+                        __self: this
+                    })
+                }),
+                /*#__PURE__*/ _jsxRuntime.jsx("div", {
+                    className: "title",
+                    __source: {
+                        fileName: "src/components/movie-card/movie-card.jsx",
+                        lineNumber: 70
+                    },
+                    __self: this,
+                    children: movie.Title
                 }),
                 /*#__PURE__*/ _jsxRuntime.jsx("div", {
                     className: "movie-card-button",
                     __source: {
                         fileName: "src/components/movie-card/movie-card.jsx",
-                        lineNumber: 19
+                        lineNumber: 71
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
@@ -30137,11 +30182,27 @@ class MovieCard extends _reactDefault.default.Component {
                         className: "button-primary",
                         __source: {
                             fileName: "src/components/movie-card/movie-card.jsx",
-                            lineNumber: 20
+                            lineNumber: 72
                         },
                         __self: this,
                         children: "See more"
                     })
+                }),
+                this.state.isInFavs && /*#__PURE__*/ _jsxRuntime.jsx("p", {
+                    __source: {
+                        fileName: "src/components/movie-card/movie-card.jsx",
+                        lineNumber: 76
+                    },
+                    __self: this,
+                    children: "is in favs"
+                }),
+                !this.state.isInFavs && /*#__PURE__*/ _jsxRuntime.jsx("p", {
+                    __source: {
+                        fileName: "src/components/movie-card/movie-card.jsx",
+                        lineNumber: 78
+                    },
+                    __self: this,
+                    children: "is not in favs"
                 })
             ]
         }));
@@ -30160,7 +30221,7 @@ MovieCard.propTypes = {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-router-dom":"cpyQW","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"5V79J":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-router-dom":"cpyQW","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J","axios":"iYoWk"}],"5V79J":[function(require,module,exports) {
 "use strict";
 var Refresh = require('react-refresh/runtime');
 function debounce(func, delay) {

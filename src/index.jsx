@@ -10,7 +10,6 @@ import MainView from './components/main-view/main-view';
 import './index.scss';
 
 const store = createStore(moviesApp, devToolsEnhancer());
-console.log('state', store.getState());
 class movieBaseApplication extends React.Component {
     render() {
         return (
