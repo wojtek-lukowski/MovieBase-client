@@ -9,4 +9,8 @@ Users need to create account and all the available movies will be displayed upon
 
 Except the React version, an alternative, independent Angular client-side part, using the same backend, has also been developed and can be ssen here: [GitHub](https://github.com/wojtek-lukowski/MovieBase-Angular), [url](https://wojtek-lukowski.github.io/MovieBase-Angular).
 
-The project will be deployed soon.
+The project can be viewed [here](https://compassionate-kare-ec9836.netlify.app/).
+
+To deploy:
+```parcel build src/index.html --public-url /```
+
