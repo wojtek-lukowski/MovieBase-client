@@ -30125,15 +30125,23 @@ class MovieCard extends _reactDefault.default.Component {
                         })
                     ]
                 }),
-                /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
-                    to: `/movies/${movie._id}`,
-                    className: "button-primary",
+                /*#__PURE__*/ _jsxRuntime.jsx("div", {
+                    className: "movie-card-button",
                     __source: {
                         fileName: "src/components/movie-card/movie-card.jsx",
-                        lineNumber: 20
+                        lineNumber: 19
                     },
                     __self: this,
-                    children: "See more"
+                    children: /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
+                        to: `/movies/${movie._id}`,
+                        className: "button-primary",
+                        __source: {
+                            fileName: "src/components/movie-card/movie-card.jsx",
+                            lineNumber: 20
+                        },
+                        __self: this,
+                        children: "See more"
+                    })
                 })
             ]
         }));
