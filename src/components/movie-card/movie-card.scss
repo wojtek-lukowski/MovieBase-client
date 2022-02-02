@@ -4,7 +4,7 @@
   align-items: center;
   background-color: var(--background) !important;
   color: var(--yellow);
-  width: 15rem !important;
+  width: 17rem !important;
   height: auto !important;
   border: 1px solid var(--yellow);
   border-radius: .3rem;
@@ -17,7 +17,7 @@
     margin: var(--u2) auto !important;
     font-size: 1.4rem;
     width: 14rem;
-    text-align: center;
+    text-align: left;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -27,8 +27,8 @@
     text-align: center;
     
     img {
-      width: 90%;
-      height: 19rem;
+      width: 100%;
+      height: 20rem;
       object-fit: cover;
       text-align: center;
     }
@@ -40,6 +40,20 @@
     justify-self: center !important;
     margin-top: 0;
     font-size: 1.2rem;
+  }
+
+  svg {
+    position: absolute;
+    top: .4rem;
+    right: 4px;
+  }
+
+  svg path {
+    stroke: var(--yellow);
+  }
+
+  .faved svg {
+    fill: var(--yellow);
   }
 }
 

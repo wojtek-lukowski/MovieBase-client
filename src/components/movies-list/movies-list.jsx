@@ -25,7 +25,6 @@ function MoviesList(props) {
 
   const [favorites, setFavorites] = useState(['61e6fdb4b17167f4e7ed6ccb', '613f3b7746378b95b687fbaa', '613eee1946378b95b687fba4']);
   // const [favorites, setFavorites] = useState([]);
-  // const [currentUser, setUser] = useState('');
 
   // useEffect(() => {
   //   getUser(token, user);
@@ -39,7 +38,7 @@ function MoviesList(props) {
       })
       .then((response) => {
         const idList = response.data.Favorites.map(({ _id }) => _id);
-        // const currentUser = response.data;
+        const currentUser = response.data;
         // setUser(currentUser);
         setFavorites(idList);
         // console.log('response data m-l', response.data);
