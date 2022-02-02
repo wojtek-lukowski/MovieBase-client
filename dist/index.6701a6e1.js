@@ -25679,7 +25679,7 @@ const visibilityFilter = (state = '', action)=>{
 const movies = (state = [], action)=>{
     switch(action.type){
         case _actions.SET_MOVIES:
-            console.log('setMovies reducer reached');
+            // console.log('setMovies reducer reached');
             return action.value;
         default:
             return state;
@@ -25754,7 +25754,7 @@ const SET_USER = 'SET_USER';
 const UPDATE_USER = 'UPDATE_USER';
 const REMOVE_USER = 'REMOVE_USER';
 function setMovies(value) {
-    console.log('setMovies triggered');
+    // console.log('setMovies triggered');
     return {
         type: SET_MOVIES,
         value
@@ -25768,7 +25768,7 @@ function setFilter(value) {
     };
 }
 function setUser(value) {
-    console.log('setUser triggered');
+    // console.log('setUser triggered');
     return {
         type: SET_USER,
         value
@@ -29917,10 +29917,13 @@ var _reactDefault = parcelHelpers.interopDefault(_react);
 var _col = require("react-bootstrap/Col");
 var _colDefault = parcelHelpers.interopDefault(_col);
 var _reactRedux = require("react-redux");
+var _axios = require("axios");
+var _axiosDefault = parcelHelpers.interopDefault(_axios);
 var _movieCard = require("../movie-card/movie-card");
 var _filter = require("../filter/filter");
 var _filterDefault = parcelHelpers.interopDefault(_filter);
 var _mainViewScss = require("../main-view/main-view.scss");
+var _s = $RefreshSig$();
 const mapStateToProps = (state)=>{
     const { visibilityFilter  } = state;
     return {
@@ -29928,15 +29931,47 @@ const mapStateToProps = (state)=>{
     };
 };
 function MoviesList(props) {
+    _s();
     const { movies , visibilityFilter  } = props;
     let filteredMovies = movies;
+    const user = localStorage.getItem('user');
+    const token = localStorage.getItem('token');
+    const [favorites, setFavorites] = _react.useState([
+        '61e6fdb4b17167f4e7ed6ccb',
+        '613f3b7746378b95b687fbaa',
+        '613eee1946378b95b687fba4'
+    ]);
+    // const [favorites, setFavorites] = useState([]);
+    // const [currentUser, setUser] = useState('');
+    // useEffect(() => {
+    //   getUser(token, user);
+    // }, [favorites])
+    getUser = (token1, user1)=>{
+        // console.log(user, token);
+        _axiosDefault.default.get("https://moviebased.herokuapp.com/users/" + user1, {
+            headers: {
+                Authorization: `Bearer ${token1}`
+            }
+        }).then((response)=>{
+            const idList = response.data.Favorites.map(({ _id  })=>_id
+            );
+            // const currentUser = response.data;
+            // setUser(currentUser);
+            setFavorites(idList);
+            // console.log('response data m-l', response.data);
+            // console.log('currentUser state m-l', currentUser);
+            console.log('favorites state m-l', favorites);
+        }).catch(function(error) {
+            console.log(error);
+        });
+    };
     if (visibilityFilter !== '') filteredMovies = movies.filter((m)=>m.Title.toLowerCase().includes(visibilityFilter.toLowerCase())
     );
     if (!movies) return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
         className: "main-view",
         __source: {
             fileName: "src/components/movies-list/movies-list.jsx",
-            lineNumber: 24
+            lineNumber: 58
         },
         __self: this,
         children: "No movies"
@@ -29945,7 +29980,7 @@ function MoviesList(props) {
         className: "movies",
         __source: {
             fileName: "src/components/movies-list/movies-list.jsx",
-            lineNumber: 26
+            lineNumber: 60
         },
         __self: this,
         children: [
@@ -29953,14 +29988,14 @@ function MoviesList(props) {
                 className: "filter-section",
                 __source: {
                     fileName: "src/components/movies-list/movies-list.jsx",
-                    lineNumber: 27
+                    lineNumber: 61
                 },
                 __self: this,
                 children: /*#__PURE__*/ _jsxRuntime.jsx(_filterDefault.default, {
                     visibilityFilter: visibilityFilter,
                     __source: {
                         fileName: "src/components/movies-list/movies-list.jsx",
-                        lineNumber: 28
+                        lineNumber: 62
                     },
                     __self: this
                 })
@@ -29969,20 +30004,21 @@ function MoviesList(props) {
                 className: "filtered-movies",
                 __source: {
                     fileName: "src/components/movies-list/movies-list.jsx",
-                    lineNumber: 30
+                    lineNumber: 64
                 },
                 __self: this,
                 children: filteredMovies.map((m)=>/*#__PURE__*/ _jsxRuntime.jsx("div", {
                         __source: {
                             fileName: "src/components/movies-list/movies-list.jsx",
-                            lineNumber: 32
+                            lineNumber: 66
                         },
                         __self: this,
                         children: /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
                             movie: m,
+                            favorites: favorites,
                             __source: {
                                 fileName: "src/components/movies-list/movies-list.jsx",
-                                lineNumber: 33
+                                lineNumber: 67
                             },
                             __self: this
                         })
@@ -29992,6 +30028,7 @@ function MoviesList(props) {
         ]
     }));
 }
+_s(MoviesList, "zqS0fDMu9WhvnxEgdpP3zwUocBg=");
 _c = MoviesList;
 exports.default = _reactRedux.connect(mapStateToProps)(MoviesList);
 var _c;
@@ -30002,7 +30039,7 @@ $RefreshReg$(_c, "MoviesList");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap/Col":"fbam0","react-redux":"2L0if","../movie-card/movie-card":"6EiBJ","../filter/filter":"2BDMw","../main-view/main-view.scss":"jyMAr","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"fbam0":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap/Col":"fbam0","react-redux":"2L0if","../movie-card/movie-card":"6EiBJ","../filter/filter":"2BDMw","../main-view/main-view.scss":"jyMAr","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J","axios":"iYoWk"}],"fbam0":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "useCol", ()=>useCol
@@ -30083,64 +30120,55 @@ class MovieCard extends _reactDefault.default.Component {
     constructor(){
         super();
         this.state = {
-            Favorites: [],
+            // Favorites: [],
             isInFavs: false
         };
     }
-    getUser = (token, user)=>{
-        _axiosDefault.default.get("https://moviebased.herokuapp.com/users/" + user, {
-            headers: {
-                Authorization: `Bearer ${token}`
-            }
-        }).then((response)=>{
-            const idList = response.data.Favorites.map(({ _id  })=>_id
-            );
-            // console.log('id list', idList);
-            this.setState({
-                Favorites: idList
-            });
-            // this.setState({ Favorites: response.data.Favorites });
-            console.log('updated state favs', this.state.Favorites);
-            console.log('calling check favs from get user');
-            this.checkFavs();
-        }).catch(function(error) {
-            console.log(error);
-        });
-    };
+    // getUser = (token, user) => {
+    //   axios
+    //     .get("https://moviebased.herokuapp.com/users/" + user, {
+    //       headers: { Authorization: `Bearer ${token}` },
+    //     })
+    //     .then((response) => {
+    //       const idList = response.data.Favorites.map(({ _id }) => _id);
+    //       // console.log('id list', idList);
+    //       this.setState({ Favorites: idList });
+    //       // this.setState({ Favorites: response.data.Favorites });
+    //       console.log('updated state favs', this.state.Favorites);
+    //       console.log('calling check favs from get user');
+    //       this.checkFavs();
+    //     })
+    //     .catch(function (error) {
+    //       console.log(error);
+    //     });
+    // }
     checkFavs = (movieId)=>{
-        // const movieId = this.props.movie._id;
-        console.log('executing check Favs');
+        console.log('<<<------------START----------->>>');
+        console.log('favorites from props', this.props.favorites);
         console.log('movieId', movieId);
-        if (this.state.Favorites.includes(this.props.movie._id)) {
-            console.log('check fav', this.state.Favorites);
-            // console.log('check movie', this.state.movieId);
+        if (this.props.favorites.includes(this.props.movie._id)) {
             this.setState({
                 isInFavs: true
             });
-            console.log('is in favs', this.state.isInFavs);
-            return isInFavs;
+            console.log('Found in favs props');
+            // console.log('is in favs - found in favs', this.state.isInFavs);
+            return this.isInFavs;
         }
+        console.log('is in favs', this.state.isInFavs);
+        console.log('<<<------------END----------->>>');
     };
     componentDidMount = ()=>{
-        console.log('compenent did mount init');
-        console.log('state favs before', this.state.Favorites);
-        console.log('state is in favs before', this.state.isInFavs);
-        const user = localStorage.getItem('user');
-        const token = localStorage.getItem('token');
-        this.getUser(token, user);
+        const movieId = this.props.movie._id;
+        this.checkFavs(movieId);
     };
     render() {
         const { movie  } = this.props;
-        // const { isInFavs } = this.state;
-        // console.log('movie', movie);
-        const movieId = this.props.movie._id;
-        console.log('movie id', movieId);
-        // console.log('Favorites', this.Favorites);
+        console.log('is in favs - found in favs', this.state.isInFavs);
         return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
             className: "card",
             __source: {
                 fileName: "src/components/movie-card/movie-card.jsx",
-                lineNumber: 66
+                lineNumber: 60
             },
             __self: this,
             children: [
@@ -30148,7 +30176,7 @@ class MovieCard extends _reactDefault.default.Component {
                     className: "card-img",
                     __source: {
                         fileName: "src/components/movie-card/movie-card.jsx",
-                        lineNumber: 67
+                        lineNumber: 61
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
@@ -30156,7 +30184,7 @@ class MovieCard extends _reactDefault.default.Component {
                         alt: "movie poster",
                         __source: {
                             fileName: "src/components/movie-card/movie-card.jsx",
-                            lineNumber: 68
+                            lineNumber: 62
                         },
                         __self: this
                     })
@@ -30165,7 +30193,7 @@ class MovieCard extends _reactDefault.default.Component {
                     className: "title",
                     __source: {
                         fileName: "src/components/movie-card/movie-card.jsx",
-                        lineNumber: 70
+                        lineNumber: 64
                     },
                     __self: this,
                     children: movie.Title
@@ -30174,7 +30202,7 @@ class MovieCard extends _reactDefault.default.Component {
                     className: "movie-card-button",
                     __source: {
                         fileName: "src/components/movie-card/movie-card.jsx",
-                        lineNumber: 71
+                        lineNumber: 65
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
@@ -30182,7 +30210,7 @@ class MovieCard extends _reactDefault.default.Component {
                         className: "button-primary",
                         __source: {
                             fileName: "src/components/movie-card/movie-card.jsx",
-                            lineNumber: 72
+                            lineNumber: 66
                         },
                         __self: this,
                         children: "See more"
@@ -30191,7 +30219,7 @@ class MovieCard extends _reactDefault.default.Component {
                 this.state.isInFavs && /*#__PURE__*/ _jsxRuntime.jsx("p", {
                     __source: {
                         fileName: "src/components/movie-card/movie-card.jsx",
-                        lineNumber: 76
+                        lineNumber: 70
                     },
                     __self: this,
                     children: "is in favs"
@@ -30199,7 +30227,7 @@ class MovieCard extends _reactDefault.default.Component {
                 !this.state.isInFavs && /*#__PURE__*/ _jsxRuntime.jsx("p", {
                     __source: {
                         fileName: "src/components/movie-card/movie-card.jsx",
-                        lineNumber: 78
+                        lineNumber: 72
                     },
                     __self: this,
                     children: "is not in favs"

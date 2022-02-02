@@ -15,7 +15,7 @@ const visibilityFilter = (state = '', action) => {
 const movies = (state = [], action) => {
     switch (action.type) {
       case SET_MOVIES:
-        console.log('setMovies reducer reached');
+        // console.log('setMovies reducer reached');
         return action.value;
             default:
                 return state;

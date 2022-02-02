@@ -5,7 +5,7 @@ export const UPDATE_USER = 'UPDATE_USER';
 export const REMOVE_USER = 'REMOVE_USER';
 
 export function setMovies(value) {
-    console.log('setMovies triggered');
+    // console.log('setMovies triggered');
     return { type: SET_MOVIES, value };
 }
 
@@ -15,7 +15,7 @@ export function setFilter(value) {
 }
 
 export function setUser(value) {
-    console.log('setUser triggered');
+    // console.log('setUser triggered');
     return { type: SET_USER, value };
 }
 
