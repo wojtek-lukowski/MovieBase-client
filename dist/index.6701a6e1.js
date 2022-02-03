@@ -30182,13 +30182,13 @@ class MovieCard extends _reactDefault.default.Component {
                 isHeartFull: false
             });
             this.removeFromFavs(movieId);
-            console.log(this.props.movie.Title, this.props.movie._id, ' has been added');
+            console.log(this.props.movie.Title, this.props.movie._id, ' has been removed');
         } else {
             this.setState({
                 isHeartFull: true
             });
             this.addToFavs(movieId);
-            console.log(this.props.movie.Title, this.props.movie._id, ' has been removed');
+            console.log(this.props.movie.Title, this.props.movie._id, ' has been added');
         }
     };
     addToFavs = (movieId)=>{
@@ -32778,7 +32778,7 @@ class ProfileView extends _reactDefault.default.Component {
                             children: "Your favorite movies:"
                         }),
                         /*#__PURE__*/ _jsxRuntime.jsx("div", {
-                            className: "filtered-movies",
+                            className: "filtered-favorite-movies",
                             __source: {
                                 fileName: "src/components/profile-view/profile-view.jsx",
                                 lineNumber: 188
@@ -33237,85 +33237,115 @@ var _reactBootstrap = require("react-bootstrap");
 var _reactRouterDom = require("react-router-dom");
 var _favMovieScss = require("./fav-movie.scss");
 class FavMovie extends _reactDefault.default.Component {
+    constructor(){
+        super();
+        this.state = {
+            isRemoved: false
+        };
+    }
+    favRemoved = ()=>{
+        // alert(`${this.props.movie.Title} has been removed.`);
+        this.setState({
+            isRemoved: true
+        });
+        console.log('is removed', this.state.isRemoved);
+        setTimeout(()=>{
+            console.log('is removed', this.state.isRemoved);
+        }, 1000);
+    };
     render() {
         const { movie , removeFav , fav  } = this.props;
-        function favRemoved() {
-            alert(`${movie.Title} has been removed.`);
-        }
         console.log(movie);
         return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
-            className: "card",
             __source: {
                 fileName: "src/components/fav-movie/fav-movie.jsx",
-                lineNumber: 23
+                lineNumber: 35
             },
             __self: this,
             children: [
-                /*#__PURE__*/ _jsxRuntime.jsxs("div", {
-                    className: "",
+                this.state.isRemoved && /*#__PURE__*/ _jsxRuntime.jsx("div", {
                     __source: {
                         fileName: "src/components/fav-movie/fav-movie.jsx",
-                        lineNumber: 25
+                        lineNumber: 37
                     },
-                    __self: this,
-                    children: [
-                        /*#__PURE__*/ _jsxRuntime.jsx("div", {
-                            className: "card-img",
-                            __source: {
-                                fileName: "src/components/fav-movie/fav-movie.jsx",
-                                lineNumber: 26
-                            },
-                            __self: this,
-                            children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
-                                src: movie.ImagePath,
-                                alt: "movie poster",
-                                __source: {
-                                    fileName: "src/components/fav-movie/fav-movie.jsx",
-                                    lineNumber: 27
-                                },
-                                __self: this
-                            })
-                        }),
-                        /*#__PURE__*/ _jsxRuntime.jsx("div", {
-                            className: "title",
-                            __source: {
-                                fileName: "src/components/fav-movie/fav-movie.jsx",
-                                lineNumber: 29
-                            },
-                            __self: this,
-                            children: movie.Title
-                        })
-                    ]
+                    __self: this
                 }),
-                /*#__PURE__*/ _jsxRuntime.jsxs("div", {
-                    className: "centered",
+                !this.state.isRemoved && /*#__PURE__*/ _jsxRuntime.jsxs("div", {
+                    className: "card",
                     __source: {
                         fileName: "src/components/fav-movie/fav-movie.jsx",
-                        lineNumber: 33
+                        lineNumber: 40
                     },
                     __self: this,
                     children: [
-                        /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
-                            to: `/movies/${movie._id}`,
-                            className: "button-primary",
+                        /*#__PURE__*/ _jsxRuntime.jsxs("div", {
+                            className: "",
                             __source: {
                                 fileName: "src/components/fav-movie/fav-movie.jsx",
-                                lineNumber: 34
+                                lineNumber: 42
                             },
                             __self: this,
-                            children: "See more"
+                            children: [
+                                /*#__PURE__*/ _jsxRuntime.jsx("div", {
+                                    className: "card-img",
+                                    __source: {
+                                        fileName: "src/components/fav-movie/fav-movie.jsx",
+                                        lineNumber: 43
+                                    },
+                                    __self: this,
+                                    children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
+                                        src: movie.ImagePath,
+                                        alt: "movie poster",
+                                        __source: {
+                                            fileName: "src/components/fav-movie/fav-movie.jsx",
+                                            lineNumber: 44
+                                        },
+                                        __self: this
+                                    })
+                                }),
+                                /*#__PURE__*/ _jsxRuntime.jsx("div", {
+                                    className: "title",
+                                    __source: {
+                                        fileName: "src/components/fav-movie/fav-movie.jsx",
+                                        lineNumber: 46
+                                    },
+                                    __self: this,
+                                    children: movie.Title
+                                })
+                            ]
                         }),
-                        /*#__PURE__*/ _jsxRuntime.jsx("button", {
-                            className: "button-primary",
-                            onClick: ()=>{
-                                removeFav(movie._id), favRemoved(), location.reload();
-                            },
+                        /*#__PURE__*/ _jsxRuntime.jsxs("div", {
+                            className: "centered",
                             __source: {
                                 fileName: "src/components/fav-movie/fav-movie.jsx",
-                                lineNumber: 35
+                                lineNumber: 50
                             },
                             __self: this,
-                            children: "Remove"
+                            children: [
+                                /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
+                                    to: `/movies/${movie._id}`,
+                                    className: "button-primary",
+                                    __source: {
+                                        fileName: "src/components/fav-movie/fav-movie.jsx",
+                                        lineNumber: 51
+                                    },
+                                    __self: this,
+                                    children: "See more"
+                                }),
+                                /*#__PURE__*/ _jsxRuntime.jsx("button", {
+                                    className: "button-primary",
+                                    onClick: ()=>{
+                                        removeFav(movie._id), this.favRemoved();
+                                    // , location.reload() 
+                                    },
+                                    __source: {
+                                        fileName: "src/components/fav-movie/fav-movie.jsx",
+                                        lineNumber: 52
+                                    },
+                                    __self: this,
+                                    children: "Remove"
+                                })
+                            ]
                         })
                     ]
                 })

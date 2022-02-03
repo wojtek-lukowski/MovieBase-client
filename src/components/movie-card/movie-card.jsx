@@ -60,11 +60,11 @@ export class MovieCard extends React.Component {
     if (this.state.isHeartFull) {
       this.setState({ isHeartFull: false });
       this.removeFromFavs(movieId);
-      console.log(this.props.movie.Title, this.props.movie._id, ' has been added');
+      console.log(this.props.movie.Title, this.props.movie._id, ' has been removed');
     } else {
       this.setState({ isHeartFull: true });
       this.addToFavs(movieId);
-      console.log(this.props.movie.Title, this.props.movie._id, ' has been removed');
+      console.log(this.props.movie.Title, this.props.movie._id, ' has been added');
     }
   }
 

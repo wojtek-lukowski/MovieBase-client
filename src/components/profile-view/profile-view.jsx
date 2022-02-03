@@ -185,7 +185,7 @@ export class ProfileView extends React.Component {
 
         <div className="favorite-movies">
           <h2>Your favorite movies:</h2>
-          <div className="filtered-movies">
+          <div className="filtered-favorite-movies">
             {this.state.Favorites.map(fav => (
               <div key={fav._id}>
                 <FavMovie key={fav._id} movie={fav} removeFav={this.removeFromFavs} />

@@ -12,6 +12,16 @@
     }
 }
 
+.filtered-favorite-movies {
+  display: flex;
+  flex-wrap: nowrap;
+  row-gap: var(--u2);
+  max-width: var(--page);
+  padding: var(--u2) 0;
+  justify-content: flex-start;
+  overflow-x: auto;
+}
+
 .profile-buttons {
   display: flex;
   justify-content: space-evenly;
