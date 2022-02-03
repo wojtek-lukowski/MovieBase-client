@@ -30325,7 +30325,7 @@ class MovieCard extends _reactDefault.default.Component {
                                 lineNumber: 154
                             },
                             __self: this,
-                            children: "Add"
+                            children: "Add to favs"
                         })
                     ]
                 })

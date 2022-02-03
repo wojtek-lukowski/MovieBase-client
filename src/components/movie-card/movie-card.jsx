@@ -151,7 +151,7 @@ export class MovieCard extends React.Component {
             <div className="button-primary is-in-favs" onClick={() => this.toggleHeart(movie._id)}>Remove</div>
           }
           {!this.state.isHeartFull &&
-            <div className="button-primary" onClick={() => this.toggleHeart(movie._id)}>Add</div>
+            <div className="button-primary" onClick={() => this.toggleHeart(movie._id)}>Add to favs</div>
           }
         </div>
       </div>
