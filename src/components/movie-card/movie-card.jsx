@@ -8,63 +8,126 @@ export class MovieCard extends React.Component {
     super();
 
     this.state = {
-      // Favorites: [],
-      isInFavs: false
+      favorites: [],
+      isInFavs: false,
+      isHeartFull: false,
     };
   }
 
-  // getUser = (token, user) => {
-  //   axios
-  //     .get("https://moviebased.herokuapp.com/users/" + user, {
-  //       headers: { Authorization: `Bearer ${token}` },
-  //     })
-  //     .then((response) => {
-  //       const idList = response.data.Favorites.map(({ _id }) => _id);
-  //       // console.log('id list', idList);
-  //       this.setState({ Favorites: idList });
-  //       // this.setState({ Favorites: response.data.Favorites });
-  //       console.log('updated state favs', this.state.Favorites);
-  //       console.log('calling check favs from get user');
-  //       this.checkFavs();
-  //     })
-  //     .catch(function (error) {
-  //       console.log(error);
-  //     });
-  // }
+  getUser = () => {
+    const user = localStorage.getItem('user');
+    const token = localStorage.getItem('token');
+    axios
+      .get("https://moviebased.herokuapp.com/users/" + user, {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      .then((response) => {
+        const favIdList = response.data.Favorites.map(({ _id }) => _id);
+        // const movieId = this.props.movie._id;
+        this.setState({ favorites: favIdList });
+        // this.setIsInFavs(movieId);
+        console.log('updated state favs', this.state.favorites);
+      })
+      .then(() => {
+        const movieId = this.props.movie._id;
+        this.setIsInFavs(movieId)
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
 
-  checkFavs = (movieId) => {
-    console.log('<<<------------START----------->>>');
-    console.log('favorites from props', this.props.favorites);
-    console.log('movieId', movieId);
-    if (this.props.favorites.includes(this.props.movie._id)) {
-      this.setState({ isInFavs: true })
-      console.log('Found in favs props');
-      // console.log('is in favs - found in favs', this.state.isInFavs);
-      return this.isInFavs;
+  setIsInFavs = (movieId) => {
+    // console.log('movieId', this.props.movie._id);
+    console.log('state favorites before updating isInFavs', this.state.favorites);
+    // if (this.state.favorites.includes(this.props.movie._id)) {
+    if (this.state.favorites.includes(movieId)) {
+      // this.setState({ isInFavs: true })
+      this.setState({ isHeartFull: true })
+      console.log('updated isInFavs', this.state.isInFavs);
+      // return this.isInFavs;
+    } else {
+      // this.setState({ isInFavs: false })
+      this.setState({ isHeartFull: false })
+      console.log('updated isInFavs', this.state.isInFavs);
+      // return this.isInFavs;
     }
+  }
+
+  toggleFavs = (movieId) => {
     console.log('is in favs', this.state.isInFavs);
-    console.log('<<<------------END----------->>>');
+    // if (this.state.isInFavs) {
+    if (this.state.isHeartFull) {
+      // if (this.state.favorites.includes(movieId)) {
+      console.log('favorites state before removing', this.state.favorites);
+      // this.setState({ isInFavs: false })
+      this.setState({ isHeartFull: false })
+      this.removeFromFavs(movieId);
+      this.getUser();
+      console.log(this.props.movie.Title, this.props.movie._id, ' has been removed');
+    } else {
+      console.log('favorites state before adding', this.state.favorites);
+      // this.setState({ isInFavs: true })
+      this.setState({ isHeartFull: true })
+      this.addToFavs(movieId);
+      this.getUser();
+      console.log(this.props.movie.Title, this.props.movie._id, ' has been added');
+    }
+  }
+
+  toggleHeart = (movieId) => {
+    if (this.state.isHeartFull) {
+      this.setState({ isHeartFull: false });
+      this.removeFromFavs(movieId);
+    } else {
+      this.setState({ isHeartFull: true });
+      this.addToFavs(movieId);
+    }
+    // this.toggleFavs(movieId);
+  }
+
+  addToFavs = (movieId) => {
+    const username = localStorage.getItem("user");
+    const token = localStorage.getItem("token");
+
+    axios
+      .post(
+        `https://moviebased.herokuapp.com/users/${username}/movies/` + movieId,
+        {},
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      )
+      .then((response) => {
+        // console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
+
+  removeFromFavs = (movieId) => {
+    const username = localStorage.getItem('user');
+    const token = localStorage.getItem('token');
+
+    axios.delete(`https://moviebased.herokuapp.com/users/${username}/movies/` + movieId, {
+      headers: { Authorization: `Bearer ${token}` }
+    })
+      .then((response) => {
+        // console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   }
 
   componentDidMount = () => {
-    const movieId = this.props.movie._id;
-    this.checkFavs(movieId);
+    console.log('running componentDidMount');
+    this.getUser();
   }
-
-  // componentDidMount = () => {
-
-  //   const movieId = this.props.movie._id;
-
-  //   console.log('taking time');
-  //   setTimeout(
-  //     this.checkFavs(movieId), 10000
-  //   )
-  // }
 
   render() {
     const { movie } = this.props;
-    console.log('is in favs - found in favs', this.state.isInFavs);
-
 
     return (
       <div className="card">
@@ -72,31 +135,25 @@ export class MovieCard extends React.Component {
           <img src={movie.ImagePath} alt="movie poster" />
         </div>
         <div className="title">{movie.Title}
-          {this.state.isInFavs &&
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M7 3C4.239 3 2 5.216 2 7.95C2 10.157 2.875 15.395 11.488 20.69C11.6423 20.7839 11.8194 20.8335 12 20.8335C12.1806 20.8335 12.3577 20.7839 12.512 20.69C21.125 15.395 22 10.157 22 7.95C22 5.216 19.761 3 17 3C14.239 3 12 6 12 6C12 6 9.761 3 7 3Z" fill="#FFBF00" stroke="#FFBF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
+        </div>
+        <div className="card-actions">
+          <div className="movie-card-button">
+            <Link to={`/movies/${movie._id}`} className="button-primary">See more
+            </Link>
+          </div>
+          {/* {this.state.isInFavs &&
+            <div className="button-primary" onClick={() => this.toggleFavs(movie._id)}>Remove</div>
           }
           {!this.state.isInFavs &&
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M7 3C4.239 3 2 5.216 2 7.95C2 10.157 2.875 15.395 11.488 20.69C11.6423 20.7839 11.8194 20.8335 12 20.8335C12.1806 20.8335 12.3577 20.7839 12.512 20.69C21.125 15.395 22 10.157 22 7.95C22 5.216 19.761 3 17 3C14.239 3 12 6 12 6C12 6 9.761 3 7 3Z" fill="#404040" stroke="#404040" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-
-          }</div>
-        <div className="movie-card-button">
-          <Link to={`/movies/${movie._id}`} className="button-primary">See more
-          </Link>
+            <div className="button-primary" onClick={() => this.toggleFavs(movie._id)}>Add</div>
+          } */}
+          {this.state.isHeartFull &&
+            <div className="button-primary is-in-favs" onClick={() => this.toggleHeart(movie._id)}>Remove</div>
+          }
+          {!this.state.isHeartFull &&
+            <div className="button-primary" onClick={() => this.toggleHeart(movie._id)}>Add</div>
+          }
         </div>
-        {/* {this.state.isInFavs &&
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M7 3C4.239 3 2 5.216 2 7.95C2 10.157 2.875 15.395 11.488 20.69C11.6423 20.7839 11.8194 20.8335 12 20.8335C12.1806 20.8335 12.3577 20.7839 12.512 20.69C21.125 15.395 22 10.157 22 7.95C22 5.216 19.761 3 17 3C14.239 3 12 6 12 6C12 6 9.761 3 7 3Z" fill="#FFBF00" stroke="#FFBF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-          </svg>
-        }
-        {!this.state.isInFavs &&
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M7 3C4.239 3 2 5.216 2 7.95C2 10.157 2.875 15.395 11.488 20.69C11.6423 20.7839 11.8194 20.8335 12 20.8335C12.1806 20.8335 12.3577 20.7839 12.512 20.69C21.125 15.395 22 10.157 22 7.95C22 5.216 19.761 3 17 3C14.239 3 12 6 12 6C12 6 9.761 3 7 3Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-          </svg>
-        } */}
       </div>
     );
   }

@@ -42,18 +42,31 @@
     font-size: 1.2rem;
   }
 
+  .is-in-favs {
+    background-color: var(--yellow);
+    color: var(--background);
+    font-weight: 600;
+
+    &:hover {
+      background-color: var(--background);
+      color: var(--yellow) !important;
+      border: 1px solid var(--yellow);
+    }
+  }
+
   svg {
     position: absolute;
     top: .4rem;
     right: 4px;
   }
 
-  svg path {
-    stroke: var(--yellow);
+  svg:hover {
+    cursor: pointer;
+    transform: scale(1.2);
   }
 
-  .faved svg {
-    fill: var(--yellow);
+  svg path {
+    stroke: var(--yellow);
   }
 }
 
