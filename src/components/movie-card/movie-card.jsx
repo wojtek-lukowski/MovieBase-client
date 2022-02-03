@@ -9,7 +9,6 @@ export class MovieCard extends React.Component {
 
     this.state = {
       favorites: [],
-      isInFavs: false,
       isHeartFull: false,
     };
   }
@@ -23,10 +22,7 @@ export class MovieCard extends React.Component {
       })
       .then((response) => {
         const favIdList = response.data.Favorites.map(({ _id }) => _id);
-        // const movieId = this.props.movie._id;
         this.setState({ favorites: favIdList });
-        // this.setIsInFavs(movieId);
-        console.log('updated state favs', this.state.favorites);
       })
       .then(() => {
         const movieId = this.props.movie._id;
@@ -38,40 +34,25 @@ export class MovieCard extends React.Component {
   }
 
   setIsInFavs = (movieId) => {
-    // console.log('movieId', this.props.movie._id);
-    console.log('state favorites before updating isInFavs', this.state.favorites);
-    // if (this.state.favorites.includes(this.props.movie._id)) {
     if (this.state.favorites.includes(movieId)) {
-      // this.setState({ isInFavs: true })
       this.setState({ isHeartFull: true })
-      console.log('updated isInFavs', this.state.isInFavs);
-      // return this.isInFavs;
     } else {
-      // this.setState({ isInFavs: false })
       this.setState({ isHeartFull: false })
-      console.log('updated isInFavs', this.state.isInFavs);
-      // return this.isInFavs;
     }
   }
 
   toggleFavs = (movieId) => {
     console.log('is in favs', this.state.isInFavs);
-    // if (this.state.isInFavs) {
     if (this.state.isHeartFull) {
-      // if (this.state.favorites.includes(movieId)) {
       console.log('favorites state before removing', this.state.favorites);
-      // this.setState({ isInFavs: false })
       this.setState({ isHeartFull: false })
       this.removeFromFavs(movieId);
       this.getUser();
-      console.log(this.props.movie.Title, this.props.movie._id, ' has been removed');
     } else {
       console.log('favorites state before adding', this.state.favorites);
-      // this.setState({ isInFavs: true })
       this.setState({ isHeartFull: true })
       this.addToFavs(movieId);
       this.getUser();
-      console.log(this.props.movie.Title, this.props.movie._id, ' has been added');
     }
   }
 
@@ -79,11 +60,12 @@ export class MovieCard extends React.Component {
     if (this.state.isHeartFull) {
       this.setState({ isHeartFull: false });
       this.removeFromFavs(movieId);
+      console.log(this.props.movie.Title, this.props.movie._id, ' has been added');
     } else {
       this.setState({ isHeartFull: true });
       this.addToFavs(movieId);
+      console.log(this.props.movie.Title, this.props.movie._id, ' has been removed');
     }
-    // this.toggleFavs(movieId);
   }
 
   addToFavs = (movieId) => {

@@ -30127,7 +30127,6 @@ class MovieCard extends _reactDefault.default.Component {
         super();
         this.state = {
             favorites: [],
-            isInFavs: false,
             isHeartFull: false
         };
     }
@@ -30141,12 +30140,9 @@ class MovieCard extends _reactDefault.default.Component {
         }).then((response)=>{
             const favIdList = response.data.Favorites.map(({ _id  })=>_id
             );
-            // const movieId = this.props.movie._id;
             this.setState({
                 favorites: favIdList
             });
-            // this.setIsInFavs(movieId);
-            console.log('updated state favs', this.state.favorites);
         }).then(()=>{
             const movieId = this.props.movie._id;
             this.setIsInFavs(movieId);
@@ -30155,47 +30151,29 @@ class MovieCard extends _reactDefault.default.Component {
         });
     };
     setIsInFavs = (movieId)=>{
-        // console.log('movieId', this.props.movie._id);
-        console.log('state favorites before updating isInFavs', this.state.favorites);
-        // if (this.state.favorites.includes(this.props.movie._id)) {
-        if (this.state.favorites.includes(movieId)) {
-            // this.setState({ isInFavs: true })
-            this.setState({
-                isHeartFull: true
-            });
-            console.log('updated isInFavs', this.state.isInFavs);
-        // return this.isInFavs;
-        } else {
-            // this.setState({ isInFavs: false })
-            this.setState({
-                isHeartFull: false
-            });
-            console.log('updated isInFavs', this.state.isInFavs);
-        // return this.isInFavs;
-        }
+        if (this.state.favorites.includes(movieId)) this.setState({
+            isHeartFull: true
+        });
+        else this.setState({
+            isHeartFull: false
+        });
     };
     toggleFavs = (movieId)=>{
         console.log('is in favs', this.state.isInFavs);
-        // if (this.state.isInFavs) {
         if (this.state.isHeartFull) {
-            // if (this.state.favorites.includes(movieId)) {
             console.log('favorites state before removing', this.state.favorites);
-            // this.setState({ isInFavs: false })
             this.setState({
                 isHeartFull: false
             });
             this.removeFromFavs(movieId);
             this.getUser();
-            console.log(this.props.movie.Title, this.props.movie._id, ' has been removed');
         } else {
             console.log('favorites state before adding', this.state.favorites);
-            // this.setState({ isInFavs: true })
             this.setState({
                 isHeartFull: true
             });
             this.addToFavs(movieId);
             this.getUser();
-            console.log(this.props.movie.Title, this.props.movie._id, ' has been added');
         }
     };
     toggleHeart = (movieId)=>{
@@ -30204,13 +30182,14 @@ class MovieCard extends _reactDefault.default.Component {
                 isHeartFull: false
             });
             this.removeFromFavs(movieId);
+            console.log(this.props.movie.Title, this.props.movie._id, ' has been added');
         } else {
             this.setState({
                 isHeartFull: true
             });
             this.addToFavs(movieId);
+            console.log(this.props.movie.Title, this.props.movie._id, ' has been removed');
         }
-    // this.toggleFavs(movieId);
     };
     addToFavs = (movieId)=>{
         const username = localStorage.getItem("user");
@@ -30249,7 +30228,7 @@ class MovieCard extends _reactDefault.default.Component {
             className: "card",
             __source: {
                 fileName: "src/components/movie-card/movie-card.jsx",
-                lineNumber: 133
+                lineNumber: 115
             },
             __self: this,
             children: [
@@ -30257,7 +30236,7 @@ class MovieCard extends _reactDefault.default.Component {
                     className: "card-img",
                     __source: {
                         fileName: "src/components/movie-card/movie-card.jsx",
-                        lineNumber: 134
+                        lineNumber: 116
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
@@ -30265,7 +30244,7 @@ class MovieCard extends _reactDefault.default.Component {
                         alt: "movie poster",
                         __source: {
                             fileName: "src/components/movie-card/movie-card.jsx",
-                            lineNumber: 135
+                            lineNumber: 117
                         },
                         __self: this
                     })
@@ -30274,7 +30253,7 @@ class MovieCard extends _reactDefault.default.Component {
                     className: "title",
                     __source: {
                         fileName: "src/components/movie-card/movie-card.jsx",
-                        lineNumber: 137
+                        lineNumber: 119
                     },
                     __self: this,
                     children: movie.Title
@@ -30283,7 +30262,7 @@ class MovieCard extends _reactDefault.default.Component {
                     className: "card-actions",
                     __source: {
                         fileName: "src/components/movie-card/movie-card.jsx",
-                        lineNumber: 139
+                        lineNumber: 121
                     },
                     __self: this,
                     children: [
@@ -30291,7 +30270,7 @@ class MovieCard extends _reactDefault.default.Component {
                             className: "movie-card-button",
                             __source: {
                                 fileName: "src/components/movie-card/movie-card.jsx",
-                                lineNumber: 140
+                                lineNumber: 122
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
@@ -30299,7 +30278,7 @@ class MovieCard extends _reactDefault.default.Component {
                                 className: "button-primary",
                                 __source: {
                                     fileName: "src/components/movie-card/movie-card.jsx",
-                                    lineNumber: 141
+                                    lineNumber: 123
                                 },
                                 __self: this,
                                 children: "See more"
@@ -30311,7 +30290,7 @@ class MovieCard extends _reactDefault.default.Component {
                             ,
                             __source: {
                                 fileName: "src/components/movie-card/movie-card.jsx",
-                                lineNumber: 151
+                                lineNumber: 133
                             },
                             __self: this,
                             children: "Remove"
@@ -30322,7 +30301,7 @@ class MovieCard extends _reactDefault.default.Component {
                             ,
                             __source: {
                                 fileName: "src/components/movie-card/movie-card.jsx",
-                                lineNumber: 154
+                                lineNumber: 136
                             },
                             __self: this,
                             children: "Add to favs"
@@ -31813,39 +31792,25 @@ class MovieView extends _reactDefault.default.Component {
                                 })
                             ]
                         }),
-                        /*#__PURE__*/ _jsxRuntime.jsxs("div", {
+                        /*#__PURE__*/ _jsxRuntime.jsx("div", {
                             className: "movie-view-buttons",
                             __source: {
                                 fileName: "src/components/movie-view/movie-view.jsx",
                                 lineNumber: 72
                             },
                             __self: this,
-                            children: [
-                                /*#__PURE__*/ _jsxRuntime.jsx("button", {
-                                    className: "button-primary",
-                                    onClick: ()=>{
-                                        onBackClick();
-                                    },
-                                    __source: {
-                                        fileName: "src/components/movie-view/movie-view.jsx",
-                                        lineNumber: 73
-                                    },
-                                    __self: this,
-                                    children: "Back"
-                                }),
-                                /*#__PURE__*/ _jsxRuntime.jsx("button", {
-                                    className: "button-primary",
-                                    onClick: ()=>{
-                                        this.addToFavs(movie._id);
-                                    },
-                                    __source: {
-                                        fileName: "src/components/movie-view/movie-view.jsx",
-                                        lineNumber: 74
-                                    },
-                                    __self: this,
-                                    children: "Add to favs"
-                                })
-                            ]
+                            children: /*#__PURE__*/ _jsxRuntime.jsx("button", {
+                                className: "button-primary",
+                                onClick: ()=>{
+                                    onBackClick();
+                                },
+                                __source: {
+                                    fileName: "src/components/movie-view/movie-view.jsx",
+                                    lineNumber: 73
+                                },
+                                __self: this,
+                                children: "Back"
+                            })
                         })
                     ]
                 })
