@@ -171,6 +171,7 @@ export class ProfileView extends React.Component {
 
   setBirthday(value) {
     this.state.Birthday = value;
+    // this.state.Birthday.toLocaleDateString('en-GB', { year: 'numeric', month: '2-digit', day: '2-digit' }) = value;
   }
 
   // areFavs = () => {
@@ -218,7 +219,7 @@ export class ProfileView extends React.Component {
             <h4>Your username: <span>{this.state.Username}</span></h4>
             <h4>Your Email: <span>{this.state.Email}</span></h4>
             <h4>Your Birthdate: <span>{this.state.Birthday}</span></h4>
-
+            {/* <h4>Your Birthdate: <span>{this.state.Birthday.toLocaleDate()}</span></h4> */}
             <div className="remove-user">
               <button className="button-remove" onClick={() => this.removeUser()} >Remove your account</button>
             </div>
