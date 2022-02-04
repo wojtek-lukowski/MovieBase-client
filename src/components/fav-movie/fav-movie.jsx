@@ -37,7 +37,7 @@ export class FavMovie extends React.Component {
           <div></div>
         }
         {!this.state.isRemoved &&
-          <div className="card">
+          <div className="card fav-card">
             {/* <Link to={`/movies/${movie._id}`}> */}
             <div className="">
               <div className="card-img">

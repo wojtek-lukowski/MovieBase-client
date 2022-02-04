@@ -33326,7 +33326,7 @@ class FavMovie extends _reactDefault.default.Component {
                     __self: this
                 }),
                 !this.state.isRemoved && /*#__PURE__*/ _jsxRuntime.jsxs("div", {
-                    className: "card",
+                    className: "card fav-card",
                     __source: {
                         fileName: "src/components/fav-movie/fav-movie.jsx",
                         lineNumber: 40
