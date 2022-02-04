@@ -32,7 +32,9 @@ export class ProfileView extends React.Component {
       Password: null,
       Email: null,
       Birthday: null,
-      Favorites: []
+      Favorites: [],
+      renderProfileButton: false,
+      // areFavsEmpty: true,
     };
   }
 
@@ -171,19 +173,34 @@ export class ProfileView extends React.Component {
     this.state.Birthday = value;
   }
 
+  // areFavs = () => {
+  //   if (this.state.Favorites.length == 0) {
+  //     this.setState({ areFavsEmpty: true });
+  //     console.log('are favs empty', areFavsEmpty);
+  //   } else {
+  //     this.setState({ areFavsEmpty: false })
+  //     console.log('are favs empty', areFavsEmpty);
+  //   }
+  // }
+
   render() {
     const { user, onBackClick } = this.props;
-    console.log(this.state.Username); //undefined
 
     return (
       <div className="profile-view">
-        <Header user={user} logOut={() => this.onLoggedOut()} />
+        <Header user={user} logOut={() => this.onLoggedOut()} renderProfileButton={this.state.renderProfileButton} />
         <div className="profile-buttons">
-          <button onClick={() => { onBackClick(); }} className="button-primary">Back</button>
-          <a href="#data" className="button-primary">Your data</a>
+          {/* <button onClick={() => { onBackClick(); }} className="button-primary">Back</button> */}
+          <a href="#data" className="button-primary">Go to your data</a>
         </div>
 
         <div className="favorite-movies">
+          {/* {this.state.areFavsEmpty &&
+            <h2>Your favorite movies:</h2>
+          }
+          {!this.state.areFavsEmpty &&
+            <h2>Looks, like you do not have any favorite movies.</h2>
+          } */}
           <h2>Your favorite movies:</h2>
           <div className="filtered-favorite-movies">
             {this.state.Favorites.map(fav => (

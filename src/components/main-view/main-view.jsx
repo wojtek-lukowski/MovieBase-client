@@ -28,6 +28,7 @@ export class MainView extends React.Component {
     super();
     this.state = {
       user: null,
+      renderProfileButton: true
     };
   }
 
@@ -103,7 +104,7 @@ export class MainView extends React.Component {
                 return <div className="loading">Loading...</div>;
               return (
                 <div>
-                  <Header user={user} logOut={() => this.onLoggedOut()} />
+                  <Header user={user} logOut={() => this.onLoggedOut()} renderProfileButton={this.state.renderProfileButton} />
                   <div className="movie-cards">
                     <MoviesList movies={movies} />;
                   </div>
