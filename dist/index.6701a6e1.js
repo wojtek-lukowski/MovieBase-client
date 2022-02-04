@@ -32746,17 +32746,7 @@ class ProfileView extends _reactDefault.default.Component {
                         fileName: "src/components/profile-view/profile-view.jsx",
                         lineNumber: 193
                     },
-                    __self: this,
-                    children: /*#__PURE__*/ _jsxRuntime.jsx("a", {
-                        href: "#data",
-                        className: "button-primary",
-                        __source: {
-                            fileName: "src/components/profile-view/profile-view.jsx",
-                            lineNumber: 195
-                        },
-                        __self: this,
-                        children: "Go to your data"
-                    })
+                    __self: this
                 }),
                 /*#__PURE__*/ _jsxRuntime.jsxs("div", {
                     className: "favorite-movies",

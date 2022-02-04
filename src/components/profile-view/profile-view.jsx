@@ -192,7 +192,7 @@ export class ProfileView extends React.Component {
         <Header user={user} logOut={() => this.onLoggedOut()} renderProfileButton={this.state.renderProfileButton} />
         <div className="profile-buttons">
           {/* <button onClick={() => { onBackClick(); }} className="button-primary">Back</button> */}
-          <a href="#data" className="button-primary">Go to your data</a>
+          {/* <a href="#data" className="button-primary">Go to your data</a> */}
         </div>
 
         <div className="favorite-movies">
