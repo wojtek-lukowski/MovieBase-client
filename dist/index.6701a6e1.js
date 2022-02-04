@@ -26024,7 +26024,6 @@ class MainView extends _reactDefault.default.Component {
                                 children: "Loading..."
                             }));
                             return(/*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
-                                md: 8,
                                 children: /*#__PURE__*/ _jsxRuntime.jsx(_movieView.MovieView, {
                                     movie: movies.find((m)=>m._id === match.params.MovieId
                                     ),
@@ -26052,7 +26051,6 @@ class MainView extends _reactDefault.default.Component {
                                 children: "Loading..."
                             }));
                             return(/*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
-                                md: 8,
                                 children: /*#__PURE__*/ _jsxRuntime.jsx(_directorView.DirectorView, {
                                     director: movies.find((m)=>m.Director.Name === match.params.Name
                                     ).Director,
@@ -26062,7 +26060,7 @@ class MainView extends _reactDefault.default.Component {
                         },
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 178
+                            lineNumber: 180
                         },
                         __self: this
                     }),
@@ -26081,7 +26079,6 @@ class MainView extends _reactDefault.default.Component {
                             }));
                             console.log(movies);
                             return(/*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
-                                md: 8,
                                 children: /*#__PURE__*/ _jsxRuntime.jsx(_genreView.GenreView, {
                                     genre: movies.find((m)=>m.Genre.Name === match.params.Name
                                     ).Genre,
@@ -26094,7 +26091,7 @@ class MainView extends _reactDefault.default.Component {
                         },
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 204
+                            lineNumber: 208
                         },
                         __self: this
                     })
