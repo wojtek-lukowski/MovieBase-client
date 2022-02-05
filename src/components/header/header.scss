@@ -6,7 +6,8 @@
   max-width: var(--page);
   height: 10rem;
   background-color: var(--background);
-  border: 1px solid var(--yellow);
+  // border-bottom: 1px solid var(--yellow);
+  box-shadow: 0px 0 5px var(--yellow);
   border-radius: 3px;
   padding: var(--u) var(--u4);
   display: flex;
