@@ -25860,11 +25860,11 @@ class MainView extends _reactDefault.default.Component {
     }
     onLoggedIn(authData) {
         console.log(authData);
+        localStorage.setItem("token", authData.token);
+        localStorage.setItem("user", authData.user.Username);
         this.setState({
             user: authData.user.Username
         });
-        localStorage.setItem("token", authData.token);
-        localStorage.setItem("user", authData.user.Username);
         this.getMovies(authData.token);
     }
     getMovies(token) {
@@ -30130,9 +30130,9 @@ class MovieCard extends _reactDefault.default.Component {
             isHeartFull: false
         };
     }
-    getUser = ()=>{
-        const user = localStorage.getItem('user');
-        const token = localStorage.getItem('token');
+    getUser = (token, user)=>{
+        // const user = localStorage.getItem('user');
+        // const token = localStorage.getItem('token');
         _axiosDefault.default.get("https://moviebased.herokuapp.com/users/" + user, {
             headers: {
                 Authorization: `Bearer ${token}`
@@ -30220,7 +30220,10 @@ class MovieCard extends _reactDefault.default.Component {
     };
     componentDidMount = ()=>{
         console.log('running componentDidMount');
-        this.getUser();
+        const user = localStorage.getItem('user');
+        const token = localStorage.getItem('token');
+        console.log('user, token:', user, token);
+        this.getUser(token, user);
     };
     render() {
         const { movie  } = this.props;
@@ -30228,7 +30231,7 @@ class MovieCard extends _reactDefault.default.Component {
             className: "card",
             __source: {
                 fileName: "src/components/movie-card/movie-card.jsx",
-                lineNumber: 115
+                lineNumber: 118
             },
             __self: this,
             children: [
@@ -30236,7 +30239,7 @@ class MovieCard extends _reactDefault.default.Component {
                     className: "card-img",
                     __source: {
                         fileName: "src/components/movie-card/movie-card.jsx",
-                        lineNumber: 116
+                        lineNumber: 119
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
@@ -30244,7 +30247,7 @@ class MovieCard extends _reactDefault.default.Component {
                         alt: "movie poster",
                         __source: {
                             fileName: "src/components/movie-card/movie-card.jsx",
-                            lineNumber: 117
+                            lineNumber: 120
                         },
                         __self: this
                     })
@@ -30253,7 +30256,7 @@ class MovieCard extends _reactDefault.default.Component {
                     className: "title",
                     __source: {
                         fileName: "src/components/movie-card/movie-card.jsx",
-                        lineNumber: 119
+                        lineNumber: 122
                     },
                     __self: this,
                     children: movie.Title
@@ -30262,7 +30265,7 @@ class MovieCard extends _reactDefault.default.Component {
                     className: "card-actions",
                     __source: {
                         fileName: "src/components/movie-card/movie-card.jsx",
-                        lineNumber: 121
+                        lineNumber: 124
                     },
                     __self: this,
                     children: [
@@ -30270,7 +30273,7 @@ class MovieCard extends _reactDefault.default.Component {
                             className: "movie-card-button",
                             __source: {
                                 fileName: "src/components/movie-card/movie-card.jsx",
-                                lineNumber: 122
+                                lineNumber: 125
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
@@ -30278,7 +30281,7 @@ class MovieCard extends _reactDefault.default.Component {
                                 className: "button-primary",
                                 __source: {
                                     fileName: "src/components/movie-card/movie-card.jsx",
-                                    lineNumber: 123
+                                    lineNumber: 126
                                 },
                                 __self: this,
                                 children: "See more"
@@ -30290,7 +30293,7 @@ class MovieCard extends _reactDefault.default.Component {
                             ,
                             __source: {
                                 fileName: "src/components/movie-card/movie-card.jsx",
-                                lineNumber: 133
+                                lineNumber: 136
                             },
                             __self: this,
                             children: "Remove"
@@ -30301,7 +30304,7 @@ class MovieCard extends _reactDefault.default.Component {
                             ,
                             __source: {
                                 fileName: "src/components/movie-card/movie-card.jsx",
-                                lineNumber: 136
+                                lineNumber: 139
                             },
                             __self: this,
                             children: "Add to favs"

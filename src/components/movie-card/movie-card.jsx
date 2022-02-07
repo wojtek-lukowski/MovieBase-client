@@ -13,9 +13,9 @@ export class MovieCard extends React.Component {
     };
   }
 
-  getUser = () => {
-    const user = localStorage.getItem('user');
-    const token = localStorage.getItem('token');
+  getUser = (token, user) => {
+    // const user = localStorage.getItem('user');
+    // const token = localStorage.getItem('token');
     axios
       .get("https://moviebased.herokuapp.com/users/" + user, {
         headers: { Authorization: `Bearer ${token}` },
@@ -105,7 +105,10 @@ export class MovieCard extends React.Component {
 
   componentDidMount = () => {
     console.log('running componentDidMount');
-    this.getUser();
+    const user = localStorage.getItem('user');
+    const token = localStorage.getItem('token');
+    console.log('user, token:', user, token);
+    this.getUser(token, user);
   }
 
   render() {
