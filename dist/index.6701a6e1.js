@@ -25866,6 +25866,7 @@ class MainView extends _reactDefault.default.Component {
         localStorage.setItem("token", authData.token);
         localStorage.setItem("user", authData.user.Username);
         this.getMovies(authData.token);
+    // this.getUser(authData.token, authData.user.Username);
     }
     getMovies(token) {
         _axiosDefault.default.get("https://moviebased.herokuapp.com/movies", {
@@ -25878,6 +25879,23 @@ class MainView extends _reactDefault.default.Component {
             console.log(error);
         });
     }
+    // getUser = (token, user) => {
+    //   console.log('getting user');
+    //   axios
+    //     .get("https://moviebased.herokuapp.com/users/" + user, {
+    //       headers: { Authorization: `Bearer ${token}` },
+    //     })
+    //     .then((response) => {
+    //       const idList = response.data.Favorites.map(({ _id }) => _id);
+    //       const storageFavs = JSON.stringify(idList);
+    //       console.log('string favs', storageFavs);
+    //       localStorage.setItem('favorites', storageFavs);
+    //       console.log('set favs to storage');
+    //     })
+    //     .catch(function (error) {
+    //       console.log(error);
+    //     });
+    // }
     onLoggedOut() {
         localStorage.removeItem("token");
         localStorage.removeItem("user");
@@ -25892,14 +25910,14 @@ class MainView extends _reactDefault.default.Component {
         return(/*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.BrowserRouter, {
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 83
+                lineNumber: 102
             },
             __self: this,
             children: /*#__PURE__*/ _jsxRuntime.jsxs("div", {
                 className: "main-view",
                 __source: {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 85
+                    lineNumber: 104
                 },
                 __self: this,
                 children: [
@@ -25952,7 +25970,7 @@ class MainView extends _reactDefault.default.Component {
                         },
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 86
+                            lineNumber: 105
                         },
                         __self: this
                     }),
@@ -25980,7 +25998,7 @@ class MainView extends _reactDefault.default.Component {
                         },
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 116
+                            lineNumber: 135
                         },
                         __self: this
                     }),
@@ -26006,7 +26024,7 @@ class MainView extends _reactDefault.default.Component {
                         },
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 132
+                            lineNumber: 151
                         },
                         __self: this
                     }),
@@ -26033,7 +26051,7 @@ class MainView extends _reactDefault.default.Component {
                         },
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 155
+                            lineNumber: 174
                         },
                         __self: this
                     }),
@@ -26060,7 +26078,7 @@ class MainView extends _reactDefault.default.Component {
                         },
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 180
+                            lineNumber: 199
                         },
                         __self: this
                     }),
@@ -26091,7 +26109,7 @@ class MainView extends _reactDefault.default.Component {
                         },
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 208
+                            lineNumber: 227
                         },
                         __self: this
                     })
@@ -29950,7 +29968,10 @@ function MoviesList(props) {
             );
             console.log('response data user', response.data);
             setUser(response.data);
-            console.log('response data favs', idList);
+            // console.log('response data favs', idList);
+            // const storageFavs = JSON.stringify(idList);
+            // console.log('string favs', storageFavs);
+            // localStorage.setItem('favorites', storageFavs);
             setFavorites(idList);
         }).catch(function(error) {
             console.log(error);
@@ -29978,7 +29999,7 @@ function MoviesList(props) {
         className: "main-view",
         __source: {
             fileName: "src/components/movies-list/movies-list.jsx",
-            lineNumber: 70
+            lineNumber: 73
         },
         __self: this,
         children: "No movies"
@@ -29988,7 +30009,7 @@ function MoviesList(props) {
         className: "movies",
         __source: {
             fileName: "src/components/movies-list/movies-list.jsx",
-            lineNumber: 74
+            lineNumber: 77
         },
         __self: this,
         children: [
@@ -29996,14 +30017,14 @@ function MoviesList(props) {
                 className: "filter-section",
                 __source: {
                     fileName: "src/components/movies-list/movies-list.jsx",
-                    lineNumber: 75
+                    lineNumber: 78
                 },
                 __self: this,
                 children: /*#__PURE__*/ _jsxRuntime.jsx(_filterDefault.default, {
                     visibilityFilter: visibilityFilter,
                     __source: {
                         fileName: "src/components/movies-list/movies-list.jsx",
-                        lineNumber: 76
+                        lineNumber: 79
                     },
                     __self: this
                 })
@@ -30012,13 +30033,13 @@ function MoviesList(props) {
                 className: "filtered-movies",
                 __source: {
                     fileName: "src/components/movies-list/movies-list.jsx",
-                    lineNumber: 78
+                    lineNumber: 81
                 },
                 __self: this,
                 children: filteredMovies.map((m)=>/*#__PURE__*/ _jsxRuntime.jsx("div", {
                         __source: {
                             fileName: "src/components/movies-list/movies-list.jsx",
-                            lineNumber: 80
+                            lineNumber: 83
                         },
                         __self: this,
                         children: /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
@@ -30027,7 +30048,7 @@ function MoviesList(props) {
                             favorites: favorites,
                             __source: {
                                 fileName: "src/components/movies-list/movies-list.jsx",
-                                lineNumber: 81
+                                lineNumber: 84
                             },
                             __self: this
                         })
@@ -30154,12 +30175,11 @@ class MovieCard extends _reactDefault.default.Component {
     //     });
     // }
     setIsInFavs = (movieId)=>{
-        // const movieId = this.props.movie._id;
-        const idList = this.props.user.Favorites.map(({ _id  })=>_id
-        );
-        console.log('favs', idList);
-        console.log('movieId', movieId);
-        if (idList.includes(movieId)) {
+        const Id = this.props.movie._id;
+        // const idList = this.props.user.Favorites.map(({ _id }) => _id);
+        // console.log('favs', idList)
+        console.log('movieId', Id);
+        if (this.state.favorites.includes(Id)) {
             console.log('>>>---START---<<<');
             console.log('favs', idList);
             console.log('movieId', movieId);
@@ -30231,28 +30251,42 @@ class MovieCard extends _reactDefault.default.Component {
             console.log(error);
         });
     };
+    waitForFavs = (movieId)=>{
+        if (this.props.favorites) {
+            console.log('prop favs should be here', this.props.favorites);
+            this.setIsInFavs(movieId);
+        } else {
+            this.waitForFavs(movieId);
+            cosnole.log('waiting for favs');
+        }
+    };
     componentDidMount = (movieId)=>{
-        console.log('>>>---START---<<<');
+        // const favs = localStorage.getItem('favorites');
+        // this.setState({ favorites: JSON.parse(favs) });
+        // console.log('>>>---START---<<<');
         console.log('running componentDidMount');
-        const Id = this.props.movie._id;
-        console.log('movieId', Id);
-        console.log('movie-card: user from props', this.props.user);
-        console.log('movie-card: favorites from props', this.props.favorites);
-        console.log('>>>---END---<<<');
-        // console.log('movie-card: user favorites from props', this.props.user.Favorites);
-        // const list = this.props.user.Favorites.map(({ _id }) => _id);
-        // console.log('favs from comp did mount', list);
-        // this.getUser();
-        this.setIsInFavs(movieId);
+        this.waitForFavs();
+    // console.log('favs from storage', this.state.favorites);
+    // const Id = this.props.movie._id;
+    // console.log('movieId', Id);
+    // console.log('movie-card: user from props', this.props.user);
+    // console.log('movie-card: favorites from props', this.props.favorites);
+    // console.log('>>>---END---<<<');
+    // console.log('movie-card: user favorites from props', this.props.user.Favorites);
+    // const list = this.props.user.Favorites.map(({ _id }) => _id);
+    // console.log('favs from comp did mount', list);
+    // this.getUser();
+    // this.setIsInFavs(movieId);
     };
     render() {
         const { movie  } = this.props;
-        console.log('props.favorites', this.props.favorites);
+        console.log(' render props.favorites', this.props.favorites);
+        console.log('state from storage', this.state.favorites);
         return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
             className: "card",
             __source: {
                 fileName: "src/components/movie-card/movie-card.jsx",
-                lineNumber: 137
+                lineNumber: 153
             },
             __self: this,
             children: [
@@ -30260,7 +30294,7 @@ class MovieCard extends _reactDefault.default.Component {
                     className: "card-img",
                     __source: {
                         fileName: "src/components/movie-card/movie-card.jsx",
-                        lineNumber: 138
+                        lineNumber: 154
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
@@ -30268,7 +30302,7 @@ class MovieCard extends _reactDefault.default.Component {
                         alt: "movie poster",
                         __source: {
                             fileName: "src/components/movie-card/movie-card.jsx",
-                            lineNumber: 139
+                            lineNumber: 155
                         },
                         __self: this
                     })
@@ -30277,7 +30311,7 @@ class MovieCard extends _reactDefault.default.Component {
                     className: "title",
                     __source: {
                         fileName: "src/components/movie-card/movie-card.jsx",
-                        lineNumber: 141
+                        lineNumber: 157
                     },
                     __self: this,
                     children: movie.Title
@@ -30286,7 +30320,7 @@ class MovieCard extends _reactDefault.default.Component {
                     className: "card-actions",
                     __source: {
                         fileName: "src/components/movie-card/movie-card.jsx",
-                        lineNumber: 143
+                        lineNumber: 159
                     },
                     __self: this,
                     children: [
@@ -30294,7 +30328,7 @@ class MovieCard extends _reactDefault.default.Component {
                             className: "movie-card-button",
                             __source: {
                                 fileName: "src/components/movie-card/movie-card.jsx",
-                                lineNumber: 144
+                                lineNumber: 160
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
@@ -30302,7 +30336,7 @@ class MovieCard extends _reactDefault.default.Component {
                                 className: "button-primary",
                                 __source: {
                                     fileName: "src/components/movie-card/movie-card.jsx",
-                                    lineNumber: 145
+                                    lineNumber: 161
                                 },
                                 __self: this,
                                 children: "See more"
@@ -30314,7 +30348,7 @@ class MovieCard extends _reactDefault.default.Component {
                             ,
                             __source: {
                                 fileName: "src/components/movie-card/movie-card.jsx",
-                                lineNumber: 155
+                                lineNumber: 171
                             },
                             __self: this,
                             children: "Remove"
@@ -30325,7 +30359,7 @@ class MovieCard extends _reactDefault.default.Component {
                             ,
                             __source: {
                                 fileName: "src/components/movie-card/movie-card.jsx",
-                                lineNumber: 158
+                                lineNumber: 174
                             },
                             __self: this,
                             children: "Add to favs"

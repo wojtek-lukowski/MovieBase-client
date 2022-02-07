@@ -38,7 +38,10 @@ function MoviesList(props) {
         const idList = response.data.Favorites.map(({ _id }) => _id);
         console.log('response data user', response.data);
         setUser(response.data);
-        console.log('response data favs', idList);
+        // console.log('response data favs', idList);
+        // const storageFavs = JSON.stringify(idList);
+        // console.log('string favs', storageFavs);
+        // localStorage.setItem('favorites', storageFavs);
         setFavorites(idList);
       })
       .catch(function (error) {

@@ -36,11 +36,11 @@ export class MovieCard extends React.Component {
   // }
 
   setIsInFavs = (movieId) => {
-    // const movieId = this.props.movie._id;
-    const idList = this.props.user.Favorites.map(({ _id }) => _id);
-    console.log('favs', idList)
-    console.log('movieId', movieId)
-    if (idList.includes(movieId)) {
+    const Id = this.props.movie._id;
+    // const idList = this.props.user.Favorites.map(({ _id }) => _id);
+    // console.log('favs', idList)
+    console.log('movieId', Id)
+    if (this.state.favorites.includes(Id)) {
       console.log('>>>---START---<<<')
       console.log('favs', idList)
       console.log('movieId', movieId)
@@ -113,25 +113,41 @@ export class MovieCard extends React.Component {
       });
   }
 
+  waitForFavs = (movieId) => {
+    if (this.props.favorites) {
+      console.log('prop favs should be here', this.props.favorites);
+      this.setIsInFavs(movieId);
+    } else {
+      this.waitForFavs(movieId);
+      cosnole.log('waiting for favs');
+    }
+  }
+
   componentDidMount = (movieId) => {
-    console.log('>>>---START---<<<');
+    // const favs = localStorage.getItem('favorites');
+    // this.setState({ favorites: JSON.parse(favs) });
+    // console.log('>>>---START---<<<');
     console.log('running componentDidMount');
-    const Id = this.props.movie._id;
-    console.log('movieId', Id);
-    console.log('movie-card: user from props', this.props.user);
-    console.log('movie-card: favorites from props', this.props.favorites);
-    console.log('>>>---END---<<<');
+    this.waitForFavs();
+    // console.log('favs from storage', this.state.favorites);
+    // const Id = this.props.movie._id;
+    // console.log('movieId', Id);
+    // console.log('movie-card: user from props', this.props.user);
+    // console.log('movie-card: favorites from props', this.props.favorites);
+    // console.log('>>>---END---<<<');
     // console.log('movie-card: user favorites from props', this.props.user.Favorites);
     // const list = this.props.user.Favorites.map(({ _id }) => _id);
     // console.log('favs from comp did mount', list);
     // this.getUser();
-    this.setIsInFavs(movieId);
+    // this.setIsInFavs(movieId);
   }
 
   render() {
     const { movie } = this.props;
 
-    console.log('props.favorites', this.props.favorites);
+    console.log(' render props.favorites', this.props.favorites);
+    console.log('state from storage', this.state.favorites);
+
 
     return (
       <div className="card">
