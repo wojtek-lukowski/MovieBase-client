@@ -9,8 +9,8 @@ export class MovieCard extends React.Component {
 
     this.state = {
       favorites: [],
-      isHeartFull: false,
-      user: null
+      isInFavs: false,
+      // user: null
     };
 
   }
@@ -45,34 +45,34 @@ export class MovieCard extends React.Component {
       console.log('favs', idList)
       console.log('movieId', movieId)
       console.log('>>>---END---<<<')
-      this.setState({ isHeartFull: true })
+      this.setState({ isInFavs: true })
     } else {
-      this.setState({ isHeartFull: false })
+      this.setState({ isInFavs: false })
     }
   }
 
   toggleFavs = (movieId) => {
     console.log('is in favs', this.state.isInFavs);
-    if (this.state.isHeartFull) {
+    if (this.state.isInFavs) {
       console.log('favorites state before removing', this.state.favorites);
-      this.setState({ isHeartFull: false })
+      this.setState({ isInFavs: false })
       this.removeFromFavs(movieId);
       this.getUser();
     } else {
       console.log('favorites state before adding', this.state.favorites);
-      this.setState({ isHeartFull: true })
+      this.setState({ isInFavs: true })
       this.addToFavs(movieId);
       this.getUser();
     }
   }
 
   toggleHeart = (movieId) => {
-    if (this.state.isHeartFull) {
-      this.setState({ isHeartFull: false });
+    if (this.state.isInFavs) {
+      this.setState({ isInFavs: false });
       this.removeFromFavs(movieId);
       console.log(this.props.movie.Title, this.props.movie._id, ' has been removed');
     } else {
-      this.setState({ isHeartFull: true });
+      this.setState({ isInFavs: true });
       this.addToFavs(movieId);
       console.log(this.props.movie.Title, this.props.movie._id, ' has been added');
     }
@@ -119,7 +119,7 @@ export class MovieCard extends React.Component {
       this.setIsInFavs(movieId);
     } else {
       this.waitForFavs(movieId);
-      cosnole.log('waiting for favs');
+      console.log('waiting for favs');
     }
   }
 
@@ -146,7 +146,7 @@ export class MovieCard extends React.Component {
     const { movie } = this.props;
 
     console.log(' render props.favorites', this.props.favorites);
-    console.log('state from storage', this.state.favorites);
+    // console.log('state from storage', this.state.favorites);
 
 
     return (
@@ -167,10 +167,10 @@ export class MovieCard extends React.Component {
           {!this.state.isInFavs &&
             <div className="button-primary" onClick={() => this.toggleFavs(movie._id)}>Add</div>
           } */}
-          {this.state.isHeartFull &&
+          {this.state.isInFavs &&
             <div className="button-primary is-in-favs" onClick={() => this.toggleHeart(movie._id)}>Remove</div>
           }
-          {!this.state.isHeartFull &&
+          {!this.state.isInFavs &&
             <div className="button-primary" onClick={() => this.toggleHeart(movie._id)}>Add to favs</div>
           }
         </div>

@@ -30151,8 +30151,7 @@ class MovieCard extends _reactDefault.default.Component {
         super();
         this.state = {
             favorites: [],
-            isHeartFull: false,
-            user: null
+            isInFavs: false
         };
     }
     // getUser = () => {
@@ -30185,40 +30184,40 @@ class MovieCard extends _reactDefault.default.Component {
             console.log('movieId', movieId);
             console.log('>>>---END---<<<');
             this.setState({
-                isHeartFull: true
+                isInFavs: true
             });
         } else this.setState({
-            isHeartFull: false
+            isInFavs: false
         });
     };
     toggleFavs = (movieId)=>{
         console.log('is in favs', this.state.isInFavs);
-        if (this.state.isHeartFull) {
+        if (this.state.isInFavs) {
             console.log('favorites state before removing', this.state.favorites);
             this.setState({
-                isHeartFull: false
+                isInFavs: false
             });
             this.removeFromFavs(movieId);
             this.getUser();
         } else {
             console.log('favorites state before adding', this.state.favorites);
             this.setState({
-                isHeartFull: true
+                isInFavs: true
             });
             this.addToFavs(movieId);
             this.getUser();
         }
     };
     toggleHeart = (movieId)=>{
-        if (this.state.isHeartFull) {
+        if (this.state.isInFavs) {
             this.setState({
-                isHeartFull: false
+                isInFavs: false
             });
             this.removeFromFavs(movieId);
             console.log(this.props.movie.Title, this.props.movie._id, ' has been removed');
         } else {
             this.setState({
-                isHeartFull: true
+                isInFavs: true
             });
             this.addToFavs(movieId);
             console.log(this.props.movie.Title, this.props.movie._id, ' has been added');
@@ -30257,7 +30256,7 @@ class MovieCard extends _reactDefault.default.Component {
             this.setIsInFavs(movieId);
         } else {
             this.waitForFavs(movieId);
-            cosnole.log('waiting for favs');
+            console.log('waiting for favs');
         }
     };
     componentDidMount = (movieId)=>{
@@ -30281,7 +30280,7 @@ class MovieCard extends _reactDefault.default.Component {
     render() {
         const { movie  } = this.props;
         console.log(' render props.favorites', this.props.favorites);
-        console.log('state from storage', this.state.favorites);
+        // console.log('state from storage', this.state.favorites);
         return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
             className: "card",
             __source: {
@@ -30342,7 +30341,7 @@ class MovieCard extends _reactDefault.default.Component {
                                 children: "See more"
                             })
                         }),
-                        this.state.isHeartFull && /*#__PURE__*/ _jsxRuntime.jsx("div", {
+                        this.state.isInFavs && /*#__PURE__*/ _jsxRuntime.jsx("div", {
                             className: "button-primary is-in-favs",
                             onClick: ()=>this.toggleHeart(movie._id)
                             ,
@@ -30353,7 +30352,7 @@ class MovieCard extends _reactDefault.default.Component {
                             __self: this,
                             children: "Remove"
                         }),
-                        !this.state.isHeartFull && /*#__PURE__*/ _jsxRuntime.jsx("div", {
+                        !this.state.isInFavs && /*#__PURE__*/ _jsxRuntime.jsx("div", {
                             className: "button-primary",
                             onClick: ()=>this.toggleHeart(movie._id)
                             ,
