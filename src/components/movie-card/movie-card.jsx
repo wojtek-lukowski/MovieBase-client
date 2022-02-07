@@ -125,11 +125,13 @@ export class MovieCard extends React.Component {
     // const list = this.props.user.Favorites.map(({ _id }) => _id);
     // console.log('favs from comp did mount', list);
     // this.getUser();
-    // this.setIsInFavs(movieId);
+    this.setIsInFavs(movieId);
   }
 
   render() {
     const { movie } = this.props;
+
+    console.log('props.favorites', this.props.favorites);
 
     return (
       <div className="card">
