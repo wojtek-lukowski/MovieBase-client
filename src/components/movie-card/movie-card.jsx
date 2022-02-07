@@ -10,31 +10,41 @@ export class MovieCard extends React.Component {
     this.state = {
       favorites: [],
       isHeartFull: false,
+      user: null
     };
+
   }
 
-  getUser = () => {
-    const user = localStorage.getItem('user');
-    const token = localStorage.getItem('token');
-    axios
-      .get("https://moviebased.herokuapp.com/users/" + user, {
-        headers: { Authorization: `Bearer ${token}` },
-      })
-      .then((response) => {
-        const favIdList = response.data.Favorites.map(({ _id }) => _id);
-        this.setState({ favorites: favIdList });
-      })
-      .then(() => {
-        const movieId = this.props.movie._id;
-        this.setIsInFavs(movieId)
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  }
+  // getUser = () => {
+  //   const user = localStorage.getItem('user');
+  //   const token = localStorage.getItem('token');
+  //   axios
+  //     .get("https://moviebased.herokuapp.com/users/" + user, {
+  //       headers: { Authorization: `Bearer ${token}` },
+  //     })
+  //     .then((response) => {
+  //       const favIdList = response.data.Favorites.map(({ _id }) => _id);
+  //       this.setState({ favorites: favIdList });
+  //     })
+  //     .then(() => {
+  //       const movieId = this.props.movie._id;
+  //       this.setIsInFavs(movieId)
+  //     })
+  //     .catch(function (error) {
+  //       console.log(error);
+  //     });
+  // }
 
   setIsInFavs = (movieId) => {
-    if (this.state.favorites.includes(movieId)) {
+    // const movieId = this.props.movie._id;
+    const idList = this.props.user.Favorites.map(({ _id }) => _id);
+    console.log('favs', idList)
+    console.log('movieId', movieId)
+    if (idList.includes(movieId)) {
+      console.log('>>>---START---<<<')
+      console.log('favs', idList)
+      console.log('movieId', movieId)
+      console.log('>>>---END---<<<')
       this.setState({ isHeartFull: true })
     } else {
       this.setState({ isHeartFull: false })
@@ -103,9 +113,19 @@ export class MovieCard extends React.Component {
       });
   }
 
-  componentDidMount = () => {
+  componentDidMount = (movieId) => {
+    console.log('>>>---START---<<<');
     console.log('running componentDidMount');
-    this.getUser();
+    const Id = this.props.movie._id;
+    console.log('movieId', Id);
+    console.log('movie-card: user from props', this.props.user);
+    console.log('movie-card: favorites from props', this.props.favorites);
+    console.log('>>>---END---<<<');
+    // console.log('movie-card: user favorites from props', this.props.user.Favorites);
+    // const list = this.props.user.Favorites.map(({ _id }) => _id);
+    // console.log('favs from comp did mount', list);
+    // this.getUser();
+    // this.setIsInFavs(movieId);
   }
 
   render() {

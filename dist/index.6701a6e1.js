@@ -29923,6 +29923,7 @@ var _movieCard = require("../movie-card/movie-card");
 var _filter = require("../filter/filter");
 var _filterDefault = parcelHelpers.interopDefault(_filter);
 var _mainViewScss = require("../main-view/main-view.scss");
+var _s = $RefreshSig$();
 const mapStateToProps = (state)=>{
     const { visibilityFilter  } = state;
     return {
@@ -29930,56 +29931,41 @@ const mapStateToProps = (state)=>{
     };
 };
 function MoviesList(props) {
+    _s();
     const { movies , visibilityFilter  } = props;
     let filteredMovies = movies;
-    // const username = localStorage.getItem('user');
-    // const token = localStorage.getItem('token');
+    const username = localStorage.getItem('user');
+    const token = localStorage.getItem('token');
+    const [favorites, setFavorites] = _react.useState([]);
+    const [user, setUser] = _react.useState('null');
     // const [favorites, setFavorites] = useState(['61e6fdb4b17167f4e7ed6ccb', '613f3b7746378b95b687fbaa', '613eee1946378b95b687fba4']);
-    // const [favorites, setFavorites] = useState([]);
-    // const [user, setUser] = useState({ _id: '61ebf0f2f57bef8c46f7f8f8', Username: 'wojtek', Password: '$2b$10$oK8MlgdLjmkG0MF4h2Uv.u1ohehOcfeexO55jS6Eivih6XR5Jx3du', Email: 'wojtek@gmail.com', Birthday: '1972-06-03T00:00:00.000Z', Favorites: ['61e6fdb4b17167f4e7ed6ccb', '613f3b7746378b95b687fbaa', '613eee1946378b95b687fba4'] });
-    // const [user, setUser] = useState({});
-    // useEffect(() => {
-    //   getUser(token, user);
-    // }, [favorites])
-    // getUser = (token, user) => {
-    //   axios
-    //     .get("https://moviebased.herokuapp.com/users/" + user, {
-    //       headers: { Authorization: `Bearer ${token}` },
-    //     })
-    //     .then((response) => {
-    //       const idList = response.data.Favorites.map(({ _id }) => _id);
-    //       setFavorites(idList);
-    //       console.log('favorites state m-l', favorites);
-    //     })
-    //     .catch(function (error) {
-    //       console.log(error);
-    //     });
-    // }
-    // useEffect(() => {
-    //   fetchUser(token, username);
-    // }, [user.Username])
-    // fetchUser = (token, username) => {
-    //   axios
-    //     .get("https://moviebased.herokuapp.com/users/" + username, {
-    //       headers: { Authorization: `Bearer ${token}` },
-    //     })
-    //     .then((response) => {
-    //       console.log('response data', response.data);
-    //       console.log('response data favorites', response.data.Favorites);
-    //       setUser(response.data);
-    //       console.log('user state m-l', user);
-    //     })
-    //     .catch(function (error) {
-    //       console.log(error);
-    //     });
-    // }
+    // const [user, setUser] = useState({ _id: '61ebf0f2f57bef8c46f7f8f8', Username: 'wojtek', Password: '$2b$10$oK8MlgdLjmkG0MF4h2Uv.u1ohehOcfeexO55jS6Eivih6XR5Jx3du', Email: 'wojtek@gmail.com', Birthday: '1972-06-03T00:00:00.000Z', Favorites: [{ _id: '61e6fdb4b17167f4e7ed6ccb' }, { _id: '613f3b7746378b95b687fbaa' }, { _id: '613eee1946378b95b687fba4' }] });
+    _react.useEffect(()=>{
+        getUser(token, username);
+    }, []);
+    getUser = (token1, username1)=>{
+        _axiosDefault.default.get("https://moviebased.herokuapp.com/users/" + username1, {
+            headers: {
+                Authorization: `Bearer ${token1}`
+            }
+        }).then((response)=>{
+            const idList = response.data.Favorites.map(({ _id  })=>_id
+            );
+            console.log('response data user', response.data);
+            setUser(response.data);
+            console.log('response data favs', idList);
+            setFavorites(idList);
+        }).catch(function(error) {
+            console.log(error);
+        });
+    };
     if (visibilityFilter !== '') filteredMovies = movies.filter((m)=>m.Title.toLowerCase().includes(visibilityFilter.toLowerCase())
     );
     if (!movies) return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
         className: "main-view",
         __source: {
             fileName: "src/components/movies-list/movies-list.jsx",
-            lineNumber: 75
+            lineNumber: 57
         },
         __self: this,
         children: "No movies"
@@ -29988,7 +29974,7 @@ function MoviesList(props) {
         className: "movies",
         __source: {
             fileName: "src/components/movies-list/movies-list.jsx",
-            lineNumber: 77
+            lineNumber: 59
         },
         __self: this,
         children: [
@@ -29996,14 +29982,14 @@ function MoviesList(props) {
                 className: "filter-section",
                 __source: {
                     fileName: "src/components/movies-list/movies-list.jsx",
-                    lineNumber: 78
+                    lineNumber: 60
                 },
                 __self: this,
                 children: /*#__PURE__*/ _jsxRuntime.jsx(_filterDefault.default, {
                     visibilityFilter: visibilityFilter,
                     __source: {
                         fileName: "src/components/movies-list/movies-list.jsx",
-                        lineNumber: 79
+                        lineNumber: 61
                     },
                     __self: this
                 })
@@ -30012,20 +29998,22 @@ function MoviesList(props) {
                 className: "filtered-movies",
                 __source: {
                     fileName: "src/components/movies-list/movies-list.jsx",
-                    lineNumber: 81
+                    lineNumber: 63
                 },
                 __self: this,
                 children: filteredMovies.map((m)=>/*#__PURE__*/ _jsxRuntime.jsx("div", {
                         __source: {
                             fileName: "src/components/movies-list/movies-list.jsx",
-                            lineNumber: 83
+                            lineNumber: 65
                         },
                         __self: this,
                         children: /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
                             movie: m,
+                            user: user,
+                            favorites: favorites,
                             __source: {
                                 fileName: "src/components/movies-list/movies-list.jsx",
-                                lineNumber: 84
+                                lineNumber: 66
                             },
                             __self: this
                         })
@@ -30035,6 +30023,7 @@ function MoviesList(props) {
         ]
     }));
 }
+_s(MoviesList, "+lHRwV0agrj0k7KZEZdAGywqnG4=");
 _c = MoviesList;
 exports.default = _reactRedux.connect(mapStateToProps)(MoviesList);
 var _c;
@@ -30127,34 +30116,44 @@ class MovieCard extends _reactDefault.default.Component {
         super();
         this.state = {
             favorites: [],
-            isHeartFull: false
+            isHeartFull: false,
+            user: null
         };
     }
-    getUser = ()=>{
-        const user = localStorage.getItem('user');
-        const token = localStorage.getItem('token');
-        _axiosDefault.default.get("https://moviebased.herokuapp.com/users/" + user, {
-            headers: {
-                Authorization: `Bearer ${token}`
-            }
-        }).then((response)=>{
-            const favIdList = response.data.Favorites.map(({ _id  })=>_id
-            );
-            this.setState({
-                favorites: favIdList
-            });
-        }).then(()=>{
-            const movieId = this.props.movie._id;
-            this.setIsInFavs(movieId);
-        }).catch(function(error) {
-            console.log(error);
-        });
-    };
+    // getUser = () => {
+    //   const user = localStorage.getItem('user');
+    //   const token = localStorage.getItem('token');
+    //   axios
+    //     .get("https://moviebased.herokuapp.com/users/" + user, {
+    //       headers: { Authorization: `Bearer ${token}` },
+    //     })
+    //     .then((response) => {
+    //       const favIdList = response.data.Favorites.map(({ _id }) => _id);
+    //       this.setState({ favorites: favIdList });
+    //     })
+    //     .then(() => {
+    //       const movieId = this.props.movie._id;
+    //       this.setIsInFavs(movieId)
+    //     })
+    //     .catch(function (error) {
+    //       console.log(error);
+    //     });
+    // }
     setIsInFavs = (movieId)=>{
-        if (this.state.favorites.includes(movieId)) this.setState({
-            isHeartFull: true
-        });
-        else this.setState({
+        // const movieId = this.props.movie._id;
+        const idList = this.props.user.Favorites.map(({ _id  })=>_id
+        );
+        console.log('favs', idList);
+        console.log('movieId', movieId);
+        if (idList.includes(movieId)) {
+            console.log('>>>---START---<<<');
+            console.log('favs', idList);
+            console.log('movieId', movieId);
+            console.log('>>>---END---<<<');
+            this.setState({
+                isHeartFull: true
+            });
+        } else this.setState({
             isHeartFull: false
         });
     };
@@ -30218,9 +30217,19 @@ class MovieCard extends _reactDefault.default.Component {
             console.log(error);
         });
     };
-    componentDidMount = ()=>{
+    componentDidMount = (movieId)=>{
+        console.log('>>>---START---<<<');
         console.log('running componentDidMount');
-        this.getUser();
+        const Id = this.props.movie._id;
+        console.log('movieId', Id);
+        console.log('movie-card: user from props', this.props.user);
+        console.log('movie-card: favorites from props', this.props.favorites);
+        console.log('>>>---END---<<<');
+    // console.log('movie-card: user favorites from props', this.props.user.Favorites);
+    // const list = this.props.user.Favorites.map(({ _id }) => _id);
+    // console.log('favs from comp did mount', list);
+    // this.getUser();
+    // this.setIsInFavs(movieId);
     };
     render() {
         const { movie  } = this.props;
@@ -30228,7 +30237,7 @@ class MovieCard extends _reactDefault.default.Component {
             className: "card",
             __source: {
                 fileName: "src/components/movie-card/movie-card.jsx",
-                lineNumber: 115
+                lineNumber: 135
             },
             __self: this,
             children: [
@@ -30236,7 +30245,7 @@ class MovieCard extends _reactDefault.default.Component {
                     className: "card-img",
                     __source: {
                         fileName: "src/components/movie-card/movie-card.jsx",
-                        lineNumber: 116
+                        lineNumber: 136
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
@@ -30244,7 +30253,7 @@ class MovieCard extends _reactDefault.default.Component {
                         alt: "movie poster",
                         __source: {
                             fileName: "src/components/movie-card/movie-card.jsx",
-                            lineNumber: 117
+                            lineNumber: 137
                         },
                         __self: this
                     })
@@ -30253,7 +30262,7 @@ class MovieCard extends _reactDefault.default.Component {
                     className: "title",
                     __source: {
                         fileName: "src/components/movie-card/movie-card.jsx",
-                        lineNumber: 119
+                        lineNumber: 139
                     },
                     __self: this,
                     children: movie.Title
@@ -30262,7 +30271,7 @@ class MovieCard extends _reactDefault.default.Component {
                     className: "card-actions",
                     __source: {
                         fileName: "src/components/movie-card/movie-card.jsx",
-                        lineNumber: 121
+                        lineNumber: 141
                     },
                     __self: this,
                     children: [
@@ -30270,7 +30279,7 @@ class MovieCard extends _reactDefault.default.Component {
                             className: "movie-card-button",
                             __source: {
                                 fileName: "src/components/movie-card/movie-card.jsx",
-                                lineNumber: 122
+                                lineNumber: 142
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
@@ -30278,7 +30287,7 @@ class MovieCard extends _reactDefault.default.Component {
                                 className: "button-primary",
                                 __source: {
                                     fileName: "src/components/movie-card/movie-card.jsx",
-                                    lineNumber: 123
+                                    lineNumber: 143
                                 },
                                 __self: this,
                                 children: "See more"
@@ -30290,7 +30299,7 @@ class MovieCard extends _reactDefault.default.Component {
                             ,
                             __source: {
                                 fileName: "src/components/movie-card/movie-card.jsx",
-                                lineNumber: 133
+                                lineNumber: 153
                             },
                             __self: this,
                             children: "Remove"
@@ -30301,7 +30310,7 @@ class MovieCard extends _reactDefault.default.Component {
                             ,
                             __source: {
                                 fileName: "src/components/movie-card/movie-card.jsx",
-                                lineNumber: 136
+                                lineNumber: 156
                             },
                             __self: this,
                             children: "Add to favs"
@@ -33091,9 +33100,9 @@ class Header extends _reactDefault.default.Component {
     //     renderProfileButton: true
     //   };
     // }
-    componentDidMount = ()=>{
-        console.log('profile button - did mount', this.props.renderProfileButton);
-    };
+    // componentDidMount = () => {
+    //   console.log('profile button - did mount', this.props.renderProfileButton);
+    // }
     toggleButton = ()=>{
     // console.log('profile button before',);
     // if (this.props.renderProfileButton) {
