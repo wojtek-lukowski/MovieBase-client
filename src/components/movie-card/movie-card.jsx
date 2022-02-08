@@ -13,48 +13,17 @@ export default function MovieCard(props) {
   const [isInFavs, setIsInFavs] = useState(false);
 
   useEffect(() => {
-    console.log('running useEffect');
+    console.log('>>>---CARD---<<<')
     console.log('useEffect favorites', favorites);
-
+    console.log('movie', movie.Title, '(', movieId, ')');
     if (favorites.includes(movieId)) {
       console.log('in favs');
       setIsInFavs(true)
-      console.log(isInFavs);
     } else {
       console.log('not in favs');
       setIsInFavs(false)
-      console.log(isInFavs);
     }
-    // checkFavs(movieId);
   }, [favorites])
-
-  // checkFavs = (movieId) => {
-  //   console.log('movieId', movieId);
-  //   if (favorites.includes(movieId)) {
-  //     console.log('in favs');
-  //     setIsInFavs({ isInFavs: true })
-  //     console.log(isInFavs);
-  //   } else {
-  //     console.log('not in favs');
-  //     setIsInFavs({ isInFavs: false })
-  //     console.log(isInFavs);
-  //   }
-  // }
-
-  // toggleFavs = (movieId) => {
-  //   console.log('is in favs', this.state.isInFavs);
-  //   if (this.state.isInFavs) {
-  //     console.log('favorites state before removing', this.state.favorites);
-  //     this.setState({ isInFavs: false })
-  //     this.removeFromFavs(movieId);
-  //     this.getUser();
-  //   } else {
-  //     console.log('favorites state before adding', this.state.favorites);
-  //     this.setState({ isInFavs: true })
-  //     this.addToFavs(movieId);
-  //     this.getUser();
-  //   }
-  // }
 
   toggleButton = (movieId) => {
     if (isInFavs) {
@@ -116,10 +85,10 @@ export default function MovieCard(props) {
           </Link>
         </div>
         {isInFavs &&
-          <div className="button-primary is-in-favs" onClick={() => this.toggleButton(movie._id)}>Remove</div>
+          <div className="button-primary is-in-favs" onClick={() => toggleButton(movie._id)}>Remove</div>
         }
         {!isInFavs &&
-          <div className="button-primary" onClick={() => this.toggleButton(movie._id)}>Add to favs</div>
+          <div className="button-primary" onClick={() => toggleButton(movie._id)}>Add to favs</div>
         }
       </div>
     </div>

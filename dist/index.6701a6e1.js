@@ -30144,47 +30144,19 @@ function MovieCard(props) {
     const movieId = movie._id;
     const [isInFavs, setIsInFavs] = _react.useState(false);
     _react.useEffect(()=>{
-        console.log('running useEffect');
+        console.log('>>>---CARD---<<<');
         console.log('useEffect favorites', favorites);
+        console.log('movie', movie.Title, '(', movieId, ')');
         if (favorites.includes(movieId)) {
             console.log('in favs');
             setIsInFavs(true);
-            console.log(isInFavs);
         } else {
             console.log('not in favs');
             setIsInFavs(false);
-            console.log(isInFavs);
         }
-    // checkFavs(movieId);
     }, [
         favorites
     ]);
-    // checkFavs = (movieId) => {
-    //   console.log('movieId', movieId);
-    //   if (favorites.includes(movieId)) {
-    //     console.log('in favs');
-    //     setIsInFavs({ isInFavs: true })
-    //     console.log(isInFavs);
-    //   } else {
-    //     console.log('not in favs');
-    //     setIsInFavs({ isInFavs: false })
-    //     console.log(isInFavs);
-    //   }
-    // }
-    // toggleFavs = (movieId) => {
-    //   console.log('is in favs', this.state.isInFavs);
-    //   if (this.state.isInFavs) {
-    //     console.log('favorites state before removing', this.state.favorites);
-    //     this.setState({ isInFavs: false })
-    //     this.removeFromFavs(movieId);
-    //     this.getUser();
-    //   } else {
-    //     console.log('favorites state before adding', this.state.favorites);
-    //     this.setState({ isInFavs: true })
-    //     this.addToFavs(movieId);
-    //     this.getUser();
-    //   }
-    // }
     toggleButton = (movieId1)=>{
         if (isInFavs) {
             setIsInFavs(false);
@@ -30227,7 +30199,7 @@ function MovieCard(props) {
         className: "card",
         __source: {
             fileName: "src/components/movie-card/movie-card.jsx",
-            lineNumber: 107
+            lineNumber: 76
         },
         __self: this,
         children: [
@@ -30235,7 +30207,7 @@ function MovieCard(props) {
                 className: "card-img",
                 __source: {
                     fileName: "src/components/movie-card/movie-card.jsx",
-                    lineNumber: 108
+                    lineNumber: 77
                 },
                 __self: this,
                 children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
@@ -30243,7 +30215,7 @@ function MovieCard(props) {
                     alt: "movie poster",
                     __source: {
                         fileName: "src/components/movie-card/movie-card.jsx",
-                        lineNumber: 109
+                        lineNumber: 78
                     },
                     __self: this
                 })
@@ -30252,7 +30224,7 @@ function MovieCard(props) {
                 className: "title",
                 __source: {
                     fileName: "src/components/movie-card/movie-card.jsx",
-                    lineNumber: 111
+                    lineNumber: 80
                 },
                 __self: this,
                 children: movie.Title
@@ -30261,7 +30233,7 @@ function MovieCard(props) {
                 className: "card-actions",
                 __source: {
                     fileName: "src/components/movie-card/movie-card.jsx",
-                    lineNumber: 113
+                    lineNumber: 82
                 },
                 __self: this,
                 children: [
@@ -30269,7 +30241,7 @@ function MovieCard(props) {
                         className: "movie-card-button",
                         __source: {
                             fileName: "src/components/movie-card/movie-card.jsx",
-                            lineNumber: 114
+                            lineNumber: 83
                         },
                         __self: this,
                         children: /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
@@ -30277,7 +30249,7 @@ function MovieCard(props) {
                             className: "button-primary",
                             __source: {
                                 fileName: "src/components/movie-card/movie-card.jsx",
-                                lineNumber: 115
+                                lineNumber: 84
                             },
                             __self: this,
                             children: "See more"
@@ -30285,22 +30257,22 @@ function MovieCard(props) {
                     }),
                     isInFavs && /*#__PURE__*/ _jsxRuntime.jsx("div", {
                         className: "button-primary is-in-favs",
-                        onClick: ()=>this.toggleButton(movie._id)
+                        onClick: ()=>toggleButton(movie._id)
                         ,
                         __source: {
                             fileName: "src/components/movie-card/movie-card.jsx",
-                            lineNumber: 119
+                            lineNumber: 88
                         },
                         __self: this,
                         children: "Remove"
                     }),
                     !isInFavs && /*#__PURE__*/ _jsxRuntime.jsx("div", {
                         className: "button-primary",
-                        onClick: ()=>this.toggleButton(movie._id)
+                        onClick: ()=>toggleButton(movie._id)
                         ,
                         __source: {
                             fileName: "src/components/movie-card/movie-card.jsx",
-                            lineNumber: 122
+                            lineNumber: 91
                         },
                         __self: this,
                         children: "Add to favs"
