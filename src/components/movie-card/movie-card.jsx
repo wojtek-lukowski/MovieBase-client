@@ -13,9 +13,9 @@ export default function MovieCard(props) {
   const [isInFavs, setIsInFavs] = useState(false);
 
   useEffect(() => {
-    console.log('>>>---CARD---<<<')
+    console.log(`>>>---CARD ${movie._id}---<<<`)
     console.log('useEffect favorites', favorites);
-    console.log('movie', movie.Title, '(', movieId, ')');
+    console.log('movie:', movie.Title);
     if (favorites.includes(movieId)) {
       console.log('in favs');
       setIsInFavs(true)
