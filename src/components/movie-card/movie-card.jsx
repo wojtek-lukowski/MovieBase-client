@@ -4,7 +4,6 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
-import { setVersion } from 'atatus-spa';
 
 export default function MovieCard(props) {
 
@@ -15,24 +14,32 @@ export default function MovieCard(props) {
 
   useEffect(() => {
     console.log('running useEffect');
-    console.log('use effect favorites', favorites);
-    checkFavs(movieId);
-  }, [favorites])
+    console.log('useEffect favorites', favorites);
 
-  checkFavs = (movieId) => {
-    console.log('movieId', movieId);
     if (favorites.includes(movieId)) {
       console.log('in favs');
-      setTimeout = () => { console.log(isInFavs), 1000 }
-      setIsInFavs({ isInFavs: true })
-      // console.log(isInFavs);
+      setIsInFavs(true)
+      console.log(isInFavs);
     } else {
       console.log('not in favs');
-      setIsInFavs({ isInFavs: false })
-      setTimeout = () => { console.log(isInFavs), 1000 }
-      // console.log(isInFavs);
+      setIsInFavs(false)
+      console.log(isInFavs);
     }
-  }
+    // checkFavs(movieId);
+  }, [favorites])
+
+  // checkFavs = (movieId) => {
+  //   console.log('movieId', movieId);
+  //   if (favorites.includes(movieId)) {
+  //     console.log('in favs');
+  //     setIsInFavs({ isInFavs: true })
+  //     console.log(isInFavs);
+  //   } else {
+  //     console.log('not in favs');
+  //     setIsInFavs({ isInFavs: false })
+  //     console.log(isInFavs);
+  //   }
+  // }
 
   // toggleFavs = (movieId) => {
   //   console.log('is in favs', this.state.isInFavs);
@@ -49,66 +56,52 @@ export default function MovieCard(props) {
   //   }
   // }
 
-  // toggleHeart = (movieId) => {
-  //   if (this.state.isInFavs) {
-  //     this.setState({ isInFavs: false });
-  //     this.removeFromFavs(movieId);
-  //     console.log(this.props.movie.Title, this.props.movie._id, ' has been removed');
-  //   } else {
-  //     this.setState({ isInFavs: true });
-  //     this.addToFavs(movieId);
-  //     console.log(this.props.movie.Title, this.props.movie._id, ' has been added');
-  //   }
-  // }
+  toggleButton = (movieId) => {
+    if (isInFavs) {
+      setIsInFavs(false);
+      removeFromFavs(movieId);
+      console.log(movie.Title, movie._id, ' has been removed');
+    } else {
+      setIsInFavs(true);
+      addToFavs(movieId);
+      console.log(movie.Title, movie._id, ' has been added');
+    }
+  }
 
-  // addToFavs = (movieId) => {
-  //   const username = localStorage.getItem("user");
-  //   const token = localStorage.getItem("token");
+  addToFavs = (movieId) => {
+    const username = localStorage.getItem("user");
+    const token = localStorage.getItem("token");
 
-  //   axios
-  //     .post(
-  //       `https://moviebased.herokuapp.com/users/${username}/movies/` + movieId,
-  //       {},
-  //       {
-  //         headers: { Authorization: `Bearer ${token}` },
-  //       }
-  //     )
-  //     .then((response) => {
-  //       // console.log(response);
-  //     })
-  //     .catch(function (error) {
-  //       console.log(error);
-  //     });
-  // }
+    axios
+      .post(
+        `https://moviebased.herokuapp.com/users/${username}/movies/` + movieId,
+        {},
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      )
+      .then((response) => {
+        // console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
 
-  // removeFromFavs = (movieId) => {
-  //   const username = localStorage.getItem('user');
-  //   const token = localStorage.getItem('token');
+  removeFromFavs = (movieId) => {
+    const username = localStorage.getItem('user');
+    const token = localStorage.getItem('token');
 
-  //   axios.delete(`https://moviebased.herokuapp.com/users/${username}/movies/` + movieId, {
-  //     headers: { Authorization: `Bearer ${token}` }
-  //   })
-  //     .then((response) => {
-  //       // console.log(response);
-  //     })
-  //     .catch(function (error) {
-  //       console.log(error);
-  //     });
-  // }
-
-  // waitForFavs = (movieId) => {
-  //   console.log('wait for favs running');
-  //   if (favorites) {
-  //     console.log('prop favs should be here', favorites);
-  //     this.checkFavs(movieId);
-  //   } else {
-  //     this.waitForFavs(movieId);
-  //     console.log('waiting for favs');
-  //   }
-  // }
-
-  // console.log('render props.favorites', favorites);
-
+    axios.delete(`https://moviebased.herokuapp.com/users/${username}/movies/` + movieId, {
+      headers: { Authorization: `Bearer ${token}` }
+    })
+      .then((response) => {
+        // console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
 
   return (
     <div className="card">
@@ -122,17 +115,11 @@ export default function MovieCard(props) {
           <Link to={`/movies/${movie._id}`} className="button-primary">See more
           </Link>
         </div>
-        {/* {this.state.isInFavs &&
-            <div className="button-primary" onClick={() => this.toggleFavs(movie._id)}>Remove</div>
-          }
-          {!this.state.isInFavs &&
-            <div className="button-primary" onClick={() => this.toggleFavs(movie._id)}>Add</div>
-          } */}
         {isInFavs &&
-          <div className="button-primary is-in-favs" onClick={() => this.toggleHeart(movie._id)}>Remove</div>
+          <div className="button-primary is-in-favs" onClick={() => this.toggleButton(movie._id)}>Remove</div>
         }
         {!isInFavs &&
-          <div className="button-primary" onClick={() => this.toggleHeart(movie._id)}>Add to favs</div>
+          <div className="button-primary" onClick={() => this.toggleButton(movie._id)}>Add to favs</div>
         }
       </div>
     </div>
