@@ -14,27 +14,23 @@ export default function MovieCard(props) {
   const [isInFavs, setIsInFavs] = useState(false);
 
   useEffect(() => {
-    // const favs = localStorage.getItem('favorites');
-    // this.setState({ favorites: JSON.parse(favs) });
-    // console.log('>>>---START---<<<');
     console.log('running useEffect');
-    waitForFavs(movieId);
-    // this.setIsInFavs(movieId);
-  }, [])
+    console.log('use effect favorites', favorites);
+    checkFavs(movieId);
+  }, [favorites])
 
   checkFavs = (movieId) => {
-    // const Id = this.props.movie._id;
-    // const idList = this.props.user.Favorites.map(({ _id }) => _id);
-    // console.log('favs', idList)
     console.log('movieId', movieId);
     if (favorites.includes(movieId)) {
-      console.log('>>>---START---<<<')
-      console.log('favs', idList)
-      console.log('movieId', movieId)
-      console.log('>>>---END---<<<')
+      console.log('in favs');
+      setTimeout = () => { console.log(isInFavs), 1000 }
       setIsInFavs({ isInFavs: true })
+      // console.log(isInFavs);
     } else {
+      console.log('not in favs');
       setIsInFavs({ isInFavs: false })
+      setTimeout = () => { console.log(isInFavs), 1000 }
+      // console.log(isInFavs);
     }
   }
 
@@ -100,18 +96,18 @@ export default function MovieCard(props) {
   //     });
   // }
 
-  waitForFavs = (movieId) => {
-    console.log('wait for favs running');
-    if (favorites) {
-      console.log('prop favs should be here', favorites);
-      this.checkFavs(movieId);
-    } else {
-      this.waitForFavs(movieId);
-      console.log('waiting for favs');
-    }
-  }
+  // waitForFavs = (movieId) => {
+  //   console.log('wait for favs running');
+  //   if (favorites) {
+  //     console.log('prop favs should be here', favorites);
+  //     this.checkFavs(movieId);
+  //   } else {
+  //     this.waitForFavs(movieId);
+  //     console.log('waiting for favs');
+  //   }
+  // }
 
-  console.log('render props.favorites', favorites);
+  // console.log('render props.favorites', favorites);
 
 
   return (
