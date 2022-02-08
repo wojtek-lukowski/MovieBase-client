@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-import { MovieCard } from '../movie-card/movie-card';
+import MovieCard from '../movie-card/movie-card';
 import VisibilityFilterInput from '../filter/filter';
 
 import '../main-view/main-view.scss';
@@ -36,7 +36,7 @@ function MoviesList(props) {
       })
       .then((response) => {
         const idList = response.data.Favorites.map(({ _id }) => _id);
-        console.log('response data user', response.data);
+        // console.log('response data user', response.data);
         setUser(response.data);
         // console.log('response data favs', idList);
         // const storageFavs = JSON.stringify(idList);
@@ -72,7 +72,7 @@ function MoviesList(props) {
 
   if (!movies) return <div className="main-view">No movies</div>
 
-  console.log('user before render', user);
+  // console.log('user before render', user);
 
   return <div className="movies">
     <div className="filter-section">
@@ -82,7 +82,7 @@ function MoviesList(props) {
       {filteredMovies.map(m => (
         <div key={m._id}>
           <MovieCard movie={m}
-            user={user}
+            // user={user}
             favorites={favorites}
           />
         </div>
