@@ -53,20 +53,20 @@
     }
   }
 
-  svg {
-    position: absolute;
-    top: .4rem;
-    right: 4px;
-  }
+  // svg {
+  //   position: absolute;
+  //   top: .4rem;
+  //   right: 4px;
+  // }
 
-  svg:hover {
-    cursor: pointer;
-    transform: scale(1.2);
-  }
+  // svg:hover {
+  //   cursor: pointer;
+  //   transform: scale(1.2);
+  // }
 
-  svg path {
-    stroke: var(--yellow);
-  }
+  // svg path {
+  //   stroke: var(--yellow);
+  // }
 }
 
 

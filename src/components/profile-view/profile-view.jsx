@@ -19,8 +19,6 @@ import { GenreView } from '../genre-view/genre-view';
 import { Header } from '../header/header';
 import { FavMovie } from '../fav-movie/fav-movie';
 import { Row, Col, Button, Form } from 'react-bootstrap';
-// import Col from 'react-bootstrap/Col';
-// import Button from 'react-bootstrap/Button';
 
 export class ProfileView extends React.Component {
 
@@ -190,10 +188,10 @@ export class ProfileView extends React.Component {
     return (
       <div className="profile-view">
         <Header user={user} logOut={() => this.onLoggedOut()} renderProfileButton={this.state.renderProfileButton} />
-        <div className="profile-buttons">
-          {/* <button onClick={() => { onBackClick(); }} className="button-primary">Back</button> */}
-          {/* <a href="#data" className="button-primary">Go to your data</a> */}
-        </div>
+        {/* <div className="profile-buttons"> */}
+        {/* <button onClick={() => { onBackClick(); }} className="button-primary">Back</button> */}
+        {/* <a href="#data" className="button-primary">Go to your data</a> */}
+        {/* </div> */}
 
         <div className="favorite-movies">
           {/* {this.state.areFavsEmpty &&

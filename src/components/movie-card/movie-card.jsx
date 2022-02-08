@@ -15,12 +15,11 @@ export default function MovieCard(props) {
   useEffect(() => {
     console.log(`>>>---CARD ${movie._id}---<<<`)
     console.log('useEffect favorites', favorites);
-    console.log('movie:', movie.Title);
     if (favorites.includes(movieId)) {
-      console.log('in favs');
+      console.log(movie.Title, '- in favs');
       setIsInFavs(true)
     } else {
-      console.log('not in favs');
+      console.log(movie.Title, '- not in favs');
       setIsInFavs(false)
     }
   }, [favorites])
