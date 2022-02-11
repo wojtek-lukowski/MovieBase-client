@@ -79,8 +79,8 @@ export class MainView extends React.Component {
   render() {
     const { movies } = this.props;
     const { user } = this.state;
-    const date = new Date();
-    const currentYear = date.getFullYear();
+    // const date = new Date();
+    // const currentYear = date.getFullYear();
 
     return (
       <Router>
@@ -99,7 +99,7 @@ export class MainView extends React.Component {
                         className="button-primary create-account">
                         Create Account
                       </Link>
-                      <p>© {currentYear} Wojtek Lukowski</p>
+                      {/* <p>© {currentYear} Wojtek Lukowski</p> */}
                     </div>
                   </div>
                 );
