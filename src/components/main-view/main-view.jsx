@@ -67,24 +67,6 @@ export class MainView extends React.Component {
       });
   }
 
-  // getUser = (token, user) => {
-  //   console.log('getting user');
-  //   axios
-  //     .get("https://moviebased.herokuapp.com/users/" + user, {
-  //       headers: { Authorization: `Bearer ${token}` },
-  //     })
-  //     .then((response) => {
-  //       const idList = response.data.Favorites.map(({ _id }) => _id);
-  //       const storageFavs = JSON.stringify(idList);
-  //       console.log('string favs', storageFavs);
-  //       localStorage.setItem('favorites', storageFavs);
-  //       console.log('set favs to storage');
-  //     })
-  //     .catch(function (error) {
-  //       console.log(error);
-  //     });
-  // }
-
   onLoggedOut() {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
@@ -97,6 +79,8 @@ export class MainView extends React.Component {
   render() {
     const { movies } = this.props;
     const { user } = this.state;
+    const date = new Date();
+    const currentYear = date.getFullYear();
 
     return (
       <Router>
@@ -112,10 +96,10 @@ export class MainView extends React.Component {
                     <div className="login-view">
                       <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />
                       <Link to={`/register`}
-                        className="button-primary">
+                        className="button-primary create-account">
                         Create Account
                       </Link>
-                      <p>© 2021 Wojtek Lukowski</p>
+                      <p>© {currentYear} Wojtek Lukowski</p>
                     </div>
                   </div>
                 );

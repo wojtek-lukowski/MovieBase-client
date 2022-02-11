@@ -25879,23 +25879,6 @@ class MainView extends _reactDefault.default.Component {
             console.log(error);
         });
     }
-    // getUser = (token, user) => {
-    //   console.log('getting user');
-    //   axios
-    //     .get("https://moviebased.herokuapp.com/users/" + user, {
-    //       headers: { Authorization: `Bearer ${token}` },
-    //     })
-    //     .then((response) => {
-    //       const idList = response.data.Favorites.map(({ _id }) => _id);
-    //       const storageFavs = JSON.stringify(idList);
-    //       console.log('string favs', storageFavs);
-    //       localStorage.setItem('favorites', storageFavs);
-    //       console.log('set favs to storage');
-    //     })
-    //     .catch(function (error) {
-    //       console.log(error);
-    //     });
-    // }
     onLoggedOut() {
         localStorage.removeItem("token");
         localStorage.removeItem("user");
@@ -25907,17 +25890,19 @@ class MainView extends _reactDefault.default.Component {
     render() {
         const { movies  } = this.props;
         const { user  } = this.state;
+        const date = new Date();
+        const currentYear = date.getFullYear();
         return(/*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.BrowserRouter, {
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 102
+                lineNumber: 86
             },
             __self: this,
             children: /*#__PURE__*/ _jsxRuntime.jsxs("div", {
                 className: "main-view",
                 __source: {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 104
+                    lineNumber: 88
                 },
                 __self: this,
                 children: [
@@ -25935,11 +25920,15 @@ class MainView extends _reactDefault.default.Component {
                                         }),
                                         /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
                                             to: `/register`,
-                                            className: "button-primary",
+                                            className: "button-primary create-account",
                                             children: "Create Account"
                                         }),
-                                        /*#__PURE__*/ _jsxRuntime.jsx("p", {
-                                            children: "\xa9 2021 Wojtek Lukowski"
+                                        /*#__PURE__*/ _jsxRuntime.jsxs("p", {
+                                            children: [
+                                                "\xa9 ",
+                                                currentYear,
+                                                " Wojtek Lukowski"
+                                            ]
                                         })
                                     ]
                                 })
@@ -25970,7 +25959,7 @@ class MainView extends _reactDefault.default.Component {
                         },
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 105
+                            lineNumber: 89
                         },
                         __self: this
                     }),
@@ -25998,7 +25987,7 @@ class MainView extends _reactDefault.default.Component {
                         },
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 135
+                            lineNumber: 119
                         },
                         __self: this
                     }),
@@ -26024,7 +26013,7 @@ class MainView extends _reactDefault.default.Component {
                         },
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 151
+                            lineNumber: 135
                         },
                         __self: this
                     }),
@@ -26051,7 +26040,7 @@ class MainView extends _reactDefault.default.Component {
                         },
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 174
+                            lineNumber: 158
                         },
                         __self: this
                     }),
@@ -26078,7 +26067,7 @@ class MainView extends _reactDefault.default.Component {
                         },
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 199
+                            lineNumber: 183
                         },
                         __self: this
                     }),
@@ -26109,7 +26098,7 @@ class MainView extends _reactDefault.default.Component {
                         },
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 227
+                            lineNumber: 211
                         },
                         __self: this
                     })
@@ -30259,14 +30248,6 @@ function MovieCard(props) {
                         },
                         __self: this,
                         children: "Add to favs"
-                    }),
-                    /*#__PURE__*/ _jsxRuntime.jsx("div", {
-                        __source: {
-                            fileName: "src/components/movie-card/movie-card.jsx",
-                            lineNumber: 74
-                        },
-                        __self: this,
-                        children: movieId
                     })
                 ]
             })
