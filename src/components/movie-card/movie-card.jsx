@@ -83,3 +83,4 @@ MovieCard.propTypes = {
     Description: PropTypes.string
   }).isRequired
 };
+
