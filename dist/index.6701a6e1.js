@@ -30130,6 +30130,7 @@ function MovieCard(props) {
     _s();
     const { movie , favorites  } = props;
     const movieId = movie._id;
+    const movieTitle = movie.Title;
     const [isInFavs, setIsInFavs] = _react.useState(true);
     _react.useEffect(()=>{
         if (favorites.includes(movieId)) setIsInFavs(true);
@@ -30137,41 +30138,37 @@ function MovieCard(props) {
     }, [
         favorites
     ]);
-    // addToFavs = (movieId) => {
-    //   const username = localStorage.getItem("user");
-    //   const token = localStorage.getItem("token");
-    //   axios
-    //     .post(
-    //       `https://moviebased.herokuapp.com/users/${username}/movies/` + movieId,
-    //       {},
-    //       {
-    //         headers: { Authorization: `Bearer ${token}` },
-    //       }
-    //     )
-    //     .then((response) => {
-    //       // console.log(response);
-    //     })
-    //     .catch(function (error) {
-    //       console.log(error);
-    //     });
-    // }
-    // removeFromFavs = (movieId) => {
-    //   const username = localStorage.getItem('user');
-    //   const token = localStorage.getItem('token');
-    //   axios.delete(`https://moviebased.herokuapp.com/users/${username}/movies/` + movieId, {
-    //     headers: { Authorization: `Bearer ${token}` }
-    //   })
-    //     .then((response) => {
-    //     })
-    //     .catch(function (error) {
-    //       console.log(error);
-    //     });
-    // }
+    addToFavs = (movieId1)=>{
+        const username = localStorage.getItem("user");
+        const token = localStorage.getItem("token");
+        _axiosDefault.default.post(`https://moviebased.herokuapp.com/users/${username}/movies/` + movieId1, {
+        }, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        }).then((response)=>{
+        // console.log(response);
+        }).catch(function(error) {
+            console.log(error);
+        });
+    };
+    removeFromFavs = (movieId1)=>{
+        const username = localStorage.getItem('user');
+        const token = localStorage.getItem('token');
+        _axiosDefault.default.delete(`https://moviebased.herokuapp.com/users/${username}/movies/` + movieId1, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        }).then((response)=>{
+        }).catch(function(error) {
+            console.log(error);
+        });
+    };
     return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
         className: "card",
         __source: {
             fileName: "src/components/movie-card/movie-card.jsx",
-            lineNumber: 57
+            lineNumber: 58
         },
         __self: this,
         children: [
@@ -30179,7 +30176,7 @@ function MovieCard(props) {
                 className: "card-img",
                 __source: {
                     fileName: "src/components/movie-card/movie-card.jsx",
-                    lineNumber: 58
+                    lineNumber: 59
                 },
                 __self: this,
                 children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
@@ -30187,7 +30184,7 @@ function MovieCard(props) {
                     alt: "movie poster",
                     __source: {
                         fileName: "src/components/movie-card/movie-card.jsx",
-                        lineNumber: 59
+                        lineNumber: 60
                     },
                     __self: this
                 })
@@ -30196,7 +30193,7 @@ function MovieCard(props) {
                 className: "title",
                 __source: {
                     fileName: "src/components/movie-card/movie-card.jsx",
-                    lineNumber: 61
+                    lineNumber: 62
                 },
                 __self: this,
                 children: movie.Title
@@ -30205,7 +30202,7 @@ function MovieCard(props) {
                 className: "movie-card-button",
                 __source: {
                     fileName: "src/components/movie-card/movie-card.jsx",
-                    lineNumber: 63
+                    lineNumber: 64
                 },
                 __self: this,
                 children: /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
@@ -30213,19 +30210,47 @@ function MovieCard(props) {
                     className: "button-primary",
                     __source: {
                         fileName: "src/components/movie-card/movie-card.jsx",
-                        lineNumber: 64
+                        lineNumber: 65
                     },
                     __self: this,
                     children: "See more"
                 })
             }),
-            /*#__PURE__*/ _jsxRuntime.jsx("div", {
+            /*#__PURE__*/ _jsxRuntime.jsxs("div", {
                 className: "card-actions",
                 __source: {
                     fileName: "src/components/movie-card/movie-card.jsx",
-                    lineNumber: 67
+                    lineNumber: 68
                 },
-                __self: this
+                __self: this,
+                children: [
+                    isInFavs && /*#__PURE__*/ _jsxRuntime.jsx("div", {
+                        className: "button-primary is-in-favs",
+                        onClick: ()=>{
+                            setIsInFavs(false);
+                            removeFromFavs(movieId);
+                        },
+                        __source: {
+                            fileName: "src/components/movie-card/movie-card.jsx",
+                            lineNumber: 70
+                        },
+                        __self: this,
+                        children: "Remove"
+                    }),
+                    !isInFavs && /*#__PURE__*/ _jsxRuntime.jsx("div", {
+                        className: "button-primary",
+                        onClick: ()=>{
+                            setIsInFavs(true);
+                            addToFavs(movieId);
+                        },
+                        __source: {
+                            fileName: "src/components/movie-card/movie-card.jsx",
+                            lineNumber: 73
+                        },
+                        __self: this,
+                        children: "Add to favs"
+                    })
+                ]
             })
         ]
     }));

@@ -7,6 +7,7 @@ export default function MovieCard(props) {
 
   const { movie, favorites } = props;
   const movieId = movie._id;
+  const movieTitle = movie.Title;
 
   const [isInFavs, setIsInFavs] = useState(true);
 
@@ -19,39 +20,39 @@ export default function MovieCard(props) {
     }
   }, [favorites])
 
-  // addToFavs = (movieId) => {
-  //   const username = localStorage.getItem("user");
-  //   const token = localStorage.getItem("token");
+  addToFavs = (movieId) => {
+    const username = localStorage.getItem("user");
+    const token = localStorage.getItem("token");
 
-  //   axios
-  //     .post(
-  //       `https://moviebased.herokuapp.com/users/${username}/movies/` + movieId,
-  //       {},
-  //       {
-  //         headers: { Authorization: `Bearer ${token}` },
-  //       }
-  //     )
-  //     .then((response) => {
-  //       // console.log(response);
-  //     })
-  //     .catch(function (error) {
-  //       console.log(error);
-  //     });
-  // }
+    axios
+      .post(
+        `https://moviebased.herokuapp.com/users/${username}/movies/` + movieId,
+        {},
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      )
+      .then((response) => {
+        // console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
 
-  // removeFromFavs = (movieId) => {
-  //   const username = localStorage.getItem('user');
-  //   const token = localStorage.getItem('token');
+  removeFromFavs = (movieId) => {
+    const username = localStorage.getItem('user');
+    const token = localStorage.getItem('token');
 
-  //   axios.delete(`https://moviebased.herokuapp.com/users/${username}/movies/` + movieId, {
-  //     headers: { Authorization: `Bearer ${token}` }
-  //   })
-  //     .then((response) => {
-  //     })
-  //     .catch(function (error) {
-  //       console.log(error);
-  //     });
-  // }
+    axios.delete(`https://moviebased.herokuapp.com/users/${username}/movies/` + movieId, {
+      headers: { Authorization: `Bearer ${token}` }
+    })
+      .then((response) => {
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
 
   return (
     <div className="card">
@@ -65,12 +66,12 @@ export default function MovieCard(props) {
         </Link>
       </div>
       <div className="card-actions">
-        {/* {isInFavs &&
+        {isInFavs &&
           <div className="button-primary is-in-favs" onClick={() => { setIsInFavs(false); removeFromFavs(movieId) }} >Remove</div>
         }
         {!isInFavs &&
           <div className="button-primary" onClick={() => { setIsInFavs(true); addToFavs(movieId) }}>Add to favs</div>
-        } */}
+        }
       </div>
     </div >
   );
@@ -83,4 +84,3 @@ MovieCard.propTypes = {
     Description: PropTypes.string
   }).isRequired
 };
-
