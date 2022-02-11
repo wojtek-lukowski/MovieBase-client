@@ -2,71 +2,22 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-export class MovieCard extends React.Component {
+import { useState, useEffect } from 'react';
+export default function MovieCard(props) {
 
-  constructor() {
-    super();
+  const { movie, favorites } = props;
+  const movieId = movie._id;
 
-    this.state = {
-      favorites: [],
-      isHeartFull: false,
-    };
-  }
+  const [isInFavs, setIsInFavs] = useState(true);
 
-  getUser = (token, user) => {
-    // const user = localStorage.getItem('user');
-    // const token = localStorage.getItem('token');
-    axios
-      .get("https://moviebased.herokuapp.com/users/" + user, {
-        headers: { Authorization: `Bearer ${token}` },
-      })
-      .then((response) => {
-        const favIdList = response.data.Favorites.map(({ _id }) => _id);
-        this.setState({ favorites: favIdList });
-      })
-      .then(() => {
-        const movieId = this.props.movie._id;
-        this.setIsInFavs(movieId)
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  }
 
-  setIsInFavs = (movieId) => {
-    if (this.state.favorites.includes(movieId)) {
-      this.setState({ isHeartFull: true })
+  useEffect(() => {
+    if (favorites.includes(movieId)) {
+      setIsInFavs(true)
     } else {
-      this.setState({ isHeartFull: false })
+      setIsInFavs(false)
     }
-  }
-
-  toggleFavs = (movieId) => {
-    console.log('is in favs', this.state.isInFavs);
-    if (this.state.isHeartFull) {
-      console.log('favorites state before removing', this.state.favorites);
-      this.setState({ isHeartFull: false })
-      this.removeFromFavs(movieId);
-      this.getUser();
-    } else {
-      console.log('favorites state before adding', this.state.favorites);
-      this.setState({ isHeartFull: true })
-      this.addToFavs(movieId);
-      this.getUser();
-    }
-  }
-
-  toggleHeart = (movieId) => {
-    if (this.state.isHeartFull) {
-      this.setState({ isHeartFull: false });
-      this.removeFromFavs(movieId);
-      console.log(this.props.movie.Title, this.props.movie._id, ' has been removed');
-    } else {
-      this.setState({ isHeartFull: true });
-      this.addToFavs(movieId);
-      console.log(this.props.movie.Title, this.props.movie._id, ' has been added');
-    }
-  }
+  }, [favorites])
 
   addToFavs = (movieId) => {
     const username = localStorage.getItem("user");
@@ -96,52 +47,34 @@ export class MovieCard extends React.Component {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then((response) => {
-        // console.log(response);
       })
       .catch(function (error) {
         console.log(error);
       });
   }
 
-  componentDidMount = () => {
-    console.log('running componentDidMount');
-    const user = localStorage.getItem('user');
-    const token = localStorage.getItem('token');
-    console.log('user, token:', user, token);
-    this.getUser(token, user);
-  }
-
-  render() {
-    const { movie } = this.props;
-
-    return (
-      <div className="card">
-        <div className="card-img">
-          <img src={movie.ImagePath} alt="movie poster" />
-        </div>
-        <div className="title">{movie.Title}
-        </div>
-        <div className="card-actions">
-          <div className="movie-card-button">
-            <Link to={`/movies/${movie._id}`} className="button-primary">See more
-            </Link>
-          </div>
-          {/* {this.state.isInFavs &&
-            <div className="button-primary" onClick={() => this.toggleFavs(movie._id)}>Remove</div>
-          }
-          {!this.state.isInFavs &&
-            <div className="button-primary" onClick={() => this.toggleFavs(movie._id)}>Add</div>
-          } */}
-          {this.state.isHeartFull &&
-            <div className="button-primary is-in-favs" onClick={() => this.toggleHeart(movie._id)}>Remove</div>
-          }
-          {!this.state.isHeartFull &&
-            <div className="button-primary" onClick={() => this.toggleHeart(movie._id)}>Add to favs</div>
-          }
-        </div>
+  return (
+    <div className="card">
+      <div className="card-img">
+        <img src={movie.ImagePath} alt="movie poster" />
       </div>
-    );
-  }
+      <div className="title">{movie.Title}
+      </div>
+      <div className="movie-card-button">
+        <Link to={`/movies/${movie._id}`} className="button-primary">See more
+        </Link>
+      </div>
+      <div className="card-actions">
+        {isInFavs &&
+          <div className="button-primary is-in-favs" onClick={() => { setIsInFavs(false); removeFromFavs(movieId) }} >Remove</div>
+        }
+        {!isInFavs &&
+          <div className="button-primary" onClick={() => { setIsInFavs(true); addToFavs(movieId) }}>Add to favs</div>
+        }
+        <div>{movieId}</div>
+      </div>
+    </div>
+  );
 }
 
 MovieCard.propTypes = {

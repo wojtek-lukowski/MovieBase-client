@@ -19,8 +19,6 @@ import { GenreView } from '../genre-view/genre-view';
 import { Header } from '../header/header';
 import { FavMovie } from '../fav-movie/fav-movie';
 import { Row, Col, Button, Form } from 'react-bootstrap';
-// import Col from 'react-bootstrap/Col';
-// import Button from 'react-bootstrap/Button';
 
 export class ProfileView extends React.Component {
 
@@ -91,8 +89,6 @@ export class ProfileView extends React.Component {
     e.preventDefault();
     const username = localStorage.getItem("user");
     const token = localStorage.getItem("token");
-    console.log('event', e);
-    console.log('edit');
 
     axios.put(
       `https://moviebased.herokuapp.com/users/${username}`,
@@ -174,26 +170,16 @@ export class ProfileView extends React.Component {
     // this.state.Birthday.toLocaleDateString('en-GB', { year: 'numeric', month: '2-digit', day: '2-digit' }) = value;
   }
 
-  // areFavs = () => {
-  //   if (this.state.Favorites.length == 0) {
-  //     this.setState({ areFavsEmpty: true });
-  //     console.log('are favs empty', areFavsEmpty);
-  //   } else {
-  //     this.setState({ areFavsEmpty: false })
-  //     console.log('are favs empty', areFavsEmpty);
-  //   }
-  // }
-
   render() {
     const { user, onBackClick } = this.props;
 
     return (
       <div className="profile-view">
         <Header user={user} logOut={() => this.onLoggedOut()} renderProfileButton={this.state.renderProfileButton} />
-        <div className="profile-buttons">
-          {/* <button onClick={() => { onBackClick(); }} className="button-primary">Back</button> */}
-          {/* <a href="#data" className="button-primary">Go to your data</a> */}
-        </div>
+        {/* <div className="profile-buttons"> */}
+        {/* <button onClick={() => { onBackClick(); }} className="button-primary">Back</button> */}
+        {/* <a href="#data" className="button-primary">Go to your data</a> */}
+        {/* </div> */}
 
         <div className="favorite-movies">
           {/* {this.state.areFavsEmpty &&

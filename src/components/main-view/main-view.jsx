@@ -43,7 +43,11 @@ export class MainView extends React.Component {
   }
 
   onLoggedIn(authData) {
+<<<<<<< HEAD
     console.log(authData);
+=======
+    // console.log(authData);
+>>>>>>> dev2
     localStorage.setItem("token", authData.token);
     localStorage.setItem("user", authData.user.Username);
     this.setState({
@@ -51,6 +55,7 @@ export class MainView extends React.Component {
     });
 
     this.getMovies(authData.token);
+    // this.getUser(authData.token, authData.user.Username);
   }
 
   getMovies(token) {
@@ -65,6 +70,24 @@ export class MainView extends React.Component {
         console.log(error);
       });
   }
+
+  // getUser = (token, user) => {
+  //   console.log('getting user');
+  //   axios
+  //     .get("https://moviebased.herokuapp.com/users/" + user, {
+  //       headers: { Authorization: `Bearer ${token}` },
+  //     })
+  //     .then((response) => {
+  //       const idList = response.data.Favorites.map(({ _id }) => _id);
+  //       const storageFavs = JSON.stringify(idList);
+  //       console.log('string favs', storageFavs);
+  //       localStorage.setItem('favorites', storageFavs);
+  //       console.log('set favs to storage');
+  //     })
+  //     .catch(function (error) {
+  //       console.log(error);
+  //     });
+  // }
 
   onLoggedOut() {
     localStorage.removeItem("token");

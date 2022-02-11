@@ -17,9 +17,9 @@ export class Header extends React.Component {
   //   };
   // }
 
-  componentDidMount = () => {
-    console.log('profile button - did mount', this.props.renderProfileButton);
-  }
+  // componentDidMount = () => {
+  //   console.log('profile button - did mount', this.props.renderProfileButton);
+  // }
 
   toggleButton = () => {
     // console.log('profile button before',);
