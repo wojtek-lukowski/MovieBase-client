@@ -30169,7 +30169,19 @@ function MovieCard(props) {
             console.log(error);
         });
     }
-    removeFromFavs = (movieId1)=>{
+    // removeFromFavs = (movieId) => {
+    //   const username = localStorage.getItem('user');
+    //   const token = localStorage.getItem('token');
+    //   axios.delete(`https://moviebased.herokuapp.com/users/${username}/movies/` + movieId, {
+    //     headers: { Authorization: `Bearer ${token}` }
+    //   })
+    //     .then((response) => {
+    //     })
+    //     .catch(function (error) {
+    //       console.log(error);
+    //     });
+    // }
+    function removeFromFavs(movieId1) {
         const username = localStorage.getItem('user');
         const token = localStorage.getItem('token');
         _axiosDefault.default.delete(`https://moviebased.herokuapp.com/users/${username}/movies/` + movieId1, {
@@ -30180,12 +30192,12 @@ function MovieCard(props) {
         }).catch(function(error) {
             console.log(error);
         });
-    };
+    }
     return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
         className: "card",
         __source: {
             fileName: "src/components/movie-card/movie-card.jsx",
-            lineNumber: 74
+            lineNumber: 87
         },
         __self: this,
         children: [
@@ -30193,7 +30205,7 @@ function MovieCard(props) {
                 className: "card-img",
                 __source: {
                     fileName: "src/components/movie-card/movie-card.jsx",
-                    lineNumber: 75
+                    lineNumber: 88
                 },
                 __self: this,
                 children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
@@ -30201,7 +30213,7 @@ function MovieCard(props) {
                     alt: "movie poster",
                     __source: {
                         fileName: "src/components/movie-card/movie-card.jsx",
-                        lineNumber: 76
+                        lineNumber: 89
                     },
                     __self: this
                 })
@@ -30210,7 +30222,7 @@ function MovieCard(props) {
                 className: "title",
                 __source: {
                     fileName: "src/components/movie-card/movie-card.jsx",
-                    lineNumber: 78
+                    lineNumber: 91
                 },
                 __self: this,
                 children: movie.Title
@@ -30219,7 +30231,7 @@ function MovieCard(props) {
                 className: "movie-card-button",
                 __source: {
                     fileName: "src/components/movie-card/movie-card.jsx",
-                    lineNumber: 80
+                    lineNumber: 93
                 },
                 __self: this,
                 children: /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
@@ -30227,7 +30239,7 @@ function MovieCard(props) {
                     className: "button-primary",
                     __source: {
                         fileName: "src/components/movie-card/movie-card.jsx",
-                        lineNumber: 81
+                        lineNumber: 94
                     },
                     __self: this,
                     children: "See more"
@@ -30237,7 +30249,7 @@ function MovieCard(props) {
                 className: "card-actions",
                 __source: {
                     fileName: "src/components/movie-card/movie-card.jsx",
-                    lineNumber: 84
+                    lineNumber: 97
                 },
                 __self: this,
                 children: [
@@ -30249,7 +30261,7 @@ function MovieCard(props) {
                         },
                         __source: {
                             fileName: "src/components/movie-card/movie-card.jsx",
-                            lineNumber: 86
+                            lineNumber: 99
                         },
                         __self: this,
                         children: "Remove"
@@ -30262,7 +30274,7 @@ function MovieCard(props) {
                         },
                         __source: {
                             fileName: "src/components/movie-card/movie-card.jsx",
-                            lineNumber: 89
+                            lineNumber: 102
                         },
                         __self: this,
                         children: "Add to favs"
