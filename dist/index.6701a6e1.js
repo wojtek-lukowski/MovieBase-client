@@ -30138,32 +30138,36 @@ function MovieCard(props) {
     }, [
         favorites
     ]);
-    addToFavs = (movieId1)=>{
-        const username = localStorage.getItem("user");
-        const token = localStorage.getItem("token");
-        _axiosDefault.default.post(`https://moviebased.herokuapp.com/users/${username}/movies/` + movieId1, {
-        }, {
-            headers: {
-                Authorization: `Bearer ${token}`
-            }
-        }).then((response)=>{
-        // console.log(response);
-        }).catch(function(error) {
-            console.log(error);
-        });
-    };
-    removeFromFavs = (movieId1)=>{
-        const username = localStorage.getItem('user');
-        const token = localStorage.getItem('token');
-        _axiosDefault.default.delete(`https://moviebased.herokuapp.com/users/${username}/movies/` + movieId1, {
-            headers: {
-                Authorization: `Bearer ${token}`
-            }
-        }).then((response)=>{
-        }).catch(function(error) {
-            console.log(error);
-        });
-    };
+    // addToFavs = (movieId) => {
+    //   const username = localStorage.getItem("user");
+    //   const token = localStorage.getItem("token");
+    //   axios
+    //     .post(
+    //       `https://moviebased.herokuapp.com/users/${username}/movies/` + movieId,
+    //       {},
+    //       {
+    //         headers: { Authorization: `Bearer ${token}` },
+    //       }
+    //     )
+    //     .then((response) => {
+    //       // console.log(response);
+    //     })
+    //     .catch(function (error) {
+    //       console.log(error);
+    //     });
+    // }
+    // removeFromFavs = (movieId) => {
+    //   const username = localStorage.getItem('user');
+    //   const token = localStorage.getItem('token');
+    //   axios.delete(`https://moviebased.herokuapp.com/users/${username}/movies/` + movieId, {
+    //     headers: { Authorization: `Bearer ${token}` }
+    //   })
+    //     .then((response) => {
+    //     })
+    //     .catch(function (error) {
+    //       console.log(error);
+    //     });
+    // }
     return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
         className: "card",
         __source: {
@@ -30224,28 +30228,26 @@ function MovieCard(props) {
                 },
                 __self: this,
                 children: [
-                    isInFavs && /*#__PURE__*/ _jsxRuntime.jsx("div", {
+                    isInFavs && // <div className="button-primary is-in-favs" onClick={() => { setIsInFavs(false); removeFromFavs(movieId) }} >Remove</div>
+                    /*#__PURE__*/ _jsxRuntime.jsx("div", {
                         className: "button-primary is-in-favs",
-                        onClick: ()=>{
-                            setIsInFavs(false);
-                            removeFromFavs(movieId);
-                        },
+                        onClick: ()=>setIsInFavs(false)
+                        ,
                         __source: {
                             fileName: "src/components/movie-card/movie-card.jsx",
-                            lineNumber: 70
+                            lineNumber: 71
                         },
                         __self: this,
                         children: "Remove"
                     }),
-                    !isInFavs && /*#__PURE__*/ _jsxRuntime.jsx("div", {
+                    !isInFavs && // <div className="button-primary" onClick={() => { setIsInFavs(true); addToFavs(movieId) }}>Add to favs</div>
+                    /*#__PURE__*/ _jsxRuntime.jsx("div", {
                         className: "button-primary",
-                        onClick: ()=>{
-                            setIsInFavs(true);
-                            addToFavs(movieId);
-                        },
+                        onClick: ()=>setIsInFavs(true)
+                        ,
                         __source: {
                             fileName: "src/components/movie-card/movie-card.jsx",
-                            lineNumber: 73
+                            lineNumber: 75
                         },
                         __self: this,
                         children: "Add to favs"
