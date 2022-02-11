@@ -19,7 +19,6 @@ export class FavMovie extends React.Component {
   favRemoved = () => {
     // alert(`${this.props.movie.Title} has been removed.`);
     this.setState({ isRemoved: true });
-    console.log('is removed', this.state.isRemoved);
     setTimeout(() => { console.log('is removed', this.state.isRemoved) },
       1000
     );

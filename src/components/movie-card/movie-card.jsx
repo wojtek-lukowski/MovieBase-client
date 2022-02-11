@@ -3,38 +3,21 @@ import PropTypes from 'prop-types';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { connect } from 'react-redux';
-
 export default function MovieCard(props) {
 
   const { movie, favorites } = props;
   const movieId = movie._id;
 
-  const [isInFavs, setIsInFavs] = useState(false);
+  const [isInFavs, setIsInFavs] = useState(true);
+
 
   useEffect(() => {
-    console.log(`>>>---CARD ${movie._id}---<<<`)
-    console.log('useEffect favorites', favorites);
     if (favorites.includes(movieId)) {
-      console.log(movie.Title, '- in favs');
       setIsInFavs(true)
     } else {
-      console.log(movie.Title, '- not in favs');
       setIsInFavs(false)
     }
   }, [favorites])
-
-  toggleButton = (movieId) => {
-    if (isInFavs) {
-      setIsInFavs(false);
-      removeFromFavs(movieId);
-      console.log(movie.Title, movie._id, ' has been removed');
-    } else {
-      setIsInFavs(true);
-      addToFavs(movieId);
-      console.log(movie.Title, movie._id, ' has been added');
-    }
-  }
 
   addToFavs = (movieId) => {
     const username = localStorage.getItem("user");
@@ -64,7 +47,6 @@ export default function MovieCard(props) {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then((response) => {
-        // console.log(response);
       })
       .catch(function (error) {
         console.log(error);
@@ -78,17 +60,18 @@ export default function MovieCard(props) {
       </div>
       <div className="title">{movie.Title}
       </div>
+      <div className="movie-card-button">
+        <Link to={`/movies/${movie._id}`} className="button-primary">See more
+        </Link>
+      </div>
       <div className="card-actions">
-        <div className="movie-card-button">
-          <Link to={`/movies/${movie._id}`} className="button-primary">See more
-          </Link>
-        </div>
         {isInFavs &&
-          <div className="button-primary is-in-favs" onClick={() => toggleButton(movie._id)}>Remove</div>
+          <div className="button-primary is-in-favs" onClick={() => { setIsInFavs(false); removeFromFavs(movieId) }} >Remove</div>
         }
         {!isInFavs &&
-          <div className="button-primary" onClick={() => toggleButton(movie._id)}>Add to favs</div>
+          <div className="button-primary" onClick={() => { setIsInFavs(true); addToFavs(movieId) }}>Add to favs</div>
         }
+        <div>{movieId}</div>
       </div>
     </div>
   );

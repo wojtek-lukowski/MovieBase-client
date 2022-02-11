@@ -89,8 +89,6 @@ export class ProfileView extends React.Component {
     e.preventDefault();
     const username = localStorage.getItem("user");
     const token = localStorage.getItem("token");
-    console.log('event', e);
-    console.log('edit');
 
     axios.put(
       `https://moviebased.herokuapp.com/users/${username}`,
@@ -171,16 +169,6 @@ export class ProfileView extends React.Component {
     this.state.Birthday = value;
     // this.state.Birthday.toLocaleDateString('en-GB', { year: 'numeric', month: '2-digit', day: '2-digit' }) = value;
   }
-
-  // areFavs = () => {
-  //   if (this.state.Favorites.length == 0) {
-  //     this.setState({ areFavsEmpty: true });
-  //     console.log('are favs empty', areFavsEmpty);
-  //   } else {
-  //     this.setState({ areFavsEmpty: false })
-  //     console.log('are favs empty', areFavsEmpty);
-  //   }
-  // }
 
   render() {
     const { user, onBackClick } = this.props;
