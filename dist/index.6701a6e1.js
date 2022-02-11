@@ -25859,11 +25859,7 @@ class MainView extends _reactDefault.default.Component {
         }
     }
     onLoggedIn(authData) {
-<<<<<<< HEAD
-        console.log(authData);
-=======
         // console.log(authData);
->>>>>>> dev2
         localStorage.setItem("token", authData.token);
         localStorage.setItem("user", authData.user.Username);
         this.setState({
@@ -25883,23 +25879,6 @@ class MainView extends _reactDefault.default.Component {
             console.log(error);
         });
     }
-    // getUser = (token, user) => {
-    //   console.log('getting user');
-    //   axios
-    //     .get("https://moviebased.herokuapp.com/users/" + user, {
-    //       headers: { Authorization: `Bearer ${token}` },
-    //     })
-    //     .then((response) => {
-    //       const idList = response.data.Favorites.map(({ _id }) => _id);
-    //       const storageFavs = JSON.stringify(idList);
-    //       console.log('string favs', storageFavs);
-    //       localStorage.setItem('favorites', storageFavs);
-    //       console.log('set favs to storage');
-    //     })
-    //     .catch(function (error) {
-    //       console.log(error);
-    //     });
-    // }
     onLoggedOut() {
         localStorage.removeItem("token");
         localStorage.removeItem("user");
@@ -25911,17 +25890,19 @@ class MainView extends _reactDefault.default.Component {
     render() {
         const { movies  } = this.props;
         const { user  } = this.state;
+        const date = new Date();
+        const currentYear = date.getFullYear();
         return(/*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.BrowserRouter, {
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 102
+                lineNumber: 86
             },
             __self: this,
             children: /*#__PURE__*/ _jsxRuntime.jsxs("div", {
                 className: "main-view",
                 __source: {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 104
+                    lineNumber: 88
                 },
                 __self: this,
                 children: [
@@ -25939,11 +25920,15 @@ class MainView extends _reactDefault.default.Component {
                                         }),
                                         /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
                                             to: `/register`,
-                                            className: "button-primary",
+                                            className: "button-primary create-account",
                                             children: "Create Account"
                                         }),
-                                        /*#__PURE__*/ _jsxRuntime.jsx("p", {
-                                            children: "\xa9 2021 Wojtek Lukowski"
+                                        /*#__PURE__*/ _jsxRuntime.jsxs("p", {
+                                            children: [
+                                                "\xa9 ",
+                                                currentYear,
+                                                " Wojtek Lukowski"
+                                            ]
                                         })
                                     ]
                                 })
@@ -25974,7 +25959,7 @@ class MainView extends _reactDefault.default.Component {
                         },
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 105
+                            lineNumber: 89
                         },
                         __self: this
                     }),
@@ -26002,7 +25987,7 @@ class MainView extends _reactDefault.default.Component {
                         },
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 135
+                            lineNumber: 119
                         },
                         __self: this
                     }),
@@ -26028,7 +26013,7 @@ class MainView extends _reactDefault.default.Component {
                         },
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 151
+                            lineNumber: 135
                         },
                         __self: this
                     }),
@@ -26055,7 +26040,7 @@ class MainView extends _reactDefault.default.Component {
                         },
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 174
+                            lineNumber: 158
                         },
                         __self: this
                     }),
@@ -26082,7 +26067,7 @@ class MainView extends _reactDefault.default.Component {
                         },
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 199
+                            lineNumber: 183
                         },
                         __self: this
                     }),
@@ -26113,7 +26098,7 @@ class MainView extends _reactDefault.default.Component {
                         },
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 227
+                            lineNumber: 211
                         },
                         __self: this
                     })
@@ -30140,78 +30125,6 @@ var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
 var _axios = require("axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
 var _reactRouterDom = require("react-router-dom");
-<<<<<<< HEAD
-class MovieCard extends _reactDefault.default.Component {
-    constructor(){
-        super();
-        this.state = {
-            favorites: [],
-            isHeartFull: false
-        };
-    }
-    getUser = (token, user)=>{
-        // const user = localStorage.getItem('user');
-        // const token = localStorage.getItem('token');
-        _axiosDefault.default.get("https://moviebased.herokuapp.com/users/" + user, {
-            headers: {
-                Authorization: `Bearer ${token}`
-            }
-        }).then((response)=>{
-            const favIdList = response.data.Favorites.map(({ _id  })=>_id
-            );
-            this.setState({
-                favorites: favIdList
-            });
-        }).then(()=>{
-            const movieId = this.props.movie._id;
-            this.setIsInFavs(movieId);
-        }).catch(function(error) {
-            console.log(error);
-        });
-    };
-    setIsInFavs = (movieId)=>{
-        if (this.state.favorites.includes(movieId)) this.setState({
-            isHeartFull: true
-        });
-        else this.setState({
-            isHeartFull: false
-        });
-    };
-    toggleFavs = (movieId)=>{
-        console.log('is in favs', this.state.isInFavs);
-        if (this.state.isHeartFull) {
-            console.log('favorites state before removing', this.state.favorites);
-            this.setState({
-                isHeartFull: false
-            });
-            this.removeFromFavs(movieId);
-            this.getUser();
-        } else {
-            console.log('favorites state before adding', this.state.favorites);
-            this.setState({
-                isHeartFull: true
-            });
-            this.addToFavs(movieId);
-            this.getUser();
-        }
-    };
-    toggleHeart = (movieId)=>{
-        if (this.state.isHeartFull) {
-            this.setState({
-                isHeartFull: false
-            });
-            this.removeFromFavs(movieId);
-            console.log(this.props.movie.Title, this.props.movie._id, ' has been removed');
-        } else {
-            this.setState({
-                isHeartFull: true
-            });
-            this.addToFavs(movieId);
-            console.log(this.props.movie.Title, this.props.movie._id, ' has been added');
-        }
-    };
-    addToFavs = (movieId)=>{
-=======
 var _s = $RefreshSig$();
 function MovieCard(props) {
     _s();
@@ -30225,7 +30138,6 @@ function MovieCard(props) {
         favorites
     ]);
     addToFavs = (movieId1)=>{
->>>>>>> dev2
         const username = localStorage.getItem("user");
         const token = localStorage.getItem("token");
         _axiosDefault.default.post(`https://moviebased.herokuapp.com/users/${username}/movies/` + movieId1, {
@@ -30251,47 +30163,6 @@ function MovieCard(props) {
             console.log(error);
         });
     };
-<<<<<<< HEAD
-    componentDidMount = ()=>{
-        console.log('running componentDidMount');
-        const user = localStorage.getItem('user');
-        const token = localStorage.getItem('token');
-        console.log('user, token:', user, token);
-        this.getUser(token, user);
-    };
-    render() {
-        const { movie  } = this.props;
-        return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
-            className: "card",
-            __source: {
-                fileName: "src/components/movie-card/movie-card.jsx",
-                lineNumber: 118
-            },
-            __self: this,
-            children: [
-                /*#__PURE__*/ _jsxRuntime.jsx("div", {
-                    className: "card-img",
-                    __source: {
-                        fileName: "src/components/movie-card/movie-card.jsx",
-                        lineNumber: 119
-                    },
-                    __self: this,
-                    children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
-                        src: movie.ImagePath,
-                        alt: "movie poster",
-                        __source: {
-                            fileName: "src/components/movie-card/movie-card.jsx",
-                            lineNumber: 120
-                        },
-                        __self: this
-                    })
-                }),
-                /*#__PURE__*/ _jsxRuntime.jsx("div", {
-                    className: "title",
-                    __source: {
-                        fileName: "src/components/movie-card/movie-card.jsx",
-                        lineNumber: 122
-=======
     return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
         className: "card",
         __source: {
@@ -30313,7 +30184,6 @@ function MovieCard(props) {
                     __source: {
                         fileName: "src/components/movie-card/movie-card.jsx",
                         lineNumber: 59
->>>>>>> dev2
                     },
                     __self: this
                 })
@@ -30339,58 +30209,10 @@ function MovieCard(props) {
                     className: "button-primary",
                     __source: {
                         fileName: "src/components/movie-card/movie-card.jsx",
-<<<<<<< HEAD
-                        lineNumber: 124
-                    },
-                    __self: this,
-                    children: [
-                        /*#__PURE__*/ _jsxRuntime.jsx("div", {
-                            className: "movie-card-button",
-                            __source: {
-                                fileName: "src/components/movie-card/movie-card.jsx",
-                                lineNumber: 125
-                            },
-                            __self: this,
-                            children: /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
-                                to: `/movies/${movie._id}`,
-                                className: "button-primary",
-                                __source: {
-                                    fileName: "src/components/movie-card/movie-card.jsx",
-                                    lineNumber: 126
-                                },
-                                __self: this,
-                                children: "See more"
-                            })
-                        }),
-                        this.state.isHeartFull && /*#__PURE__*/ _jsxRuntime.jsx("div", {
-                            className: "button-primary is-in-favs",
-                            onClick: ()=>this.toggleHeart(movie._id)
-                            ,
-                            __source: {
-                                fileName: "src/components/movie-card/movie-card.jsx",
-                                lineNumber: 136
-                            },
-                            __self: this,
-                            children: "Remove"
-                        }),
-                        !this.state.isHeartFull && /*#__PURE__*/ _jsxRuntime.jsx("div", {
-                            className: "button-primary",
-                            onClick: ()=>this.toggleHeart(movie._id)
-                            ,
-                            __source: {
-                                fileName: "src/components/movie-card/movie-card.jsx",
-                                lineNumber: 139
-                            },
-                            __self: this,
-                            children: "Add to favs"
-                        })
-                    ]
-=======
                         lineNumber: 64
                     },
                     __self: this,
                     children: "See more"
->>>>>>> dev2
                 })
             }),
             /*#__PURE__*/ _jsxRuntime.jsxs("div", {
@@ -30426,14 +30248,6 @@ function MovieCard(props) {
                         },
                         __self: this,
                         children: "Add to favs"
-                    }),
-                    /*#__PURE__*/ _jsxRuntime.jsx("div", {
-                        __source: {
-                            fileName: "src/components/movie-card/movie-card.jsx",
-                            lineNumber: 74
-                        },
-                        __self: this,
-                        children: movieId
                     })
                 ]
             })
