@@ -7,6 +7,7 @@ export default function MovieCard(props) {
 
   const { movie, favorites } = props;
   const movieId = movie._id;
+  const movieTitle = movie.Title;
 
   const [isInFavs, setIsInFavs] = useState(true);
 
