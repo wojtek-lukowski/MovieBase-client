@@ -2,11 +2,12 @@
   height: 100vh;
   background-image: url('../img/film.svg');
   background-repeat: no-repeat;
-  background-size: 80%;
-  background-position: center;
+  background-size: 100%;
+  background-position: center top;
   object-fit: center;
   display: flex;
   align-content: center;
+  position: relative;
 
 a {
   margin: 0;
@@ -19,6 +20,7 @@ a {
 
 .login-view {
   display: flex;
+  flex: 0 !important;
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: center;
@@ -26,6 +28,10 @@ a {
   max-width: 25rem;
   height: 50rem;
   margin: auto;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%);
 
   p {
     text-align: center;
