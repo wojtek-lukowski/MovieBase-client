@@ -124,7 +124,7 @@ export class MainView extends React.Component {
                 <div className="login-page">
                   <div className="login-view">
                     <RegistrationView />
-                    <Link to={`/`} className="button-primary">Back to login
+                    <Link to={`/`} className="button-primary create-account">Back to login
                     </Link>
                   </div>
                 </div>
