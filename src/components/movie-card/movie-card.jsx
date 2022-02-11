@@ -65,12 +65,12 @@ export default function MovieCard(props) {
         </Link>
       </div>
       <div className="card-actions">
-        {isInFavs &&
+        {/* {isInFavs &&
           <div className="button-primary is-in-favs" onClick={() => { setIsInFavs(false); removeFromFavs(movieId) }} >Remove</div>
         }
         {!isInFavs &&
           <div className="button-primary" onClick={() => { setIsInFavs(true); addToFavs(movieId) }}>Add to favs</div>
-        }
+        } */}
       </div>
     </div >
   );
