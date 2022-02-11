@@ -30137,36 +30137,32 @@ function MovieCard(props) {
     }, [
         favorites
     ]);
-    // addToFavs = (movieId) => {
-    //   const username = localStorage.getItem("user");
-    //   const token = localStorage.getItem("token");
-    //     axios
-    //       .post(
-    //         `https://moviebased.herokuapp.com/users/${username}/movies/` + movieId,
-    //         {},
-    //         {
-    //           headers: { Authorization: `Bearer ${token}` },
-    //         }
-    //       )
-    //       .then((response) => {
-    //         // console.log(response);
-    //       })
-    //       .catch(function (error) {
-    //         console.log(error);
-    //       });
-    //   }
-    // removeFromFavs = (movieId) => {
-    //   const username = localStorage.getItem('user');
-    //   const token = localStorage.getItem('token');
-    //   axios.delete(`https://moviebased.herokuapp.com/users/${username}/movies/` + movieId, {
-    //     headers: { Authorization: `Bearer ${token}` }
-    //   })
-    //     .then((response) => {
-    //     })
-    //     .catch(function (error) {
-    //       console.log(error);
-    //     });
-    // }
+    addToFavs = (movieId1)=>{
+        const username = localStorage.getItem("user");
+        const token = localStorage.getItem("token");
+        _axiosDefault.default.post(`https://moviebased.herokuapp.com/users/${username}/movies/` + movieId1, {
+        }, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        }).then((response)=>{
+        // console.log(response);
+        }).catch(function(error) {
+            console.log(error);
+        });
+    };
+    removeFromFavs = (movieId1)=>{
+        const username = localStorage.getItem('user');
+        const token = localStorage.getItem('token');
+        _axiosDefault.default.delete(`https://moviebased.herokuapp.com/users/${username}/movies/` + movieId1, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        }).then((response)=>{
+        }).catch(function(error) {
+            console.log(error);
+        });
+    };
     return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
         className: "card",
         __source: {
@@ -30248,7 +30244,7 @@ function MovieCard(props) {
                         },
                         __source: {
                             fileName: "src/components/movie-card/movie-card.jsx",
-                            lineNumber: 71
+                            lineNumber: 70
                         },
                         __self: this,
                         children: "Add to favs"
