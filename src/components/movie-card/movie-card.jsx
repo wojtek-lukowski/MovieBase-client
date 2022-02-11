@@ -71,7 +71,6 @@ export default function MovieCard(props) {
         {!isInFavs &&
           <div className="button-primary" onClick={() => { setIsInFavs(true); addToFavs(movieId) }}>Add to favs</div>
         }
-        <div>{movieId}</div>
       </div>
     </div>
   );
