@@ -72,7 +72,7 @@ export default function MovieCard(props) {
           <div className="button-primary" onClick={() => { setIsInFavs(true); addToFavs(movieId) }}>Add to favs</div>
         }
       </div>
-    </div>
+    </div >
   );
 }
 
