@@ -19,25 +19,25 @@ export default function MovieCard(props) {
     }
   }, [favorites])
 
-  addToFavs = (movieId) => {
-    const username = localStorage.getItem("user");
-    const token = localStorage.getItem("token");
+  // addToFavs = (movieId) => {
+  //   const username = localStorage.getItem("user");
+  //   const token = localStorage.getItem("token");
 
-    axios
-      .post(
-        `https://moviebased.herokuapp.com/users/${username}/movies/` + movieId,
-        {},
-        {
-          headers: { Authorization: `Bearer ${token}` },
-        }
-      )
-      .then((response) => {
-        // console.log(response);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  }
+  //   axios
+  //     .post(
+  //       `https://moviebased.herokuapp.com/users/${username}/movies/` + movieId,
+  //       {},
+  //       {
+  //         headers: { Authorization: `Bearer ${token}` },
+  //       }
+  //     )
+  //     .then((response) => {
+  //       // console.log(response);
+  //     })
+  //     .catch(function (error) {
+  //       console.log(error);
+  //     });
+  // }
 
   removeFromFavs = (movieId) => {
     const username = localStorage.getItem('user');
