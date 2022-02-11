@@ -33246,24 +33246,20 @@ class FavMovie extends _reactDefault.default.Component {
         this.setState({
             isRemoved: true
         });
-        setTimeout(()=>{
-            console.log('is removed', this.state.isRemoved);
-        }, 1000);
     };
     render() {
         const { movie , removeFav , fav  } = this.props;
-        console.log(movie);
         return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
             __source: {
                 fileName: "src/components/fav-movie/fav-movie.jsx",
-                lineNumber: 34
+                lineNumber: 29
             },
             __self: this,
             children: [
                 this.state.isRemoved && /*#__PURE__*/ _jsxRuntime.jsx("div", {
                     __source: {
                         fileName: "src/components/fav-movie/fav-movie.jsx",
-                        lineNumber: 36
+                        lineNumber: 31
                     },
                     __self: this
                 }),
@@ -33271,7 +33267,7 @@ class FavMovie extends _reactDefault.default.Component {
                     className: "card fav-card",
                     __source: {
                         fileName: "src/components/fav-movie/fav-movie.jsx",
-                        lineNumber: 39
+                        lineNumber: 34
                     },
                     __self: this,
                     children: [
@@ -33279,7 +33275,7 @@ class FavMovie extends _reactDefault.default.Component {
                             className: "",
                             __source: {
                                 fileName: "src/components/fav-movie/fav-movie.jsx",
-                                lineNumber: 41
+                                lineNumber: 36
                             },
                             __self: this,
                             children: [
@@ -33287,7 +33283,7 @@ class FavMovie extends _reactDefault.default.Component {
                                     className: "card-img",
                                     __source: {
                                         fileName: "src/components/fav-movie/fav-movie.jsx",
-                                        lineNumber: 42
+                                        lineNumber: 37
                                     },
                                     __self: this,
                                     children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
@@ -33295,7 +33291,7 @@ class FavMovie extends _reactDefault.default.Component {
                                         alt: "movie poster",
                                         __source: {
                                             fileName: "src/components/fav-movie/fav-movie.jsx",
-                                            lineNumber: 43
+                                            lineNumber: 38
                                         },
                                         __self: this
                                     })
@@ -33304,7 +33300,7 @@ class FavMovie extends _reactDefault.default.Component {
                                     className: "title",
                                     __source: {
                                         fileName: "src/components/fav-movie/fav-movie.jsx",
-                                        lineNumber: 45
+                                        lineNumber: 40
                                     },
                                     __self: this,
                                     children: movie.Title
@@ -33315,7 +33311,7 @@ class FavMovie extends _reactDefault.default.Component {
                             className: "centered",
                             __source: {
                                 fileName: "src/components/fav-movie/fav-movie.jsx",
-                                lineNumber: 49
+                                lineNumber: 44
                             },
                             __self: this,
                             children: [
@@ -33324,7 +33320,7 @@ class FavMovie extends _reactDefault.default.Component {
                                     className: "button-primary",
                                     __source: {
                                         fileName: "src/components/fav-movie/fav-movie.jsx",
-                                        lineNumber: 50
+                                        lineNumber: 45
                                     },
                                     __self: this,
                                     children: "See more"
@@ -33337,7 +33333,7 @@ class FavMovie extends _reactDefault.default.Component {
                                     },
                                     __source: {
                                         fileName: "src/components/fav-movie/fav-movie.jsx",
-                                        lineNumber: 51
+                                        lineNumber: 46
                                     },
                                     __self: this,
                                     children: "Remove"
