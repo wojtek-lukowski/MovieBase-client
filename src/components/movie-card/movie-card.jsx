@@ -40,19 +40,19 @@ export default function MovieCard(props) {
   //     });
   // }
 
-  // removeFromFavs = (movieId) => {
-  //   const username = localStorage.getItem('user');
-  //   const token = localStorage.getItem('token');
+  removeFromFavs = (movieId) => {
+    const username = localStorage.getItem('user');
+    const token = localStorage.getItem('token');
 
-  //   axios.delete(`https://moviebased.herokuapp.com/users/${username}/movies/` + movieId, {
-  //     headers: { Authorization: `Bearer ${token}` }
-  //   })
-  //     .then((response) => {
-  //     })
-  //     .catch(function (error) {
-  //       console.log(error);
-  //     });
-  // }
+    axios.delete(`https://moviebased.herokuapp.com/users/${username}/movies/` + movieId, {
+      headers: { Authorization: `Bearer ${token}` }
+    })
+      .then((response) => {
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
 
   return (
     <div className="card">
@@ -67,8 +67,8 @@ export default function MovieCard(props) {
       </div>
       <div className="card-actions">
         {isInFavs &&
-          // <div className="button-primary is-in-favs" onClick={() => { setIsInFavs(false); removeFromFavs(movieId) }} >Remove</div>
-          <div className="button-primary is-in-favs" onClick={() => setIsInFavs(false)} >Remove</div>
+          <div className="button-primary is-in-favs" onClick={() => { setIsInFavs(false); removeFromFavs(movieId) }} >Remove</div>
+          // <div className="button-primary is-in-favs" onClick={() => setIsInFavs(false)} >Remove</div>
         }
         {!isInFavs &&
           // <div className="button-primary" onClick={() => { setIsInFavs(true); addToFavs(movieId) }}>Add to favs</div>

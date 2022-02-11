@@ -30156,18 +30156,18 @@ function MovieCard(props) {
     //       console.log(error);
     //     });
     // }
-    // removeFromFavs = (movieId) => {
-    //   const username = localStorage.getItem('user');
-    //   const token = localStorage.getItem('token');
-    //   axios.delete(`https://moviebased.herokuapp.com/users/${username}/movies/` + movieId, {
-    //     headers: { Authorization: `Bearer ${token}` }
-    //   })
-    //     .then((response) => {
-    //     })
-    //     .catch(function (error) {
-    //       console.log(error);
-    //     });
-    // }
+    removeFromFavs = (movieId1)=>{
+        const username = localStorage.getItem('user');
+        const token = localStorage.getItem('token');
+        _axiosDefault.default.delete(`https://moviebased.herokuapp.com/users/${username}/movies/` + movieId1, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        }).then((response)=>{
+        }).catch(function(error) {
+            console.log(error);
+        });
+    };
     return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
         className: "card",
         __source: {
@@ -30228,14 +30228,15 @@ function MovieCard(props) {
                 },
                 __self: this,
                 children: [
-                    isInFavs && // <div className="button-primary is-in-favs" onClick={() => { setIsInFavs(false); removeFromFavs(movieId) }} >Remove</div>
-                    /*#__PURE__*/ _jsxRuntime.jsx("div", {
+                    isInFavs && /*#__PURE__*/ _jsxRuntime.jsx("div", {
                         className: "button-primary is-in-favs",
-                        onClick: ()=>setIsInFavs(false)
-                        ,
+                        onClick: ()=>{
+                            setIsInFavs(false);
+                            removeFromFavs(movieId);
+                        },
                         __source: {
                             fileName: "src/components/movie-card/movie-card.jsx",
-                            lineNumber: 71
+                            lineNumber: 70
                         },
                         __self: this,
                         children: "Remove"
