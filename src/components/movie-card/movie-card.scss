@@ -1,6 +1,5 @@
 .card {
   display: flex;
-  // justify-content: center;
   align-items: center;
   background-color: var(--background) !important;
   color: var(--yellow);
@@ -51,26 +50,9 @@
     font-weight: 600;
 
     &:hover {
-      background-color: var(--background);
-      color: var(--yellow) !important;
-      border: 1px solid var(--yellow);
+      opacity: .7;
     }
   }
-
-  // svg {
-  //   position: absolute;
-  //   top: .4rem;
-  //   right: 4px;
-  // }
-
-  // svg:hover {
-  //   cursor: pointer;
-  //   transform: scale(1.2);
-  // }
-
-  // svg path {
-  //   stroke: var(--yellow);
-  // }
 }
 
 // // @import "../../index.scss";

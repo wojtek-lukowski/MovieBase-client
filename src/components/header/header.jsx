@@ -9,28 +9,6 @@ import './header.scss';
 
 export class Header extends React.Component {
 
-  // constructor() {
-  //   super();
-
-  //   this.state = {
-  //     renderProfileButton: true
-  //   };
-  // }
-
-  // componentDidMount = () => {
-  //   console.log('profile button - did mount', this.props.renderProfileButton);
-  // }
-
-  toggleButton = () => {
-    // console.log('profile button before',);
-    // if (this.props.renderProfileButton) {
-    //   this.setState({ renderProfileButton: false })
-    // } else {
-    //   this.setState({ renderProfileButton: true })
-    // }
-    // console.log('profile button afetr',);
-  }
-
   render() {
     const { logOut, user } = this.props;
     // const renderProfileButton = this.props;

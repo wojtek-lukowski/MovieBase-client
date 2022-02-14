@@ -4,9 +4,8 @@
   right: 0;
   z-index: 1;
   max-width: var(--page);
-  height: 10rem;
+  height: 10rem !important;
   background-color: var(--background);
-  // border-bottom: 1px solid var(--yellow);
   box-shadow: 0px 0 5px var(--yellow);
   border-radius: 3px;
   padding: var(--u) var(--u4);
@@ -20,7 +19,8 @@
   }
 
   .button-primary {
-    width: 15rem;
+    width: 15rem !important;
+    flex-shrink: 0;
   }
 }
 
