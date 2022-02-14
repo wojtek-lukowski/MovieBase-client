@@ -36,7 +36,7 @@ export function RegistrationView(props) {
       })
       .catch(e => {
         console.log('Error registering the user', e)
-        alert("Sorry, something went wrong. The username may be already used. Please, try again.");
+        alert("Sorry, something went wrong. Please, try again.");
         window.open('/register', '_self');
       });
   };
@@ -51,7 +51,7 @@ export function RegistrationView(props) {
     }
 
     if (password.trim().length < 5) {
-      setPasswordError("Your password must contain  at least 6 characters.");
+      setPasswordError("Your password must contain at least 6 characters.");
       isValid = false;
     }
 
@@ -73,7 +73,7 @@ export function RegistrationView(props) {
             type="text"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
-            onBlur={validate}
+            // onBlur={validate}
             placeholder="Username"
           ></Form.Control>
           {usernameError && <p className="error-message">{usernameError}</p>}
@@ -84,7 +84,7 @@ export function RegistrationView(props) {
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            onBlur={validate}
+            // onBlur={validate}
             placeholder="Password"
           ></Form.Control>
           {passwordError && <p className="error-message">{passwordError}</p>}
@@ -95,7 +95,7 @@ export function RegistrationView(props) {
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            onBlur={validate}
+            // onBlur={validate}
             placeholder="Email"
           ></Form.Control>
           {emailError && <p className="error-message">{emailError}</p>}
@@ -106,7 +106,7 @@ export function RegistrationView(props) {
             type="date"
             value={birthday}
             onChange={(e) => setBirthday(e.target.value)}
-            onBlur={validate}
+            // onBlur={validate}
             placeholder="Birthday"
           ></Form.Control>
         </Form.Group>
@@ -116,7 +116,7 @@ export function RegistrationView(props) {
             <button
               className="button-primary"
               type="submit"
-              onClick={(e) => { handleRegister(e); setLoading(true) }}>Create Account</button>
+              onClick={(e) => { validate(); handleRegister(e); setLoading(true) }}>Create Account</button>
           }
           {loading &&
             <button className="button-primary button-loading" type="submit"><div className="loading"></div></button>

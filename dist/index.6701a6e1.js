@@ -31052,7 +31052,7 @@ function RegistrationView(props) {
             window.open('/', '_self');
         }).catch((e1)=>{
             console.log('Error registering the user', e1);
-            alert("Sorry, something went wrong. The username may be already used. Please, try again.");
+            alert("Sorry, something went wrong. Please, try again.");
             window.open('/register', '_self');
         });
     };
@@ -31064,7 +31064,7 @@ function RegistrationView(props) {
             isValid = false;
         }
         if (password.trim().length < 5) {
-            setPasswordError("Your password must contain  at least 6 characters.");
+            setPasswordError("Your password must contain at least 6 characters.");
             isValid = false;
         }
         if (!email.includes(".") || !email.includes("@")) {
@@ -31115,7 +31115,7 @@ function RegistrationView(props) {
                             value: username,
                             onChange: (e)=>setUsername(e.target.value)
                             ,
-                            onBlur: validate,
+                            // onBlur={validate}
                             placeholder: "Username",
                             __source: {
                                 fileName: "src/components/registration-view/registration-view.jsx",
@@ -31154,7 +31154,7 @@ function RegistrationView(props) {
                             value: password,
                             onChange: (e)=>setPassword(e.target.value)
                             ,
-                            onBlur: validate,
+                            // onBlur={validate}
                             placeholder: "Password",
                             __source: {
                                 fileName: "src/components/registration-view/registration-view.jsx",
@@ -31193,7 +31193,7 @@ function RegistrationView(props) {
                             value: email,
                             onChange: (e)=>setEmail(e.target.value)
                             ,
-                            onBlur: validate,
+                            // onBlur={validate}
                             placeholder: "Email",
                             __source: {
                                 fileName: "src/components/registration-view/registration-view.jsx",
@@ -31232,7 +31232,7 @@ function RegistrationView(props) {
                             value: birthday,
                             onChange: (e)=>setBirthday(e.target.value)
                             ,
-                            onBlur: validate,
+                            // onBlur={validate}
                             placeholder: "Birthday",
                             __source: {
                                 fileName: "src/components/registration-view/registration-view.jsx",
@@ -31254,6 +31254,7 @@ function RegistrationView(props) {
                             className: "button-primary",
                             type: "submit",
                             onClick: (e)=>{
+                                validate();
                                 handleRegister(e);
                                 setLoading(true);
                             },
