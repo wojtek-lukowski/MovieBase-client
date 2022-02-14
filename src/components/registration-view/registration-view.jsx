@@ -18,6 +18,8 @@ export function RegistrationView(props) {
   const [emailError, setEmailError] = useState(null);
   const [passwordError, setPasswordError] = useState(null);
 
+  const [loading, setLoading] = useState(false);
+
   const handleRegister = (e) => {
     e.preventDefault();
     console.log(username, password, email, birthday);
@@ -107,14 +109,16 @@ export function RegistrationView(props) {
           ></Form.Control>
         </Form.Group>
 
-        <div className="form-button">
-          <button
-            className="button-primary"
-            type="submit"
-            onClick={handleRegister}
-          >
-            Create Account
-          </button>
+        <div className="form-actions">
+          {!loading &&
+            <button
+              className="button-primary"
+              type="submit"
+              onClick={() => { handleRegister; setLoading(true) }}>Create Account</button>
+          }
+          {loading &&
+            <button className="button-primary button-loading" type="submit"><div className="loading"></div></button>
+          }
         </div>
       </Form>
     </div>
