@@ -43,13 +43,14 @@ export function LoginView(props) {
         <Form.Label>Password: </Form.Label>
         <Form.Control type="password" value={password} onChange={e => setPassword(e.target.value)} placeholder="Password"></Form.Control>
       </Form.Group>
-      <div className="form-button">
+      <div className="form-actions">
         {/* <button className="button-primary" type="submit" onClick={handleSubmit}>Log in</button> */}
         {!loading &&
           <button className="button-primary" type="submit" onClick={(e) => { handleSubmit(e); setLoading(true) }}>Log in</button>
         }
         {loading &&
-          <button className="button-primary" type="submit">Logging in</button>
+          // <button className="button-primary" type="submit"><div className="loading"></div></button>
+          <button className="button-primary button-loading" type="submit"><div className="loading"></div></button>
         }
       </div>
     </Form >

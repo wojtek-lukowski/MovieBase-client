@@ -31302,6 +31302,7 @@ function LoginView(props) {
     _s();
     const [username, setUsername] = _react.useState('');
     const [password, setPassword] = _react.useState('');
+    const [loading, setLoading] = _react.useState(false);
     const handleSubmit = (e)=>{
         e.preventDefault();
         _axiosDefault.default.post('https://moviebased.herokuapp.com/login', {
@@ -31318,14 +31319,14 @@ function LoginView(props) {
     return(/*#__PURE__*/ _jsxRuntime.jsxs(_formDefault.default, {
         __source: {
             fileName: "src/components/login-view/login-view.jsx",
-            lineNumber: 35
+            lineNumber: 36
         },
         __self: this,
         children: [
             /*#__PURE__*/ _jsxRuntime.jsx("h2", {
                 __source: {
                     fileName: "src/components/login-view/login-view.jsx",
-                    lineNumber: 36
+                    lineNumber: 37
                 },
                 __self: this,
                 children: "Log In"
@@ -31334,14 +31335,14 @@ function LoginView(props) {
                 controlId: "formUsername",
                 __source: {
                     fileName: "src/components/login-view/login-view.jsx",
-                    lineNumber: 37
+                    lineNumber: 38
                 },
                 __self: this,
                 children: [
                     /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Label, {
                         __source: {
                             fileName: "src/components/login-view/login-view.jsx",
-                            lineNumber: 38
+                            lineNumber: 39
                         },
                         __self: this,
                         children: "Username: "
@@ -31354,7 +31355,7 @@ function LoginView(props) {
                         placeholder: "Username",
                         __source: {
                             fileName: "src/components/login-view/login-view.jsx",
-                            lineNumber: 39
+                            lineNumber: 40
                         },
                         __self: this
                     })
@@ -31364,14 +31365,14 @@ function LoginView(props) {
                 controlId: "formPassword",
                 __source: {
                     fileName: "src/components/login-view/login-view.jsx",
-                    lineNumber: 41
+                    lineNumber: 42
                 },
                 __self: this,
                 children: [
                     /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Label, {
                         __source: {
                             fileName: "src/components/login-view/login-view.jsx",
-                            lineNumber: 42
+                            lineNumber: 43
                         },
                         __self: this,
                         children: "Password: "
@@ -31384,35 +31385,58 @@ function LoginView(props) {
                         placeholder: "Password",
                         __source: {
                             fileName: "src/components/login-view/login-view.jsx",
-                            lineNumber: 43
+                            lineNumber: 44
                         },
                         __self: this
                     })
                 ]
             }),
-            /*#__PURE__*/ _jsxRuntime.jsx("div", {
-                className: "form-button",
+            /*#__PURE__*/ _jsxRuntime.jsxs("div", {
+                className: "form-actions",
                 __source: {
                     fileName: "src/components/login-view/login-view.jsx",
-                    lineNumber: 45
+                    lineNumber: 46
                 },
                 __self: this,
-                children: /*#__PURE__*/ _jsxRuntime.jsx("button", {
-                    className: "button-primary",
-                    type: "submit",
-                    onClick: handleSubmit,
-                    __source: {
-                        fileName: "src/components/login-view/login-view.jsx",
-                        lineNumber: 46
-                    },
-                    __self: this,
-                    children: "Log in"
-                })
+                children: [
+                    !loading && /*#__PURE__*/ _jsxRuntime.jsx("button", {
+                        className: "button-primary",
+                        type: "submit",
+                        onClick: (e)=>{
+                            handleSubmit(e);
+                            setLoading(true);
+                        },
+                        __source: {
+                            fileName: "src/components/login-view/login-view.jsx",
+                            lineNumber: 49
+                        },
+                        __self: this,
+                        children: "Log in"
+                    }),
+                    loading && // <button className="button-primary" type="submit"><div className="loading"></div></button>
+                    /*#__PURE__*/ _jsxRuntime.jsx("button", {
+                        className: "button-primary button-loading",
+                        type: "submit",
+                        __source: {
+                            fileName: "src/components/login-view/login-view.jsx",
+                            lineNumber: 53
+                        },
+                        __self: this,
+                        children: /*#__PURE__*/ _jsxRuntime.jsx("div", {
+                            className: "loading",
+                            __source: {
+                                fileName: "src/components/login-view/login-view.jsx",
+                                lineNumber: 53
+                            },
+                            __self: this
+                        })
+                    })
+                ]
             })
         ]
     }));
 }
-_s(LoginView, "wuQOK7xaXdVz4RMrZQhWbI751Oc=");
+_s(LoginView, "Ib4DZnls6WwbdsxSgO3L7x75zLY=");
 _c = LoginView;
 const mapDispatchToProps = (dispatch)=>({
         handleSubmit: (username, password)=>dispatch(handleSubmit(username, password))

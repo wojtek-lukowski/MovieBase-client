@@ -82,9 +82,40 @@ form {
         font-size: 1rem;
         margin-bottom: var(--u0-5);
     }
-    .form-button {
-        text-align: center;
+    .form-actions {
+        display: flex;
+        justify-content: center;
         margin-top: var(--u3);
+    }
+
+    .button-primary {
+      width: 15rem;
+      height: 4rem;
+    }
+
+    .button-loading {
+      display: flex;
+      justify-content: center;
+
+      &:hover {
+        background-color: transparent;
+      }
+    }
+
+    .loading {
+      width: 2.4rem;
+      height: 2.4rem;
+      border-left: solid 3px var(--yellow);
+      border-bottom: solid 3px  var(--yellow);
+      border-radius: 50px;
+      animation-name: loading;
+      animation-duration: 1s;
+      animation-iteration-count: infinite;
+    }
+
+    @keyframes loading {
+      0% {transform: rotate(0deg)}
+      100% {transform: rotate(360deg)}
     }
 }
 
