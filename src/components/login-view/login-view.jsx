@@ -14,6 +14,7 @@ import Row from 'react-bootstrap/Row';
 export function LoginView(props) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -43,7 +44,13 @@ export function LoginView(props) {
         <Form.Control type="password" value={password} onChange={e => setPassword(e.target.value)} placeholder="Password"></Form.Control>
       </Form.Group>
       <div className="form-button">
-        <button className="button-primary" type="submit" onClick={handleSubmit}>Log in</button>
+        {/* <button className="button-primary" type="submit" onClick={handleSubmit}>Log in</button> */}
+        {!loading &&
+          <button className="button-primary" type="submit" onClick={(e) => { handleSubmit(e); setLoading(true) }}>Log in</button>
+        }
+        {loading &&
+          <button className="button-primary" type="submit">Logging in</button>
+        }
       </div>
     </Form >
   )
