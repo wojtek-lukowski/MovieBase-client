@@ -32,7 +32,7 @@ export function LoginView(props) {
   };
 
   return (
-    <Form className="form">
+    <Form>
       <h2>Log In</h2>
       <Form.Group controlId="formUsername">
         <Form.Label>Username: </Form.Label>

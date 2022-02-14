@@ -25995,7 +25995,7 @@ class MainView extends _reactDefault.default.Component {
                         exact: true,
                         path: "/user/:Username",
                         render: ({ history  })=>{
-                            if (!user) return(/*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                            if (!user) return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
                                 children: /*#__PURE__*/ _jsxRuntime.jsx(_loginView.LoginView, {
                                     onLoggedIn: (user1)=>this.onLoggedIn(user1)
                                 })
@@ -26021,7 +26021,7 @@ class MainView extends _reactDefault.default.Component {
                         exact: true,
                         path: "/movies/:MovieId",
                         render: ({ match , history  })=>{
-                            if (!user) return(/*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                            if (!user) return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
                                 children: /*#__PURE__*/ _jsxRuntime.jsx(_loginView.LoginView, {
                                     onLoggedIn: (user1)=>this.onLoggedIn(user1)
                                 })
@@ -26030,7 +26030,7 @@ class MainView extends _reactDefault.default.Component {
                                 className: "main-view",
                                 children: "Loading..."
                             }));
-                            return(/*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                            return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
                                 children: /*#__PURE__*/ _jsxRuntime.jsx(_movieView.MovieView, {
                                     movie: movies.find((m)=>m._id === match.params.MovieId
                                     ),
@@ -26048,7 +26048,7 @@ class MainView extends _reactDefault.default.Component {
                         exact: true,
                         path: "/directors/:Name",
                         render: ({ match , history  })=>{
-                            if (!user) return(/*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                            if (!user) return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
                                 children: /*#__PURE__*/ _jsxRuntime.jsx(_loginView.LoginView, {
                                     onLoggedIn: (user1)=>this.onLoggedIn(user1)
                                 })
@@ -26057,7 +26057,7 @@ class MainView extends _reactDefault.default.Component {
                                 className: "main-view",
                                 children: "Loading..."
                             }));
-                            return(/*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                            return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
                                 children: /*#__PURE__*/ _jsxRuntime.jsx(_directorView.DirectorView, {
                                     director: movies.find((m)=>m.Director.Name === match.params.Name
                                     ).Director,
@@ -26075,7 +26075,7 @@ class MainView extends _reactDefault.default.Component {
                         exact: true,
                         path: "/genres/:Name",
                         render: ({ match , history , Description , Movies  })=>{
-                            if (!user) return(/*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                            if (!user) return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
                                 children: /*#__PURE__*/ _jsxRuntime.jsx(_loginView.LoginView, {
                                     onLoggedIn: (user1)=>this.onLoggedIn(user1)
                                 })
@@ -26085,7 +26085,7 @@ class MainView extends _reactDefault.default.Component {
                                 children: "Loading..."
                             }));
                             console.log(movies);
-                            return(/*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                            return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
                                 children: /*#__PURE__*/ _jsxRuntime.jsx(_genreView.GenreView, {
                                     genre: movies.find((m)=>m.Genre.Name === match.params.Name
                                     ).Genre,
@@ -31316,7 +31316,6 @@ function LoginView(props) {
         });
     };
     return(/*#__PURE__*/ _jsxRuntime.jsxs(_formDefault.default, {
-        className: "form",
         __source: {
             fileName: "src/components/login-view/login-view.jsx",
             lineNumber: 35

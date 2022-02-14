@@ -138,9 +138,9 @@ export class MainView extends React.Component {
             render={({ history }) => {
               if (!user)
                 return (
-                  <Col>
+                  <div>
                     <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />
-                  </Col>
+                  </div>
                 );
               if (movies.length === 0)
                 return <div className="main-view">Loading...</div>;
@@ -161,21 +161,21 @@ export class MainView extends React.Component {
             render={({ match, history }) => {
               if (!user)
                 return (
-                  <Col>
+                  <div>
                     <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />
-                  </Col>
+                  </div>
                 );
               if (movies.length === 0)
                 return <div className="main-view">Loading...</div>;
               return (
-                <Col
+                <div
                 // md={8}
                 >
                   <MovieView
                     movie={movies.find((m) => m._id === match.params.MovieId)}
                     onBackClick={() => history.goBack()}
                   />
-                </Col>
+                </div>
               );
             }}
           />
@@ -186,14 +186,14 @@ export class MainView extends React.Component {
             render={({ match, history }) => {
               if (!user)
                 return (
-                  <Col>
+                  <div>
                     <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />
-                  </Col>
+                  </div>
                 );
               if (movies.length === 0)
                 return <div className="main-view">Loading...</div>;
               return (
-                <Col
+                <div
                 // md={8}
                 >
                   <DirectorView
@@ -203,7 +203,7 @@ export class MainView extends React.Component {
                     }
                     onBackClick={() => history.goBack()}
                   />
-                </Col>
+                </div>
               );
             }}
           />
@@ -214,15 +214,15 @@ export class MainView extends React.Component {
             render={({ match, history, Description, Movies }) => {
               if (!user)
                 return (
-                  <Col>
+                  <div>
                     <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />
-                  </Col>
+                  </div>
                 );
               if (movies.length === 0)
                 return <div className="main-view">Loading...</div>;
               console.log(movies);
               return (
-                <Col
+                <div
                 // md={8}
                 >
                   <GenreView
@@ -234,7 +234,7 @@ export class MainView extends React.Component {
                     Description={Description}
                     Movies={Movies}
                   />
-                </Col>
+                </div>
               );
             }}
           />

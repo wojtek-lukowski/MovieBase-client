@@ -17,12 +17,12 @@ a {
     border: 1px solid var(--background) !important;
   }
 }
+}
 
 @media only screen and (max-width: 800px) {
   .login-page {
     background-image: none;
   }
-}
 }
 
 
@@ -44,7 +44,7 @@ a {
   }
 }
 
-.form {
+form {
   background-color: var(--background);
   color: var(--yellow);
   border: 1px solid var(--yellow);
