@@ -50,12 +50,12 @@ export class GenreView extends React.Component {
             <div className="director-view">
                 <h1>{genre.Name}</h1>
                 <div className="director-bio">{Description}</div>
-                <div className="genre-movies-list">
+                {/* <div className="genre-movies-list">
                     <div>Other {genre.Name} movies:</div>
                     {Movies.map((movieId) => (
                         <div>{movieId}</div>
                     ))}
-                </div>
+                </div> */}
 
                 <div className="button-centered">
                     <button className="button-primary" onClick={() => { onBackClick(); }}>Back</button>

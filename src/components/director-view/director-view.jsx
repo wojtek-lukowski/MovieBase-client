@@ -26,10 +26,10 @@ export class DirectorView extends React.Component {
                     </div>
                 </div>
                 <div className="director-movies">
-                    <div>
+                    {/* <div>
                         <h4>Other movies:</h4>
                         <div className="director-movies-list">{director.Movies.map(movie => <p key={movie}>{movie}</p>)}</div>
-                    </div>
+                    </div> */}
                 </div>
                 <button className="button-primary" onClick={() => { onBackClick(); }}>Back</button>
             </div>

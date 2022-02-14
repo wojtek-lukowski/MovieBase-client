@@ -32139,41 +32139,7 @@ class DirectorView extends _reactDefault.default.Component {
                         fileName: "src/components/director-view/director-view.jsx",
                         lineNumber: 28
                     },
-                    __self: this,
-                    children: /*#__PURE__*/ _jsxRuntime.jsxs("div", {
-                        __source: {
-                            fileName: "src/components/director-view/director-view.jsx",
-                            lineNumber: 29
-                        },
-                        __self: this,
-                        children: [
-                            /*#__PURE__*/ _jsxRuntime.jsx("h4", {
-                                __source: {
-                                    fileName: "src/components/director-view/director-view.jsx",
-                                    lineNumber: 30
-                                },
-                                __self: this,
-                                children: "Other movies:"
-                            }),
-                            /*#__PURE__*/ _jsxRuntime.jsx("div", {
-                                className: "director-movies-list",
-                                __source: {
-                                    fileName: "src/components/director-view/director-view.jsx",
-                                    lineNumber: 31
-                                },
-                                __self: this,
-                                children: director.Movies.map((movie)=>/*#__PURE__*/ _jsxRuntime.jsx("p", {
-                                        __source: {
-                                            fileName: "src/components/director-view/director-view.jsx",
-                                            lineNumber: 31
-                                        },
-                                        __self: this,
-                                        children: movie
-                                    }, movie)
-                                )
-                            })
-                        ]
-                    })
+                    __self: this
                 }),
                 /*#__PURE__*/ _jsxRuntime.jsx("button", {
                     className: "button-primary",
@@ -32456,37 +32422,6 @@ class GenreView extends _reactDefault.default.Component {
                     },
                     __self: this,
                     children: Description
-                }),
-                /*#__PURE__*/ _jsxRuntime.jsxs("div", {
-                    className: "genre-movies-list",
-                    __source: {
-                        fileName: "src/components/genre-view/genre-view.jsx",
-                        lineNumber: 53
-                    },
-                    __self: this,
-                    children: [
-                        /*#__PURE__*/ _jsxRuntime.jsxs("div", {
-                            __source: {
-                                fileName: "src/components/genre-view/genre-view.jsx",
-                                lineNumber: 54
-                            },
-                            __self: this,
-                            children: [
-                                "Other ",
-                                genre.Name,
-                                " movies:"
-                            ]
-                        }),
-                        Movies.map((movieId)=>/*#__PURE__*/ _jsxRuntime.jsx("div", {
-                                __source: {
-                                    fileName: "src/components/genre-view/genre-view.jsx",
-                                    lineNumber: 56
-                                },
-                                __self: this,
-                                children: movieId
-                            })
-                        )
-                    ]
                 }),
                 /*#__PURE__*/ _jsxRuntime.jsx("div", {
                     className: "button-centered",
