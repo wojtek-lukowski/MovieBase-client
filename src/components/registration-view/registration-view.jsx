@@ -114,7 +114,7 @@ export function RegistrationView(props) {
             <button
               className="button-primary"
               type="submit"
-              onClick={() => { handleRegister; setLoading(true) }}>Create Account</button>
+              onClick={(e) => { handleRegister(e); setLoading(true) }}>Create Account</button>
           }
           {loading &&
             <button className="button-primary button-loading" type="submit"><div className="loading"></div></button>

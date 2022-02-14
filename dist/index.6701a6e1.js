@@ -31251,7 +31251,8 @@ function RegistrationView(props) {
                         !loading && /*#__PURE__*/ _jsxRuntime.jsx("button", {
                             className: "button-primary",
                             type: "submit",
-                            onClick: ()=>{
+                            onClick: (e)=>{
+                                handleRegister(e);
                                 setLoading(true);
                             },
                             __source: {
