@@ -28,7 +28,8 @@ export function LoginView(props) {
       })
       .catch(e => {
         console.log('error:', e);
-        console.log('No such user.')
+        alert('There was a problem with your login. Please try again.');
+        window.open('/', '_self');
       });
   };
 

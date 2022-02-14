@@ -36,6 +36,8 @@ export function RegistrationView(props) {
       })
       .catch(e => {
         console.log('Error registering the user', e)
+        alert("Sorry, something went wrong. The username may be already used. Please, try again.");
+        window.open('/register', '_self');
       });
   };
 
