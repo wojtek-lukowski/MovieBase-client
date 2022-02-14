@@ -32976,24 +32976,6 @@ var _button = require("react-bootstrap/Button");
 var _buttonDefault = parcelHelpers.interopDefault(_button);
 var _headerScss = require("./header.scss");
 class Header extends _reactDefault.default.Component {
-    // constructor() {
-    //   super();
-    //   this.state = {
-    //     renderProfileButton: true
-    //   };
-    // }
-    // componentDidMount = () => {
-    //   console.log('profile button - did mount', this.props.renderProfileButton);
-    // }
-    toggleButton = ()=>{
-    // console.log('profile button before',);
-    // if (this.props.renderProfileButton) {
-    //   this.setState({ renderProfileButton: false })
-    // } else {
-    //   this.setState({ renderProfileButton: true })
-    // }
-    // console.log('profile button afetr',);
-    };
     render() {
         const { logOut , user  } = this.props;
         // const renderProfileButton = this.props;
@@ -33001,7 +32983,7 @@ class Header extends _reactDefault.default.Component {
             className: "page-header",
             __source: {
                 fileName: "src/components/header/header.jsx",
-                lineNumber: 39
+                lineNumber: 17
             },
             __self: this,
             children: [
@@ -33009,14 +32991,14 @@ class Header extends _reactDefault.default.Component {
                     className: "header-logo",
                     __source: {
                         fileName: "src/components/header/header.jsx",
-                        lineNumber: 40
+                        lineNumber: 18
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
                         to: "/",
                         __source: {
                             fileName: "src/components/header/header.jsx",
-                            lineNumber: 41
+                            lineNumber: 19
                         },
                         __self: this,
                         children: /*#__PURE__*/ _jsxRuntime.jsx("svg", {
@@ -33027,7 +33009,7 @@ class Header extends _reactDefault.default.Component {
                             xmlns: "http://www.w3.org/2000/svg",
                             __source: {
                                 fileName: "src/components/header/header.jsx",
-                                lineNumber: 42
+                                lineNumber: 20
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsx("path", {
@@ -33037,7 +33019,7 @@ class Header extends _reactDefault.default.Component {
                                 fill: "#FFBF00",
                                 __source: {
                                     fileName: "src/components/header/header.jsx",
-                                    lineNumber: 43
+                                    lineNumber: 21
                                 },
                                 __self: this
                             })
@@ -33048,13 +33030,13 @@ class Header extends _reactDefault.default.Component {
                     className: "header-welcome",
                     __source: {
                         fileName: "src/components/header/header.jsx",
-                        lineNumber: 48
+                        lineNumber: 26
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsxs("h4", {
                         __source: {
                             fileName: "src/components/header/header.jsx",
-                            lineNumber: 49
+                            lineNumber: 27
                         },
                         __self: this,
                         children: [
@@ -33062,7 +33044,7 @@ class Header extends _reactDefault.default.Component {
                             /*#__PURE__*/ _jsxRuntime.jsx("span", {
                                 __source: {
                                     fileName: "src/components/header/header.jsx",
-                                    lineNumber: 49
+                                    lineNumber: 27
                                 },
                                 __self: this,
                                 children: user
@@ -33074,13 +33056,13 @@ class Header extends _reactDefault.default.Component {
                     className: "header-welcome",
                     __source: {
                         fileName: "src/components/header/header.jsx",
-                        lineNumber: 53
+                        lineNumber: 31
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsxs("h4", {
                         __source: {
                             fileName: "src/components/header/header.jsx",
-                            lineNumber: 54
+                            lineNumber: 32
                         },
                         __self: this,
                         children: [
@@ -33088,7 +33070,7 @@ class Header extends _reactDefault.default.Component {
                             /*#__PURE__*/ _jsxRuntime.jsx("span", {
                                 __source: {
                                     fileName: "src/components/header/header.jsx",
-                                    lineNumber: 54
+                                    lineNumber: 32
                                 },
                                 __self: this,
                                 children: user
@@ -33100,7 +33082,7 @@ class Header extends _reactDefault.default.Component {
                     className: "header-buttons",
                     __source: {
                         fileName: "src/components/header/header.jsx",
-                        lineNumber: 57
+                        lineNumber: 35
                     },
                     __self: this,
                     children: [
@@ -33109,7 +33091,7 @@ class Header extends _reactDefault.default.Component {
                             to: `/user/${user}`,
                             __source: {
                                 fileName: "src/components/header/header.jsx",
-                                lineNumber: 59
+                                lineNumber: 37
                             },
                             __self: this,
                             children: "Profile"
@@ -33119,7 +33101,7 @@ class Header extends _reactDefault.default.Component {
                             to: `/`,
                             __source: {
                                 fileName: "src/components/header/header.jsx",
-                                lineNumber: 64
+                                lineNumber: 42
                             },
                             __self: this,
                             children: "Back"
@@ -33129,7 +33111,7 @@ class Header extends _reactDefault.default.Component {
                             onClick: logOut,
                             __source: {
                                 fileName: "src/components/header/header.jsx",
-                                lineNumber: 68
+                                lineNumber: 46
                             },
                             __self: this,
                             children: "Log out"
