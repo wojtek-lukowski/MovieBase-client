@@ -33029,146 +33029,144 @@ class Header extends _reactDefault.default.Component {
     render() {
         const { logOut , user  } = this.props;
         // const renderProfileButton = this.props;
-        return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
+        return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
             className: "page-header",
             __source: {
                 fileName: "src/components/header/header.jsx",
                 lineNumber: 17
             },
             __self: this,
-            children: [
-                /*#__PURE__*/ _jsxRuntime.jsx("div", {
-                    className: "header-logo",
-                    __source: {
-                        fileName: "src/components/header/header.jsx",
-                        lineNumber: 18
-                    },
-                    __self: this,
-                    children: /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
-                        to: "/",
+            children: /*#__PURE__*/ _jsxRuntime.jsxs("div", {
+                className: "header-content",
+                __source: {
+                    fileName: "src/components/header/header.jsx",
+                    lineNumber: 18
+                },
+                __self: this,
+                children: [
+                    /*#__PURE__*/ _jsxRuntime.jsx("div", {
+                        className: "header-logo",
                         __source: {
                             fileName: "src/components/header/header.jsx",
                             lineNumber: 19
                         },
                         __self: this,
-                        children: /*#__PURE__*/ _jsxRuntime.jsx("svg", {
-                            width: "24",
-                            height: "24",
-                            viewBox: "0 0 24 24",
-                            fill: "none",
-                            xmlns: "http://www.w3.org/2000/svg",
+                        children: /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
+                            to: "/",
                             __source: {
                                 fileName: "src/components/header/header.jsx",
                                 lineNumber: 20
                             },
                             __self: this,
-                            children: /*#__PURE__*/ _jsxRuntime.jsx("path", {
-                                "fill-rule": "evenodd",
-                                "clip-rule": "evenodd",
-                                d: "M6 3C5.20435 3 4.44129 3.31607 3.87868 3.87868C3.31607 4.44129 3 5.20435 3 6V18C3 18.7956 3.31607 19.5587 3.87868 20.1213C4.44129 20.6839 5.20435 21 6 21H18C18.7956 21 19.5587 20.6839 20.1213 20.1213C20.6839 19.5587 21 18.7956 21 18V6C21 5.20435 20.6839 4.44129 20.1213 3.87868C19.5587 3.31607 18.7956 3 18 3H6ZM5 6C5 5.73478 5.10536 5.48043 5.29289 5.29289C5.48043 5.10536 5.73478 5 6 5H7V7H5V6ZM19 6V7H17V5H18C18.2652 5 18.5196 5.10536 18.7071 5.29289C18.8946 5.48043 19 5.73478 19 6ZM17 11V9H19V11H17ZM17 15V13H19V15H17ZM18 19H17V17H19V18C19 18.2652 18.8946 18.5196 18.7071 18.7071C18.5196 18.8946 18.2652 19 18 19ZM5 18V17H7V19H6C5.73478 19 5.48043 18.8946 5.29289 18.7071C5.10536 18.5196 5 18.2652 5 18ZM7 15H5V13H7V15ZM7 11H5V9H7V11Z",
-                                fill: "#FFBF00",
+                            children: /*#__PURE__*/ _jsxRuntime.jsx("svg", {
+                                width: "24",
+                                height: "24",
+                                viewBox: "0 0 24 24",
+                                fill: "none",
+                                xmlns: "http://www.w3.org/2000/svg",
                                 __source: {
                                     fileName: "src/components/header/header.jsx",
                                     lineNumber: 21
                                 },
-                                __self: this
+                                __self: this,
+                                children: /*#__PURE__*/ _jsxRuntime.jsx("path", {
+                                    "fill-rule": "evenodd",
+                                    "clip-rule": "evenodd",
+                                    d: "M6 3C5.20435 3 4.44129 3.31607 3.87868 3.87868C3.31607 4.44129 3 5.20435 3 6V18C3 18.7956 3.31607 19.5587 3.87868 20.1213C4.44129 20.6839 5.20435 21 6 21H18C18.7956 21 19.5587 20.6839 20.1213 20.1213C20.6839 19.5587 21 18.7956 21 18V6C21 5.20435 20.6839 4.44129 20.1213 3.87868C19.5587 3.31607 18.7956 3 18 3H6ZM5 6C5 5.73478 5.10536 5.48043 5.29289 5.29289C5.48043 5.10536 5.73478 5 6 5H7V7H5V6ZM19 6V7H17V5H18C18.2652 5 18.5196 5.10536 18.7071 5.29289C18.8946 5.48043 19 5.73478 19 6ZM17 11V9H19V11H17ZM17 15V13H19V15H17ZM18 19H17V17H19V18C19 18.2652 18.8946 18.5196 18.7071 18.7071C18.5196 18.8946 18.2652 19 18 19ZM5 18V17H7V19H6C5.73478 19 5.48043 18.8946 5.29289 18.7071C5.10536 18.5196 5 18.2652 5 18ZM7 15H5V13H7V15ZM7 11H5V9H7V11Z",
+                                    fill: "#FFBF00",
+                                    __source: {
+                                        fileName: "src/components/header/header.jsx",
+                                        lineNumber: 22
+                                    },
+                                    __self: this
+                                })
                             })
                         })
-                    })
-                }),
-                this.props.renderProfileButton && /*#__PURE__*/ _jsxRuntime.jsx("div", {
-                    className: "header-welcome",
-                    __source: {
-                        fileName: "src/components/header/header.jsx",
-                        lineNumber: 26
-                    },
-                    __self: this,
-                    children: /*#__PURE__*/ _jsxRuntime.jsxs("h4", {
+                    }),
+                    this.props.renderProfileButton && /*#__PURE__*/ _jsxRuntime.jsx("div", {
+                        className: "header-welcome",
                         __source: {
                             fileName: "src/components/header/header.jsx",
                             lineNumber: 27
                         },
                         __self: this,
-                        children: [
-                            "Welcome, ",
-                            /*#__PURE__*/ _jsxRuntime.jsx("span", {
-                                __source: {
-                                    fileName: "src/components/header/header.jsx",
-                                    lineNumber: 27
-                                },
-                                __self: this,
-                                children: user
-                            })
-                        ]
-                    })
-                }),
-                !this.props.renderProfileButton && /*#__PURE__*/ _jsxRuntime.jsx("div", {
-                    className: "header-welcome",
-                    __source: {
-                        fileName: "src/components/header/header.jsx",
-                        lineNumber: 31
-                    },
-                    __self: this,
-                    children: /*#__PURE__*/ _jsxRuntime.jsxs("h4", {
+                        children: /*#__PURE__*/ _jsxRuntime.jsxs("h4", {
+                            __source: {
+                                fileName: "src/components/header/header.jsx",
+                                lineNumber: 28
+                            },
+                            __self: this,
+                            children: [
+                                "Welcome, ",
+                                /*#__PURE__*/ _jsxRuntime.jsx("span", {
+                                    __source: {
+                                        fileName: "src/components/header/header.jsx",
+                                        lineNumber: 28
+                                    },
+                                    __self: this,
+                                    children: user
+                                })
+                            ]
+                        })
+                    }),
+                    !this.props.renderProfileButton && /*#__PURE__*/ _jsxRuntime.jsx("div", {
+                        className: "header-welcome",
                         __source: {
                             fileName: "src/components/header/header.jsx",
                             lineNumber: 32
                         },
                         __self: this,
+                        children: /*#__PURE__*/ _jsxRuntime.jsx("h4", {
+                            __source: {
+                                fileName: "src/components/header/header.jsx",
+                                lineNumber: 33
+                            },
+                            __self: this,
+                            children: "Your profile"
+                        })
+                    }),
+                    /*#__PURE__*/ _jsxRuntime.jsxs("div", {
+                        className: "header-buttons",
+                        __source: {
+                            fileName: "src/components/header/header.jsx",
+                            lineNumber: 36
+                        },
+                        __self: this,
                         children: [
-                            "See and manage your profile, ",
-                            /*#__PURE__*/ _jsxRuntime.jsx("span", {
+                            this.props.renderProfileButton && /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
+                                className: "button-primary",
+                                to: `/user/${user}`,
                                 __source: {
                                     fileName: "src/components/header/header.jsx",
-                                    lineNumber: 32
+                                    lineNumber: 38
                                 },
                                 __self: this,
-                                children: user
+                                children: "Profile"
+                            }),
+                            !this.props.renderProfileButton && /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
+                                className: "button-primary",
+                                to: `/`,
+                                __source: {
+                                    fileName: "src/components/header/header.jsx",
+                                    lineNumber: 43
+                                },
+                                __self: this,
+                                children: "Back"
+                            }),
+                            /*#__PURE__*/ _jsxRuntime.jsx("a", {
+                                className: "button-primary",
+                                onClick: logOut,
+                                __source: {
+                                    fileName: "src/components/header/header.jsx",
+                                    lineNumber: 47
+                                },
+                                __self: this,
+                                children: "Log out"
                             })
                         ]
                     })
-                }),
-                /*#__PURE__*/ _jsxRuntime.jsxs("div", {
-                    className: "header-buttons",
-                    __source: {
-                        fileName: "src/components/header/header.jsx",
-                        lineNumber: 35
-                    },
-                    __self: this,
-                    children: [
-                        this.props.renderProfileButton && /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
-                            className: "button-primary",
-                            to: `/user/${user}`,
-                            __source: {
-                                fileName: "src/components/header/header.jsx",
-                                lineNumber: 37
-                            },
-                            __self: this,
-                            children: "Profile"
-                        }),
-                        !this.props.renderProfileButton && /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
-                            className: "button-primary",
-                            to: `/`,
-                            __source: {
-                                fileName: "src/components/header/header.jsx",
-                                lineNumber: 42
-                            },
-                            __self: this,
-                            children: "Back"
-                        }),
-                        /*#__PURE__*/ _jsxRuntime.jsx("a", {
-                            className: "button-primary",
-                            onClick: logOut,
-                            __source: {
-                                fileName: "src/components/header/header.jsx",
-                                lineNumber: 46
-                            },
-                            __self: this,
-                            children: "Log out"
-                        })
-                    ]
-                })
-            ]
+                ]
+            })
         }));
     }
 }
