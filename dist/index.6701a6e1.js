@@ -32311,41 +32311,7 @@ class DirectorView extends _reactDefault.default.Component {
                         fileName: "src/components/director-view/director-view.jsx",
                         lineNumber: 54
                     },
-                    __self: this,
-                    children: /*#__PURE__*/ _jsxRuntime.jsxs("div", {
-                        __source: {
-                            fileName: "src/components/director-view/director-view.jsx",
-                            lineNumber: 55
-                        },
-                        __self: this,
-                        children: [
-                            /*#__PURE__*/ _jsxRuntime.jsx("h4", {
-                                __source: {
-                                    fileName: "src/components/director-view/director-view.jsx",
-                                    lineNumber: 56
-                                },
-                                __self: this,
-                                children: "Other movies:"
-                            }),
-                            /*#__PURE__*/ _jsxRuntime.jsx("div", {
-                                className: "director-movies-list",
-                                __source: {
-                                    fileName: "src/components/director-view/director-view.jsx",
-                                    lineNumber: 57
-                                },
-                                __self: this,
-                                children: director.Movies.map((movie)=>/*#__PURE__*/ _jsxRuntime.jsx("p", {
-                                        __source: {
-                                            fileName: "src/components/director-view/director-view.jsx",
-                                            lineNumber: 57
-                                        },
-                                        __self: this,
-                                        children: movie
-                                    })
-                                )
-                            })
-                        ]
-                    })
+                    __self: this
                 }),
                 /*#__PURE__*/ _jsxRuntime.jsx("div", {
                     className: "button-centered",

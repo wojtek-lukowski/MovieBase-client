@@ -52,10 +52,10 @@ export class DirectorView extends React.Component {
                     </div>
                 </div>
                 <div className="director-movies">
-                    <div>
+                    {/* <div>
                         <h4>Other movies:</h4>
                         <div className="director-movies-list">{director.Movies.map(movie => <p>{movie}</p>)}</div>
-                    </div>
+                    </div> */}
                 </div>
 
                 <div className="button-centered">
